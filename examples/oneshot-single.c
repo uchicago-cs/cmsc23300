@@ -80,7 +80,6 @@ int main(int argc, char *argv[])
 	if(serverSocket == -1)
 	{
 		perror("Could not open socket");
-		close(serverSocket);
 		exit(-1);
 	}
 
