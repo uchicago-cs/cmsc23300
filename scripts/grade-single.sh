@@ -31,7 +31,7 @@ fi
 
 REPO=$1
 
-git clone git@github.com:uchicago-cmsc23300/chirc.git
+git clone git@github.com:uchicago-cs/chirc.git
 
 if [ "$?" -ne "0" ]; 
 then
@@ -39,7 +39,7 @@ then
     exit 1
 fi
 
-git clone git@github.com:uchicago-cmsc23300-students/$REPO.git
+git clone git@github.com:uchicago-cs/$REPO.git
 
 if [ "$?" -ne "0" ]; 
 then
