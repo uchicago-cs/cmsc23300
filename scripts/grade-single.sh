@@ -76,8 +76,9 @@ fi
 cd ../ > /dev/null
 
 cd chirc
+CHIRCPYPATH="$(pwd)"
 echo "Running tests..."
-python -c "import tests.runners; tests.runners.grade_runner(csv=False, exe='../$REPO/chirc')"
+python -c "import sys; sys.path.insert(0, '$CHIRCPYPATH'); import tests.runners; tests.runners.grade_runner(csv=False, randomize_ports=1, exe='../$REPO/chirc')"
 
 cd ../ > /dev/null
 
