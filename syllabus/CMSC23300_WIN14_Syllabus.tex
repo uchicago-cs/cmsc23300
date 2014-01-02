@@ -1,0 +1,270 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{fancybox}
+\usepackage{multirow}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{colortbl}
+\usepackage{rotating}
+\usepackage{verbatim}
+\usepackage{url}
+
+
+
+%opening
+\title{CMSC 23300/33300\\Networks and Distributed Systems}
+\author{Department of Computer Science\\University of Chicago}
+\date{Last updated: 1/2/2014}
+
+\newcommand{\chirc}{$\chi$\textsf{IRC}}
+\newcommand{\chitcp}{$\chi$\textsf{TCP}}
+
+\setcounter{tocdepth}{1}
+
+\titlecontents{section}
+[1em]
+{\sffamily}
+{}
+{}
+{\titlerule*[0.5pc]{.}\contentspage\hspace*{1em}}
+\renewcommand\contentsname{Contents of this Document}
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{center}
+\begin{minipage}{0.6\textwidth}
+\begin{center}
+\emph{Winter 2014 Quarter}
+\end{center}
+\textbf{Dates:} January 2 -- March 11, 2014
+
+\textbf{Lectures:} TuTh 12:00-1:20 in Ryerson 251
+
+\textbf{Websites:}\\
+ \url{http://www.classes.cs.uchicago.edu/archive/2014/winter/23300-1/}\\
+ \url{https://github.com/uchicago-cs/cmsc23300/wiki}
+\
+\vspace{1em}
+
+\textbf{Lecturer:} Borja Sotomayor
+
+\textbf{E-mail:} borja@cs.uchicago.edu
+
+\textbf{Office:} Ryerson 151
+
+\textbf{Office hours:} After class and by appointment.
+
+\vspace{1em}
+
+\textbf{TA:} Zhihao Lou
+
+\textbf{E-mail:} \url{zhlou@cs.uchicago.edu}
+
+\textbf{Office:} Zoology 111
+
+\textbf{Office hours:} TA office hours will be posted on the course website.
+\end{minipage}
+
+\end{center}
+
+\vspace{2ex}
+
+\titleformat{\section}[block]
+{\filcenter\normalfont\sffamily}
+{}{0em}{}
+
+\begin{center}
+\shadowbox{
+\begin{minipage}{0.6\textwidth}
+\tableofcontents
+\end{minipage}
+}
+\end{center}
+
+
+
+
+
+
+
+\titleformat{\section}[block]
+{\large\sffamily}
+{}{0em}{\titlerule\\\bfseries}
+
+\titleformat{\subsection}[block]
+{\normalfont\sffamily\bfseries}
+{}{0em}{}
+
+\pagebreak
+
+\section{Course description}
+
+This course focuses on the principles and techniques used in the development of networked and distributed software. Topics include programming with sockets; concurrent programming; data link layer (Ethernet, packet switching, 802.11, etc.); internet and routing protocols (IP, IPv6, ARP, intra-domain and inter-domain routing, etc.); end-to-end protocols (UDP, TCP); and other commonly used network protocols and techniques.
+
+In this course, students will learn how to\ldots
+
+\begin{itemize}
+ \item[] \ldots implement multithreaded client/server applications using sockets.
+ \item[] \ldots interpret existing specifications of network protocols, and translate them into code.
+ \item[] \ldots design and combine network protocols that form the foundation of the Internet.
+ \item[] \ldots develop software collaboratively through the use of version control tools, code reviews, and project management.
+\end{itemize}
+
+In a nutshell, students will learn how the Internet works. By the end of this course, students should understand \emph{everything} that happens ``under the hood'' when (for example) a web page is requested, from the moment you click on a link in your browser to the moment you get the requested page back.
+
+CMSC 15400 and a working knowledge of the C programming language are strict prerequisites of this course. Students who have not taken CMSC 15400 must speak with the instructor to verify that they meet the prerequisites for this course.
+
+\section{Course organization}
+
+The development of three programming projects accounts for the majority of the grade in this course. To successfully complete these projects, students must understand fundamental concepts in networking. The class meets two times a week for lectures that provide this conceptual scaffolding, but will also cover material that is not directly applied in the projects. There will be a midterm and a final exam. The course calendar, including the contents of each lecture and project deadlines, is shown in Table~\ref{tab:calendar}.
+
+\subsection{Projects}
+
+Throughout the quarter, students will develop three projects:
+
+\begin{enumerate}
+ \item \textbf{\chirc}: Implementing an Internet Relay Protocol (IRC) server (partially compliant with RFC 2810, 2811, 2812, and 2813) using POSIX sockets and pthreads.
+ \item \textbf{\chitcp}: Implementing the Transmission Control Protocol.
+ \item \textbf{Simple Router}: Implementing an Internet router using the Mininet network emulator (\url{https://github.com/mininet/mininet})
+\end{enumerate}
+
+Each project is independent from the others. Students will develop these projects in pairs. Project groups must be formed by Friday, January 10. Groups can be changed from one project to another, but you must inform the instructor that you intend to do so. If your partner drops out of the course or you feel he/she is not contributing to the group's effort, you should make the instructor aware of this.
+
+\subsection{Graduate Project}
+
+Graduate students will also have to complete a research-oriented project divided into four stages. In this project, students will have to gather data and perform a series of experiments to empirically test a series of hypothesis (within the realm of Computer Networks). Students will peer-review these papers amongst themselves in a double-blind fashion, will have an opportunity to revise their papers based on the feedback they receive, and will finally present their results in a poster session.
+
+\subsection{Exams}
+
+There will be a midterm on Tuesday, February 12. This midterm will take place in class, and will only occupy the first 50 minutes of the lecture. The final exam will take place during Finals Week, on Thursday, March 20 from 10:30 to 12:30. An early final exam will be scheduled during 10th week for graduating students.
+
+Questions and exercises related to the projects will make up a substantial part of both exams. Students who have developed the projects on their own (which also requires understanding the material presented in class) should be able to answer these questions with relative ease. However, the exams will also include questions that are not related to the projects, but will be in line with the learning goals outlined at the beginning of this syllabus.
+
+
+\begin{sidewaystable}
+\sffamily
+\setlength{\extrarowheight}{4pt}
+\caption{CMSC 23300/33300 Winter 2014 Calendar}
+\begin{tabular}{|c|cc||p{6cm}|c|c|c|c|}
+\hline
+\textbf{Week} &  \multicolumn{2}{|c||}{\textbf{Date}} & \textbf{Lecture} & \textbf{CNASA} & \textbf{TIV1} & \textbf{Project Due} & \textbf{Graduate Project} \\\hline
+
+\multirow{2}{*}{1}  & Tu & 7 January    & Introduction                                    & 1    & 1       & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & Th & 9 January    & Sockets, Concurrent Programming                 & ---  & ---     & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\hline\hline
+
+\multirow{3}{*}{2}  & Tu & 14 January   & Sockets, Concurrent Programming                 & ---  & ---     & Project 1a  & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & Th & 16 January   & Ethernet, Switching                             & 2, 3 & 3       & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} \\\hline\hline
+                    & F  & 17 January   & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} &  \cellcolor[gray]{0.9} & Data Strategy Due\\\hline\hline
+
+\multirow{3}{*}{3}  & Tu & 21 January   & Switching                                       & 2, 3 & 3       & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & W  & 22 January   & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & Th & 23 January   & IP, Routing                                     & 3    & 2, 5, 7 & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\hline\hline
+
+\multirow{3}{*}{4}  & M  & 27 January   & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} &  Project 1b & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & Tu & 28 January   & Routing                                         & 3    & 5, 7    & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & Th & 30 January   & TCP                                             & 5    & 12--15  & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\hline\hline
+
+\multirow{3}{*}{5}  
+                    & Tu & 4 February   & TCP                                             & 5    & 12--15  & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & Th & 6 February   & TCP                                             & 5    & 12--15  & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & F  & 7 February   & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} &  \cellcolor[gray]{0.9} & Paper Submission Due\\\hline\hline
+
+\multirow{3}{*}{6}  & M  & 11 February  & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} &  Project 1c & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & Tu & 12 February  & Midterm & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & Th & 13 February  & DNS, Application Layer Protocols                & 9    & 11      & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\hline\hline
+
+\multirow{3}{*}{7}  & Tu & 18 February  & IPv6, Internet-level routing                    & 4, 6 & 5       & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & W  & 19 February  & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & Project 2a & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & Th & 20 February  & Congestion Control                              & 4, 6 & 16      & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\hline\hline
+
+\multirow{4}{*}{8}  & M  & 24 February  & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} &  \cellcolor[gray]{0.9} & Reviews Due \\\cline{2-7}
+                    & Tu & 25 February  & Security                                        & 8    & 18      & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & W  & 26 February  & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & Project 2b & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & Th & 27 February  & IPSec, DNSSec                                   & 8    & 18      & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\hline\hline
+
+\multirow{2}{*}{9}  & Tu & 4 March      & Wireless Networks                               & 2    & 3       & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\cline{2-6}
+                    & Th & 6 March      & Wireless Networks                               & 2    & 3       & \cellcolor[gray]{0.9}  & \cellcolor[gray]{0.9} \\\hline\hline
+
+\multirow{3}{*}{10} & M  & 10 March     & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} &  \cellcolor[gray]{0.9} & Revised Paper Due \\\cline{2-7}
+                    & Tu & 11 March     & Review                                          & ---  & ---     & \cellcolor[gray]{0.9}  & Poster Session \\\cline{2-7}
+                    & W  & 12 March     & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} & \cellcolor[gray]{0.9} &  Project 3 & \cellcolor[gray]{0.9} \\\hline
+\end{tabular}
+\begin{center}
+\textbf{CNASA}: Computer Networks: A Systems Approach\hspace{3ex}\textbf{TIV1}: TCP/IP Illustrated, Volume 1
+\end{center}
+\label{tab:calendar}
+\end{sidewaystable}
+
+
+\section{Books}
+
+This course has two \emph{suggested} texts:
+
+\begin{itemize}
+ \item \emph{Computer Networks: A Systems Approach}, 5th edition, Larry L. Peterson and Bruce S. Davie, Morgan Kaufmann 2012.
+ \item \emph{TCP/IP Illustrated, Volume 1: The Protocols}, 2nd Edition, Kevin Fall and W. Richard Stevens, Addison-Wesley 2011.
+\end{itemize}
+
+Both are available for purchase from the Seminary Co-op Bookstore. These texts are \emph{not} required, and most students are able to complete the class successfully without them. However, they can be a good complement to the lectures and projects.
+
+  
+\section{Grading}
+
+For undergraduates, the final grade will be based on the projects (60\%, each project worth 20\%), midterm (15\%), and final exam (25\%).
+
+For graduate students, the final grade will be based on the projects (40\%, each project worth $13.\overline{3}$\%), graduate project (20\%), midterm (15\%), and final exam (25\%).
+
+\subsection{Types of grades}
+
+Students may take this course for a quality grade (a ``letter'' grade) or a pass/fail grade. Students will declare on the final exam whether, depending on their final grade, they want to receive a letter grade, a pass/fail grade or withdraw from the course (a \emph{W} grade). For example, students can declare ``If my final grade is a C+ or lower, I will take a \emph{P} (Pass) instead of a letter grade and, if my grade is an \emph{F}, I wish to take a \emph{W}''. By default, all students are assumed to be taking the course for a quality grade.
+
+\begin{quote}
+Note: \emph{Students taking this course to meet general education requirements must take the course for a letter grade}. 
+\end{quote}
+
+
+\subsection{Late submissions}
+
+For the projects, the instructors will collect the latest revision each group commits to their GitHub repository before the deadline. Any work committed after the deadline is ignored and not collected. Each group is allowed four 24-hour extensions during the quarter. More than one extension can be applied to a single submission. i.e., a single 24-hour extension on four submissions, or a 96-hour extension on a single submission. No extensions will be allowed for the graduate project.
+
+If extraordinary circumstances (illness, family emergency, etc.) prevent a student from meeting a deadline, the student must inform the instructor \emph{before} the deadline.
+
+
+\section{Policy on academic honesty}
+
+The University of Chicago has a formal policy on academic honesty that you are expected to adhere to:
+
+\begin{center}
+\url{http://college.uchicago.edu/policies-regulations/academic-integrity-student-conduct}
+\end{center}
+
+In brief, academic dishonesty (handing in someone else's work as your own, taking existing code and not citing its origin, etc.) will \emph{not} be tolerated in this course. Depending on the severity of the offense, you risk getting a hefty point penalty or being dismissed altogether from the course. All occurrences of academic dishonesty will furthermore be referred to the Dean of Students office, which may impose further penalties, including suspension and expulsion.
+
+Even so, discussing the concepts necessary to complete the projects is certainly allowed (and encouraged).  Under \emph{no circumstances} should you show (or email) another student your code or post your solution to a web-page or social media site.  If you have discussed parts of an assignment with someone else, then make sure to say so in your submission (e.g., in a README file or as a comment at the top of your source code file). If you consulted other sources, please make sure you cite these sources.
+
+If you have any questions regarding what would or would not be considered academic dishonesty in this course, please don't hesitate to ask the instructor.
+
+
+\section{Asking questions}
+\label{asking}
+
+The preferred form of support for this course is though \emph{Piazza} (\url{http://www.piazza.com/}), an on-line discussion service which can be used to ask questions and share useful information with your classmates. Students will be enrolled in Piazza at the start of the quarter.
+
+All questions regarding assignments or material covered in class must be sent to Piazza, and not directly to the instructors or TAs, as this allows your classmates to join in the discussion and benefit from the replies to your question. If you send a message directly to the instructor or the TAs, you will get a gentle reply asking you to send your question to Piazza. 
+
+Piazza has a mechanism that allows you to ask a private question, which will be seen only by the instructors and teaching assistants. This mechanism should be used \emph{only} for questions that require revealing part of your solution to a project.
+
+Piazza also allows students to post anonymously. \emph{Anonymous posts will be ignored} (you will also get a gentle reply asking you to not post anonymously). This is a majors-level course: you are expected to feel comfortable sharing your questions and thoughts with your classmates without hiding behind a veil of anonymity.
+
+Finally, all course announcements will be made through Piazza. It is your responsibility to check Piazza often to see if there are any announcements. Please note that you can configure your Piazza account to send you e-mail notifications every time there is a new post on Piazza. Just go to your ``Account/Email Settings'', and click on ``Edit Email Notifications'' under CMSC 23300. We 
+encourage you to select either the ``Real Time'' option (get a notification as soon as there are new posts) or the ``Smart Digest'' option (get a summary of all the posts sent over the last 1-6 hours -- you can select the frequency).
+
+
+\section{Acknowledgements}
+
+This syllabus is based on previous CMSC 23300/33300 syllabi developed by Prof. Anne Rogers and Prof. Ian Foster from the University of Chicago.
+
+\end{document}
