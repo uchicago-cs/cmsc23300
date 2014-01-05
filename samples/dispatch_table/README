@@ -1,0 +1,30 @@
+The code in this directory provides some basic examples of how to
+build a dispatch table to process messages of the following form:
+
+    <op> <op1> <op2>
+
+There are two examples: one where <op> is an integer code 
+(0: Addition, 1: Subtraction, 2: Multiplication, 3: Division),
+and one where <op> is a string (ADD, SUB, MLT, DIV). In both
+cases, <op1> and <op2> are integer operands.
+
+The message is specified through the command line, and a
+dispatch table is used to call the appropriate function.
+The files are:
+
+handlers.c / handlers.h
+The handler functions.
+
+dispatch-int-one.c
+Solution with integer operation code and no dispatch table
+
+dispatch-int-two.c
+Solution with integer operation code and dispatch table.
+
+dispatch-str-one.c
+Solution with string operation code and dispatch table.
+
+dispatch-str-two.c
+Solution with string operation code and dispatch table.
+We use the HANDLER_ENTRY macro to construct the table.
+
