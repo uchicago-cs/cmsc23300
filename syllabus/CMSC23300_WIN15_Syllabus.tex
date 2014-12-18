@@ -15,7 +15,7 @@
 %opening
 \title{CMSC 23300/33300\\Networks and Distributed Systems}
 \author{Department of Computer Science\\University of Chicago}
-\date{{\color{red} Tentative Syllabus}\\Last updated: \today}
+\date{{\color{red} Draft --- Subject to Change}\\Last updated: \today}
 
 \newcommand{\chirc}{$\chi$\textsf{IRC}}
 \newcommand{\chitcp}{$\chi$\textsf{TCP}}
@@ -42,6 +42,8 @@
 \textbf{Dates:} January 6 -- March 10, 2015
 
 \textbf{Lectures:} TuTh 12:00-1:20 in Ryerson 251
+
+\textbf{Discussion:} Tu 3:00-4:20 in Harper 140
 
 \textbf{Websites:}\\
  \url{http://www.classes.cs.uchicago.edu/archive/2015/winter/23300-1/}\\
@@ -130,7 +132,7 @@ CMSC 15400 and a working knowledge of the C programming language are strict prer
 
 \section{Course organization}
 
-The development of three programming projects accounts for the majority of the grade in this course. To successfully complete these projects, students must understand fundamental concepts in networking. The class meets two times a week for lectures that provide this conceptual scaffolding, but will also cover material that is not directly applied in the projects. There is also an optional weekly discussion session for (1) more in-depth discussion of the projects, and (2) covering supplementary topics. Besides the projects, students will also be evaluated with a midterm and a final exam. The course calendar, including the contents of each lecture and project deadlines, is shown in Table~\ref{tab:calendar}.
+The development of three programming projects accounts for the majority of the grade in this course. To successfully complete these projects, students must master fundamental concepts and skills in networking. The class meets two times a week for lectures that provide a conceptual scaffolding for the projects, but will also cover material that is not directly applied in the projects. There is also an optional weekly discussion session primarily intended for in-depth discussion of the projects. Besides the projects, students will also be evaluated with a midterm and a final exam. The course calendar, including the contents of each lecture and project deadlines, is shown in Table~\ref{tab:calendar}.
 
 \subsection{Projects}
 
@@ -146,12 +148,18 @@ Each project is independent from the others. Students will develop these project
 
 \subsection{Discussion Session}
 
+The course includes an optional discussion session which will focus primarily on the projects. During these discussion sessions, we will (1) provide suggestions on how to approach the projects, (2) provide general feedback on submitted projects, and (3) provide a general forum to answer questions about the projects. For avoidance of doubt, the discussion sessions are not intended to provide individual feedback or help on the projects; please use Piazza and office hours for that purpose.
+
+Even though these discussion sessions are optional and have no direct impact on your grade, we encourage you to attend them, as they will provide you with very valuable pointers on how to do the projects. At the very least, one of the two members in each group should plan to attend the discussion session each week.
+
+Please note that the first two discussion sessions will be used to provide a refresher on socket programming and concurrent programming, respectively. Students who did not take CMSC 15400 in the previous school year, or who are not comfortable working with sockets or threads in C, are \emph{strongly} encouraged to attend these first two discussion sessions.
 
 
 \subsection{Graduate Discussion Session}
 
-Graduate students enrolled under the CMSC 33300 code will also participate in four discussion sessions throughout the quarter, where we will discuss seminal papers in the field of computer networks. Undergraduate students \emph{cannot} enroll in the CMSC 33300 code, but are welcome to attend the graduate discussion sessions.
+Graduate students enrolled under the CMSC 33300 code will also participate in four discussion sessions throughout the quarter, where we will discuss seminal papers in the field of computer networks. The date and time of these discussion sessions will be scheduled in consultation with the students registered for the CMSC 33300 code.
 
+Undergraduate students \emph{cannot} enroll in the CMSC 33300 code, but are welcome to attend the graduate discussion sessions.
 
 \subsection{Exams}
 
@@ -238,7 +246,7 @@ Grades are not curved in this class or, at least, not in the traditional sense. 
  \item 80-85: B
  \item 75-80: B-
  \item 70-75: C+
- \item <70: Dealt on a case-by-case basis
+ \item $<70$: Dealt on a case-by-case basis
 \end{itemize}
 
 We curve only to the extent that we may (and often do) \emph{lower} the boundaries for one or more letter grades, depending on the distribution of the raw scores.  We will never raise the boundaries in response to the distribution.
