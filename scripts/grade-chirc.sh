@@ -18,24 +18,48 @@ then
 	exit 1
 fi
 
-GROUP=$1
+TEAM=$1
 
-if ! chisubmit student team show $GROUP 2>&1 > /dev/null;
+if ! chisubmit student team show $TEAM 2>&1 > /dev/null;
 then
-    echo "No such group: $GROUP"
+    echo "No such team: $TEAM"
     exit 1
 fi
 
 echo -n "Cloning your repository... "
  
-REPO_DIR=$(chisubmit student team repo-pristine-clone $GROUP 2>&1 | grep -o "/tmp/.*")
+REPO_DIR=$(chisubmit student team repo-pristine-clone $TEAM 2>&1 | grep -o "/tmp/.*")
 
 if [ "$?" -ne "0" ]; 
 then
-    echo "ERROR: Could not clone the repository for $GROUP"
+    echo "ERROR: Could not clone the repository for $TEAM"
     exit 1
 fi
 echo "done."
+
+if [ $# -eq 2 ];
+then
+	TAG=$2
+else
+	TAG=master
+fi
+
+cd $REPO_DIR/chirc
+
+if [ $TAG != "master" ];
+then
+	git tag | grep $TAG > /dev/null
+
+	if [ "$?" -ne "0" ]; 
+	then
+		echo "ERROR: Repository $TEAM does not have a $TAG tag."
+		exit 1
+	else
+		git checkout $TAG > /dev/null 2>&1
+	fi
+else
+	git checkout master > /dev/null 2>&1
+fi
 
 echo -n "Checking for chirc files... "
 for CHIRC_FILE in $REPO_DIR/chirc/ $REPO_DIR/chirc/Makefile $REPO_DIR/chirc/src/;
@@ -47,43 +71,7 @@ do
 done
 echo "done."
 
-if [ $# -eq 2 ];
-then
-	TAG=$2
-else
-	TAG=master
-fi
-
-CHIRC_DIR=$(mktemp -d)
-
-echo -n "Cloning the chirc base code... "
-git clone git@github.com:uchicago-cs/chirc.git $CHIRC_DIR > /dev/null 2>&1
-
-if [ "$?" -ne "0" ]; 
-then
-    echo "ERROR: Could not clone chirc upstream repository"
-    exit 1
-fi
-echo "done."
-
-cd $REPO_DIR/chirc
-
-if [ $TAG != "master" ];
-then
-	git tag | grep $TAG > /dev/null
-
-	if [ "$?" -ne "0" ]; 
-	then
-		echo "ERROR: Repository $REPO does not have a $TAG tag."
-		exit 1
-	else
-		git checkout $TAG > /dev/null 2>&1
-	fi
-else
-	git checkout master > /dev/null 2>&1
-fi
-
-echo -n "Building $GROUP chirc..."
+echo -n "Building $TEAM chirc..."
 
 make chirc > chirc-build.log 2>&1
 if [ "$?" -ne "0" ]; 
@@ -95,9 +83,24 @@ fi
 
 echo "done."
 
+
 echo "Running tests..."
+
+CHIRC_DIR=$(mktemp -d)
+
+git clone git@github.com:uchicago-cs/chirc.git $CHIRC_DIR > /dev/null 2>&1
+
+if [ "$?" -ne "0" ]; 
+then
+    echo "ERROR: Could not clone chirc upstream repository"
+    exit 1
+fi
 
 python -c "import sys; sys.path.insert(0, '$CHIRCPYPATH'); import tests.runners; tests.runners.grade_runner(csv=False, randomize_ports=1, exe='$REPO_DIR/chirc/chirc')"
 
+rm -rf $CHIRC_DIR
+rm -rf $REPO_DIR
 
 echo "DONE"
+
+
