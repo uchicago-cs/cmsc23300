@@ -11,7 +11,6 @@
 # Optional second parameter is the commit you want to build.
 # (if none is specified, the head of the master branch will be built)
 
-echo $CATEGORY
 if [ "X$1" == "X" ];
 then
 	echo "ERROR: Please specify a team."
