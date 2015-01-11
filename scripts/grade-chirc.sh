@@ -4,14 +4,14 @@
 #
 # Usage:
 # 
-#     grade-chirc.sh <team> [<tag>]
+#     grade-chirc.sh <team> [<commit>]
 # 
 # First parameter is your team identifier
 #
-# Optional second parameter is the tag you want to build.
-# (if none is specified, the master branch will be built)
+# Optional second parameter is the commit you want to build.
+# (if none is specified, the head of the master branch will be built)
 
-
+echo $CATEGORY
 if [ "X$1" == "X" ];
 then
 	echo "ERROR: Please specify a team."
@@ -39,23 +39,23 @@ echo "done."
 
 if [ $# -eq 2 ];
 then
-	TAG=$2
+	CHECKOUT=$2
 else
-	TAG=master
+	CHECKOUT=master
 fi
 
 cd $REPO_DIR/chirc
 
-if [ $TAG != "master" ];
+if [ $CHECKOUT != "master" ];
 then
-	git tag | grep $TAG > /dev/null
+	git rev-list --all | grep $CHECKOUT > /dev/null
 
 	if [ "$?" -ne "0" ]; 
 	then
-		echo "ERROR: Repository $TEAM does not have a $TAG tag."
+		echo "ERROR: Repository $TEAM does not have a $CHECKOUT commit."
 		exit 1
 	else
-		git checkout $TAG > /dev/null 2>&1
+		git checkout $CHECKOUT > /dev/null 2>&1
 	fi
 else
 	git checkout master > /dev/null 2>&1
@@ -96,7 +96,7 @@ then
     exit 1
 fi
 
-python -c "import sys; sys.path.insert(0, '$CHIRCPYPATH'); import tests.runners; tests.runners.grade_runner(csv=False, randomize_ports=1, exe='$REPO_DIR/chirc/chirc')"
+python -c "import sys; sys.path.insert(0, '$CHIRCPYPATH'); import tests.runners; tests.runners.grade_runner(csv=False, randomize_ports=1, category='${CATEGORY:-ALL}', exe='$REPO_DIR/chirc/chirc')"
 
 rm -rf $CHIRC_DIR
 rm -rf $REPO_DIR
