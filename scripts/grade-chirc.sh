@@ -11,6 +11,8 @@
 # Optional second parameter is the commit you want to build.
 # (if none is specified, the head of the master branch will be built)
 
+set -o pipefail
+
 if [ "X$1" == "X" ];
 then
 	echo "ERROR: Please specify a team."
@@ -66,6 +68,7 @@ do
     if [ ! -e $CHIRC_FILE ];
     then
         echo "ERROR: Your repository doesn't seem to contain a valid chirc directory"
+        exit 1
     fi
 done
 echo "done."
