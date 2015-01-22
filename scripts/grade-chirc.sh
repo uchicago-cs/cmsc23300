@@ -75,12 +75,19 @@ echo "done."
 
 echo -n "Building $TEAM chirc..."
 
-make chirc > chirc-build.log 2>&1
+BUILD_LOG="/tmp/chirc-build-$USER-$$.log"
+touch $BUILD_LOG
+chmod 600 $BUILD_LOG
+
+make clean > $BUILD_LOG 2>&1
+make chirc >> $BUILD_LOG 2>&1
 if [ "$?" -ne "0" ]; 
 then
 	echo "ERROR: Your project did not build."
-    echo "       Build log is in chirc-build.log"
+    echo "       Build log is in $BUILD_LOG"
     exit 1
+else
+    rm $BUILD_LOG
 fi	
 
 echo "done."
