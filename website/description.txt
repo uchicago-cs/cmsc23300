@@ -1,0 +1,31 @@
+This course focuses on the principles and techniques used in the
+development of networked and distributed software. Topics include
+programming with sockets; concurrent programming; data link layer
+(Ethernet, packet switching, 802.11, etc.); internet and routing
+protocols (IP, IPv6, ARP, intra-domain and inter-domain routing, etc.);
+end-to-end protocols (UDP, TCP); and other commonly used network
+protocols and techniques.
+
+In this course, students will learn how to…
+
+-  ...implement multithreaded client/server applications using sockets.
+
+-  ...interpret existing specifications of network protocols, and
+   translate them into code.
+
+-  ...design and combine network protocols that form the foundation of the
+   Internet.
+
+-  ...develop software collaboratively through the use of version control
+   tools, code reviews, and project management.
+
+In a nutshell, students will learn how the Internet works. By the end of
+this course, students should understand *everything* that happens "under the hood"
+when (for example) a web page is requested, from the moment
+you click on a link in your browser to the moment you get the requested
+page back.
+
+CMSC 15400 and a working knowledge of the C programming language are
+strict prerequisites of this course. Students who have not taken CMSC
+15400 must speak with the instructor to verify that they meet the
+prerequisites for this course.

@@ -1,0 +1,32 @@
+.navbar-default {
+    background-color: maroon;
+}
+
+a {
+    color: #155F83;
+}
+
+a:hover {
+    color: #20364E;
+}
+
+navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    background-color: #9f2425;
+    color: #ffffff;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color: #9f2425;
+}
+
+.pager li>a, .pager li>span {
+    background-color: maroon;
+}
+
+.pager li>a:hover {
+    background-color: #9f2425;
+}
+
+.main-panels {
+    padding-top: 15px;
+}

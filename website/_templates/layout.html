@@ -1,0 +1,30 @@
+{# Import the theme's layout. #}
+{% extends "!layout.html" %}
+
+{# Custom CSS overrides #}
+{% set bootswatch_css_custom = ['_static/chiweb.css'] %}
+
+{% block htmltitle %}
+{%- if pagename == master_doc %}
+<title>{{ docstitle|e }}</title>
+{%- else %}
+<title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+{%- endif %}
+{% endblock %}
+
+{% block sidebar1 %}
+{%- if pagename != master_doc and pagename not in pages_without_nav %}
+<div class="row">
+    <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="{{ pathto(master_doc) }}">{{ project|e }}</a></li>
+        {%- for parent in parents %}
+          <li><a href="{{ parent.link|e }}">{{ parent.title }}</a></li>
+        {%- endfor %}
+            <li class="active">{{ title }}</li>
+        </ul>
+    </div>
+{%- endif %}
+</div>
+{% endblock %}
+
