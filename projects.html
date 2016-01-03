@@ -33,6 +33,7 @@
     <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="CMSC 23300 - Networks and Distributed Systems  documentation" href="index.html" />
+    <link rel="next" title="Using Git" href="git.html" />
     <link rel="prev" title="Winter 2016 Course Calendar" href="calendar.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -95,7 +96,57 @@
       
   <div class="section" id="projects">
 <h1>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h1>
-<p>Project information coming soon</p>
+<div class="section" id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you read the following before working on any of the projects:</p>
+<ul class="simple">
+<li><a class="reference external" href="git.html">Using Git</a>: If you are unfamiliar with Git, read this first.</li>
+<li><a class="reference external" href="registering.html">Registering for the projects</a>: Before you start working on
+each project, there are some steps you need to take to register for each project.</li>
+<li><a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>: We provide starter
+code for all the projects. To upload this code to your repository, make sure to follow
+the instructions described in this page.</li>
+<li><a class="reference external" href="submit.html">Submitting a project</a>: This page explains how to submit your projects,
+including how to use your extensions.</li>
+</ul>
+</div>
+<div class="section" id="project-1-chirc">
+<h2>Project 1: chirc<a class="headerlink" href="#project-1-chirc" title="Permalink to this headline">¶</a></h2>
+<p>In this project, you will implement a simple Internet Relay Chat (IRC)
+server called chirc. This project has three goals:</p>
+<ol class="arabic simple">
+<li>To provide a refresher of socket and concurrent programming covered
+in CMSC 15400.</li>
+<li>To implement a system that is (partially) compliant with an
+established network protocol specification.</li>
+<li>To allow you to become comfortable with high-level networking
+concepts before we move on to the lower-level concepts in this
+course.</li>
+</ol>
+<p>The project specification is available <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/">here</a>.</p>
+<p>Make sure you read the <a class="reference external" href="project1_tips.html">Project 1 tips</a>.</p>
+</div>
+<div class="section" id="project-2-chitcp">
+<h2>Project 2: chitcp<a class="headerlink" href="#project-2-chitcp" title="Permalink to this headline">¶</a></h2>
+<p>In this project you will be implementing the Transmission Control Protocol, as
+specified in <a class="reference external" href="http://tools.ietf.org/html/rfc793">[RFC793]</a>. However, instead
+of implementing it inside the operating system itself, you will be implementing
+it inside a system called chiTCP. This system allows you to write socket-based
+applications that rely on your TCP implementation instead of the one included
+in your operating system. To do this, chiTCP provides an alternate socket
+library, chisocket, that provides the same functions as the standard socket
+library (<code class="docutils literal"><span class="pre">connect</span></code>, <code class="docutils literal"><span class="pre">send</span></code>, <code class="docutils literal"><span class="pre">recv</span></code>, etc.). Although the chisocket
+functions have the same expected behaviour as the standard socket functions,
+they do not implement the entire functionality provided by standard sockets
+(e.g., non-blocking sockets are not supported).</p>
+<p>The project specification is available <a class="reference external" href="http://chi.cs.uchicago.edu/chitcp/">here</a>.</p>
+</div>
+<div class="section" id="project-3-chirouter">
+<h2>Project 3: chirouter<a class="headerlink" href="#project-3-chirouter" title="Permalink to this headline">¶</a></h2>
+<p>Coming soon.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
 </div>
 
 

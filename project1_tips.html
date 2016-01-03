@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+<title>Project 1 Tips &mdash; CMSC 23300 - Networks and Distributed Systems  documentation</title>
+
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems  documentation" href="index.html" />
+    <link rel="up" title="Projects" href="projects.html" />
+    <link rel="prev" title="Submitting a project" href="submit.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          CMSC 23300 - Networks and Distributed Systems</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="syllabus.html">Syllabus</a></li>
+                <li><a href="calendar.html">Course Calendar</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            
+            
+              
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+<div class="row">
+    <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="index.html">CMSC 23300 - Networks and Distributed Systems</a></li>
+          <li><a href="projects.html">Projects</a></li>
+            <li class="active">Project 1 Tips</li>
+        </ul>
+    </div>
+</div>
+
+    <div class="col-md-12 content">
+      
+  <div class="section" id="project-1-tips">
+<h1>Project 1 Tips<a class="headerlink" href="#project-1-tips" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="before-you-get-started">
+<h2>Before you get started<a class="headerlink" href="#before-you-get-started" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Make sure you&#8217;ve read all the pages listed under &#8220;General&#8221; in the main <a class="reference external" href="projects.html">Projects</a>
+page.</li>
+<li>Double-check that your repository has a single <code class="docutils literal"><span class="pre">chirc</span></code> directory in it, and that the chirc
+files are in that directory. If the chirc files (<code class="docutils literal"><span class="pre">README</span></code>, <code class="docutils literal"><span class="pre">src/</span></code>, ...) are in the top
+level of your repository, they will not be graded. Make sure you follow the exact instructions
+in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</li>
+<li>Don&#8217;t forget that we are providing you with a <a class="reference external" href="https://github.com/uchicago-cs/cmsc23300/blob/master/samples/chirc/project1a-trivial.c">solution</a>
+to Project 1a that will pass most of the tests (but would get a zero in the design portion of
+the code).</li>
+<li>When writing the socket code for your chirc server, make sure you take a look at the
+<a class="reference external" href="https://github.com/uchicago-cs/cmsc23300/tree/master/samples/sockets">socket samples</a> covered
+in the discussion section. They can provide a good starting point for writing a multi-threaded
+server in Project 1b.</li>
+</ul>
+</div>
+<div class="section" id="general-tips">
+<h2>General Tips<a class="headerlink" href="#general-tips" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><em>Don’t be intimidated by the length of the project specification</em>.
+The main reason the specification is long is to carve out
+exactly what part of the IRC specification you have to focus on. You
+will actually be implementing a fairly small subset of the IRC
+specification.</li>
+<li>Similarly, take into account that the division of points is not
+proportional to the amount of effort required to obtain those points.
+The points are distributed in such a way that a reasonable amount of
+work should produce a <em>good</em> implementation that will get you roughly
+75% of the points (and will place you in the B range). If you want to
+produce an <em>excellent</em> implementation (placing you in the A range),
+you will have to go the extra mile to obtain the final 25% of the
+points.</li>
+<li>Your implementation will require using data structures to store
+collections of users, channels, etc. We do not expect you to
+implement these data structures from scratch. The instructors’ reference
+implementation uses the <a class="reference external" href="http://mij.oltrelinux.com/devel/simclist/">SimCList library</a>.
+In the past, many students have also used the <a class="reference external" href="https://troydhanson.github.io/uthash/">uthash</a>
+library.</li>
+<li>Working with strings (specially parsing and tokenizing them) in C can be
+a pain. Using a library like <a class="reference external" href="http://bstring.sourceforge.net/">bstring</a>
+can ease that pain.</li>
+<li>As you read the project specification and the IRC specification
+itself, you’ll notice that the same patterns come up over and over.
+In a sense, your server is just a piece of software that transforms
+IRC messages into other IRC messages (altering the state of the
+server in the process). So, before you start tackling individual
+tests, we suggest you read through the whole document and design your
+server in such a way that it is easy for you to (1) parse incoming
+messages, (2) add support for new messages, (3) manipulate the state
+of the server (e.g., “create a new channel”, “add a new user to this
+channel”, etc.), and (4) construct outgoing messages. Doing so can
+pay off handsomely later on, even if you spend the first few days
+feeling like you’re not making any progress towards actually earning
+points.</li>
+<li>When processing multiple commands (starting in Project 1b), a data
+structure that can come in handy is a <a class="reference external" href="http://en.wikipedia.org/wiki/Dispatch_table">dispatch table</a>
+or <a class="reference external" href="http://en.wikipedia.org/wiki/Branch_table">branch table</a>. You can find some
+sample code <a class="reference external" href="https://github.com/uchicago-cs/cmsc23300/tree/master/samples/dispatch_table">here</a>.</li>
+</ul>
+</div>
+<div class="section" id="resolving-irc-ambiguities">
+<h2>Resolving IRC Ambiguities<a class="headerlink" href="#resolving-irc-ambiguities" title="Permalink to this headline">¶</a></h2>
+<p>The IRC protocol is, in some cases, not as well-specified and clear as one would hope (this is,
+unfortunately, a common attribute of many network specifications). If you’re unclear about how your server is meant to behave in some cases (specially the more obscure corner cases of IRC, or the points where the IRC specification is ambiguous), you should take the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Check whether it makes any of our tests fail. If it doesn&#8217;t, your interpretation of the IRC protocol is probably fine. This includes the lack of features: if you&#8217;re not implementing some feature/command/reply/corner case/etc. and it isn&#8217;t covered by our tests, then you probably don&#8217;t need to implement it. The only exception is cases that are explicitly specified in the chirc specification (there are a few that are not covered by our tests).</p>
+</li>
+<li><p class="first">Take into account that there are literally hundreds of production IRC servers on the Internet that you can log into to test how they’ve interpreted the IRC specification. We suggest using Freenode servers, which you can log into simply by running:</p>
+<div class="highlight-python"><div class="highlight"><pre>telnet irc.freenode.net 6667
+</pre></div>
+</div>
+</li>
+</ol>
+<p>In general, if you replicate the behaviour of a production IRC server, that&#8217;s good enough for us.</p>
+<ol class="arabic">
+<li><p class="first">You can also test the command on our reference implementation:</p>
+<div class="highlight-python"><div class="highlight"><pre>telnet frost.cs.uchicago.edu 6666
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Like a production IRC server, if you replicate the behaviour of our reference implementation, that&#8217;s good enough for us.</p>
+</div>
+<div class="section" id="common-issues-in-project-1a">
+<h2>Common Issues in Project 1a<a class="headerlink" href="#common-issues-in-project-1a" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="strtok">
+<h2><code class="docutils literal"><span class="pre">strtok</span></code><a class="headerlink" href="#strtok" title="Permalink to this headline">¶</a></h2>
+<p>A common approach to tokenizing IRC commands is to use the standard <code class="docutils literal"><span class="pre">strtok</span></code> function. This is a good approach, but you should take into account that <code class="docutils literal"><span class="pre">strtok</span></code> is not thread-safe and will be the source of inexplicable bugs and race conditions once you start supporting multiple clients. You should use <code class="docutils literal"><span class="pre">strtok_r</span></code> instead (the reentrant version of <code class="docutils literal"><span class="pre">strtok</span></code>).</p>
+<p>Additionally, a common pitfall when using <code class="docutils literal"><span class="pre">strtok</span></code> is to (incorrectly) assume that <code class="docutils literal"><span class="pre">strtok</span></code> returns a fresh new string with each call. That is not the case. Given a string like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>USER user * * :User\0
+</pre></div>
+</div>
+<p>Successive calls to strtok will transform the string in place into this:</p>
+<div class="highlight-python"><div class="highlight"><pre>USER\0user\0*\0*\0:User\0
+</pre></div>
+</div>
+<p>What strtok returns is pointers into that transformed string, not fresh new strings. That means that if you overwrite the original string (e.g., if you wipe out a buffer), the tokens will also be wiped out. Depending on how you&#8217;ve written your solution, you may need to <code class="docutils literal"><span class="pre">strdup</span></code> the tokens.</p>
+<p>For more details, please read the <code class="docutils literal"><span class="pre">strtok</span></code> man page, which explains <code class="docutils literal"><span class="pre">strtok</span></code>&#8216;s internal behavior in detail.</p>
+<div class="section" id="error-handling-in-sockets">
+<h3>Error handling in sockets<a class="headerlink" href="#error-handling-in-sockets" title="Permalink to this headline">¶</a></h3>
+<p>Don&#8217;t forget to check the return value of the socket functions. Although this is not something we will likely take point off for, it will indirectly make you lose points because your code is likely to behave strangely if you don&#8217;t react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in 1b and 1c, you will need to &#8220;log out&#8221; the user from the IRC server when that happens).</p>
+</div>
+<div class="section" id="general-socket-confusion">
+<h3>General socket confusion<a class="headerlink" href="#general-socket-confusion" title="Permalink to this headline">¶</a></h3>
+<p>For those of you who did not take CMSC 15400 last year, or who did not do well in that class&#8217;s socket assignment, working with sockets in the first Networks project can prove challenging. We recommend you read <a class="reference external" href="http://beej.us/guide/bgnet/">Beej&#8217;s Guide to Network Programming</a> for a more thorough review of sockets.</p>
+</div>
+</div>
+<div class="section" id="common-issues-in-projects-1b-and-1c">
+<h2>Common Issues in Projects 1b and 1c<a class="headerlink" href="#common-issues-in-projects-1b-and-1c" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="poor-code-organization">
+<h3>Poor code organization<a class="headerlink" href="#poor-code-organization" title="Permalink to this headline">¶</a></h3>
+<p>In projects 1b and 1c, your server starts getting more complex. Do not cram all your code into
+a single main.c file: you should think about separating your C code into multiple C files, each responsible for a specific part of the program.</p>
+</div>
+<div class="section" id="inadequate-locking">
+<h3>Inadequate locking<a class="headerlink" href="#inadequate-locking" title="Permalink to this headline">¶</a></h3>
+<p>In projects 1b and 1c, you now have multiple clients connecting to your server, with one thread
+per client. So remember: shared data structures have to be protected by locks, and this includes
+any socket that multiple threads could write to. POSIX requires system calls to be thread-safe (i.e., the OS itself should guarantee that send() is done atomically). However, even though a call to send() can be thread-safe, you have to account for the fact that send() might not send all your data in one go. So, you still need to gain exclusive access to the socket until a full message has been sent; otherwise, you could see partial messages interleaved by multiple threads.</p>
+</div>
+</div>
+<div class="section" id="common-c-issues">
+<h2>Common C Issues<a class="headerlink" href="#common-c-issues" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bad-memory-management">
+<h3>Bad memory management<a class="headerlink" href="#bad-memory-management" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Make sure that any block of code you malloc() is also free()&#8217;d.</li>
+<li>Don&#8217;t return pointers to stack-allocated variables (i.e., local function variables). Remember:
+stack-allocated variables become invalid after the function returns. Stack-allocated data should
+only be used during the lifetime of a function. So, for example, calling function B from function
+A, and giving B a pointer to a local variable of A is fine. Returning a pointer to a local
+variable of A, on the other hand, is not.</li>
+<li>If you initialize pointers to NULL (e.g., to indicate the absence of something), make sure you
+always check whether that pointer is NULL before using it.</li>
+<li>C has a wonderful function called <code class="docutils literal"><span class="pre">strdup</span></code> that will create a copy of a string and malloc
+the exact amount of memory needed for it. You should use this function any time you want to make a
+copy of a string. Take into account that using assignment (=) will create a shallow copy, meaning
+that if the original string is modified (or free()&#8217;d) it will affect the copy too.</li>
+</ul>
+</div>
+<div class="section" id="arbitrary-sizes">
+<h3>Arbitrary sizes<a class="headerlink" href="#arbitrary-sizes" title="Permalink to this headline">¶</a></h3>
+<p>Whenever the amount of needed memory is unknown, a common approach is to allocate an arbitrary amount of memory. This is fine, but you should be a little more methodical than just allocating several kilobytes of memory as an arbitrarily large amount. Whenever you allocate an arbitrary amount of memory, you should specify what your assumptions are (e.g., are you assuming that each line of the MOTD file won&#8217;t have more than X characters?) and, ideally, a note on what conditions would make your program crash given that arbitrary limit.</p>
+</div>
+<div class="section" id="strcat-vs-sprintf">
+<h3><code class="docutils literal"><span class="pre">strcat</span></code> vs <code class="docutils literal"><span class="pre">sprintf</span></code><a class="headerlink" href="#strcat-vs-sprintf" title="Permalink to this headline">¶</a></h3>
+<p>In some languages, creating a new string from multiple other substrings is as easy as doing this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="s">&quot;USER &quot;</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="n">username</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="s">&quot; * * &quot;</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="n">user_fullname</span>
+</pre></div>
+</div>
+<p>Some students tend to translate this pattern directly into C by using the <code class="docutils literal"><span class="pre">strcat</span></code> function
+(creating messages and replies by making successive calls to strcat, starting from an empty string).
+Resist the urge to do this: this is very hard to read, and will not scale well once you have to
+build more complex messages.</p>
+<p>Consider using <code class="docutils literal"><span class="pre">sprintf</span></code> instead to create messages and replies.</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011-2016, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
