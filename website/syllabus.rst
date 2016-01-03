@@ -33,11 +33,14 @@ Throughout the quarter, students will develop three projects:
 
 #. **chirouter**: Implementing an Internet router using the `Mininet network emulator <https://github.com/mininet/mininet>`_
 
-Each project is independent from the others. Students will develop these
-projects in pairs. Project groups must be formed by Friday of the first week of the quarter.
+Each project is independent from the others. Students registered under the
+undergraduate code (CMSC 23300) will develop these projects in pairs. Project 
+groups must be formed by Friday of the first week of the quarter.
 Groups can be changed from one project to another. If your partner drops out of
 the course or you feel he/she is not contributing to the group’s effort,
 you should make the instructor aware of this.
+
+Students registered for the graduate code (CMSC 33300) will develop these projects individually.
 
 Discussion Session
 ~~~~~~~~~~~~~~~~~~
