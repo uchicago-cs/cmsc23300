@@ -198,6 +198,7 @@ that you're expected to implement. In particular, the following libraries
 have been used by students in the past and can be considered safe to incorporate
 into your code:
 
+- `simclist <http://mij.oltrelinux.com/devel/simclist/>`_: A C library for Lists
 - `bstring <http://bstring.sourceforge.net/>`_: The Better String Library
 - `uthash <https://troydhanson.github.io/uthash/>`_: A hash table for C structures
 
