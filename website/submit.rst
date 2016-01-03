@@ -4,22 +4,22 @@ Submitting a project
 Preliminaries
 ~~~~~~~~~~~~~
 
-* Submissions are made using the `chisubmit` tool. Make sure you run these commands from your chisubmit directory
+* Submissions are made using the ``chisubmit`` tool. Make sure you run these commands from your chisubmit directory
   (the one you initialized with ``chisubmit init`` as described in `Registering for the projects <registering.html>`_).
-* Before making a submission, make sure you have pushed your code to the GitLab server. If your code hasn't been pushed to GitLab, then `chisubmit` will not see it.
+* Before making a submission, make sure you have pushed your code to the GitLab server. If your code hasn't been pushed to GitLab, then ``chisubmit`` will not see it.
 
 Selecting the commit you want to submit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To submit a project for grading, you first need to select the specific commit you want us to grade. Commits in git are identified by a SHA-1 hash, and look something like this:
+To submit a project for grading, you first need to select the specific commit you want us to grade. Commits in git are identified by a SHA-1 hash, and look something like this::
 
     4eac77c9f11dfb101dbbbe3e9f2df07c40f9b2f5
 
-You can see the list of commits in your repository by running the following:
+You can see the list of commits in your repository by running the following::
 
     git log
 
-Or, if you simply want to get the SHA-1 hash of the latest commit in your `master` branch, you can just run this:
+Or, if you simply want to get the SHA-1 hash of the latest commit in your `master` branch, you can just run this::
 
     git rev-parse master
 
@@ -32,9 +32,9 @@ Once you've identified the commit you want to submit, you need to run the follow
 
 Where:
 
-* `<team-id>` is your team identifier, which is also your repository name (typically your CNetIDs separated by hyphens).
-* `<assignment-id>` is the project identifier. Your instructor will tell you what identifier to use, but you can also see the list of possible assignment ids by running `chisubmit student assignment list`.
-* `<commit-sha>` is the SHA-1 hash of the commit you want to submit.
+* ``<team-id>`` is your team identifier, which is also your repository name (typically your CNetIDs separated by hyphens).
+* ``<assignment-id>`` is the project identifier. Your instructor will tell you what identifier to use, but you can also see the list of possible assignment ids by running `chisubmit student assignment list`.
+* ``<commit-sha>`` is the SHA-1 hash of the commit you want to submit.
 
 For example, the command could look something like this::
 
@@ -62,7 +62,7 @@ You will be given an opportunity to verify the details of the submission before 
 
 Before you type "y", **take a moment to ensure that this commit is the one you actually want to submit**. If the commit message and date shown by chisubmit don't look right, then you should double-check whether you were able to successfully commit and push your code.
 
-Finally, remember that the above has to be run _before the deadline_. If you fail to do so, it doesn't matter if your code was pushed to the GitLab server before the deadline. For your code to be accepted for grading, you must also run the `chisubmit` submission command before the deadline. The `chisubmit` system will mercilessly stop accepting submissions once the deadline has passed.
+Finally, remember that the above has to be run *before the deadline*. If you fail to do so, it doesn't matter if your code was pushed to the GitLab server before the deadline. For your code to be accepted for grading, you must also run the `chisubmit` submission command before the deadline. The `chisubmit` system will mercilessly stop accepting submissions once the deadline has passed.
 
 
 Verifying that your submission went through
@@ -97,11 +97,11 @@ If you want to be extra sure, you can log into the `GitLab server <https://mit.c
 Amending a submission
 ~~~~~~~~~~~~~~~~~~~~~
 
-If you make a submission, and realize you want to change something in your submission, all you have to do is make the changes, commit them, and run `chisubmit student assignment submit` with the new commit and with the `--force` option. For example::
+If you make a submission, and realize you want to change something in your submission, all you have to do is make the changes, commit them, and run ``chisubmit student assignment submit`` with the new commit and with the ``--force`` option. For example::
 
     chisubmit student assignment submit amr-borja p1a 3bc2ab13a504393e12c48a3b8a56510a901329fd --force
 
-`chisubmit` will warn you that there is an existing submission, and will ask you to confirm that you want to make a new one::
+``chisubmit`` will warn you that there is an existing submission, and will ask you to confirm that you want to make a new one::
 
     WARNING: You have already submitted assignment p1a and you
     are about to overwrite the previous submission of the following commit:
@@ -134,7 +134,7 @@ If you make a submission, and realize you want to change something in your submi
     
     Are you sure you want to continue? (y/n):  y
 
-Like your first submission, you can only re-submit _before the deadline_. Once the deadline passes, you cannot modify your submission, not even if you use extensions.
+Like your first submission, you can only re-submit *before the deadline*. Once the deadline passes, you cannot modify your submission, not even if you use extensions.
 
 If you make a submission and, before the deadline, you realize you want to use an extension (and re-submit after the deadline with an extension), then you need to make sure you **cancel** your submission before the deadline. For example::
 

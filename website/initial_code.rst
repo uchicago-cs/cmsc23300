@@ -15,46 +15,50 @@ Preliminaries
 
         git init
 
-  For the procedure described in this page to work, you also need to make sure that there is at least one commit in your repository. You can simply add a README file with the names of the students in your group, and commit it like so:
+  For the procedure described in this page to work, you also need to make sure that there is at least one commit in your repository. You can simply add a README file with the names of the students in your group, and commit it like so::
 
         git add README
         git commit -m "Added README"
 
-* The procedure described in this page relies on the `git subtree` subcommand. This command was added in Git 1.7.11, so you must use at least that version of Git. Please note that `git subtree` _is_ available on the CS machines.
+* The procedure described in this page relies on the ``git subtree`` subcommand. This command was added in Git 1.7.11, so you must use at least that version of Git. Please note that ``git subtree`` *is* available on the CS machines.
 
 Project 1
 ~~~~~~~~~
 
-To initialize your repository for project 1, run the following commands from inside your local repository (i.e., the directory where you ran `git init`). Make sure you substitute `studentA-studentB` with your repository name.
+To initialize your repository for project 1, run the following commands from inside your local repository (i.e., the directory where you ran ``git init``). Make sure you substitute ``studentA-studentB`` with your repository name.
+
+::
 
     REPO_NAME=studentA-studentB
     git remote add -f origin git@mit.cs.uchicago.edu:cs233-win-16/$REPO_NAME.git
     git remote add -f chirc-upstream git@github.com:uchicago-cs/chirc.git
     git subtree add --prefix chirc chirc-upstream master --squash
 
-At this point, you have only added the code to your local repository. To push it to your GitHub repository, run the following:
+At this point, you have only added the code to your local repository. To push it to your GitHub repository, run the following::
 
     git push -u origin master
 
-If you want to create other copies of the repository (e.g., if you are the team member who did _not_ run the above commands) just run the following _after_ the repository has been initialized:
+If you want to create other copies of the repository (e.g., if you are the team member who did *not* run the above commands) just run the following *after* the repository has been initialized::
 
     git clone git@mit.cs.uchicago.edu:cs233-win-16/$REPO_NAME.git
 
-If we make any changes to the upstream repository, and you want to merge them into your repository, you need to run the following command:
+If we make any changes to the upstream repository, and you want to merge them into your repository, you need to run the following command::
 
     git subtree pull --prefix chirc chirc-upstream master --squash
 
-## Project 2
+Project 2
+~~~~~~~~~
 
-The process is the same as the one described for Project 1, except with the following commands to add the initial code:
+The process is the same as the one described for Project 1, except with the following commands to add the initial code::
 
     git remote add -f chitcp-upstream git@github.com:uchicago-cs/chitcp.git
     git subtree add --prefix chitcp chitcp-upstream master --squash
 
-And the following command to pull any updates from upstream:
+And the following command to pull any updates from upstream::
 
     git subtree pull --prefix chitcp chitcp-upstream master --squash
 
-## Project 3
+Project 3
+~~~~~~~~~
 
 Coming soon.
