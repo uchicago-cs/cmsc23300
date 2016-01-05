@@ -128,7 +128,7 @@ git commit -m &quot;Added README&quot;
 <p>To initialize your repository for project 1, run the following commands from inside your local repository (i.e., the directory where you ran <code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code>). Make sure you substitute <code class="docutils literal"><span class="pre">studentA-studentB</span></code> with your repository name.</p>
 <div class="highlight-python"><div class="highlight"><pre>REPO_NAME=studentA-studentB
 git remote add -f origin git@mit.cs.uchicago.edu:cs233-win-16/$REPO_NAME.git
-git remote add -f chirc-upstream git@github.com:uchicago-cs/chirc.git
+git remote add -f chirc-upstream https://github.com/uchicago-cs/chirc.git
 git subtree add --prefix chirc chirc-upstream master --squash
 </pre></div>
 </div>
@@ -148,7 +148,7 @@ git subtree add --prefix chirc chirc-upstream master --squash
 <div class="section" id="project-2">
 <h2>Project 2<a class="headerlink" href="#project-2" title="Permalink to this headline">¶</a></h2>
 <p>The process is the same as the one described for Project 1, except with the following commands to add the initial code:</p>
-<div class="highlight-python"><div class="highlight"><pre>git remote add -f chitcp-upstream git@github.com:uchicago-cs/chitcp.git
+<div class="highlight-python"><div class="highlight"><pre>git remote add -f chitcp-upstream https://github.com/uchicago-cs/chitcp.git
 git subtree add --prefix chitcp chitcp-upstream master --squash
 </pre></div>
 </div>
