@@ -31,7 +31,7 @@ To initialize your repository for project 1, run the following commands from ins
 
     REPO_NAME=studentA-studentB
     git remote add -f origin git@mit.cs.uchicago.edu:cs233-win-16/$REPO_NAME.git
-    git remote add -f chirc-upstream git@github.com:uchicago-cs/chirc.git
+    git remote add -f chirc-upstream https://github.com/uchicago-cs/chirc.git
     git subtree add --prefix chirc chirc-upstream master --squash
 
 At this point, you have only added the code to your local repository. To push it to your GitHub repository, run the following::
@@ -51,7 +51,7 @@ Project 2
 
 The process is the same as the one described for Project 1, except with the following commands to add the initial code::
 
-    git remote add -f chitcp-upstream git@github.com:uchicago-cs/chitcp.git
+    git remote add -f chitcp-upstream https://github.com/uchicago-cs/chitcp.git
     git subtree add --prefix chitcp chitcp-upstream master --squash
 
 And the following command to pull any updates from upstream::
