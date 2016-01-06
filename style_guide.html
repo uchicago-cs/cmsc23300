@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+<title>Style Guide &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          CMSC 23300 - Networks and Distributed Systems</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="syllabus.html">Syllabus</a></li>
+                <li><a href="calendar.html">Course Calendar</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            
+            
+              
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+<div class="row">
+    <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="index.html">CMSC 23300 - Networks and Distributed Systems</a></li>
+            <li class="active">Style Guide</li>
+        </ul>
+    </div>
+</div>
+
+    <div class="col-md-12 content">
+      
+  <div class="section" id="style-guide">
+<h1>Style Guide<a class="headerlink" href="#style-guide" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div>This document is based on the <a class="reference external" href="https://www.classes.cs.uchicago.edu/archive/2015/fall/12100-1/style-guide/index.html">CMSC 12100 Style Guide</a></div></blockquote>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This style guide is intended to provide some basic coding
+conventions for the CMSC 23300 projects. These conventions
+are intended to improve the readability of your code. From
+your perspective as a student, the readability of your code
+is important for two big reasons:</p>
+<ol class="arabic simple">
+<li>If you have a problem with your code, or have trouble
+debugging a particular issue, it will be easier for us
+to provide assistance (and to provide it quickly) if your
+code is easy to read.</li>
+<li>Writing readable code makes the lives of our graders easier.
+Remember: a happy grader is a generous grader. Additionally,
+graders <em>will</em> take points off for code that is hard to read
+(which includes, but is not limited to, code that doesn&#8217;t
+follow the conventions in this style guide)</li>
+</ol>
+<p>This document is not intended to be a comprehensive C style guide.
+When you need guidance on a style issue not specified here,
+we recommend using the <a class="reference external" href="https://www.kernel.org/doc/Documentation/CodingStyle">Linux Kernel Style Guide</a>
+(however, when that guide contradicts our guide, our guide will
+be considered the normative document).</p>
+</div>
+<div class="section" id="code-layout">
+<h2>Code layout<a class="headerlink" href="#code-layout" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="indentation">
+<h3>Indentation<a class="headerlink" href="#indentation" title="Permalink to this headline">¶</a></h3>
+<p>You must follow one of the following two indent styles:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Indent_style#K.26R_style">K&amp;R style</a> (you can use any of the variants listed on that page, except BSD KNF), or</li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Indent_style#Allman_style">Allman style</a></li>
+</ul>
+<p>Make sure you choose one indent style and use it <strong>consistently</strong>. Please note that you can use <a class="reference external" href="http://astyle.sourceforge.net/">astyle</a> to take existing code and
+convert it to one of the above indent styles:</p>
+<div class="highlight-python"><div class="highlight"><pre>astyle --style=kr -r &quot;*.c&quot;
+astyle --style=allman -r &quot;*.c&quot;
+</pre></div>
+</div>
+<p>Regardless of the descriptions of K&amp;R and Allman you may find online, <em>you must use 4 spaces per indentation level</em>. This is the
+indentation level used by default by astyle.</p>
+<p><strong>Never use &#8220;tab characters&#8221;.</strong></p>
+<p>Note that you can configure most text editors to insert 4 spaces whenever you press the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Tab_key">tab key</a>. To check whether your editor is properly
+configured, try the following: press the tab key, and then press the left arrow key. If the
+cursor jumps to the beginning of the line, your editor inserted a single &#8220;tab character&#8221;.
+If the cursor only goes back one space (and you have to press the left arrow key three more
+times to get to the start of the line), then the editor is correctly inserting four spaces.</p>
+<p>Whether to use <a class="reference external" href="http://programmers.stackexchange.com/questions/57/tabs-versus-spaces-what-is-the-proper-indentation-character-for-everything-in-e">tabs or spaces</a>
+is one of the many &#8220;religious wars&#8221; within the programming community.
+So, you may run into people (even people here on campus) who will feel very strongly about
+how tabs are better than spaces, and they may even present to you a number of cogent arguments
+in favor of using tabs.</p>
+<p>Do not listen to these people. They are wrong and cannot be trusted.</p>
+</div>
+<div class="section" id="maximum-line-length">
+<h3>Maximum Line Length<a class="headerlink" href="#maximum-line-length" title="Permalink to this headline">¶</a></h3>
+<p>Limit all lines to a maximum of 80 characters. This is not a hard limit,
+and breaking it occasionally is fine, as long as you don&#8217;t do it repeateadly
+and always by a small number of additional characters. Also, remember that
+most syntactical elements in C are delimited by whitespace, and that
+newlines are considered whitespace. So, the following is correct C:</p>
+<div class="highlight-python"><div class="highlight"><pre>if (VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION ||
+    ANOTHER_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION ||
+    strlen(s) &lt; 100)
+{
+    /* ... */
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="blank-lines">
+<h3>Blank Lines<a class="headerlink" href="#blank-lines" title="Permalink to this headline">¶</a></h3>
+<p>Separate function definitions with two blank lines.</p>
+<p>Extra blank lines may be used (sparingly) to separate groups of
+related functions.</p>
+<p>Use blank lines in functions, sparingly, to indicate logical sections.</p>
+</div>
+</div>
+<div class="section" id="whitespace-in-expressions-and-statements">
+<h2>Whitespace in Expressions and Statements<a class="headerlink" href="#whitespace-in-expressions-and-statements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="avoid-extraneous-whitespace-in-the-following-situations">
+<h3>Avoid extraneous whitespace in the following situations:<a class="headerlink" href="#avoid-extraneous-whitespace-in-the-following-situations" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Immediately inside parentheses:</p>
+<div class="highlight-python"><div class="highlight"><pre>Yes: chilog(INFO, &quot;User %s has connected&quot;, user);
+No:  chilog( INFO, &quot;User %s has connected&quot;, user );
+</pre></div>
+</div>
+</li>
+<li><p class="first">Immediately before a comma or a semicolon:</p>
+<div class="highlight-python"><div class="highlight"><pre>Yes: for (int i = 0; i &lt; N; i++)
+No:  for (int i = 0 ; i &lt; N ; i++)
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Yes: chilog(INFO, &quot;User %s has connected&quot;, user);
+No:  chilog(INFO , &quot;User %s has connected&quot; , user);
+</pre></div>
+</div>
+</li>
+<li><p class="first">Immediately before the open parenthesis that starts the argument list of a function call:</p>
+<div class="highlight-python"><div class="highlight"><pre>Yes: chilog(INFO, &quot;User %s has connected&quot;, user);
+No:  chilog (INFO, &quot;User %s has connected&quot;, user);
+</pre></div>
+</div>
+</li>
+<li><p class="first">Immediately before brackets indicating an array index:</p>
+<div class="highlight-python"><div class="highlight"><pre>Yes: a[N] = b[i]
+No:  a [N] = b [i]
+</pre></div>
+</div>
+</li>
+<li><p class="first">More than one space around an assignment (or other) operator to align it with another.</p>
+<p>Yes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span>             <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span>             <span class="o">=</span> <span class="mi">2</span>
+<span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="places-to-use-spaces">
+<h3>Places to use spaces<a class="headerlink" href="#places-to-use-spaces" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Always surround these binary operators with a single space on either side: assignment (=), augmented assignment (+=, -=, etc.), comparisons (==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, &gt;=), Booleans (&amp;&amp;, ||).</p>
+</li>
+<li><p class="first">Use a space after these keywords:</p>
+<div class="highlight-python"><div class="highlight"><pre>if, switch, case, for, do, while
+</pre></div>
+</div>
+<p>Yes:</p>
+<div class="highlight-python"><div class="highlight"><pre>if (x == 5)
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-python"><div class="highlight"><pre>if(x == 5)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use spaces around arithmetic operators:</p>
+<p>Yes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">submitted</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">submitted</span> <span class="o">+=</span><span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Compound statements (multiple statements on the same line) are generally discouraged.</p>
+<p>Yes:</p>
+<div class="highlight-python"><div class="highlight"><pre>if (x == 0)
+    do_blah_thing();
+do_one();
+do_two();
+do_three();
+</pre></div>
+</div>
+<p>Rather not:</p>
+<div class="highlight-python"><div class="highlight"><pre>if (x == 0) do_blah_thing();
+do_one(); do_two(); do_three();
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Comments that contradict the code are worse than no comments. Always
+make a priority of keeping the comments up-to-date when the code
+changes!  Comments should consist of either a single short phrase or
+one or more complete sentences. The first word of a comment should be
+capitalized, unless it is an identifier that begins with a lower case
+letter (never alter the case of identifiers!).</p>
+<p>If a comment is short, the period at the end can be omitted. Block
+comments generally consist of one or more paragraphs built out of
+complete sentences, and each sentence should end in a period.</p>
+<div class="section" id="header-comments">
+<h3>Header Comments<a class="headerlink" href="#header-comments" title="Permalink to this headline">¶</a></h3>
+<p>Header comments appear at the top of a file. These lines typically
+include the filename, author, date, version number, and a description
+of what the file is for and what it contains.</p>
+<div class="highlight-python"><div class="highlight"><pre>/*
+ *  log.c: Logging functions
+ *
+ *  Use these functions to print log messages. Each message has an
+ *  associated log level:
+ *
+ *  CRITICAL: A critical unrecoverable error
+ *  ERROR: A recoverable error
+ *  WARNING: A warning
+ *  INFO: High-level information about the progress of the application
+ *  DEBUG: Lower-level information
+ *  TRACE: Very low-level information.
+ *
+ */
+</pre></div>
+</div>
+</div>
+<div class="section" id="function-comments">
+<h3>Function Comments<a class="headerlink" href="#function-comments" title="Permalink to this headline">¶</a></h3>
+<p>Function comments should be done in the form of a multiline comment
+above the function header.</p>
+<p>This comment must contain information specific to what a function does.
+It should also include a description of the purpose and expected
+input arguments, the expected output values, and how error conditions
+are handled.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>/*
+ * chilog - Print a log message
+ *
+ * level: Logging level of the message
+ *
+ * fmt: printf-style formatting string
+ *
+ * ...: Extra parameters if needed by fmt
+ *
+ * Returns: nothing.
+ */
+void chilog(loglevel_t level, char *fmt, ...);
+</pre></div>
+</div>
+</div>
+<div class="section" id="block-comments">
+<h3>Block Comments<a class="headerlink" href="#block-comments" title="Permalink to this headline">¶</a></h3>
+<p>Block comments (<code class="docutils literal"><span class="pre">/*</span> <span class="pre">...</span> <span class="pre">*/</span></code>) generally apply to some (or all) code that follows
+them, and are indented to the same level as that code.</p>
+</div>
+<div class="section" id="inline-comments">
+<h3>Inline Comments<a class="headerlink" href="#inline-comments" title="Permalink to this headline">¶</a></h3>
+<p>Use inline comments sparingly.  An inline comment is a comment on the
+same line as a statement. Inline comments should be separated by at
+least two spaces from the statement.  They should start with a <code class="docutils literal"><span class="pre">//</span></code> and a
+single space.</p>
+<p>Inline comments are unnecessary and in fact distracting if they state
+the obvious. Don&#8217;t do this:</p>
+<div class="highlight-python"><div class="highlight"><pre>x = x + 1                 // Increment x
+</pre></div>
+</div>
+<p>But sometimes, this style of comment is useful:</p>
+<div class="highlight-python"><div class="highlight"><pre>x = x + 1                 // Compensate for border
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="naming-conventions">
+<h2>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h2>
+<p>Variable and function names should use the <a class="reference external" href="https://en.wikipedia.org/wiki/Snake_case">snake_case</a>
+naming convention (i.e., <code class="docutils literal"><span class="pre">lowercase_with_underscore</span></code>). For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sum_of_squares</span>
+<span class="n">print_happy_birthday</span>
+<span class="n">total_apples</span>
+</pre></div>
+</div>
+<p>Constants names should use snake_case with all caps:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">PI</span>
+<span class="n">MAX_CLIENTS</span>
+<span class="n">MAX_IRC_MSG_LEN</span>
+</pre></div>
+</div>
+<p>Use descriptive names for parameter names, variables, and function
+names.  Use short names for local
+variables.  In general, the further away a variable will be used, the more
+descriptive the name needs to be.</p>
+</div>
+<div class="section" id="avoid-magic-numbers">
+<h2>Avoid Magic Numbers<a class="headerlink" href="#avoid-magic-numbers" title="Permalink to this headline">¶</a></h2>
+<p>Avoid sprinkling numbers that will have very little meaning to your
+reader throughout your code. For example:</p>
+<p>Yes:</p>
+<div class="highlight-python"><div class="highlight"><pre>if (strlen(msg) &gt; MAX_IRC_MSG_LEN)
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-python"><div class="highlight"><pre>if (strlen(msg) &gt; 510)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011-2016, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
