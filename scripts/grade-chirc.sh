@@ -97,7 +97,7 @@ echo "Running tests..."
 
 CHIRC_DIR=$(mktemp -d)
 
-git clone git@github.com:uchicago-cs/chirc.git $CHIRC_DIR > /dev/null 2>&1
+git clone https://github.com/uchicago-cs/chirc.git $CHIRC_DIR > /dev/null 2>&1
 
 if [ "$?" -ne "0" ]; 
 then
@@ -105,7 +105,8 @@ then
     exit 1
 fi
 
-python -c "import sys; sys.path.insert(0, '$CHIRCPYPATH'); import tests.runners; tests.runners.grade_runner(csv=False, randomize_ports=1, category='${CATEGORY:-ALL}', exe='$REPO_DIR/chirc/chirc')"
+python3 -m pytest $CHIRC_DIR/tests/ --chirc-exe=$REPO_DIR/chirc/chirc --chirc-loglevel=-1 --randomize-ports --json=$REPO_DIR/chirc/results.json
+python3 $CHIRC_DIR/tests/grade.py --report-file=$REPO_DIR/chirc/results.json
 
 rm -rf $CHIRC_DIR
 rm -rf $REPO_DIR
