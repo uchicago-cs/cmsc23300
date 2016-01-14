@@ -14,6 +14,7 @@ Make sure you read the following before working on any of the projects:
   the instructions described in this page.
 * `Submitting a project <submit.html>`_: This page explains how to submit your projects,
   including how to use your extensions.
+* `Style Guide <style_guide.html>`_: Conventions for writing C code in this class.
 
 
 Project 1: chirc
