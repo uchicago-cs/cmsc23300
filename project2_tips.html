@@ -137,11 +137,10 @@ on how you should interpret the RFC.</p>
 <li><p class="first"><strong>Sending only one packet when segmentizing</strong>: Whenever you process the send buffer, you should always send as many packets as possible without exceeding the receiver&#8217;s advertised window. A common pitfall is to correctly identify that the send buffer contains more than one MSS of data, but then sending only that first MSS, instead of sending as many packets allowed by SND.WND.</p>
 </li>
 <li><p class="first"><strong>Not setting/reading the window variables</strong>: Every TCP packet you send must include a valid value for SEG.WND. This is true regardless of whether the size of the receive buffer has changed since the last TCP packet, and regardless of whether the packet carries a payload or not. The value of SEG.WND is always set to the available space in the receive buffer.</p>
-</li>
-</ul>
 <p>Similarly, the value of SND.WND is always updated when you receive a valid TCP packet.</p>
-<ul class="simple">
-<li><strong>Not delaying the FIN packet</strong>: When an APPLICATION_CLOSE event happens, you <em>only</em> send a FIN packet if the send buffer is empty. If the send buffer still has unacknowledged/unsent data, you don&#8217;t send the FIN packet until the send buffer is empty.</li>
+</li>
+<li><p class="first"><strong>Not delaying the FIN packet</strong>: When an APPLICATION_CLOSE event happens, you <em>only</em> send a FIN packet if the send buffer is empty. If the send buffer still has unacknowledged/unsent data, you don&#8217;t send the FIN packet until the send buffer is empty.</p>
+</li>
 </ul>
 </div>
 </div>
