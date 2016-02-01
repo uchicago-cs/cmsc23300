@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+<title>Project 2 Tips &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          CMSC 23300 - Networks and Distributed Systems</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="syllabus.html">Syllabus</a></li>
+                <li><a href="calendar.html">Course Calendar</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            
+            
+              
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+<div class="row">
+    <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="index.html">CMSC 23300 - Networks and Distributed Systems</a></li>
+            <li class="active">Project 2 Tips</li>
+        </ul>
+    </div>
+</div>
+
+    <div class="col-md-12 content">
+      
+  <div class="section" id="project-2-tips">
+<h1>Project 2 Tips<a class="headerlink" href="#project-2-tips" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="before-you-get-started">
+<h2>Before you get started<a class="headerlink" href="#before-you-get-started" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Make sure you&#8217;ve read all the pages listed under &#8220;General&#8221; in the main <a class="reference external" href="projects.html">Projects</a>
+page.</li>
+<li>Double-check that your repository has a single <code class="docutils literal"><span class="pre">chirc</span></code> directory in it, and that the chirc
+files are in that directory. If the chirc files (<code class="docutils literal"><span class="pre">README</span></code>, <code class="docutils literal"><span class="pre">src/</span></code>, ...) are in the top
+level of your repository, they will not be graded. Make sure you follow the exact instructions
+in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</li>
+</ul>
+</div>
+<div class="section" id="interpreting-rfc-793">
+<h2>Interpreting RFC 793<a class="headerlink" href="#interpreting-rfc-793" title="Permalink to this headline">¶</a></h2>
+<p>In this project, you will be implementing TCP, which is specified in <a class="reference external" href="http://tools.ietf.org/html/rfc793">RFC 793</a>.
+Like many network protocols, certain aspects of the specification may be unclear. When you run into such an issue,
+you should first check <a class="reference external" href="http://tools.ietf.org/html/rfc1122">RFC 1122</a>: it provides corrections and clarifications
+on RFC 793. If you are still unclear on how to proceed, then ask on Piazza: we will provide an ex cathedra ruling
+on how you should interpret the RFC.</p>
+<p>That said, there are parts of the RFC that <em>do</em> provide unambiguous formulas. Sometimes, students will tweak this formulas as they try to debug their code (e.g., using &lt;= instead of &lt;). This may make your code work for the issue you are trying to resolve, but will probably cause issues down the road.</p>
+<p>Finally, it is important that you implement TCP as specified in the RFC, not your interpretation of TCP (based on class notes and examples online). Replicating the behaviour of simple examples (like the 3-way handshake) may work for simple operations, but is not a good strategy for implementing all of TCP.</p>
+</div>
+<div class="section" id="writing-the-packet-arrival-handler">
+<h2>Writing the Packet Arrival Handler<a class="headerlink" href="#writing-the-packet-arrival-handler" title="Permalink to this headline">¶</a></h2>
+<p>Writing the &#8220;packet arrival handler&#8221; (i.e., how TCP reacts when a packet arrives) is actually pretty simple: you just have to translate pages 64-75 of the RFC into code. A common pitfall is to write this handler as a gigantic if-else statement (with each branch corresponding to a TCP state) where you implement your interpretation of what should happen in each state when a packet arrives. Pages 64-75 methodically describe how to process a packet. Although some parts of it do involve branching by state, you should not write a gigantic if-else as the main structure of your packet arrival handler. As noted above, it is important that you follow the RFC, not your high-level understanding of how TCP must work.</p>
+</div>
+<div class="section" id="segfaults">
+<h2>Segfaults<a class="headerlink" href="#segfaults" title="Permalink to this headline">¶</a></h2>
+<p>The Project 2 tests are unfortunately not as robust as the Project 1 tests. They will occasionally segfault, specially after the chiTCP daemon shuts down at the end of the test. So, it can sometimes be hard to tell whether a segfault is your fault or our fault. In general:</p>
+<ul class="simple">
+<li>If you run the tests multiple times, and they pass most of the time and only occasionally segfault, you&#8217;re probably fine. Don&#8217;t stress out about this segfault, and carry on.</li>
+<li>If a segfault happens only after the chiTCP daemon shuts down, the segfault is not your fault. Move on. We won&#8217;t take points off.</li>
+<li>If the segfault happens in the middle of your TCP code (i.e., it happens while processing a TCP event, etc.), and happens consistently when you run the tests, then the segfault is very likely your fault and you should try to fix it. However, take into account that we will only take points off if we are able to pinpoint the exact cause of the segfault. So, if the segfault happens very infrequently, you&#8217;re probably in the clear. On the other hand, if the segfault happens consistently and repeatedly at the same point, you should run the tests with LOG=TRACE and try to figure out where the segfault happens so you can fix it.</li>
+</ul>
+</div>
+<div class="section" id="common-pitfalls">
+<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><strong>Not initializing the sequence number in the buffer</strong>: You need to initialize the initial sequence number of the buffers with <code class="docutils literal"><span class="pre">circular_buffer_set_seq_initial</span></code>. If you do not, functions <code class="docutils literal"><span class="pre">circular_buffer_first</span></code> and <code class="docutils literal"><span class="pre">circular_buffer_next</span></code> will return incoherent values.</p>
+<p>Take into account that the initial sequence number of the buffers should be the same as the first sequence number of sendable/received <em>data</em>. So, it would not be exactly ISS/IRS, because those are actually the first &#8220;byte&#8221; used by the SYN (but which do not represent any actual data). So, you would initialize them to ISS+1 and IRS+1.</p>
+</li>
+<li><p class="first"><strong>Sending only one packet when segmentizing</strong>: Whenever you process the send buffer, you should always send as many packets as possible without exceeding the receiver&#8217;s advertised window. A common pitfall is to correctly identify that the send buffer contains more than one MSS of data, but then sending only that first MSS, instead of sending as many packets allowed by SND.WND.</p>
+</li>
+<li><p class="first"><strong>Not setting/reading the window variables</strong>: Every TCP packet you send must include a valid value for SEG.WND. This is true regardless of whether the size of the receive buffer has changed since the last TCP packet, and regardless of whether the packet carries a payload or not. The value of SEG.WND is always set to the available space in the receive buffer.</p>
+</li>
+</ul>
+<p>Similarly, the value of SND.WND is always updated when you receive a valid TCP packet.</p>
+<ul class="simple">
+<li><strong>Not delaying the FIN packet</strong>: When an APPLICATION_CLOSE event happens, you <em>only</em> send a FIN packet if the send buffer is empty. If the send buffer still has unacknowledged/unsent data, you don&#8217;t send the FIN packet until the send buffer is empty.</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011-2016, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
