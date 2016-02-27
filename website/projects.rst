@@ -61,7 +61,16 @@ Make sure you read the `Project 2 tips <project2_tips.html>`_.
 Project 3: chirouter
 ~~~~~~~~~~~~~~~~~~~~
 
-Coming soon.
+In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.
+
+The project specification is available `here <http://chi.cs.uchicago.edu/chirouter/>`_.
+
+Take into account that this project requires using a network simulator that
+needs to be run with root privileges on a Linux machine. If you do not have
+access to such a machine, you can use a virtual machine to run the network
+simulator. If you need to use a virtual machine, please read our 
+`VM instructions <project3_vm.html>`_.
+
 
 .. toctree::
    :maxdepth: 2

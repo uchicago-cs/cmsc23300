@@ -61,4 +61,11 @@ And the following command to pull any updates from upstream::
 Project 3
 ~~~~~~~~~
 
-Coming soon.
+The process is the same as the one described for Project 1, except with the following commands to add the initial code::
+
+    git remote add -f chirouter-upstream https://github.com/uchicago-cs/chirouter.git
+    git subtree add --prefix chirouter chirouter-upstream master --squash
+
+And the following command to pull any updates from upstream::
+
+    git subtree pull --prefix chirouter chirouter-upstream master --squash
