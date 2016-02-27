@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+<title>Project 3 Virtual Machine &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          CMSC 23300 - Networks and Distributed Systems</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="syllabus.html">Syllabus</a></li>
+                <li><a href="calendar.html">Course Calendar</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            
+            
+              
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+<div class="row">
+    <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="index.html">CMSC 23300 - Networks and Distributed Systems</a></li>
+            <li class="active">Project 3 Virtual Machine</li>
+        </ul>
+    </div>
+</div>
+
+    <div class="col-md-12 content">
+      
+  <div class="section" id="project-3-virtual-machine">
+<h1>Project 3 Virtual Machine<a class="headerlink" href="#project-3-virtual-machine" title="Permalink to this headline">¶</a></h1>
+<p>The mininet network simulator in Project 3 must be run with root privileges
+on a Linux machine. If you do not have access to such a machine, we recommend
+using a virtual machine to run mininet. Take into account that this doesn&#8217;t
+mean you have to do all your development work inside the virtual machine; you
+will be able to continue to use your usual development environment (your laptop,
+a CSIL machine, etc.), and will simply instruct chirouter to connect to the instance
+of mininet running on the virtual machine (instead of running mininet directly
+on your machine).</p>
+<p>Although mininet provides some ready-to-use VMs, we will be using the VM image
+from CMSC 12100. This is an Ubuntu image that closely mirrors the standard CS
+Linux environment, and which our Techstaff is deeply familiar with if we
+run into any issues. Furthemore, this VM image can be run with VirtualBox,
+an open source virtualization software package.</p>
+<p>You can download the VM here:</p>
+<blockquote>
+<div><a class="reference external" href="http://mirror.cs.uchicago.edu/techstaff/cs121-aut-15-final.ova">http://mirror.cs.uchicago.edu/techstaff/cs121-aut-15-final.ova</a> [3.3 GB]</div></blockquote>
+<p>To get the VM running on Windows or OS X, just follow the instructions provided
+<a class="reference external" href="https://www.classes.cs.uchicago.edu/archive/2015/fall/12100-1/install-guide/index-download.html">on the CS 121 website</a>, with the following exceptions:</p>
+<ul class="simple">
+<li>You can download the latest version of VirtualBox (you don&#8217;t need to use the 5.0.4
+version specified in those instructions)</li>
+<li>If installing on OS X, you can skip steps 8 and 9, and all the steps after (and including) step 16.</li>
+<li>If installing on Windows, you can skip steps 7 and 8, and all the steps after (and including) step 14.</li>
+</ul>
+<p>Make sure you start the VM on an Internet-connected machine. Once you do so, log into
+the VM (username: <code class="docutils literal"><span class="pre">student</span></code>, password: <code class="docutils literal"><span class="pre">uccs</span></code>), open a terminal and run the following
+commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get update
+sudo apt-get install traceroute
+
+git clone https://github.com/uchicago-cs/chirouter.git
+git clone https://github.com/mininet/mininet.git
+
+cd mininet/
+git checkout -b 2.2.1 2.2.1
+util/install.sh -nfv
+</pre></div>
+</div>
+<p>Take into account that this final command will take a while to run.</p>
+<p>At this point, your VM will be set up to run mininet and POX. You can
+use the VM in one of two ways:</p>
+<ul class="simple">
+<li>Developing your code directly on the VM</li>
+<li>Developing your code elsewhere, and using the VM only to run mininet.</li>
+</ul>
+<p>Please follow the instructions below for the appropriate case:</p>
+<div class="section" id="using-the-vm-as-your-development-environment">
+<h2>Using the VM as your development environment<a class="headerlink" href="#using-the-vm-as-your-development-environment" title="Permalink to this headline">¶</a></h2>
+<p>If you do this, you do not need to configure your VM further, and you
+will be able to run the mininet and POX commands as described in the
+chirouter documentation.</p>
+<p>However, you will need to clone your repository inside the VM, which
+will require generating and upload SSH keys as described in
+<a class="reference external" href="http://uchicago-cs.github.io/cmsc23300/initial_code.html">Uploading the initial code to your repository</a></p>
+<p>Nonetheless, you may want to run the following to disable Ubuntu&#8217;s Network
+Manager, as it can sometimes interfere with the virtual networking
+devices created by mininet:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo stop network-manager
+sudo ifconfig eth0 up
+sudo dhclient eth0
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-vm-only-to-run-mininet">
+<h2>Using the VM only to run mininet<a class="headerlink" href="#using-the-vm-only-to-run-mininet" title="Permalink to this headline">¶</a></h2>
+<p>In this case, you will run POX and mininet inside the VM. Note that
+you can do so using the chirouter repository you cloned earlier,
+following the instructions in the chirouter specification.
+<em>You do not neet to clone your team&#8217;s repository</em>. Instead,
+your team repository will be in the host machine (i.e., the machine
+that is running the VM). You will build and run chirouter on the
+host machine, and then instruct chirouter to connect to POX/mininet
+on the VM.</p>
+<p>However, while VirtualBox will, by default, allow your VM to access the
+Internet using the host machine&#8217;s network, it won&#8217;t allow
+the VM and the host machine to communicate directly, so we
+need to change your VM&#8217;s network configuration to use &#8220;Host Only&#8221; mode.</p>
+<p>To do this, you must first create a Host-only Network. On VirtualBox,
+go to File -&gt; Preferences -&gt; Network -&gt; Host-only Networks, and then
+click on the plus icon.</p>
+<p>Next, before starting your VM, click on Settings -&gt; Network, and
+select &#8220;Host-only Adapter&#8221; under &#8220;Attached to&#8221;. Note that you can
+also do this while the VM is running by clicking on the network icon
+on the bottom-left corner of the VM window (the network icon is the one
+with two computers).</p>
+<p>Then, from a terminal in the VM, run the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo stop network-manager
+sudo ifconfig eth0 up
+sudo dhclient eth0
+</pre></div>
+</div>
+<p>This will stop Ubuntu&#8217;s Network Manager, which can interfere with
+the virtual network devices created by mininet.</p>
+<p>Next, you need to find out what IP address has been assigned to your
+machine. Run this from inside the VM:</p>
+<div class="highlight-python"><div class="highlight"><pre>ifconfig eth0
+</pre></div>
+</div>
+<p>The address will likely be an address like 192.168.56.101. You should
+verify that you can ping this IP address from the host machine.</p>
+<p>Now, when you run chirouter, you must include an <code class="docutils literal"><span class="pre">-s</span></code> option to
+specify that you&#8217;re connecting to POX/mininet on a different machine.
+For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>./chirouter -s 192.168.56.101 -p 9999 -r topologies/basic/rtable9999 -vv
+</pre></div>
+</div>
+<p>Note: setting the VM to Host-only Networking will prevent the VM from accessing
+the Internet. If you later on realize you need to access the Internet from the VM,
+just go back to the Network settings and switch the &#8220;Attached to&#8221; option to &#8220;NAT&#8221;.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011-2016, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
