@@ -55,6 +55,8 @@ they do not implement the entire functionality provided by standard sockets
 
 The project specification is available `here <http://chi.cs.uchicago.edu/chitcp/>`_.
 
+Make sure you read the `Project 2 tips <project2_tips.html>`_.
+
 
 Project 3: chirouter
 ~~~~~~~~~~~~~~~~~~~~
