@@ -71,6 +71,8 @@ devices created by mininet::
     sudo ifconfig eth0 up
     sudo dhclient eth0
 
+Note: You will have to re-run these commands if you reboot the VM.
+
 
 Using the VM only to run mininet
 --------------------------------
@@ -106,7 +108,8 @@ Then, from a terminal in the VM, run the following::
     sudo dhclient eth0
 
 This will stop Ubuntu's Network Manager, which can interfere with
-the virtual network devices created by mininet.
+the virtual network devices created by mininet. Note: You will have 
+to re-run these commands if you reboot the VM.
 
 Next, you need to find out what IP address has been assigned to your
 machine. Run this from inside the VM::
