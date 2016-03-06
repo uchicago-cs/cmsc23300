@@ -156,6 +156,7 @@ sudo ifconfig eth0 up
 sudo dhclient eth0
 </pre></div>
 </div>
+<p>Note: You will have to re-run these commands if you reboot the VM.</p>
 </div>
 <div class="section" id="using-the-vm-only-to-run-mininet">
 <h2>Using the VM only to run mininet<a class="headerlink" href="#using-the-vm-only-to-run-mininet" title="Permalink to this headline">¶</a></h2>
@@ -186,7 +187,8 @@ sudo dhclient eth0
 </pre></div>
 </div>
 <p>This will stop Ubuntu&#8217;s Network Manager, which can interfere with
-the virtual network devices created by mininet.</p>
+the virtual network devices created by mininet. Note: You will have
+to re-run these commands if you reboot the VM.</p>
 <p>Next, you need to find out what IP address has been assigned to your
 machine. Run this from inside the VM:</p>
 <div class="highlight-python"><div class="highlight"><pre>ifconfig eth0
