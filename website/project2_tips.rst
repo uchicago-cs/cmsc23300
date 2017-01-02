@@ -31,17 +31,6 @@ Writing the Packet Arrival Handler
 Writing the "packet arrival handler" (i.e., how TCP reacts when a packet arrives) is actually pretty simple: you just have to translate pages 64-75 of the RFC into code. A common pitfall is to write this handler as a gigantic if-else statement (with each branch corresponding to a TCP state) where you implement your interpretation of what should happen in each state when a packet arrives. Pages 64-75 methodically describe how to process a packet. Although some parts of it do involve branching by state, you should not write a gigantic if-else as the main structure of your packet arrival handler. As noted above, it is important that you follow the RFC, not your high-level understanding of how TCP must work.
 
 
-Segfaults
----------
-
-The Project 2 tests are unfortunately not as robust as the Project 1 tests. They will occasionally segfault, specially after the chiTCP daemon shuts down at the end of the test. So, it can sometimes be hard to tell whether a segfault is your fault or our fault. In general:
-
-* If you run the tests multiple times, and they pass most of the time and only occasionally segfault, you're probably fine. Don't stress out about this segfault, and carry on.
-* If a segfault happens only after the chiTCP daemon shuts down, the segfault is not your fault. Move on. We won't take points off.
-* If the segfault happens in the middle of your TCP code (i.e., it happens while processing a TCP event, etc.), and happens consistently when you run the tests, then the segfault is very likely your fault and you should try to fix it. However, take into account that we will only take points off if we are able to pinpoint the exact cause of the segfault. So, if the segfault happens very infrequently, you're probably in the clear. On the other hand, if the segfault happens consistently and repeatedly at the same point, you should run the tests with LOG=TRACE and try to figure out where the segfault happens so you can fix it.
-
-
-
 Common Pitfalls
 ---------------
 

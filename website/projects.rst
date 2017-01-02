@@ -41,6 +41,10 @@ Make sure you read the `Project 1 tips <project1_tips.html>`_.
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
 
+**WARNING: We are still updating this project for this year's edition of Networks.
+If you read the project specification and do any work on the project, you do so
+at your own peril.**
+
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -60,6 +64,10 @@ Make sure you read the `Project 2 tips <project2_tips.html>`_.
 
 Project 3: chirouter
 ~~~~~~~~~~~~~~~~~~~~
+
+**WARNING: We are still updating this project for this year's edition of Networks.
+If you read the project specification and do any work on the project, you do so
+at your own peril.**
 
 In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.
 

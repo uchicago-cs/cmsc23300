@@ -71,8 +71,7 @@ Exams
 -----
 
 There will be an in-class midterm half-way through the quarter,
-and a final exam will take place during Finals Week. An early final 
-exam will be scheduled during 10th week for graduating students. Please
+and a final exam will take place during Finals Week. Please
 see the `Course Calendar <calendar.html>`_ page for the exact dates.
 
 Questions and exercises related to the projects will make up a
@@ -102,7 +101,7 @@ to the lectures and projects.
 Grading
 ~~~~~~~
 
-For undergraduates, the final grade will be based on the following:
+The final grade will be based on the following:
 
 - Project 1: 20%
 - Project 2: 25%
@@ -127,8 +126,8 @@ of the raw scores. We will never raise the boundaries in response to the
 distribution.
 
 Before the end of the quarter, we will provide students with an
-estimated grade based on all the work they have done up to that point,
-including a preliminary and non-binding list of grade boundaries.
+estimated grade based on all the work they have done up to that point.
+We may also provide a preliminary and non-binding list of grade boundaries.
 
 Types of grades
 ~~~~~~~~~~~~~~~
@@ -178,32 +177,80 @@ Policy on academic honesty
 The University of Chicago has a `formal policy on academic honesty <http://college.uchicago.edu/advising/academic-integrity-student-conduct>`_
 that you are expected to adhere to.
 
-In brief, academic dishonesty (handing in someone else’s work as your
-own, taking existing code and not citing its origin, etc.) will *not* be
-tolerated in this course. Depending on the severity of the offense, you
-risk getting a hefty point penalty or being dismissed altogether from
-the course. All occurrences of academic dishonesty will furthermore be
-referred to the Dean of Students office, which may impose further
-penalties, including suspension and expulsion.
+Additionally, this class has a **ZERO TOLERANCE** policy on plagiarism
+(i.e., handing in someone else's work as your own, whether it be work
+done by another student in the class or available publicly on the Internet).
+If we determine you committed plagiarism, you will receive an F in the 
+class and you will be referred to the Dean of Students in the College for 
+further adjudication. The College may impose further
+penalties, up to and including suspension and expulsion.
 
-Even so, discussing the concepts necessary to complete the projects is
-certainly allowed (and encouraged). Under *no circumstances* should you
-show (or email) another student your code or post your solution to a
-web-page or social media site. If you have discussed parts of an
+Fortunately, avoiding plagiarism is very simple! For the most part, you
+just need to make sure you follow these simple rules:
+
+* **DO NOT** ask another student in the class to show you or e-mail you 
+  their code. It doesn't matter how you want to use it: even if you just
+  want to skim through their solution for inspiration, this is still
+  plagiarism. Needless to say, you **MUST NOT** use someone else's code
+  (with or without their permission) in your own solution.
+* Similarly, **DO NOT** show or share your code with another student in the class.
+  If someone in the class asks you to share your code with them, even if you're
+  certain they won't use it and they just want to look at it to get "unstuck",
+  please point them to this part of the syllabus. *Take into account
+  that, if you willingly share your code with someone else, you are 
+  not being a "Good Samaritan": you are an equally guilty
+  party in a plagiarism offence, and will also receive an F.*
+* **DO NOT** post your code in publicly-accessible websites, like pastebin,
+  a public GitHub repository, GitHub gists, etc. While it can be a convenient 
+  mechanism to share code with an instructor/TA or with a project partner, it 
+  can also expose your code to other students in the class. You are provided
+  with a private repository on our GitLab server, and you should use that repository
+  exclusively to share code with your project partner, or with the instructional
+  staff.
+
+  If you do post your code in a publicly-accessible location, and we find out
+  about it outside of a plagiarism incident, you will just get a warning. However, 
+  if another student in the class uses code that you posted on such a site (even
+  if you did not intend for that code to be used by someone else), you will
+  receive an F in the class.
+* **DO NOT** use code you find on the Internet, except in the very limited
+  cases described below.
+
+We realize that sometimes students commit plagiarism out of desperation
+and as a measure of last resort. If you are in this situation, please
+just ask the instructors for help. If you are having a hard time in the
+class, we will provide as much assistance as we can. Plus, a poor performance in
+one assignment is unlikely to wreck your grade for the class. Plagiarism
+is never worth it.
+
+All that said, we do encourage a collaborative environment in this class,
+as long as it doesn't slip into the realm of plagiarism. If a given
+assignment requires you to work with another student, you may share
+code with that student only for that assignment. You are also welcome
+to *discuss* aspects of an assignment with other students in the class,
+as long as you don't share or write code together. If you have discussed parts of an
 assignment with someone else, then make sure to say so in your
 submission (e.g., in a README file or as a comment at the top of your
-source code file). If you consulted other sources, please make sure you
-cite these sources.
+source code file). 
+
+Using outside sources is generally acceptable as long as:
+
+1. You cite the source you used.
+2. You do not use verbatim blocks of code from that source.
+3. The source does not provide a complete (or nearly complete) solution 
+   to the assignment.
 
 Furthermore, the use of external libraries is generally allowed on all
 the projects, as long as they don't provide networks-related functionality 
-that you're expected to implement. In particular, the following libraries
-have been used by students in the past and can be considered safe to incorporate
-into your code:
+that you're expected to implement. If you want to be on the safe side,
+you can ask on Piazza whether a given library is ok to use. Please note
+that the following libraries are pre-approved, and you are welcome to use them
+in your projects (in fact, many students have used them in past years):
 
 - `simclist <http://mij.oltrelinux.com/devel/simclist/>`_: A C library for Lists
 - `bstring <http://bstring.sourceforge.net/>`_: The Better String Library
 - `uthash <https://troydhanson.github.io/uthash/>`_: A hash table for C structures
+- `utlist <https://troydhanson.github.io/uthash/utlist.html>`_: Another linked list library
 
 Finally, if you have any questions regarding what would or would not be
 considered academic dishonesty in this course, please don’t hesitate to

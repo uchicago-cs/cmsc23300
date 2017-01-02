@@ -10,7 +10,7 @@ Preliminaries
 
 * If you are new to Git, make sure you've read the `Using Git <git.html>`_ page.
 * Make sure you have added your SSH public key to your GitLab account (otherwise, you will only have read-only access to the GitLab server). You can do this in this page: https://mit.cs.uchicago.edu/profile/keys. If you do not know what an SSH key is, or do not know how to generate one, read https://help.github.com/articles/generating-ssh-keys.
-* Only one of the team members needs to initialize the repository. In other words, do _not_ follow these instructions more than once. Once one of you has initialized the repository, the other team member will be able to simply create a local copy of the (initialized) Git repository that you are both sharing.
+* Only one of the team members needs to initialize the repository. In other words, do *not* follow these instructions more than once. Once one of you has initialized the repository, the other team member will be able to simply create a local copy of the (initialized) Git repository that you are both sharing.
 * The first thing you need to do is create an empty local repository. In an empty directory, run the following::
 
         git init
@@ -30,7 +30,7 @@ To initialize your repository for project 1, run the following commands from ins
 ::
 
     REPO_NAME=studentA-studentB
-    git remote add -f origin git@mit.cs.uchicago.edu:cs233-win-16/$REPO_NAME.git
+    git remote add -f origin git@mit.cs.uchicago.edu:cs233-win-17/$REPO_NAME.git
     git remote add -f chirc-upstream https://github.com/uchicago-cs/chirc.git
     git subtree add --prefix chirc chirc-upstream master --squash
 
@@ -40,7 +40,7 @@ At this point, you have only added the code to your local repository. To push it
 
 If you want to create other copies of the repository (e.g., if you are the team member who did *not* run the above commands) just run the following *after* the repository has been initialized::
 
-    git clone git@mit.cs.uchicago.edu:cs233-win-16/$REPO_NAME.git
+    git clone git@mit.cs.uchicago.edu:cs233-win-17/$REPO_NAME.git
 
 If we make any changes to the upstream repository, and you want to merge them into your repository, you need to run the following command::
 

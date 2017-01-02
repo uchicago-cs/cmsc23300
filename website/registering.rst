@@ -42,8 +42,13 @@ Once you have registered for the first project, and your team repository has bee
 
     chisubmit student assignment register PROJECT_ID --partner studentB
     
-Where ``PROJECT_ID`` should be replaced with the project you are registering for (``p1b``, ``p1c``, ``p2a``, ``p2b``, or ``p3``). Your partner, ``studentB``, does not need to run the equivalent command (since you are both already confirmed to be working together).
+Where ``PROJECT_ID`` should be replaced with the project you are registering for (``p1b``, ``p1c``, ``p2a``, ``p2b``, or ``p3``). Your partner, ``studentB``, does not need to run the equivalent command (since you are both already confirmed to be working together). 
 
 We suggest you register for an assignment as soon as you know you will be working on it (i.e., do not wait until right before the deadline). This way, the instructor will know what teams are working on what projects.
 
-Please note that, if you decide to switch to a different team for one of the projects, then both you and your partner will have to run the ``chisubmit student assignment register``, and you must wait for a shared repository to be created for your team.
+Finally, please make sure your project partner wants to continue working with you before registering your team again. If you want to cancel your registration for a given assignment, just run the following::
+
+    chisubmit student assignment cancel-registration PROJECT_ID
+
+If you decide to switch to a different team for one of the projects, then both you and your new partner will have to run the ``chisubmit student assignment register`` command, and you must wait for a shared repository to be created for your team.
+
