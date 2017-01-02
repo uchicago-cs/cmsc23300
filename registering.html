@@ -101,25 +101,25 @@
 <div class="section" id="registering-for-the-first-time">
 <h2>Registering for the first time<a class="headerlink" href="#registering-for-the-first-time" title="Permalink to this headline">¶</a></h2>
 <p>We use a command-line tool called <code class="docutils literal"><span class="pre">chisubmit</span></code> to manage teams and their repositories in this course. Before you can start working on the projects, you will need to register your team with <cite>chisubmit</cite> (this will result in a Git repository being created for your team in our GitLab server). First, choose an empty directory in your CS home directory on which to do your CMSC 23300 work on. Inside that directory, run the following command on a CS Linux machine (or by SSH&#8217;ing into linux.cs.uchicago.edu):</p>
-<div class="highlight-python"><div class="highlight"><pre>chisubmit init
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">init</span>
 </pre></div>
 </div>
 <p>When prompted for your &#8220;chisubmit username&#8221; and &#8220;chisubmit password&#8221;, just use your CNetID and password. Once you have entered your username and password, you will be shown a list of courses you belong to in <code class="docutils literal"><span class="pre">chisubmit</span></code>. If CMSC 23300 does not appear in them, you registration information may not have been added to <code class="docutils literal"><span class="pre">chisubmit</span></code> (if you registered for the class recently, please try again in 24 hours; if not, please contact your instructor).</p>
 <p>After <code class="docutils literal"><span class="pre">chisubmit</span> <span class="pre">init</span></code> runs successfully, you will be able to run <code class="docutils literal"><span class="pre">chisubmit</span></code> commands from inside that directory.</p>
 <p>The first thing you should do is register for the first project (<code class="docutils literal"><span class="pre">p1a</span></code>) as a team. You (<code class="docutils literal"><span class="pre">studentA</span></code>) must run this command:</p>
-<div class="highlight-python"><div class="highlight"><pre>chisubmit student assignment register p1a --partner studentB
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">register</span> <span class="n">p1a</span> <span class="o">--</span><span class="n">partner</span> <span class="n">studentB</span>
 </pre></div>
 </div>
 <p>And your partner (<code class="docutils literal"><span class="pre">studentB</span></code>) must run this command:</p>
-<div class="highlight-python"><div class="highlight"><pre>chisubmit student assignment register p1a --partner studentA
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">register</span> <span class="n">p1a</span> <span class="o">--</span><span class="n">partner</span> <span class="n">studentA</span>
 </pre></div>
 </div>
 <p>You will be assigned a team name which will be composed of your CNetIDs (e.g., in this case, the team name would be <code class="docutils literal"><span class="pre">studentA-studentB</span></code>. You can see the list of teams you are in with this command:</p>
-<div class="highlight-python"><div class="highlight"><pre>chisubmit student team list
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">team</span> <span class="nb">list</span>
 </pre></div>
 </div>
 <p>And you can use this command to check the status of your team (and, in particular, whether your partner has completed their part of the registration):</p>
-<div class="highlight-python"><div class="highlight"><pre>chisubmit student team show TEAMNAME
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">team</span> <span class="n">show</span> <span class="n">TEAMNAME</span>
 </pre></div>
 </div>
 <p>(where <code class="docutils literal"><span class="pre">TEAMNAME</span></code> should be replaced by your team name)</p>
@@ -129,12 +129,16 @@
 <div class="section" id="registering-for-subsequent-projects">
 <h2>Registering for subsequent projects<a class="headerlink" href="#registering-for-subsequent-projects" title="Permalink to this headline">¶</a></h2>
 <p>Once you have registered for the first project, and your team repository has been created, you will need to register for the other projects too (otherwise, you will not be able to submit them). However, you do not need to repeat all the steps described above. If you are working with the same partner, all you (<code class="docutils literal"><span class="pre">studentA</span></code>) has to do is run the following command from your chisubmit directory (the one you initialized with <cite>chisubmit init</cite>):</p>
-<div class="highlight-python"><div class="highlight"><pre>chisubmit student assignment register PROJECT_ID --partner studentB
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">register</span> <span class="n">PROJECT_ID</span> <span class="o">--</span><span class="n">partner</span> <span class="n">studentB</span>
 </pre></div>
 </div>
 <p>Where <code class="docutils literal"><span class="pre">PROJECT_ID</span></code> should be replaced with the project you are registering for (<code class="docutils literal"><span class="pre">p1b</span></code>, <code class="docutils literal"><span class="pre">p1c</span></code>, <code class="docutils literal"><span class="pre">p2a</span></code>, <code class="docutils literal"><span class="pre">p2b</span></code>, or <code class="docutils literal"><span class="pre">p3</span></code>). Your partner, <code class="docutils literal"><span class="pre">studentB</span></code>, does not need to run the equivalent command (since you are both already confirmed to be working together).</p>
 <p>We suggest you register for an assignment as soon as you know you will be working on it (i.e., do not wait until right before the deadline). This way, the instructor will know what teams are working on what projects.</p>
-<p>Please note that, if you decide to switch to a different team for one of the projects, then both you and your partner will have to run the <code class="docutils literal"><span class="pre">chisubmit</span> <span class="pre">student</span> <span class="pre">assignment</span> <span class="pre">register</span></code>, and you must wait for a shared repository to be created for your team.</p>
+<p>Finally, please make sure your project partner wants to continue working with you before registering your team again. If you want to cancel your registration for a given assignment, just run the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">cancel</span><span class="o">-</span><span class="n">registration</span> <span class="n">PROJECT_ID</span>
+</pre></div>
+</div>
+<p>If you decide to switch to a different team for one of the projects, then both you and your new partner will have to run the <code class="docutils literal"><span class="pre">chisubmit</span> <span class="pre">student</span> <span class="pre">assignment</span> <span class="pre">register</span></code> command, and you must wait for a shared repository to be created for your team.</p>
 </div>
 </div>
 
@@ -150,8 +154,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2011-2016, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.<br/>
+        &copy; Copyright 2011-2017, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
     </p>
   </div>
 </footer>

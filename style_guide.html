@@ -131,8 +131,8 @@ be considered the normative document).</p>
 </ul>
 <p>Make sure you choose one indent style and use it <strong>consistently</strong>. Please note that you can use <a class="reference external" href="http://astyle.sourceforge.net/">astyle</a> to take existing code and
 convert it to one of the above indent styles:</p>
-<div class="highlight-python"><div class="highlight"><pre>astyle --style=kr -r &quot;*.c&quot;
-astyle --style=allman -r &quot;*.c&quot;
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">astyle</span> <span class="o">--</span><span class="n">style</span><span class="o">=</span><span class="n">kr</span> <span class="o">-</span><span class="n">r</span> <span class="s2">&quot;*.c&quot;</span>
+<span class="n">astyle</span> <span class="o">--</span><span class="n">style</span><span class="o">=</span><span class="n">allman</span> <span class="o">-</span><span class="n">r</span> <span class="s2">&quot;*.c&quot;</span>
 </pre></div>
 </div>
 <p>Regardless of the descriptions of K&amp;R and Allman you may find online, <em>you must use 4 spaces per indentation level</em>. This is the
@@ -158,12 +158,12 @@ and breaking it occasionally is fine, as long as you don&#8217;t do it repeatead
 and always by a small number of additional characters. Also, remember that
 most syntactical elements in C are delimited by whitespace, and that
 newlines are considered whitespace. So, the following is correct C:</p>
-<div class="highlight-python"><div class="highlight"><pre>if (VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION ||
-    ANOTHER_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION ||
-    strlen(s) &lt; 100)
-{
-    /* ... */
-}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION</span> <span class="o">||</span>
+    <span class="n">ANOTHER_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION</span> <span class="o">||</span>
+    <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">/*</span> <span class="o">...</span> <span class="o">*/</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -181,42 +181,42 @@ related functions.</p>
 <h3>Avoid extraneous whitespace in the following situations:<a class="headerlink" href="#avoid-extraneous-whitespace-in-the-following-situations" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first">Immediately inside parentheses:</p>
-<div class="highlight-python"><div class="highlight"><pre>Yes: chilog(INFO, &quot;User %s has connected&quot;, user);
-No:  chilog( INFO, &quot;User %s has connected&quot;, user );
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">chilog</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">);</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">chilog</span><span class="p">(</span> <span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span> <span class="p">);</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Immediately before a comma or a semicolon:</p>
-<div class="highlight-python"><div class="highlight"><pre>Yes: for (int i = 0; i &lt; N; i++)
-No:  for (int i = 0 ; i &lt; N ; i++)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="n">No</span><span class="p">:</span>  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>Yes: chilog(INFO, &quot;User %s has connected&quot;, user);
-No:  chilog(INFO , &quot;User %s has connected&quot; , user);
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">chilog</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">);</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">chilog</span><span class="p">(</span><span class="n">INFO</span> <span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span> <span class="p">,</span> <span class="n">user</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Immediately before the open parenthesis that starts the argument list of a function call:</p>
-<div class="highlight-python"><div class="highlight"><pre>Yes: chilog(INFO, &quot;User %s has connected&quot;, user);
-No:  chilog (INFO, &quot;User %s has connected&quot;, user);
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">chilog</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">);</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">chilog</span> <span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Immediately before brackets indicating an array index:</p>
-<div class="highlight-python"><div class="highlight"><pre>Yes: a[N] = b[i]
-No:  a [N] = b [i]
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">a</span> <span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">More than one space around an assignment (or other) operator to align it with another.</p>
 <p>Yes:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>No:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span>             <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span>             <span class="o">=</span> <span class="mi">1</span>
 <span class="n">y</span>             <span class="o">=</span> <span class="mi">2</span>
 <span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
@@ -230,21 +230,21 @@ No:  a [N] = b [i]
 <li><p class="first">Always surround these binary operators with a single space on either side: assignment (=), augmented assignment (+=, -=, etc.), comparisons (==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, &gt;=), Booleans (&amp;&amp;, ||).</p>
 </li>
 <li><p class="first">Use a space after these keywords:</p>
-<div class="highlight-python"><div class="highlight"><pre>if, switch, case, for, do, while
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">,</span> <span class="n">switch</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="k">for</span><span class="p">,</span> <span class="n">do</span><span class="p">,</span> <span class="k">while</span>
 </pre></div>
 </div>
 <p>Yes:</p>
-<div class="highlight-python"><div class="highlight"><pre>if (x == 5)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>No:</p>
-<div class="highlight-python"><div class="highlight"><pre>if(x == 5)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Use spaces around arithmetic operators:</p>
 <p>Yes:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="n">submitted</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span>
@@ -252,7 +252,7 @@ No:  a [N] = b [i]
 </pre></div>
 </div>
 <p>No:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
 <span class="n">submitted</span> <span class="o">+=</span><span class="mi">1</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
@@ -262,16 +262,16 @@ No:  a [N] = b [i]
 </li>
 <li><p class="first">Compound statements (multiple statements on the same line) are generally discouraged.</p>
 <p>Yes:</p>
-<div class="highlight-python"><div class="highlight"><pre>if (x == 0)
-    do_blah_thing();
-do_one();
-do_two();
-do_three();
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">do_blah_thing</span><span class="p">();</span>
+<span class="n">do_one</span><span class="p">();</span>
+<span class="n">do_two</span><span class="p">();</span>
+<span class="n">do_three</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Rather not:</p>
-<div class="highlight-python"><div class="highlight"><pre>if (x == 0) do_blah_thing();
-do_one(); do_two(); do_three();
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">do_blah_thing</span><span class="p">();</span>
+<span class="n">do_one</span><span class="p">();</span> <span class="n">do_two</span><span class="p">();</span> <span class="n">do_three</span><span class="p">();</span>
 </pre></div>
 </div>
 </li>
@@ -294,20 +294,20 @@ complete sentences, and each sentence should end in a period.</p>
 <p>Header comments appear at the top of a file. These lines typically
 include the filename, author, date, version number, and a description
 of what the file is for and what it contains.</p>
-<div class="highlight-python"><div class="highlight"><pre>/*
- *  log.c: Logging functions
- *
- *  Use these functions to print log messages. Each message has an
- *  associated log level:
- *
- *  CRITICAL: A critical unrecoverable error
- *  ERROR: A recoverable error
- *  WARNING: A warning
- *  INFO: High-level information about the progress of the application
- *  DEBUG: Lower-level information
- *  TRACE: Very low-level information.
- *
- */
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span>
+ <span class="o">*</span>  <span class="n">log</span><span class="o">.</span><span class="n">c</span><span class="p">:</span> <span class="n">Logging</span> <span class="n">functions</span>
+ <span class="o">*</span>
+ <span class="o">*</span>  <span class="n">Use</span> <span class="n">these</span> <span class="n">functions</span> <span class="n">to</span> <span class="nb">print</span> <span class="n">log</span> <span class="n">messages</span><span class="o">.</span> <span class="n">Each</span> <span class="n">message</span> <span class="n">has</span> <span class="n">an</span>
+ <span class="o">*</span>  <span class="n">associated</span> <span class="n">log</span> <span class="n">level</span><span class="p">:</span>
+ <span class="o">*</span>
+ <span class="o">*</span>  <span class="n">CRITICAL</span><span class="p">:</span> <span class="n">A</span> <span class="n">critical</span> <span class="n">unrecoverable</span> <span class="n">error</span>
+ <span class="o">*</span>  <span class="n">ERROR</span><span class="p">:</span> <span class="n">A</span> <span class="n">recoverable</span> <span class="n">error</span>
+ <span class="o">*</span>  <span class="n">WARNING</span><span class="p">:</span> <span class="n">A</span> <span class="n">warning</span>
+ <span class="o">*</span>  <span class="n">INFO</span><span class="p">:</span> <span class="n">High</span><span class="o">-</span><span class="n">level</span> <span class="n">information</span> <span class="n">about</span> <span class="n">the</span> <span class="n">progress</span> <span class="n">of</span> <span class="n">the</span> <span class="n">application</span>
+ <span class="o">*</span>  <span class="n">DEBUG</span><span class="p">:</span> <span class="n">Lower</span><span class="o">-</span><span class="n">level</span> <span class="n">information</span>
+ <span class="o">*</span>  <span class="n">TRACE</span><span class="p">:</span> <span class="n">Very</span> <span class="n">low</span><span class="o">-</span><span class="n">level</span> <span class="n">information</span><span class="o">.</span>
+ <span class="o">*</span>
+ <span class="o">*/</span>
 </pre></div>
 </div>
 </div>
@@ -320,18 +320,18 @@ It should also include a description of the purpose and expected
 input arguments, the expected output values, and how error conditions
 are handled.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre>/*
- * chilog - Print a log message
- *
- * level: Logging level of the message
- *
- * fmt: printf-style formatting string
- *
- * ...: Extra parameters if needed by fmt
- *
- * Returns: nothing.
- */
-void chilog(loglevel_t level, char *fmt, ...);
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span>
+ <span class="o">*</span> <span class="n">chilog</span> <span class="o">-</span> <span class="n">Print</span> <span class="n">a</span> <span class="n">log</span> <span class="n">message</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="n">level</span><span class="p">:</span> <span class="n">Logging</span> <span class="n">level</span> <span class="n">of</span> <span class="n">the</span> <span class="n">message</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="n">fmt</span><span class="p">:</span> <span class="n">printf</span><span class="o">-</span><span class="n">style</span> <span class="n">formatting</span> <span class="n">string</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="o">...</span><span class="p">:</span> <span class="n">Extra</span> <span class="n">parameters</span> <span class="k">if</span> <span class="n">needed</span> <span class="n">by</span> <span class="n">fmt</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="n">Returns</span><span class="p">:</span> <span class="n">nothing</span><span class="o">.</span>
+ <span class="o">*/</span>
+<span class="n">void</span> <span class="n">chilog</span><span class="p">(</span><span class="n">loglevel_t</span> <span class="n">level</span><span class="p">,</span> <span class="n">char</span> <span class="o">*</span><span class="n">fmt</span><span class="p">,</span> <span class="o">...</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -348,11 +348,11 @@ least two spaces from the statement.  They should start with a <code class="docu
 single space.</p>
 <p>Inline comments are unnecessary and in fact distracting if they state
 the obvious. Don&#8217;t do this:</p>
-<div class="highlight-python"><div class="highlight"><pre>x = x + 1                 // Increment x
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="o">//</span> <span class="n">Increment</span> <span class="n">x</span>
 </pre></div>
 </div>
 <p>But sometimes, this style of comment is useful:</p>
-<div class="highlight-python"><div class="highlight"><pre>x = x + 1                 // Compensate for border
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="o">//</span> <span class="n">Compensate</span> <span class="k">for</span> <span class="n">border</span>
 </pre></div>
 </div>
 </div>
@@ -361,13 +361,13 @@ the obvious. Don&#8217;t do this:</p>
 <h2>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h2>
 <p>Variable and function names should use the <a class="reference external" href="https://en.wikipedia.org/wiki/Snake_case">snake_case</a>
 naming convention (i.e., <code class="docutils literal"><span class="pre">lowercase_with_underscore</span></code>). For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">sum_of_squares</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sum_of_squares</span>
 <span class="n">print_happy_birthday</span>
 <span class="n">total_apples</span>
 </pre></div>
 </div>
 <p>Constants names should use snake_case with all caps:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">PI</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">PI</span>
 <span class="n">MAX_CLIENTS</span>
 <span class="n">MAX_IRC_MSG_LEN</span>
 </pre></div>
@@ -382,11 +382,11 @@ descriptive the name needs to be.</p>
 <p>Avoid sprinkling numbers that will have very little meaning to your
 reader throughout your code. For example:</p>
 <p>Yes:</p>
-<div class="highlight-python"><div class="highlight"><pre>if (strlen(msg) &gt; MAX_IRC_MSG_LEN)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">MAX_IRC_MSG_LEN</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>No:</p>
-<div class="highlight-python"><div class="highlight"><pre>if (strlen(msg) &gt; 510)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">510</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -404,8 +404,8 @@ reader throughout your code. For example:</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2016, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.<br/>
+        &copy; Copyright 2011-2017, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
     </p>
   </div>
 </footer>

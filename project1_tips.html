@@ -167,7 +167,7 @@ unfortunately, a common attribute of many network specifications). If you’re u
 <li><p class="first">Check whether it makes any of our tests fail. If it doesn&#8217;t, your interpretation of the IRC protocol is probably fine. This includes the lack of features: if you&#8217;re not implementing some feature/command/reply/corner case/etc. and it isn&#8217;t covered by our tests, then you probably don&#8217;t need to implement it. The only exception is cases that are explicitly specified in the chirc specification (there are a few that are not covered by our tests).</p>
 </li>
 <li><p class="first">Take into account that there are literally hundreds of production IRC servers on the Internet that you can log into to test how they’ve interpreted the IRC specification. We suggest using Freenode servers, which you can log into simply by running:</p>
-<div class="highlight-python"><div class="highlight"><pre>telnet irc.freenode.net 6667
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">telnet</span> <span class="n">irc</span><span class="o">.</span><span class="n">freenode</span><span class="o">.</span><span class="n">net</span> <span class="mi">6667</span>
 </pre></div>
 </div>
 </li>
@@ -175,7 +175,7 @@ unfortunately, a common attribute of many network specifications). If you’re u
 <p>In general, if you replicate the behaviour of a production IRC server, that&#8217;s good enough for us.</p>
 <ol class="arabic">
 <li><p class="first">You can also test the command on our reference implementation:</p>
-<div class="highlight-python"><div class="highlight"><pre>telnet frost.cs.uchicago.edu 6666
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">telnet</span> <span class="n">frost</span><span class="o">.</span><span class="n">cs</span><span class="o">.</span><span class="n">uchicago</span><span class="o">.</span><span class="n">edu</span> <span class="mi">6666</span>
 </pre></div>
 </div>
 </li>
@@ -189,11 +189,11 @@ unfortunately, a common attribute of many network specifications). If you’re u
 <h2><code class="docutils literal"><span class="pre">strtok</span></code><a class="headerlink" href="#strtok" title="Permalink to this headline">¶</a></h2>
 <p>A common approach to tokenizing IRC commands is to use the standard <code class="docutils literal"><span class="pre">strtok</span></code> function. This is a good approach, but you should take into account that <code class="docutils literal"><span class="pre">strtok</span></code> is not thread-safe and will be the source of inexplicable bugs and race conditions once you start supporting multiple clients. You should use <code class="docutils literal"><span class="pre">strtok_r</span></code> instead (the reentrant version of <code class="docutils literal"><span class="pre">strtok</span></code>).</p>
 <p>Additionally, a common pitfall when using <code class="docutils literal"><span class="pre">strtok</span></code> is to (incorrectly) assume that <code class="docutils literal"><span class="pre">strtok</span></code> returns a fresh new string with each call. That is not the case. Given a string like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>USER user * * :User\0
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">USER</span> <span class="n">user</span> <span class="o">*</span> <span class="o">*</span> <span class="p">:</span><span class="n">User</span>\<span class="mi">0</span>
 </pre></div>
 </div>
 <p>Successive calls to strtok will transform the string in place into this:</p>
-<div class="highlight-python"><div class="highlight"><pre>USER\0user\0*\0*\0:User\0
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">USER</span>\<span class="mi">0</span><span class="n">user</span>\<span class="mi">0</span><span class="o">*</span>\<span class="mi">0</span><span class="o">*</span>\<span class="mi">0</span><span class="p">:</span><span class="n">User</span>\<span class="mi">0</span>
 </pre></div>
 </div>
 <p>What strtok returns is pointers into that transformed string, not fresh new strings. That means that if you overwrite the original string (e.g., if you wipe out a buffer), the tokens will also be wiped out. Depending on how you&#8217;ve written your solution, you may need to <code class="docutils literal"><span class="pre">strdup</span></code> the tokens.</p>
@@ -247,11 +247,11 @@ that if the original string is modified (or free()&#8217;d) it will affect the c
 <div class="section" id="strcat-vs-sprintf">
 <h3><code class="docutils literal"><span class="pre">strcat</span></code> vs <code class="docutils literal"><span class="pre">sprintf</span></code><a class="headerlink" href="#strcat-vs-sprintf" title="Permalink to this headline">¶</a></h3>
 <p>In some languages, creating a new string from multiple other substrings is as easy as doing this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
-<span class="n">s</span> <span class="o">+=</span> <span class="s">&quot;USER &quot;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;USER &quot;</span>
 <span class="n">s</span> <span class="o">+=</span> <span class="n">username</span>
-<span class="n">s</span> <span class="o">+=</span> <span class="s">&quot; * * &quot;</span>
-<span class="n">s</span> <span class="o">+=</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="n">user_fullname</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot; * * &quot;</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">user_fullname</span>
 </pre></div>
 </div>
 <p>Some students tend to translate this pattern directly into C by using the <code class="docutils literal"><span class="pre">strcat</span></code> function
@@ -275,8 +275,8 @@ build more complex messages.</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2016, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.<br/>
+        &copy; Copyright 2011-2017, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
     </p>
   </div>
 </footer>
