@@ -342,6 +342,35 @@ names.  Use short names for local
 variables.  In general, the further away a variable will be used, the more
 descriptive the name needs to be.
 
+Printing logging / debug messages
+---------------------------------
+
+All the projects in this class use a simple logging library called ``chilog`` that is documented in each of the project specifications. You must use the ``chilog`` functions *exclusively* for printing logging or debug messages. **Do not use printf() directly in your code**. Please note that the ``chilog`` functions provide essentially the same functionality as ``printf``, so there is no situation where ``printf`` would be necessary instead of ``chilog`` (using ``chilog`` consistently also means you will not have to scrub ``printf``'s from your code before submitting it).
+
+Furthermore, all the messages at the ``INFO``, ``WARNING``, ``ERROR``, and ``CRITICAL`` levels must be used only for their intended purposes (e.g., only use ``ERROR`` to print out actual errors in the execution of your program). You must use the ``DEBUG`` level only to print informative debug messages that would be understood by any developer trying to debug your code. You may use the ``TRACE`` level to print *any* debug message (including those that would only be understood by you). However, if your code is riddled with ``TRACE`` logging statements (including commented out ones) to the point where it is hard to read the code itself, we may take points off for this. So, once a ``TRACE`` logging statement has served its purpose, we suggest you remove it (not just comment it out).
+
+You should assume that graders will run your code with logging at the ``INFO`` level, and will only use the ``DEBUG`` level if they need to debug an issue with your code. We will never run your code with logging at the ``TRACE`` level.
+
+Please note that, in assignments where you are responsible for writing the ``main`` function, you may use ``fprintf`` to print to *standard error* if there is an error that prevents the program from starting (e.g., if a command-line parameter has not been provided, etc.)
+
+Global variables
+----------------
+
+The use of global variables is forbidden in this class, except for defining compile-time *constants*. **There are no other exceptions**.
+
+A compile-time constant is a global variable with a value that is known and set at compile-time and *never* changed during the runtime of the program (if the variable can be used to access other values, e.g., because it is a pointer, a ``struct``, etc., all the values reachable from the variable must also be known and set at compile-time). Such variables must have ``ALL_CAPS`` names, be declared as ``const`` and, if they are only going to be used in a single module, they must also be declared as ``static``. Please note that our definition excludes variables that are initialized when the program starts running, *even if the value of that variable won't change once it has been initialized*. If the value of the variable is not known before the program is running, it cannot be a global variable.
+
+To be fair, there are a few, very limited cases where using a (non-constant) global variable is truly justified. However, *none of those cases apply to the code you must write in this class*. Please do not try to convince us to the contrary: we are steadfast in our opposition to using global variables in this class. 
+
+When writing a function, you must make sure that all the data the function is going to operate on is passed to the function via its parameters, and that all data the functions produces is returned via its return value (or through an input/output parameter). If, instead, you write a function that uses a global variable to convey information to/from the function (except when using a compile-time constant), you can expect some pretty hefty point deductions.
+  
+For more details, see the Wikipedia entry on `Global Variables <https://en.wikipedia.org/wiki/Global_variable>`_, which also notes "They are usually considered bad practice".
+
+
+``goto`` statements
+-------------------
+
+``goto`` statements can *only* be used to perform error handling. See this blog post for more details on how to do error handling with ``goto``'s in C: `Using goto for error handling in C <http://eli.thegreenplace.net/2009/04/27/using-goto-for-error-handling-in-c>`_. That post describes an additional acceptable use case for ``goto``'s (breaking out of deeply-nested loops) and, while we will technically accept that use of ``goto``'s as well, none of your code should require such a level of loop nesting (or, rather, if you find yourself needing to use a ``goto`` in this way, you should reconsider whether you need to re-design your code or break it up into more functions to avoid so many nested loops in the same function).
 
 
 Avoid Magic Numbers
@@ -361,6 +390,8 @@ No:
 ::
 
     if (strlen(msg) > 510)
+
+
 
 
 
