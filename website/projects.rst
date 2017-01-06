@@ -35,23 +35,7 @@ server called chirc. This project has three goals:
 
 The project specification is available `here <http://chi.cs.uchicago.edu/chirc/>`_.
 
-Make sure you read the `Project 1 tips <project1_tips.html>`_.
-
-This project is worth 20% of your final grade, and is divided into three parts:
-
-* Project 1a (Assignment 1 in chirc). Worth 20% of the Project 1 grade.
-* Project 1b (Assignment 2 in chirc). Worth 40% of the Project 1 grade.
-* Project 1c (Assignment 3 in chirc). Worth 40% of the Project 1 grade.
-
-The grade for each project is divided into the following components:
-
-- Completeness (50%), as determined by running the automated tests.
-- Design (30%), determined by qualities, many of which are intangible, that don’t have 
-  to do with (and exist to some extent independently of) the correct operation of your code. 
-- Style (20%), based on your adherence to our `Style Guide <style_guide.html>`_.
-
-A more detailed rubric, specially for the Design portion of the grade, will be
-available soon.
+Make sure you read the `Project 1 rubric <project1_rubric.html>`_ and the `Project 1 tips <project1_tips.html>`_.
 
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
