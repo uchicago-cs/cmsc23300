@@ -204,15 +204,21 @@ some of the above is acceptable. You will not be penalized in those cases.</p>
 <div class="section" id="additional-penalties">
 <h2>Additional Penalties<a class="headerlink" href="#additional-penalties" title="Permalink to this headline">¶</a></h2>
 <p>We will also apply the following penalties:</p>
-<ul class="simple">
-<li><strong>Submitting code that doesn&#8217;t build</strong>: 15 point penalty. <em>Make sure you verify that
-the version of the code you submitted builds correctly on a CS machine</em></li>
-<li><strong>Grossly incorrect memory management</strong>: Up to 5 point penalty. You should make sure
+<ul>
+<li><p class="first"><strong>Submitting code that doesn&#8217;t build</strong>: If the graders are able to build your
+code with a few minor fixes (missing semicolons, parenthesis, etc.),
+we will apply a 15 point penalty. If your code
+requires substantial work to get it to build, you will receive a zero on
+the assignment.</p>
+<p><strong>So, make sure you verify that the version of the code you submitted builds correctly on a CS machine</strong></p>
+</li>
+<li><p class="first"><strong>Grossly incorrect memory management</strong>: Up to 5 point penalty. You should make sure
 to free any memory you malloc, but we will usually not take points off unless you&#8217;ve
 been grossly negligent in your malloc&#8217;ing/freeing. You should also make sure to
 not &#8220;save&#8221; pointers to stack-allocated memory that is going to be deallocated.
 This can happen if you store a pointer to a functions&#8217; local variable in a struct
-that is heap-allocated.</li>
+that is heap-allocated.</p>
+</li>
 </ul>
 </div>
 </div>
