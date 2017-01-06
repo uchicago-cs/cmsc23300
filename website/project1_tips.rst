@@ -11,7 +11,7 @@ Before you get started
   level of your repository, they will not be graded. Make sure you follow the exact instructions 
   in `Uploading the initial code to your repository <initial_code.html>`_.
 - Don't forget that we are providing you with a `solution <https://github.com/uchicago-cs/cmsc23300/blob/master/samples/chirc/project1a-trivial.c>`_
-  to Project 1a that will pass most of the tests (but would get a zero in the design portion of 
+  to Project 1a that will pass nearly half of the tests (but would get a zero in the design portion of 
   the code).
 - When writing the socket code for your chirc server, make sure you take a look at the 
   `socket samples <https://github.com/uchicago-cs/cmsc23300/tree/master/samples/sockets>`_ covered 
