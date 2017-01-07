@@ -118,8 +118,14 @@ Additional Penalties
 
 We will also apply the following penalties:
 
-* **Submitting code that doesn't build**: 15 point penalty. *Make sure you verify that
-  the version of the code you submitted builds correctly on a CS machine*
+* **Submitting code that doesn't build**: If the graders are able to build your
+  code with a few minor fixes (missing semicolons, parenthesis, etc.), 
+  we will apply a 15 point penalty. If your code
+  requires substantial work to get it to build, you will receive a zero on
+  the assignment.
+
+  **So, make sure you verify that the version of the code you submitted builds correctly on a CS machine**
+
 * **Grossly incorrect memory management**: Up to 5 point penalty. You should make sure
   to free any memory you malloc, but we will usually not take points off unless you've
   been grossly negligent in your malloc'ing/freeing. You should also make sure to
