@@ -22,9 +22,15 @@ Course Staff
 
 Jakub Tucholski, Brian Tuan
 
-Office Hours TBD
-
 Please do not contact the TAs directly; instead, post your questions on Piazza.
+
+Office Hours
+
+* Monday, 1pm-2:30pm (Brian Tuan) in CSIL 4
+* Wednesday, 1pm-2:30pm (Brian Tuan) in CSIL 4
+* Wednesday, 2:30pm-4pm (Jakub Tucholski) in the computer islands outside CSIL 3+4
+* Friday, 2:30pm-4pm (Jakub Tucholski) in CSIL 4
+
 
 Course Description
 ~~~~~~~~~~~~~~~~~~
