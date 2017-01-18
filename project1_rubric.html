@@ -103,7 +103,8 @@
 <p>The grade for each project is divided into the following components:</p>
 <ul class="simple">
 <li>Completeness (50 points)</li>
-<li>Design (30 points)</li>
+<li>Correctness (10 points)</li>
+<li>Design (20 points)</li>
 <li>Style (20 points)</li>
 </ul>
 <div class="section" id="completeness">
@@ -112,6 +113,29 @@
 the tests and, more specifically, on the number of points obtained when
 running <code class="docutils literal"><span class="pre">make</span> <span class="pre">grade</span></code> (see <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests">Using the automated tests</a>
 in the chirc documentation and, specifically, the &#8220;Producing a grade report&#8221; section).</p>
+</div>
+<div class="section" id="correctness">
+<h2>Correctness<a class="headerlink" href="#correctness" title="Permalink to this headline">¶</a></h2>
+<p>The Correctness component of the grade encompasses issues with your code that, while
+not explicitly captured by the tests, could lead to <em>incorrect</em> behaviour in your server.
+In projects 1b and 1c, we will mostly be looking at whether you are using locks
+correctly. In particular, your code must adequately protect any data that can
+be accessed concurrently by more than one thread. Using a Big Fat Lock (i.e.,
+using a single lock for your entire server) will result in an 8 point penalty.</p>
+<p>However, in general, the graders may take points off for issues like the following:</p>
+<ul class="simple">
+<li>Hardcoding reply values that happen to make the tests pass, but which would fail
+under reasonable use cases (e.g., hardcoding the LUSERS values)</li>
+<li>Segfaults that happen under reasonable use cases (i.e., the graders won&#8217;t be
+trying to make your code fail with bizarre corner cases)</li>
+<li>Not implementing something that is clearly specified in the project, even if
+the tests don&#8217;t test for it (e.g., implementing a command almost completely,
+but not implementing one of the replies).</li>
+</ul>
+<p>Please note that this section of the rubric will not re-penalize you for a failure
+that is already captured by the tests. So, if your code fails to implement something
+we told you to implement, but that is already captured by the tests, we would not
+re-penalize you here.</p>
 </div>
 <div class="section" id="design">
 <h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
@@ -137,29 +161,26 @@ in <span class="math">\(O(n^2)\)</span> time when the same task can reasonably b
 <span class="math">\(O(n)\)</span> time (i.e., when the <span class="math">\(O(n)\)</span> is not particularly clever or relies
 on some obscure algorithm).</li>
 </ul>
-<p>In Project 1a, the the 30 points of the Design portion will be divided as follows:</p>
+<p>In Project 1a, we will be looking at the following:</p>
 <ul class="simple">
-<li><strong>Module/function decomposition</strong> (15 points). Please note that, in this part of
+<li><strong>Module/function decomposition</strong> (8 points). Please note that, in this part of
 the project, it is acceptable to have all your code in a single C file (so you
 are not required to divide your implementation into multiple modules, but are
 welcome to do so). You will get at most 5 points here if your entire implementation
 is inside the main() function, without using any additional functions.</li>
-<li><strong>Data structure design</strong> (10 points). We will specifically be looking at how you
+<li><strong>Data structure design</strong> (8 points). We will specifically be looking at how you
 handle the reassembly of partitioned messages (and the data structures to support
 this).</li>
-<li><strong>Efficiency</strong> (5 points)</li>
+<li><strong>Efficiency</strong> (4 points)</li>
 </ul>
-<p>In Projects 1b and 1c, the 30 points of the Design portion will be divided as follows:</p>
+<p>In Projects 1b and 1c, we will be looking at the following:</p>
 <ul class="simple">
-<li><strong>Module/function decomposition</strong> (9 points). Please note that, in this part of
+<li><strong>Module/function decomposition</strong> (8 points). Please note that, in this part of
 the project, you <em>must</em> divide your server into multiple modules.</li>
-<li><strong>Locking</strong> (9 points): Your code must adequately protect any data that can
-be accessed concurrently by more than one thread. Using a Big Fat Lock (i.e.,
-using a single lock for your entire server) is an automatic zero here.</li>
-<li><strong>Data structure design</strong> (9 points). We will specifically look at how you store
+<li><strong>Data structure design</strong> (8 points). We will specifically look at how you store
 information about the server state, including the list of users (and their state)
 and the list of channels (and their state).</li>
-<li><strong>Efficiency</strong> (3 points)</li>
+<li><strong>Efficiency</strong> (4 points)</li>
 </ul>
 <p>Please note that we will discuss the module/function decomposition and
 the data structure design of Project 1b in the Week 2 discussion session,
