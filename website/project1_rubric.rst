@@ -10,7 +10,8 @@ This project is worth 20% of your final grade, and is divided into three parts:
 The grade for each project is divided into the following components:
 
 - Completeness (50 points)
-- Design (30 points) 
+- Correctness (10 points)
+- Design (20 points) 
 - Style (20 points)
 
 Completeness
@@ -20,6 +21,31 @@ The Completeness component of the grade will be determined by the result of runn
 the tests and, more specifically, on the number of points obtained when
 running ``make grade`` (see `Using the automated tests <http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests>`_
 in the chirc documentation and, specifically, the "Producing a grade report" section).
+
+Correctness
+~~~~~~~~~~~
+
+The Correctness component of the grade encompasses issues with your code that, while
+not explicitly captured by the tests, could lead to *incorrect* behaviour in your server.
+In projects 1b and 1c, we will mostly be looking at whether you are using locks
+correctly. In particular, your code must adequately protect any data that can
+be accessed concurrently by more than one thread. Using a Big Fat Lock (i.e.,
+using a single lock for your entire server) will result in an 8 point penalty.
+
+However, in general, the graders may take points off for issues like the following:
+
+- Hardcoding reply values that happen to make the tests pass, but which would fail
+  under reasonable use cases (e.g., hardcoding the LUSERS values)
+- Segfaults that happen under reasonable use cases (i.e., the graders won't be
+  trying to make your code fail with bizarre corner cases)
+- Not implementing something that is clearly specified in the project, even if
+  the tests don't test for it (e.g., implementing a command almost completely,
+  but not implementing one of the replies).
+
+Please note that this section of the rubric will not re-penalize you for a failure
+that is already captured by the tests. So, if your code fails to implement something
+we told you to implement, but that is already captured by the tests, we would not
+re-penalize you here.
 
 Design
 ~~~~~~
@@ -46,29 +72,26 @@ later):
   :math:`O(n)` time (i.e., when the :math:`O(n)` is not particularly clever or relies
   on some obscure algorithm).
   
-In Project 1a, the the 30 points of the Design portion will be divided as follows:
+In Project 1a, we will be looking at the following:
 
-* **Module/function decomposition** (15 points). Please note that, in this part of
+* **Module/function decomposition** (8 points). Please note that, in this part of
   the project, it is acceptable to have all your code in a single C file (so you
   are not required to divide your implementation into multiple modules, but are
   welcome to do so). You will get at most 5 points here if your entire implementation
   is inside the main() function, without using any additional functions.
-* **Data structure design** (10 points). We will specifically be looking at how you
+* **Data structure design** (8 points). We will specifically be looking at how you
   handle the reassembly of partitioned messages (and the data structures to support
   this).
-* **Efficiency** (5 points)
+* **Efficiency** (4 points)
 
-In Projects 1b and 1c, the 30 points of the Design portion will be divided as follows:
+In Projects 1b and 1c, we will be looking at the following:
 
-* **Module/function decomposition** (9 points). Please note that, in this part of
+* **Module/function decomposition** (8 points). Please note that, in this part of
   the project, you *must* divide your server into multiple modules.
-* **Locking** (9 points): Your code must adequately protect any data that can
-  be accessed concurrently by more than one thread. Using a Big Fat Lock (i.e.,
-  using a single lock for your entire server) is an automatic zero here.
-* **Data structure design** (9 points). We will specifically look at how you store
+* **Data structure design** (8 points). We will specifically look at how you store
   information about the server state, including the list of users (and their state)
   and the list of channels (and their state).
-* **Efficiency** (3 points)
+* **Efficiency** (4 points)
 
 Please note that we will discuss the module/function decomposition and 
 the data structure design of Project 1b in the Week 2 discussion session,
