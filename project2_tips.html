@@ -99,7 +99,7 @@
 <ul class="simple">
 <li>Make sure you&#8217;ve read all the pages listed under &#8220;General&#8221; in the main <a class="reference external" href="projects.html">Projects</a>
 page.</li>
-<li>Double-check that your repository has a single <code class="docutils literal"><span class="pre">chirc</span></code> directory in it, and that the chirc
+<li>Double-check that your repository has a single <code class="docutils literal"><span class="pre">chitcp</span></code> directory in it, and that the chirc
 files are in that directory. If the chirc files (<code class="docutils literal"><span class="pre">README</span></code>, <code class="docutils literal"><span class="pre">src/</span></code>, ...) are in the top
 level of your repository, they will not be graded. Make sure you follow the exact instructions
 in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</li>
@@ -118,6 +118,25 @@ on how you should interpret the RFC.</p>
 <div class="section" id="writing-the-packet-arrival-handler">
 <h2>Writing the Packet Arrival Handler<a class="headerlink" href="#writing-the-packet-arrival-handler" title="Permalink to this headline">¶</a></h2>
 <p>Writing the &#8220;packet arrival handler&#8221; (i.e., how TCP reacts when a packet arrives) is actually pretty simple: you just have to translate pages 64-75 of the RFC into code. A common pitfall is to write this handler as a gigantic if-else statement (with each branch corresponding to a TCP state) where you implement your interpretation of what should happen in each state when a packet arrives. Pages 64-75 methodically describe how to process a packet. Although some parts of it do involve branching by state, you should not write a gigantic if-else as the main structure of your packet arrival handler. As noted above, it is important that you follow the RFC, not your high-level understanding of how TCP must work.</p>
+</div>
+<div class="section" id="dealing-with-zero-windows">
+<h2>Dealing with Zero Windows<a class="headerlink" href="#dealing-with-zero-windows" title="Permalink to this headline">¶</a></h2>
+<p>In this project, you will not be implementing any of the mechanisms to deal with a host that is advertising a window
+of zero bytes (a common way of dealing with this is by sending
+<a class="reference external" href="http://www.tcpipguide.com/free/t_TCPWindowManagementIssues-3.htm">probe segments</a>). So, if a host does advertise
+a window with zero bytes, your TCP may get stuck. The tests are designed to avoid, as much as possible, this situation,
+but it may still arise (and will do so sporadically, since it requires a specific sequence of events to happen). We
+suggest you add something like this wherever you update the <code class="docutils literal"><span class="pre">SND_WND</span></code> variable:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">tcp_data</span><span class="o">-&gt;</span><span class="n">SND_WND</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">chilog</span><span class="p">(</span><span class="n">CRITICAL</span><span class="p">,</span> <span class="s2">&quot;Zero window received. TCP may become stuck.&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you run a test, and it sporadically times out because of this (but works most of the times), you should not worry
+about this, and should consider the test passed.</p>
+<p>Note that this situation is different from the <em>effective window</em> being equal to zero: this can happen when the sender
+has sent enough data to fill the window, but the receiving host may open the window by acknowledging the data or
+by advertising a new window size. It may not be uncommon for the effective window to be zero at times, and what
+you need to check for is whether the <em>advertised window</em> ever becomes zero.</p>
 </div>
 <div class="section" id="common-pitfalls">
 <h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this headline">¶</a></h2>
