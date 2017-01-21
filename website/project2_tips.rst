@@ -6,7 +6,7 @@ Before you get started
 
 - Make sure you've read all the pages listed under "General" in the main `Projects <projects.html>`_
   page.
-- Double-check that your repository has a single ``chirc`` directory in it, and that the chirc 
+- Double-check that your repository has a single ``chitcp`` directory in it, and that the chirc 
   files are in that directory. If the chirc files (``README``, ``src/``, ...) are in the top 
   level of your repository, they will not be graded. Make sure you follow the exact instructions 
   in `Uploading the initial code to your repository <initial_code.html>`_.
@@ -29,6 +29,27 @@ Writing the Packet Arrival Handler
 ----------------------------------
 
 Writing the "packet arrival handler" (i.e., how TCP reacts when a packet arrives) is actually pretty simple: you just have to translate pages 64-75 of the RFC into code. A common pitfall is to write this handler as a gigantic if-else statement (with each branch corresponding to a TCP state) where you implement your interpretation of what should happen in each state when a packet arrives. Pages 64-75 methodically describe how to process a packet. Although some parts of it do involve branching by state, you should not write a gigantic if-else as the main structure of your packet arrival handler. As noted above, it is important that you follow the RFC, not your high-level understanding of how TCP must work.
+
+Dealing with Zero Windows
+-------------------------
+
+In this project, you will not be implementing any of the mechanisms to deal with a host that is advertising a window
+of zero bytes (a common way of dealing with this is by sending
+`probe segments <http://www.tcpipguide.com/free/t_TCPWindowManagementIssues-3.htm>`_). So, if a host does advertise
+a window with zero bytes, your TCP may get stuck. The tests are designed to avoid, as much as possible, this situation,
+but it may still arise (and will do so sporadically, since it requires a specific sequence of events to happen). We
+suggest you add something like this wherever you update the ``SND_WND`` variable::
+
+    if(tcp_data->SND_WND == 0)
+        chilog(CRITICAL, "Zero window received. TCP may become stuck.");
+
+If you run a test, and it sporadically times out because of this (but works most of the times), you should not worry
+about this, and should consider the test passed.
+
+Note that this situation is different from the *effective window* being equal to zero: this can happen when the sender
+has sent enough data to fill the window, but the receiving host may open the window by acknowledging the data or
+by advertising a new window size. It may not be uncommon for the effective window to be zero at times, and what
+you need to check for is whether the *advertised window* ever becomes zero.
 
 
 Common Pitfalls
