@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+<title>Project 2 Rubric &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          CMSC 23300 - Networks and Distributed Systems</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="syllabus.html">Syllabus</a></li>
+                <li><a href="calendar.html">Course Calendar</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            
+            
+              
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+<div class="row">
+    <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="index.html">CMSC 23300 - Networks and Distributed Systems</a></li>
+            <li class="active">Project 2 Rubric</li>
+        </ul>
+    </div>
+</div>
+
+    <div class="col-md-12 content">
+      
+  <div class="section" id="project-2-rubric">
+<h1>Project 2 Rubric<a class="headerlink" href="#project-2-rubric" title="Permalink to this headline">¶</a></h1>
+<p>This project is worth 25% of your final grade, and is divided into three parts:</p>
+<ul class="simple">
+<li>Project 2a (Assignment 1 in chiTCP). Worth 60% of the Project 2 grade.</li>
+<li>Project 2b (Assignment 2 in chiTCP). Worth 40% of the Project 2 grade.</li>
+</ul>
+<p>The grade for each project is divided into the following components:</p>
+<ul class="simple">
+<li>Completeness (50 points)</li>
+<li>Correctness (10 points)</li>
+<li>Design (20 points)</li>
+<li>Style (20 points)</li>
+</ul>
+<div class="section" id="completeness">
+<h2>Completeness<a class="headerlink" href="#completeness" title="Permalink to this headline">¶</a></h2>
+<p>The Completeness component of the grade will be determined by the result of running
+the tests and, more specifically, on the number of points obtained when
+running <code class="docutils literal"><span class="pre">make</span> <span class="pre">grade</span></code> (see <a class="reference external" href="http://chi.cs.uchicago.edu/chitcp/testing.html#automated-tests">Automated tests</a>
+in the chiTCP documentation and, specifically, the &#8220;Producing a grade report&#8221; section).</p>
+</div>
+<div class="section" id="correctness">
+<h2>Correctness<a class="headerlink" href="#correctness" title="Permalink to this headline">¶</a></h2>
+<p>The Correctness component of the grade encompasses issues with your code that, while
+not explicitly captured by the tests, could lead to <em>incorrect</em> behaviour in your server.
+Unlike Project 1, there are many aspects of the implementation that are hard to
+check via the automated tests, so a perfect score on the tests is no guarantee
+that you&#8217;ll also get a high score in this section.</p>
+<p>Most penalties in this section are usually because something was implemented
+by rote.For example, it is easy to pass the three-way handshake
+by making TCP go into an ESTABLISHED state after receiving two packets (without checking
+whether the first one is a SYN packet, and whether the second one contains a valid ACK).
+In general, making assumptions about the packets you will receive, instead of performing
+the checks that are clearly specified in RFC 793, will result in penalties.</p>
+<p>The graders may also take points off for not implementing something that is clearly specified
+in the project or in RFC 793, even if the tests don&#8217;t test for it (e.g., not setting all the
+values in the TCP header, even if they&#8217;re not relevant for a specific test; a common
+pitfall is to forget to set/update the window-related fields/variables). In Project 2b
+we will be paying special attention to your RTT estimation code, which is
+difficult to test automatically.</p>
+<p>Finally, please note that this section of the rubric will not re-penalize you for a failure
+that is already captured by the tests. So, if your code fails to implement something
+we told you to implement, but that is already captured by the tests, we would not
+re-penalize you here.</p>
+</div>
+<div class="section" id="design">
+<h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
+<p>The Design component of the grade will be determined by &#8220;qualities, many of which are intangible,
+that don’t have to do with (and exist to some extent independently of) the correct operation of your code.&#8221;
+(thanks to Adam Shaw for this concise phrasing). Across both
+parts of the project, we will be looking at the following
+(the exact points for each of the parts of the project is specified
+later):</p>
+<ul>
+<li><p class="first"><strong>Function decomposition</strong> : We will look at whether you divided your
+implementation into functions that make sense. This includes avoiding
+repeated/redundant code, ensuring that each function performs a well-defined
+task, and putting related functions in the same module (i.e., the same C file).</p>
+<p>Please note that, unlike Project 1, all you work will be constrained to a
+single C file: <code class="docutils literal"><span class="pre">tcp.c</span></code> (and its header file <code class="docutils literal"><span class="pre">tcp.h</span></code>). <strong>Do not create
+additional C files or header files, and do not modify any other files in the project</strong></p>
+</li>
+<li><p class="first"><strong>Data structure design</strong> (Project 2b only): We will look at whether you have designed
+(and/or used) the right data structures to manage retransmissions and out-of-order delivery.</p>
+</li>
+<li><p class="first"><strong>Efficiency</strong>: We will look at whether your code is minimally efficient.
+In other words, we are not looking for sublimely efficient code but, rather,
+for the lack of grossly inefficient code. For example, we don&#8217;t care whether
+you store your list of channels in a linked list (<span class="math">\(O(n)\)</span> lookup times) or a
+hash table (<span class="math">\(O(1)\)</span> lookup times), but we do care whether you iterate over a list
+in <span class="math">\(O(n^2)\)</span> time when the same task can reasonably be accomplished in
+<span class="math">\(O(n)\)</span> time (i.e., when the <span class="math">\(O(n)\)</span> is not particularly clever or relies
+on some obscure algorithm).</p>
+</li>
+</ul>
+<p>In Project 2a, we will be looking at the following:</p>
+<ul>
+<li><p class="first"><strong>Function decomposition</strong> (15 points). We strongly encourage you to write a
+<a class="reference external" href="project2_tips.html#writing-the-packet-arrival-handler">packet arrival handler</a>.
+While it is not strictly required, it should make your life much easier. Please
+note that the packet arrival handler will probably be a very long function; we will
+not deduct points for this, as long as you clearly document how each part of the
+function corresponds to what is specified in pages 64-75 of RFC 793.</p>
+<p>However, we <em>will</em> deduct points if your packet arrival handler unnecessarily repeats
+code (e.g., the code to construct and send a packet).</p>
+</li>
+<li><p class="first"><strong>Efficiency</strong> (5 points)</p>
+</li>
+</ul>
+<p>In Project 2b, we will be looking at the following:</p>
+<ul class="simple">
+<li><strong>Function decomposition</strong> (8 points). In particular, the code for handling timeouts,
+retransmissions, and out-of-order delivery should be written in their own functions.
+A good design would be one where your p2a code only requires adding a few calls to
+these new functions, instead of a complete overhaul of your code.</li>
+<li><strong>Data structure design</strong> (8 points). We will specifically look at how you keep track
+of retranmissions and out-of-order packets.</li>
+<li><strong>Efficiency</strong> (4 points)</li>
+</ul>
+</div>
+<div class="section" id="style">
+<h2>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h2>
+<p>The Style component of the grade will be determined by your adherence to
+our <a class="reference external" href="style_guide.html">Style Guide</a>. While you should strive to follow this guide as
+closely as possible, there <em>are</em> certain aspects we will be paying more
+attention to. In all three parts of the project, the 20 points of the Style
+portion are divided as follows:</p>
+<ul class="simple">
+<li><strong>Documenting functions</strong> (8 points): Every function written by you must have
+a <a class="reference external" href="style_guide.html#function-comments">function comment</a> with a brief description
+of what the function does, and a description of the parameters and the
+return value.</li>
+<li><strong>Consistent indentation</strong> (2 points): Your code must follow one of the
+<a class="reference external" href="style_guide.html#function-comments">allowed indentation styles</a> consistently.
+The presence of even a single tab character in your code will result in 0 points
+here.</li>
+<li><strong>Clarity</strong> (6 points): Your code must be easy to read and understand. This
+is a fairly subjective aspect, but common deductions for lack of clarity
+include using variables without descriptive names, writing convoluted code
+that would be easier to understand with more code comments, using magic
+numbers, etc.</li>
+<li><strong>General adherence to the style guide</strong> (4 points): The graders will not be
+checking that you follow every minute aspect of our style guide, and occasional
+infractions are ok (and won&#8217;t necessarily be penalized). What we&#8217;re more
+concerned with is that your code, overall, has a <em>consistent</em> style that
+asymptotically approaches the one specified in our style guide.</li>
+</ul>
+<p>Please note that, as mentioned in the Design section, we will <em>not</em> deduct points
+if your packet arrival handler is a very long function (as long as you clearly
+document how each part of the function corresponds to what is specified in pages
+64-75 of RFC 793). We may still take points off if <em>other</em> functions you write are
+too long and difficult to follow.</p>
+<p>Additionally, the graders will apply the following penalties:</p>
+<ul class="simple">
+<li>Using <a class="reference external" href="style_guide.html#global-variables">global variables</a>: 10 point penalty</li>
+<li>Using <a class="reference external" href="style_guide.html#goto-statements">goto statements</a>: 5 point penalty</li>
+<li>Using <a class="reference external" href="style_guide.html#printing-logging-debug-messages">printf instead of chilog</a>: 5 point penalty</li>
+</ul>
+<p>Please note that the style guide does specify a few exceptions when using
+some of the above is acceptable. You will not be penalized in those cases.</p>
+</div>
+<div class="section" id="additional-penalties">
+<h2>Additional Penalties<a class="headerlink" href="#additional-penalties" title="Permalink to this headline">¶</a></h2>
+<p>We will also apply the following penalties:</p>
+<ul>
+<li><p class="first"><strong>Submitting code that doesn&#8217;t build</strong>: If the graders are able to build your
+code with a few minor fixes (missing semicolons, parenthesis, etc.),
+we will apply a 15 point penalty. If your code
+requires substantial work to get it to build, you will receive a zero on
+the assignment.</p>
+<p><strong>So, make sure you verify that the version of the code you submitted builds correctly on a CS machine</strong></p>
+</li>
+<li><p class="first"><strong>Grossly incorrect memory management</strong>: Up to 5 point penalty. You should make sure
+to free any memory you malloc, but we will usually not take points off unless you&#8217;ve
+been grossly negligent in your malloc&#8217;ing/freeing. You should also make sure to
+not &#8220;save&#8221; pointers to stack-allocated memory that is going to be deallocated.
+This can happen if you store a pointer to a functions&#8217; local variable in a struct
+that is heap-allocated.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011-2017, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
