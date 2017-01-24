@@ -40,10 +40,6 @@ Make sure you read the `Project 1 rubric <project1_rubric.html>`_ and the `Proje
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
 
-**WARNING: We are still updating this project for this year's edition of Networks.
-If you read the project specification and do any work on the project, you do so
-at your own peril.**
-
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -58,7 +54,7 @@ they do not implement the entire functionality provided by standard sockets
 
 The project specification is available `here <http://chi.cs.uchicago.edu/chitcp/>`_.
 
-Make sure you read the `Project 2 tips <project2_tips.html>`_.
+Make sure you read the `Project 2 rubric <project2_rubric.html>`_ and the `Project 2 tips <project2_tips.html>`_.
 
 
 Project 3: chirouter
