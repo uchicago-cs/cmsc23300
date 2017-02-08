@@ -132,6 +132,7 @@ html_theme_options = {
     'navbar_links': [
         ("Syllabus", "syllabus"),
         ("Course Calendar", "calendar"),
+        ("Additional Resources", "resources"),
         ("Projects", "projects"),
     ],
 
