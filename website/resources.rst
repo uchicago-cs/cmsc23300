@@ -32,7 +32,11 @@ IP
 IPv6
 ~~~~
 
+* `IANA Internet Protocol Version 6 Address Space <http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xhtml>`_
+* `IANA IPv6 Global Unicast Address Assignments <http://www.iana.org/assignments/ipv6-unicast-address-assignments/ipv6-unicast-address-assignments.xhtml>`_
+* `IPv6 Test <http://ipv6-test.com/>`_: Tests IPv6 connectivity from the machine accessing this page.
 * `IP6to4 tunnel <http://www.wtfm.org/ip6to4>`_: Script for creating a 6to4 tunnel.
+* `Preparing for IPv6-only mobile networks: Why and How <https://blogs.akamai.com/2016/06/preparing-for-ipv6-only-mobile-networks-why-and-how.html>`_
 
 
 Internet-level Routing
