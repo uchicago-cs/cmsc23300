@@ -103,38 +103,36 @@ will be able to continue to use your usual development environment (your laptop,
 a CSIL machine, etc.), and will simply instruct chirouter to connect to the instance
 of mininet running on the virtual machine (instead of running mininet directly
 on your machine).</p>
-<p>Although mininet provides some ready-to-use VMs, we will be using the VM image
-from CMSC 12100. This is an Ubuntu image that closely mirrors the standard CS
+<p>Although mininet provides some ready-to-use VMs, we will be using our own
+VM image. This is an Ubuntu image that closely mirrors the standard CS
 Linux environment, and which our Techstaff is deeply familiar with if we
 run into any issues. Furthemore, this VM image can be run with VirtualBox,
 an open source virtualization software package.</p>
+<p>Please note that the VM <strong>does not recognize CNetIDs, nor will it have access to your CS
+home directory</strong>. However, as we explain below, you will be able to develop
+your code in your environment of choice, and then use the VM only when you
+need to test your code (and you will not even have to copy your code into the VM;
+your chirouter implementation can run on your own machine, and then communicate
+with mininet and POX on the VM).</p>
 <p>You can download the VM here:</p>
 <blockquote>
-<div><a class="reference external" href="http://mirror.cs.uchicago.edu/techstaff/cs121-aut-15-final.ova">http://mirror.cs.uchicago.edu/techstaff/cs121-aut-15-final.ova</a> [3.3 GB]</div></blockquote>
+<div><p><a class="reference external" href="http://mirror.cs.uchicago.edu/techstaff/cs233-win-17.ova">http://mirror.cs.uchicago.edu/techstaff/cs233-win-17.ova</a> [3.3 GB]</p>
+<p>MD5: 75519a792d99b747789a8e036a344751</p>
+</div></blockquote>
 <p>To get the VM running on Windows or OS X, just follow the instructions provided
-<a class="reference external" href="https://www.classes.cs.uchicago.edu/archive/2015/fall/12100-1/install-guide/index-download.html">on the CS 121 website</a>, with the following exceptions:</p>
+<a class="reference external" href="https://www.classes.cs.uchicago.edu/archive/2016/fall/12100-1/install-guide/index-download.html">on the CS 121 website</a> (that class
+used a similar VM). However, please note the following exceptions:</p>
 <ul class="simple">
+<li>Instead of the <code class="docutils literal"><span class="pre">cs121-aut-15-final.ova</span></code> file referred to in that page, use the
+OVA file you downloaded from the URL above.</li>
 <li>You can download the latest version of VirtualBox (you don&#8217;t need to use the 5.0.4
 version specified in those instructions)</li>
 <li>If installing on OS X, you can skip steps 8 and 9, and all the steps after (and including) step 16.</li>
 <li>If installing on Windows, you can skip steps 7 and 8, and all the steps after (and including) step 14.</li>
 </ul>
 <p>Make sure you start the VM on an Internet-connected machine. Once you do so, log into
-the VM (username: <code class="docutils literal"><span class="pre">student</span></code>, password: <code class="docutils literal"><span class="pre">uccs</span></code>), open a terminal and run the following
-commands:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">traceroute</span>
-
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">uchicago</span><span class="o">-</span><span class="n">cs</span><span class="o">/</span><span class="n">chirouter</span><span class="o">.</span><span class="n">git</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mininet</span><span class="o">/</span><span class="n">mininet</span><span class="o">.</span><span class="n">git</span>
-
-<span class="n">cd</span> <span class="n">mininet</span><span class="o">/</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="mf">2.2</span><span class="o">.</span><span class="mi">1</span> <span class="mf">2.2</span><span class="o">.</span><span class="mi">1</span>
-<span class="n">util</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">nfv</span>
-</pre></div>
-</div>
-<p>Take into account that this final command will take a while to run.</p>
-<p>At this point, your VM will be set up to run mininet and POX. You can
+the VM (username: <code class="docutils literal"><span class="pre">student</span></code>, password: <code class="docutils literal"><span class="pre">uchicago</span></code>). The software to run mininet
+and POX is already installed on the VM, and you can
 use the VM in one of two ways:</p>
 <ul class="simple">
 <li>Developing your code directly on the VM</li>
@@ -152,19 +150,20 @@ will require generating and upload SSH keys as described in
 <p>Nonetheless, you may want to run the following to disable Ubuntu&#8217;s Network
 Manager, as it can sometimes interfere with the virtual networking
 devices created by mininet:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">stop</span> <span class="n">network</span><span class="o">-</span><span class="n">manager</span>
-<span class="n">sudo</span> <span class="n">ifconfig</span> <span class="n">eth0</span> <span class="n">up</span>
-<span class="n">sudo</span> <span class="n">dhclient</span> <span class="n">eth0</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">service</span> <span class="n">network</span><span class="o">-</span><span class="n">manager</span> <span class="n">stop</span>
 </pre></div>
 </div>
-<p>Note: You will have to re-run these commands if you reboot the VM.</p>
+<p>Note: You will have to re-run this command if you reboot the VM.</p>
 </div>
 <div class="section" id="using-the-vm-only-to-run-mininet">
 <h2>Using the VM only to run mininet<a class="headerlink" href="#using-the-vm-only-to-run-mininet" title="Permalink to this headline">¶</a></h2>
-<p>In this case, you will run POX and mininet inside the VM. Note that
-you can do so using the chirouter repository you cloned earlier,
-following the instructions in the chirouter specification.
-<em>You do not neet to clone your team&#8217;s repository</em>. Instead,
+<p>In this case, you will run POX and mininet inside the VM, but you will
+develop and run your chirouter code elsewhere (typically, on the machine
+that is running the VM).</p>
+<p>To run POX and mininet, the VM already includes a clone of the chirouter repository
+in your home directory, and you should run POX and mininet
+from the <code class="docutils literal"><span class="pre">~/chirouter/</span></code> directory. <strong>You do not neet to clone your
+team&#8217;s repository in the VM</strong>. Instead,
 your team repository will be in the host machine (i.e., the machine
 that is running the VM). You will build and run chirouter on the
 host machine, and then instruct chirouter to connect to POX/mininet
@@ -182,20 +181,20 @@ also do this while the VM is running by clicking on the network icon
 on the bottom-left corner of the VM window (the network icon is the one
 with two computers).</p>
 <p>Then, from a terminal in the VM, run the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">stop</span> <span class="n">network</span><span class="o">-</span><span class="n">manager</span>
-<span class="n">sudo</span> <span class="n">ifconfig</span> <span class="n">eth0</span> <span class="n">up</span>
-<span class="n">sudo</span> <span class="n">dhclient</span> <span class="n">eth0</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">service</span> <span class="n">network</span><span class="o">-</span><span class="n">manager</span> <span class="n">stop</span>
 </pre></div>
 </div>
 <p>This will stop Ubuntu&#8217;s Network Manager, which can interfere with
 the virtual network devices created by mininet. Note: You will have
-to re-run these commands if you reboot the VM.</p>
+to re-run this commands if you reboot the VM.</p>
 <p>Next, you need to find out what IP address has been assigned to your
 machine. Run this from inside the VM:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ifconfig</span> <span class="n">eth0</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ifconfig</span>
 </pre></div>
 </div>
-<p>The address will likely be an address like 192.168.56.101. You should
+<p>The network interface for your VM may not have the usual <code class="docutils literal"><span class="pre">ethX</span></code> name,
+so you should look for an interface with a private IP address, typically
+something like 192.168.56.101. You should
 verify that you can ping this IP address from the host machine.</p>
 <p>Now, when you run chirouter, you must include an <code class="docutils literal"><span class="pre">-s</span></code> option to
 specify that you&#8217;re connecting to POX/mininet on a different machine.
@@ -206,6 +205,35 @@ For example:</p>
 <p>Note: setting the VM to Host-only Networking will prevent the VM from accessing
 the Internet. If you later on realize you need to access the Internet from the VM,
 just go back to the Network settings and switch the &#8220;Attached to&#8221; option to &#8220;NAT&#8221;.</p>
+</div>
+<div class="section" id="common-issues-when-running-the-vm">
+<h2>Common issues when running the VM<a class="headerlink" href="#common-issues-when-running-the-vm" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enabling-virtualization-extensions">
+<h3>Enabling virtualization extensions<a class="headerlink" href="#enabling-virtualization-extensions" title="Permalink to this headline">¶</a></h3>
+<p>If you try to run the VM and VirtualBox shows a message like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Failed</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">a</span> <span class="n">session</span> <span class="k">for</span> <span class="n">the</span> <span class="n">virtual</span> <span class="n">machine</span> <span class="n">CMSC23300</span><span class="o">.</span>
+
+<span class="n">VT</span><span class="o">-</span><span class="n">x</span> <span class="ow">is</span> <span class="n">disabled</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">BIOS</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">CPU</span> <span class="n">modes</span> <span class="p">(</span><span class="n">VERR_VMX_MSR_ALL_VMX_DISABLED</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Result</span> <span class="n">Code</span><span class="p">:</span>        <span class="n">E_FAIL</span> <span class="p">(</span><span class="mh">0x80004005</span><span class="p">)</span>
+<span class="n">Component</span><span class="p">:</span>  <span class="n">ConsoleWrap</span>
+<span class="n">Interface</span><span class="p">:</span>  <span class="n">IConsole</span> <span class="p">{</span><span class="mi">872</span><span class="n">da645</span><span class="o">-</span><span class="mi">4</span><span class="n">a9b</span><span class="o">-</span><span class="mi">1727</span><span class="o">-</span><span class="n">bee2</span><span class="o">-</span><span class="mi">5585105</span><span class="n">b9eed</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>This means that your computer&#8217;s &#8220;virtualization extensions&#8221; (which enables the CPU to efficiently run virtual machines) have not been activated. You can usually activate them by rebooting your computer and going into the BIOS menu (usually by pressing Esc or Shift at boot; if your computer is nice, it will probably tell you exactly what key to press to interrupt the computer&#8217;s bootup and to go into the BIOS menu)</p>
+<p>Once there, you&#8217;ll have to look around for the option to turn on &#8220;VT-X&#8221; or &#8220;VMX&#8221; or some variation of the term &#8220;Virtualization Extensions&#8221;. If you&#8217;re unsure on how to do any of this, try Googling for your computer&#8217;s brand/model along with &#8220;BIOS menu&#8221; or &#8220;virtualization&#8221;. This will likely turn up the appropriate instructions for your machine.</p>
+</div>
+<div class="section" id="corrupted-download">
+<h3>Corrupted download<a class="headerlink" href="#corrupted-download" title="Permalink to this headline">¶</a></h3>
+<p>If VirtualBox complains about trying to import or launch a corrupted VM, make sure the OVA file
+you downloaded was correctly downloaded. You can check the integrity of the file by running
+the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">md5sum</span> <span class="n">cs233</span><span class="o">-</span><span class="n">win</span><span class="o">-</span><span class="mf">17.</span><span class="n">ova</span>
+</pre></div>
+</div>
+<p>The resulting MD5 hash should match the one shown at the top of this page. If it doesn&#8217;t,
+try re-downloading the file. We recommend using <code class="docutils literal"><span class="pre">wget</span></code> or <code class="docutils literal"><span class="pre">curl</span></code>, which will usually
+deal better with resuming an interrupted download.</p>
+</div>
 </div>
 </div>
 
