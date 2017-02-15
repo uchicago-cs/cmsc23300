@@ -6,8 +6,8 @@ Before you get started
 
 - Make sure you've read all the pages listed under "General" in the main `Projects <projects.html>`_
   page.
-- Double-check that your repository has a single ``chitcp`` directory in it, and that the chirc 
-  files are in that directory. If the chirc files (``README``, ``src/``, ...) are in the top 
+- Double-check that your repository has a single ``chitcp`` directory in it, and that the chiTCP 
+  files are in that directory. If the chiTCP files (``README``, ``src/``, ...) are in the top 
   level of your repository, they will not be graded. Make sure you follow the exact instructions 
   in `Uploading the initial code to your repository <initial_code.html>`_.
 

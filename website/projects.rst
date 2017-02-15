@@ -60,13 +60,11 @@ Make sure you read the `Project 2 rubric <project2_rubric.html>`_ and the `Proje
 Project 3: chirouter
 ~~~~~~~~~~~~~~~~~~~~
 
-**WARNING: We are still updating this project for this year's edition of Networks.
-If you read the project specification and do any work on the project, you do so
-at your own peril.**
-
 In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.
 
 The project specification is available `here <http://chi.cs.uchicago.edu/chirouter/>`_.
+
+Make sure you read the `Project 3 rubric <project3_rubric.html>`_ and the `Project 3 tips <project3_tips.html>`_.
 
 Take into account that this project requires using a network simulator that
 needs to be run with root privileges on a Linux machine. If you do not have
