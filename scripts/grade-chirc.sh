@@ -38,14 +38,20 @@ then
 fi
 echo "done."
 
+if [ ! -e $REPO_DIR/chirc ];
+then
+    echo "ERROR: Your repository doesn't seem to contain a valid chirc directory"
+    exit 1
+fi
+
+cd $REPO_DIR/chirc
+
 if [ $# -eq 2 ];
 then
 	CHECKOUT=$2
 else
 	CHECKOUT=master
 fi
-
-cd $REPO_DIR/chirc
 
 if [ $CHECKOUT != "master" ];
 then
