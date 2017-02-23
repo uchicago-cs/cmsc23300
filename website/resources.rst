@@ -43,6 +43,7 @@ Internet-level Routing
 ~~~~~~~~~~~~~~~~~~~~~~
 
 * `BGP Toolkit <http://bgp.he.net/>`_: Website that provides lots of information about Autonomous Systems (AS), routing prefixes, peers, etc.
+* `The Opte Project <http://www.opte.org/>`_: Visualization of the Internet based on BGP data
 
 TCP
 ~~~
@@ -64,10 +65,12 @@ Network Neutrality
 * `Understanding the Level 3-Comcast spat (FAQ) <http://www.cnet.com/news/understanding-the-level-3-comcast-spat-faq/>`_
 * `Comcast and Netflix Reach Deal on Service <http://www.nytimes.com/2014/02/24/business/media/comcast-and-netflix-reach-a-streaming-agreement.html>`_
 * `Comcast vs. Netflix: Is this really about Net neutrality? <http://www.cnet.com/news/comcast-vs-netflix-is-this-really-about-net-neutrality/>`_
+* `13 things you need to know about the FCC's Net neutrality regulation <https://www.cnet.com/news/13-things-you-need-to-know-about-the-fccs-net-neutrality-regulation/>`_
 
 Network Security
 ----------------
 
+* `How DNSSEC Works <https://www.cloudflare.com/dns/dnssec/how-dnssec-works/>`_: Very clear and concise explanation of how DNSSEC works.
 * `DNSSEC verification with dig <http://backreference.org/2010/11/17/dnssec-verification-with-dig/>`_
 * `Meet the seven people who hold the keys to worldwide internet security <https://www.theguardian.com/technology/2014/feb/28/seven-people-keys-worldwide-internet-security-web>`_
 
