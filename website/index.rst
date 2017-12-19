@@ -1,11 +1,10 @@
 CMSC 23300 - Networks and Distributed Systems
 =============================================
 
-
 Announcements
 ~~~~~~~~~~~~~
 
-- January 2nd, 2017 -- The course website has been updated for Winter 2017.
+- December 19th, 2017 -- The course website has been updated for Winter 2018.
 
 Course Staff
 ~~~~~~~~~~~~
@@ -16,20 +15,15 @@ Course Staff
 
 *Office*: Eckhart 120-B
 
-*Office hours*: After class and by appointment.
+*Office hours*: Tuesdays and Thursdays, 1:30pm-3pm
 
 **TAs**
 
-Jakub Tucholski, Brian Tuan
+Mark Cohen, Geoffrey Owens
 
 Please do not contact the TAs directly; instead, post your questions on Piazza.
 
-Office Hours
-
-* Monday, 1pm-2:30pm (Brian Tuan) in CSIL 4
-* Wednesday, 1pm-2:30pm (Brian Tuan) in CSIL 4
-* Wednesday, 2:30pm-4pm (Jakub Tucholski) in the computer islands outside CSIL 3+4
-* Friday, 2:30pm-4pm (Jakub Tucholski) in CSIL 4
+Office Hours: TBD
 
 
 Course Description

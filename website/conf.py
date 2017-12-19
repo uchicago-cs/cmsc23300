@@ -23,6 +23,9 @@ import sphinx_bootstrap_theme
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 
+def setup(app):
+    app.add_stylesheet("chiweb.css")
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -52,7 +55,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'CMSC 23300 - Networks and Distributed Systems'
-copyright = u'2011-2017, The University of Chicago'
+copyright = u'2011-2018, The University of Chicago'
 author = 'Borja Sotomayor'
 
 # The version info for the project you're documenting, acts as replacement for

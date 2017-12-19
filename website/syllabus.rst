@@ -33,14 +33,12 @@ Throughout the quarter, students will develop three projects:
 
 #. **chirouter**: Implementing an Internet router using the `Mininet network emulator <https://github.com/mininet/mininet>`_
 
-Each project is independent from the others. Students registered under the
-undergraduate code (CMSC 23300) will develop these projects in pairs. Project 
-groups must be formed by Friday of the first week of the quarter.
+Each project is independent from the others. Students will develop these 
+projects in pairs; project groups must be formed by Monday of the
+second week of the quarter.
 Groups can be changed from one project to another. If your partner drops out of
-the course or you feel he/she is not contributing to the group’s effort,
+the course or you feel they are not contributing to the group’s effort,
 you should make the instructor aware of this.
-
-Students registered for the graduate code (CMSC 33300) will develop these projects individually.
 
 Discussion Session
 ~~~~~~~~~~~~~~~~~~
@@ -60,12 +58,14 @@ provide you with very valuable pointers on how to do the projects. At
 the very least, one of the two members in each group should plan to
 attend the discussion session each week.
 
-Please note that the first two discussion sessions will be used to
-provide a refresher on socket programming and concurrent programming,
-respectively. Students who did not take CMSC 15400 in the previous
+Please note there will be a special session on Thursday,
+January 4, from 5:30pm to 8:30pm to provide a refresher on socket 
+programming and concurrent programming. Students who did not take CMSC 15400 in the previous
 school year, or who are not comfortable working with sockets or threads
-in C, are *strongly* encouraged to attend these first two discussion
-sessions.
+in C, are *strongly* encouraged to attend this review session. However,
+since it takes place outside of regular class/discussion teams, we understand
+that not everyone will be able to make it, and all examples from this
+session will be posted online, as well as pointers to reference materials.
 
 Exams
 -----
@@ -228,10 +228,19 @@ as long as it doesn't slip into the realm of plagiarism. If a given
 assignment requires you to work with another student, you may share
 code with that student only for that assignment. You are also welcome
 to *discuss* aspects of an assignment with other students in the class,
-as long as you don't share or write code together. If you have discussed parts of an
-assignment with someone else, then make sure to say so in your
-submission (e.g., in a README file or as a comment at the top of your
-source code file). 
+as long as you don't share or write code together. 
+
+Please note that this also included "whiteboarding": discussing an assignment with
+other students by sketching out code on a whiteboard *may* cross the line into 
+academic dishonesty (*even when using pseudocode*). If you do sketch out code on
+a whiteboard, do not take pictures of the code or use the code verbatim in your
+own solution. You should instead focus on using the whiteboard discussion as
+a way to understand the high-level aspects of the problem, and then writing
+your own code from scratch.
+
+In any case, if you have discussed parts of an assignment with someone else, 
+then make sure to say so in your submission (e.g., in a README file or as a 
+comment at the top of your source code file). 
 
 Using outside sources is generally acceptable as long as:
 

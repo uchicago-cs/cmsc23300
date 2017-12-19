@@ -1,9 +1,6 @@
 {# Import the theme's layout. #}
 {% extends "!layout.html" %}
 
-{# Custom CSS overrides #}
-{% set bootswatch_css_custom = ['_static/chiweb.css'] %}
-
 {% block htmltitle %}
 {%- if pagename == master_doc %}
 <title>{{ docstitle|e }}</title>

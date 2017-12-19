@@ -20,6 +20,13 @@ Make sure you read the following before working on any of the projects:
 Project 1: chirc
 ~~~~~~~~~~~~~~~~
 
+.. admonition:: WARNING: Project 1 has not yet been updated for Winter 2018!
+
+   You can find here the links to the project specification, and other resources,
+   exactly as they were assigned in 2017. You may find them useful to get a sense
+   of what the project will involve, but **DO NOT** work on this project until
+   we tell you to do so, as the project specification may change.
+
 In this project, you will implement a simple Internet Relay Chat (IRC)
 server called chirc. This project has three goals:
 
@@ -40,6 +47,13 @@ Make sure you read the `Project 1 rubric <project1_rubric.html>`_ and the `Proje
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
 
+.. admonition:: WARNING: Project 2 has not yet been updated for Winter 2018!
+
+   You can find here the links to the project specification, and other resources,
+   exactly as they were assigned in 2017. You may find them useful to get a sense
+   of what the project will involve, but **DO NOT** work on this project until
+   we tell you to do so, as the project specification may change.
+
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -59,6 +73,17 @@ Make sure you read the `Project 2 rubric <project2_rubric.html>`_ and the `Proje
 
 Project 3: chirouter
 ~~~~~~~~~~~~~~~~~~~~
+
+.. admonition:: WARNING: Project 3 has not yet been updated for Winter 2018!
+
+   You can find here the links to the project specification, and other resources,
+   exactly as they were assigned in 2017. You may find them useful to get a sense
+   of what the project will involve, but **DO NOT** work on this project until
+   we tell you to do so, as the project specification may change.
+
+   Also, **DO NOT** install last year's virtual machine, as it will undergo
+   major updates for this year. We cannot provide any support on this project
+   if you install an outdated VM.
 
 In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.
 
