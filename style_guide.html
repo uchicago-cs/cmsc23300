@@ -1,45 +1,41 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-<title>Style Guide &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+<title>Style Guide &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
-    
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -112,7 +108,7 @@ code is easy to read.</li>
 <li>Writing readable code makes the lives of our graders easier.
 Remember: a happy grader is a generous grader. Additionally,
 graders <em>will</em> take points off for code that is hard to read
-(which includes, but is not limited to, code that doesn&#8217;t
+(which includes, but is not limited to, code that doesn’t
 follow the conventions in this style guide)</li>
 </ol>
 <p>This document is not intended to be a comprehensive C style guide.
@@ -138,15 +134,15 @@ convert it to one of the above indent styles:</p>
 </div>
 <p>Regardless of the descriptions of K&amp;R and Allman you may find online, <em>you must use 4 spaces per indentation level</em>. This is the
 indentation level used by default by astyle.</p>
-<p><strong>Never use &#8220;tab characters&#8221;.</strong></p>
+<p><strong>Never use “tab characters”.</strong></p>
 <p>Note that you can configure most text editors to insert 4 spaces whenever you press the
 <a class="reference external" href="https://en.wikipedia.org/wiki/Tab_key">tab key</a>. To check whether your editor is properly
 configured, try the following: press the tab key, and then press the left arrow key. If the
-cursor jumps to the beginning of the line, your editor inserted a single &#8220;tab character&#8221;.
+cursor jumps to the beginning of the line, your editor inserted a single “tab character”.
 If the cursor only goes back one space (and you have to press the left arrow key three more
 times to get to the start of the line), then the editor is correctly inserting four spaces.</p>
 <p>Whether to use <a class="reference external" href="http://programmers.stackexchange.com/questions/57/tabs-versus-spaces-what-is-the-proper-indentation-character-for-everything-in-e">tabs or spaces</a>
-is one of the many &#8220;religious wars&#8221; within the programming community.
+is one of the many “religious wars” within the programming community.
 So, you may run into people (even people here on campus) who will feel very strongly about
 how tabs are better than spaces, and they may even present to you a number of cogent arguments
 in favor of using tabs.</p>
@@ -155,7 +151,7 @@ in favor of using tabs.</p>
 <div class="section" id="maximum-line-length">
 <h3>Maximum Line Length<a class="headerlink" href="#maximum-line-length" title="Permalink to this headline">¶</a></h3>
 <p>Limit all lines to a maximum of 80 characters. This is not a hard limit,
-and breaking it occasionally is fine, as long as you don&#8217;t do it repeateadly
+and breaking it occasionally is fine, as long as you don’t do it repeateadly
 and always by a small number of additional characters. Also, remember that
 most syntactical elements in C are delimited by whitespace, and that
 newlines are considered whitespace. So, the following is correct C:</p>
@@ -348,7 +344,7 @@ same line as a statement. Inline comments should be separated by at
 least two spaces from the statement.  They should start with a <code class="docutils literal"><span class="pre">//</span></code> and a
 single space.</p>
 <p>Inline comments are unnecessary and in fact distracting if they state
-the obvious. Don&#8217;t do this:</p>
+the obvious. Don’t do this:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="o">//</span> <span class="n">Increment</span> <span class="n">x</span>
 </pre></div>
 </div>
@@ -380,7 +376,7 @@ descriptive the name needs to be.</p>
 </div>
 <div class="section" id="printing-logging-debug-messages">
 <h2>Printing logging / debug messages<a class="headerlink" href="#printing-logging-debug-messages" title="Permalink to this headline">¶</a></h2>
-<p>All the projects in this class use a simple logging library called <code class="docutils literal"><span class="pre">chilog</span></code> that is documented in each of the project specifications. You must use the <code class="docutils literal"><span class="pre">chilog</span></code> functions <em>exclusively</em> for printing logging or debug messages. <strong>Do not use printf() directly in your code</strong>. Please note that the <code class="docutils literal"><span class="pre">chilog</span></code> functions provide essentially the same functionality as <code class="docutils literal"><span class="pre">printf</span></code>, so there is no situation where <code class="docutils literal"><span class="pre">printf</span></code> would be necessary instead of <code class="docutils literal"><span class="pre">chilog</span></code> (using <code class="docutils literal"><span class="pre">chilog</span></code> consistently also means you will not have to scrub <code class="docutils literal"><span class="pre">printf</span></code>&#8216;s from your code before submitting it).</p>
+<p>All the projects in this class use a simple logging library called <code class="docutils literal"><span class="pre">chilog</span></code> that is documented in each of the project specifications. You must use the <code class="docutils literal"><span class="pre">chilog</span></code> functions <em>exclusively</em> for printing logging or debug messages. <strong>Do not use printf() directly in your code</strong>. Please note that the <code class="docutils literal"><span class="pre">chilog</span></code> functions provide essentially the same functionality as <code class="docutils literal"><span class="pre">printf</span></code>, so there is no situation where <code class="docutils literal"><span class="pre">printf</span></code> would be necessary instead of <code class="docutils literal"><span class="pre">chilog</span></code> (using <code class="docutils literal"><span class="pre">chilog</span></code> consistently also means you will not have to scrub <code class="docutils literal"><span class="pre">printf</span></code>’s from your code before submitting it).</p>
 <p>Furthermore, all the messages at the <code class="docutils literal"><span class="pre">INFO</span></code>, <code class="docutils literal"><span class="pre">WARNING</span></code>, <code class="docutils literal"><span class="pre">ERROR</span></code>, and <code class="docutils literal"><span class="pre">CRITICAL</span></code> levels must be used only for their intended purposes (e.g., only use <code class="docutils literal"><span class="pre">ERROR</span></code> to print out actual errors in the execution of your program). You must use the <code class="docutils literal"><span class="pre">DEBUG</span></code> level only to print informative debug messages that would be understood by any developer trying to debug your code. You may use the <code class="docutils literal"><span class="pre">TRACE</span></code> level to print <em>any</em> debug message (including those that would only be understood by you). However, if your code is riddled with <code class="docutils literal"><span class="pre">TRACE</span></code> logging statements (including commented out ones) to the point where it is hard to read the code itself, we may take points off for this. So, once a <code class="docutils literal"><span class="pre">TRACE</span></code> logging statement has served its purpose, we suggest you remove it (not just comment it out).</p>
 <p>You should assume that graders will run your code with logging at the <code class="docutils literal"><span class="pre">INFO</span></code> level, and will only use the <code class="docutils literal"><span class="pre">DEBUG</span></code> level if they need to debug an issue with your code. We will never run your code with logging at the <code class="docutils literal"><span class="pre">TRACE</span></code> level.</p>
 <p>Please note that, in assignments where you are responsible for writing the <code class="docutils literal"><span class="pre">main</span></code> function, you may use <code class="docutils literal"><span class="pre">fprintf</span></code> to print to <em>standard error</em> if there is an error that prevents the program from starting (e.g., if a command-line parameter has not been provided, etc.)</p>
@@ -388,14 +384,14 @@ descriptive the name needs to be.</p>
 <div class="section" id="global-variables">
 <h2>Global variables<a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h2>
 <p>The use of global variables is forbidden in this class, except for defining compile-time <em>constants</em>. <strong>There are no other exceptions</strong>.</p>
-<p>A compile-time constant is a global variable with a value that is known and set at compile-time and <em>never</em> changed during the runtime of the program (if the variable can be used to access other values, e.g., because it is a pointer, a <code class="docutils literal"><span class="pre">struct</span></code>, etc., all the values reachable from the variable must also be known and set at compile-time). Such variables must have <code class="docutils literal"><span class="pre">ALL_CAPS</span></code> names, be declared as <code class="docutils literal"><span class="pre">const</span></code> and, if they are only going to be used in a single module, they must also be declared as <code class="docutils literal"><span class="pre">static</span></code>. Please note that our definition excludes variables that are initialized when the program starts running, <em>even if the value of that variable won&#8217;t change once it has been initialized</em>. If the value of the variable is not known before the program is running, it cannot be a global variable.</p>
+<p>A compile-time constant is a global variable with a value that is known and set at compile-time and <em>never</em> changed during the runtime of the program (if the variable can be used to access other values, e.g., because it is a pointer, a <code class="docutils literal"><span class="pre">struct</span></code>, etc., all the values reachable from the variable must also be known and set at compile-time). Such variables must have <code class="docutils literal"><span class="pre">ALL_CAPS</span></code> names, be declared as <code class="docutils literal"><span class="pre">const</span></code> and, if they are only going to be used in a single module, they must also be declared as <code class="docutils literal"><span class="pre">static</span></code>. Please note that our definition excludes variables that are initialized when the program starts running, <em>even if the value of that variable won’t change once it has been initialized</em>. If the value of the variable is not known before the program is running, it cannot be a global variable.</p>
 <p>To be fair, there are a few, very limited cases where using a (non-constant) global variable is truly justified. However, <em>none of those cases apply to the code you must write in this class</em>. Please do not try to convince us to the contrary: we are steadfast in our opposition to using global variables in this class.</p>
 <p>When writing a function, you must make sure that all the data the function is going to operate on is passed to the function via its parameters, and that all data the functions produces is returned via its return value (or through an input/output parameter). If, instead, you write a function that uses a global variable to convey information to/from the function (except when using a compile-time constant), you can expect some pretty hefty point deductions.</p>
-<p>For more details, see the Wikipedia entry on <a class="reference external" href="https://en.wikipedia.org/wiki/Global_variable">Global Variables</a>, which also notes &#8220;They are usually considered bad practice&#8221;.</p>
+<p>For more details, see the Wikipedia entry on <a class="reference external" href="https://en.wikipedia.org/wiki/Global_variable">Global Variables</a>, which also notes “They are usually considered bad practice”.</p>
 </div>
 <div class="section" id="goto-statements">
 <h2><code class="docutils literal"><span class="pre">goto</span></code> statements<a class="headerlink" href="#goto-statements" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">goto</span></code> statements can <em>only</em> be used to perform error handling. See this blog post for more details on how to do error handling with <code class="docutils literal"><span class="pre">goto</span></code>&#8216;s in C: <a class="reference external" href="http://eli.thegreenplace.net/2009/04/27/using-goto-for-error-handling-in-c">Using goto for error handling in C</a>. That post describes an additional acceptable use case for <code class="docutils literal"><span class="pre">goto</span></code>&#8216;s (breaking out of deeply-nested loops) and, while we will technically accept that use of <code class="docutils literal"><span class="pre">goto</span></code>&#8216;s as well, none of your code should require such a level of loop nesting (or, rather, if you find yourself needing to use a <code class="docutils literal"><span class="pre">goto</span></code> in this way, you should reconsider whether you need to re-design your code or break it up into more functions to avoid so many nested loops in the same function).</p>
+<p><code class="docutils literal"><span class="pre">goto</span></code> statements can <em>only</em> be used to perform error handling. See this blog post for more details on how to do error handling with <code class="docutils literal"><span class="pre">goto</span></code>’s in C: <a class="reference external" href="http://eli.thegreenplace.net/2009/04/27/using-goto-for-error-handling-in-c">Using goto for error handling in C</a>. That post describes an additional acceptable use case for <code class="docutils literal"><span class="pre">goto</span></code>’s (breaking out of deeply-nested loops) and, while we will technically accept that use of <code class="docutils literal"><span class="pre">goto</span></code>’s as well, none of your code should require such a level of loop nesting (or, rather, if you find yourself needing to use a <code class="docutils literal"><span class="pre">goto</span></code> in this way, you should reconsider whether you need to re-design your code or break it up into more functions to avoid so many nested loops in the same function).</p>
 </div>
 <div class="section" id="avoid-magic-numbers">
 <h2>Avoid Magic Numbers<a class="headerlink" href="#avoid-magic-numbers" title="Permalink to this headline">¶</a></h2>
@@ -424,8 +420,8 @@ reader throughout your code. For example:</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2017, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
     </p>
   </div>
 </footer>

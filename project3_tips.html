@@ -1,45 +1,41 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-<title>Project 3 Tips &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+<title>Project 3 Tips &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
-    
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -98,10 +94,10 @@
 <div class="section" id="before-you-get-started">
 <h2>Before you get started<a class="headerlink" href="#before-you-get-started" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Make sure you&#8217;ve read all the pages listed under &#8220;General&#8221; in the main <a class="reference external" href="projects.html">Projects</a>
+<li>Make sure you’ve read all the pages listed under “General” in the main <a class="reference external" href="projects.html">Projects</a>
 page.</li>
 <li>Double-check that your repository has a single <code class="docutils literal"><span class="pre">chirouter</span></code> directory in it, and that the chirouter
-files are in that directory. If the chirouter files (<code class="docutils literal"><span class="pre">README.md</span></code>, <code class="docutils literal"><span class="pre">src/</span></code>, ...) are in the top
+files are in that directory. If the chirouter files (<code class="docutils literal"><span class="pre">README.md</span></code>, <code class="docutils literal"><span class="pre">src/</span></code>, …) are in the top
 level of your repository, they will not be graded. Make sure you follow the exact instructions
 in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</li>
 </ul>
@@ -125,7 +121,7 @@ when running chirouter:</p>
 <h2>29 bytes?<a class="headerlink" href="#bytes" title="Permalink to this headline">¶</a></h2>
 <p>An ARP message is 28 bytes long, but you may observe that some of your <em>inbound</em> ARP messages are 29 bytes long. You can safely ignore this,
 as long as you only process the first 28 bytes of the ARP message. Take into account that when you generate an ARP message,
-you must make sure it&#8217;s 28 bytes long.</p>
+you must make sure it’s 28 bytes long.</p>
 </div>
 <div class="section" id="unexpected-udp-packets-on-port-67">
 <h2>Unexpected UDP packets on port 67<a class="headerlink" href="#unexpected-udp-packets-on-port-67" title="Permalink to this headline">¶</a></h2>
@@ -153,7 +149,7 @@ well-defined modifications.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">iphdr_t</span> <span class="o">*</span><span class="n">hdr</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>And that you have malloc&#8217;d and populated the values in the IP header. A common mistake is to call the <code class="docutils literal"><span class="pre">cksum</span></code> function like this:</p>
+<p>And that you have malloc’d and populated the values in the IP header. A common mistake is to call the <code class="docutils literal"><span class="pre">cksum</span></code> function like this:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cksum</span><span class="p">(</span><span class="n">hdr</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">hdr</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -185,8 +181,8 @@ network order to host order)</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2017, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
     </p>
   </div>
 </footer>

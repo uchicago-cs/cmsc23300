@@ -1,39 +1,34 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-<title>Using Git &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+<title>Using Git &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
-    
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
-    <link rel="up" title="Projects" href="projects.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Registering for the projects" href="registering.html" />
     <link rel="prev" title="Projects" href="projects.html" />
 <meta charset='utf-8'>
@@ -42,7 +37,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -102,7 +97,7 @@
 <blockquote>
 <div>This page is based on a lab written by <a class="reference external" href="http://people.cs.uchicago.edu/~larsson/">Gustav Larsson</a> for CMSC 12300</div></blockquote>
 <p>In many of your previous CS courses, you became familiar with using Subversion (SVN) to handle <em>revision control</em> (or <em>version control</em>) of your projects and assignments. In this class, we will be using Git instead, which has become the most popular revision control system in the open-source community in recent years. This page provides an overview of Git, and should be enough to get started, specially if you are already familiar with SVN. For a deeper dive into Git, we recommend consulting the <a class="reference external" href="http://git-scm.com/book">Pro Git</a> book (available for free online).</p>
-<p>This page will also guide you through creating a GitHub account, which will allow you to experiment with uploading (or &#8220;pushing&#8221;) your Git repository to a remote repository (and, also, because having a GitHub account is a generally useful thing to do). However, please note that, in this class, we will be using a <cite>GitLab &lt;https://about.gitlab.com/</cite>&gt;_ server run by the CS department. Working with GitLab is fairly similar to working with GitHub, but it is very important that you do not upload any of your code from the projects to your GitHub account!</p>
+<p>This page will also guide you through creating a GitHub account, which will allow you to experiment with uploading (or “pushing”) your Git repository to a remote repository (and, also, because having a GitHub account is a generally useful thing to do). However, please note that, in this class, we will be using a <cite>GitLab &lt;https://about.gitlab.com/</cite>&gt;_ server run by the CS department. Working with GitLab is fairly similar to working with GitHub, but it is very important that you do not upload any of your code from the projects to your GitHub account!</p>
 <div class="section" id="git">
 <h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
 <p>In the olden days (~10 years ago), most open-source projects used primarily CVS or SVN, the latter being a newer replacement of the former. These systems follow a client-server model, where you commit and check out the source code to and from a single server. In our case, that server was PhoenixForge, hosted by the university.</p>
@@ -116,7 +111,7 @@ $ cd new-project
 $ git init
 </pre></div>
 </div>
-<p>That&#8217;s it, we now have an empty local repository. Try:</p>
+<p>That’s it, we now have an empty local repository. Try:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ git status
 </pre></div>
 </div>
@@ -149,7 +144,7 @@ $ git config user.email &quot;your_email@example.com&quot;
 <div class="section" id="github">
 <h2>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://github.com">GitHub</a> is a website that offers free hosting of Git repositories for any open-source project, with plenty of additional features that grease the wheels of collaborative work.</p>
-<p>For instance, GitHub makes it easy to <em>fork</em> (clone) someone else&#8217;s open-source project, which means you create your own copy of it, where you have free rein. In your cloned version, you can fix bugs, add features or simply experiment in any way that you want. Anyone can use your cloned version, but if you really think your changes would be useful to everyone, then you can open a <em>pull request</em>, to have those changes merged back into the main repository. GitHub makes it easy to manage your repositories, discuss changes, track bugs/issues, create wikis and visualize statistics for your project, and follow the progress of other developers and their projects.</p>
+<p>For instance, GitHub makes it easy to <em>fork</em> (clone) someone else’s open-source project, which means you create your own copy of it, where you have free rein. In your cloned version, you can fix bugs, add features or simply experiment in any way that you want. Anyone can use your cloned version, but if you really think your changes would be useful to everyone, then you can open a <em>pull request</em>, to have those changes merged back into the main repository. GitHub makes it easy to manage your repositories, discuss changes, track bugs/issues, create wikis and visualize statistics for your project, and follow the progress of other developers and their projects.</p>
 </div>
 <div class="section" id="github-account">
 <h2>GitHub account<a class="headerlink" href="#github-account" title="Permalink to this headline">¶</a></h2>
@@ -159,15 +154,15 @@ $ git config user.email &quot;your_email@example.com&quot;
 </div>
 <div class="section" id="create-a-repository">
 <h2>Create a repository<a class="headerlink" href="#create-a-repository" title="Permalink to this headline">¶</a></h2>
-<p>In this course, we will create a repository for you on the department&#8217;s GitLab server. However, if you&#8217;re new to Git, you should try creating a repository under your GitHub account so you can experiment and tinker around without fear of messing up your CMSC 23300 repository.</p>
-<p>We will create our Git repository through GitHub&#8217;s web interface. Once logged in, you should see several icons in the top right corner, next to your username. Click on the left-most icon, which should say &#8220;Create new..&#8221;. If you click on it, you will have the option to select &#8220;New repository&#8221;. Pick a name for your repository and write a short description.</p>
+<p>In this course, we will create a repository for you on the department’s GitLab server. However, if you’re new to Git, you should try creating a repository under your GitHub account so you can experiment and tinker around without fear of messing up your CMSC 23300 repository.</p>
+<p>We will create our Git repository through GitHub’s web interface. Once logged in, you should see several icons in the top right corner, next to your username. Click on the left-most icon, which should say “Create new..”. If you click on it, you will have the option to select “New repository”. Pick a name for your repository and write a short description.</p>
 <p>GitHub only offers free hosting for <em>Public</em> (open-source) projects, and if you select <em>Private</em> you will see that payment options appear. Select <em>Public</em> and also tick the box <em>Initialize this repository with a README</em>.</p>
 <p>Finally, GitHub can add an appropriate <code class="docutils literal"><span class="pre">.gitignore</span></code> for your project if you know what programming language you will be using. The <code class="docutils literal"><span class="pre">.gitignore</span></code> file will tell Git to hide certain files from <code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> that should not be commited, such as <code class="docutils literal"><span class="pre">.o</span></code> files in C or log files.</p>
 <p>Once the project is created, you need to create a local clone on your computer.</p>
 </div>
 <div class="section" id="cloning-from-github">
 <h2>Cloning from GitHub<a class="headerlink" href="#cloning-from-github" title="Permalink to this headline">¶</a></h2>
-<p>On your repo&#8217;s front page, you will see a text field on the right column called &#8220;SSH clone URL&#8221;. Select this URL and copy it to your clipboard. Now, go to an appropriate folder in your home directory where you want to put your local copy. Take into account that when we clone (check out) a repository, Git will create a folder with the repo&#8217;s name for us, so there is no need to do that separately. Now, enter <code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></code> followed by pasting from your clipboard, e.g.:</p>
+<p>On your repo’s front page, you will see a text field on the right column called “SSH clone URL”. Select this URL and copy it to your clipboard. Now, go to an appropriate folder in your home directory where you want to put your local copy. Take into account that when we clone (check out) a repository, Git will create a folder with the repo’s name for us, so there is no need to do that separately. Now, enter <code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></code> followed by pasting from your clipboard, e.g.:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
 </pre></div>
 </div>
@@ -186,7 +181,7 @@ $ git config user.email &quot;your_email@example.com&quot;
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ git pull origin master
 </pre></div>
 </div>
-<p>If the remote repository (on GitHub) has changed since you last pulled from it, you will need to run <code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></code> before you can run <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code>. At this point, there might be a conflict between your changes and someone else&#8217;s that Git can&#8217;t merge automatically. In this case, it will include both versions in the file, looking something like:</p>
+<p>If the remote repository (on GitHub) has changed since you last pulled from it, you will need to run <code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></code> before you can run <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code>. At this point, there might be a conflict between your changes and someone else’s that Git can’t merge automatically. In this case, it will include both versions in the file, looking something like:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">text</span> <span class="n">file</span><span class="o">.</span>
 <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span><span class="p">:</span><span class="n">file1</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">This</span> <span class="ow">is</span> <span class="n">version</span> <span class="mf">1.</span>
@@ -200,12 +195,12 @@ $ git config user.email &quot;your_email@example.com&quot;
 </div>
 <div class="section" id="committing-etiquette">
 <h2>Committing etiquette<a class="headerlink" href="#committing-etiquette" title="Permalink to this headline">¶</a></h2>
-<p>Remember to commit <strong>often</strong> with <strong>descriptive commit messages</strong>. Try to avoid committing code that doesn&#8217;t run into the <code class="docutils literal"><span class="pre">master</span></code> branch. If it will take a while for your project to be running at all, you should relax this suggestion and still commit often. Please avoid committing files that does not belong in the repository (binaries, logs, etc.), and remove them if you accidentally add them at some point.</p>
+<p>Remember to commit <strong>often</strong> with <strong>descriptive commit messages</strong>. Try to avoid committing code that doesn’t run into the <code class="docutils literal"><span class="pre">master</span></code> branch. If it will take a while for your project to be running at all, you should relax this suggestion and still commit often. Please avoid committing files that does not belong in the repository (binaries, logs, etc.), and remove them if you accidentally add them at some point.</p>
 </div>
 <div class="section" id="github-vs-gitlab">
 <h2>GitHub vs GitLab<a class="headerlink" href="#github-vs-gitlab" title="Permalink to this headline">¶</a></h2>
 <p>Remember: this page presents GitHub as an easy way for you to get acquainted with how to use a remote Git server. However,
-in this class, we will use the CS department&#8217;s GitLab server. <strong>Never upload any of your CMSC 23300 code to GitHub</strong></p>
+in this class, we will use the CS department’s GitLab server. <strong>Never upload any of your CMSC 23300 code to GitHub</strong></p>
 </div>
 </div>
 
@@ -221,8 +216,8 @@ in this class, we will use the CS department&#8217;s GitLab server. <strong>Neve
       
     </p>
     <p>
-        &copy; Copyright 2011-2017, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
     </p>
   </div>
 </footer>

@@ -1,45 +1,41 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-<title>Project 2 Rubric &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+<title>Project 2 Rubric &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
-    
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -112,7 +108,7 @@
 <p>The Completeness component of the grade will be determined by the result of running
 the tests and, more specifically, on the number of points obtained when
 running <code class="docutils literal"><span class="pre">make</span> <span class="pre">grade</span></code> (see <a class="reference external" href="http://chi.cs.uchicago.edu/chitcp/testing.html#automated-tests">Automated tests</a>
-in the chiTCP documentation and, specifically, the &#8220;Producing a grade report&#8221; section).</p>
+in the chiTCP documentation and, specifically, the “Producing a grade report” section).</p>
 </div>
 <div class="section" id="correctness">
 <h2>Correctness<a class="headerlink" href="#correctness" title="Permalink to this headline">¶</a></h2>
@@ -120,7 +116,7 @@ in the chiTCP documentation and, specifically, the &#8220;Producing a grade repo
 not explicitly captured by the tests, could lead to <em>incorrect</em> behaviour in your server.
 Unlike Project 1, there are many aspects of the implementation that are hard to
 check via the automated tests, so a perfect score on the tests is no guarantee
-that you&#8217;ll also get a high score in this section.</p>
+that you’ll also get a high score in this section.</p>
 <p>Most penalties in this section are usually because something was implemented
 by rote.For example, it is easy to pass the three-way handshake
 by making TCP go into an ESTABLISHED state after receiving two packets (without checking
@@ -128,8 +124,8 @@ whether the first one is a SYN packet, and whether the second one contains a val
 In general, making assumptions about the packets you will receive, instead of performing
 the checks that are clearly specified in RFC 793, will result in penalties.</p>
 <p>The graders may also take points off for not implementing something that is clearly specified
-in the project or in RFC 793, even if the tests don&#8217;t test for it (e.g., not setting all the
-values in the TCP header, even if they&#8217;re not relevant for a specific test; a common
+in the project or in RFC 793, even if the tests don’t test for it (e.g., not setting all the
+values in the TCP header, even if they’re not relevant for a specific test; a common
 pitfall is to forget to set/update the window-related fields/variables). In Project 2b
 we will be paying special attention to your RTT estimation code, which is
 difficult to test automatically.</p>
@@ -140,8 +136,8 @@ re-penalize you here.</p>
 </div>
 <div class="section" id="design">
 <h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
-<p>The Design component of the grade will be determined by &#8220;qualities, many of which are intangible,
-that don’t have to do with (and exist to some extent independently of) the correct operation of your code.&#8221;
+<p>The Design component of the grade will be determined by “qualities, many of which are intangible,
+that don’t have to do with (and exist to some extent independently of) the correct operation of your code.”
 (thanks to Adam Shaw for this concise phrasing). Across both
 parts of the project, we will be looking at the following
 (the exact points for each of the parts of the project is specified
@@ -160,7 +156,7 @@ additional C files or header files, and do not modify any other files in the pro
 </li>
 <li><p class="first"><strong>Efficiency</strong>: We will look at whether your code is minimally efficient.
 In other words, we are not looking for sublimely efficient code but, rather,
-for the lack of grossly inefficient code. For example, we don&#8217;t care whether
+for the lack of grossly inefficient code. For example, we don’t care whether
 you store your list of channels in a linked list (<span class="math">\(O(n)\)</span> lookup times) or a
 hash table (<span class="math">\(O(1)\)</span> lookup times), but we do care whether you iterate over a list
 in <span class="math">\(O(n^2)\)</span> time when the same task can reasonably be accomplished in
@@ -216,7 +212,7 @@ that would be easier to understand with more code comments, using magic
 numbers, etc.</li>
 <li><strong>General adherence to the style guide</strong> (4 points): The graders will not be
 checking that you follow every minute aspect of our style guide, and occasional
-infractions are ok (and won&#8217;t necessarily be penalized). What we&#8217;re more
+infractions are ok (and won’t necessarily be penalized). What we’re more
 concerned with is that your code, overall, has a <em>consistent</em> style that
 asymptotically approaches the one specified in our style guide.</li>
 </ul>
@@ -238,7 +234,7 @@ some of the above is acceptable. You will not be penalized in those cases.</p>
 <h2>Additional Penalties<a class="headerlink" href="#additional-penalties" title="Permalink to this headline">¶</a></h2>
 <p>We will also apply the following penalties:</p>
 <ul>
-<li><p class="first"><strong>Submitting code that doesn&#8217;t build</strong>: If the graders are able to build your
+<li><p class="first"><strong>Submitting code that doesn’t build</strong>: If the graders are able to build your
 code with a few minor fixes (missing semicolons, parenthesis, etc.),
 we will apply a 15 point penalty. If your code
 requires substantial work to get it to build, you will receive a zero on
@@ -246,10 +242,10 @@ the assignment.</p>
 <p><strong>So, make sure you verify that the version of the code you submitted builds correctly on a CS machine</strong></p>
 </li>
 <li><p class="first"><strong>Grossly incorrect memory management</strong>: Up to 5 point penalty. You should make sure
-to free any memory you malloc, but we will usually not take points off unless you&#8217;ve
-been grossly negligent in your malloc&#8217;ing/freeing. You should also make sure to
-not &#8220;save&#8221; pointers to stack-allocated memory that is going to be deallocated.
-This can happen if you store a pointer to a functions&#8217; local variable in a struct
+to free any memory you malloc, but we will usually not take points off unless you’ve
+been grossly negligent in your malloc’ing/freeing. You should also make sure to
+not “save” pointers to stack-allocated memory that is going to be deallocated.
+This can happen if you store a pointer to a functions’ local variable in a struct
 that is heap-allocated.</p>
 </li>
 </ul>
@@ -268,8 +264,8 @@ that is heap-allocated.</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2017, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
     </p>
   </div>
 </footer>

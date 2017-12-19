@@ -1,45 +1,41 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-<title>Project 3 Virtual Machine &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+<title>Project 3 Virtual Machine &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
-    
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -97,7 +93,7 @@
 <h1>Project 3 Virtual Machine<a class="headerlink" href="#project-3-virtual-machine" title="Permalink to this headline">¶</a></h1>
 <p>The mininet network simulator in Project 3 must be run with root privileges
 on a Linux machine. If you do not have access to such a machine, we recommend
-using a virtual machine to run mininet. Take into account that this doesn&#8217;t
+using a virtual machine to run mininet. Take into account that this doesn’t
 mean you have to do all your development work inside the virtual machine; you
 will be able to continue to use your usual development environment (your laptop,
 a CSIL machine, etc.), and will simply instruct chirouter to connect to the instance
@@ -125,7 +121,7 @@ used a similar VM). However, please note the following exceptions:</p>
 <ul class="simple">
 <li>Instead of the <code class="docutils literal"><span class="pre">cs121-aut-15-final.ova</span></code> file referred to in that page, use the
 OVA file you downloaded from the URL above.</li>
-<li>You can download the latest version of VirtualBox (you don&#8217;t need to use the 5.0.4
+<li>You can download the latest version of VirtualBox (you don’t need to use the 5.0.4
 version specified in those instructions)</li>
 <li>If installing on OS X, you can skip steps 8 and 9, and all the steps after (and including) step 16.</li>
 <li>If installing on Windows, you can skip steps 7 and 8, and all the steps after (and including) step 14.</li>
@@ -147,7 +143,7 @@ chirouter documentation.</p>
 <p>However, you will need to clone your repository inside the VM, which
 will require generating and upload SSH keys as described in
 <a class="reference external" href="http://uchicago-cs.github.io/cmsc23300/initial_code.html">Uploading the initial code to your repository</a></p>
-<p>Nonetheless, you may want to run the following to disable Ubuntu&#8217;s Network
+<p>Nonetheless, you may want to run the following to disable Ubuntu’s Network
 Manager, as it can sometimes interfere with the virtual networking
 devices created by mininet:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">service</span> <span class="n">network</span><span class="o">-</span><span class="n">manager</span> <span class="n">stop</span>
@@ -163,20 +159,20 @@ that is running the VM).</p>
 <p>To run POX and mininet, the VM already includes a clone of the chirouter repository
 in your home directory, and you should run POX and mininet
 from the <code class="docutils literal"><span class="pre">~/chirouter/</span></code> directory. <strong>You do not neet to clone your
-team&#8217;s repository in the VM</strong>. Instead,
+team’s repository in the VM</strong>. Instead,
 your team repository will be in the host machine (i.e., the machine
 that is running the VM). You will build and run chirouter on the
 host machine, and then instruct chirouter to connect to POX/mininet
 on the VM.</p>
 <p>However, while VirtualBox will, by default, allow your VM to access the
-Internet using the host machine&#8217;s network, it won&#8217;t allow
+Internet using the host machine’s network, it won’t allow
 the VM and the host machine to communicate directly, so we
-need to change your VM&#8217;s network configuration to use &#8220;Host Only&#8221; mode.</p>
+need to change your VM’s network configuration to use “Host Only” mode.</p>
 <p>To do this, you must first create a Host-only Network. On VirtualBox,
 go to File -&gt; Preferences -&gt; Network -&gt; Host-only Networks, and then
 click on the plus icon.</p>
 <p>Next, before starting your VM, click on Settings -&gt; Network, and
-select &#8220;Host-only Adapter&#8221; under &#8220;Attached to&#8221;. Note that you can
+select “Host-only Adapter” under “Attached to”. Note that you can
 also do this while the VM is running by clicking on the network icon
 on the bottom-left corner of the VM window (the network icon is the one
 with two computers).</p>
@@ -184,7 +180,7 @@ with two computers).</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">service</span> <span class="n">network</span><span class="o">-</span><span class="n">manager</span> <span class="n">stop</span>
 </pre></div>
 </div>
-<p>This will stop Ubuntu&#8217;s Network Manager, which can interfere with
+<p>This will stop Ubuntu’s Network Manager, which can interfere with
 the virtual network devices created by mininet. Note: You will have
 to re-run this commands if you reboot the VM.</p>
 <p>Next, you need to find out what IP address has been assigned to your
@@ -197,14 +193,14 @@ so you should look for an interface with a private IP address, typically
 something like 192.168.56.101. You should
 verify that you can ping this IP address from the host machine.</p>
 <p>Now, when you run chirouter, you must include an <code class="docutils literal"><span class="pre">-s</span></code> option to
-specify that you&#8217;re connecting to POX/mininet on a different machine.
+specify that you’re connecting to POX/mininet on a different machine.
 For example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">chirouter</span> <span class="o">-</span><span class="n">s</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">56.101</span> <span class="o">-</span><span class="n">p</span> <span class="mi">9999</span> <span class="o">-</span><span class="n">r</span> <span class="n">topologies</span><span class="o">/</span><span class="n">basic</span><span class="o">/</span><span class="n">rtable9999</span> <span class="o">-</span><span class="n">vv</span>
 </pre></div>
 </div>
 <p>Note: setting the VM to Host-only Networking will prevent the VM from accessing
 the Internet. If you later on realize you need to access the Internet from the VM,
-just go back to the Network settings and switch the &#8220;Attached to&#8221; option to &#8220;NAT&#8221;.</p>
+just go back to the Network settings and switch the “Attached to” option to “NAT”.</p>
 </div>
 <div class="section" id="common-issues-when-running-the-vm">
 <h2>Common issues when running the VM<a class="headerlink" href="#common-issues-when-running-the-vm" title="Permalink to this headline">¶</a></h2>
@@ -219,8 +215,8 @@ just go back to the Network settings and switch the &#8220;Attached to&#8221; op
 <span class="n">Interface</span><span class="p">:</span>  <span class="n">IConsole</span> <span class="p">{</span><span class="mi">872</span><span class="n">da645</span><span class="o">-</span><span class="mi">4</span><span class="n">a9b</span><span class="o">-</span><span class="mi">1727</span><span class="o">-</span><span class="n">bee2</span><span class="o">-</span><span class="mi">5585105</span><span class="n">b9eed</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>This means that your computer&#8217;s &#8220;virtualization extensions&#8221; (which enables the CPU to efficiently run virtual machines) have not been activated. You can usually activate them by rebooting your computer and going into the BIOS menu (usually by pressing Esc or Shift at boot; if your computer is nice, it will probably tell you exactly what key to press to interrupt the computer&#8217;s bootup and to go into the BIOS menu)</p>
-<p>Once there, you&#8217;ll have to look around for the option to turn on &#8220;VT-X&#8221; or &#8220;VMX&#8221; or some variation of the term &#8220;Virtualization Extensions&#8221;. If you&#8217;re unsure on how to do any of this, try Googling for your computer&#8217;s brand/model along with &#8220;BIOS menu&#8221; or &#8220;virtualization&#8221;. This will likely turn up the appropriate instructions for your machine.</p>
+<p>This means that your computer’s “virtualization extensions” (which enables the CPU to efficiently run virtual machines) have not been activated. You can usually activate them by rebooting your computer and going into the BIOS menu (usually by pressing Esc or Shift at boot; if your computer is nice, it will probably tell you exactly what key to press to interrupt the computer’s bootup and to go into the BIOS menu)</p>
+<p>Once there, you’ll have to look around for the option to turn on “VT-X” or “VMX” or some variation of the term “Virtualization Extensions”. If you’re unsure on how to do any of this, try Googling for your computer’s brand/model along with “BIOS menu” or “virtualization”. This will likely turn up the appropriate instructions for your machine.</p>
 </div>
 <div class="section" id="corrupted-download">
 <h3>Corrupted download<a class="headerlink" href="#corrupted-download" title="Permalink to this headline">¶</a></h3>
@@ -230,7 +226,7 @@ the following:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">md5sum</span> <span class="n">cs233</span><span class="o">-</span><span class="n">win</span><span class="o">-</span><span class="mf">17.</span><span class="n">ova</span>
 </pre></div>
 </div>
-<p>The resulting MD5 hash should match the one shown at the top of this page. If it doesn&#8217;t,
+<p>The resulting MD5 hash should match the one shown at the top of this page. If it doesn’t,
 try re-downloading the file. We recommend using <code class="docutils literal"><span class="pre">wget</span></code> or <code class="docutils literal"><span class="pre">curl</span></code>, which will usually
 deal better with resuming an interrupted download.</p>
 </div>
@@ -249,8 +245,8 @@ deal better with resuming an interrupted download.</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2017, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
     </p>
   </div>
 </footer>

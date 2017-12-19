@@ -1,39 +1,35 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-<title>Syllabus &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+<title>Syllabus &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
-    
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
-    <link rel="next" title="Winter 2017 Course Calendar" href="calendar.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Winter 2018 Course Calendar" href="calendar.html" />
     <link rel="prev" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -41,7 +37,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -108,16 +104,16 @@ end-to-end protocols (UDP, TCP); and other commonly used network
 protocols and techniques.</p>
 <p>In this course, students will learn how to…</p>
 <ul class="simple">
-<li>...implement multithreaded client/server applications using sockets.</li>
-<li>...interpret existing specifications of network protocols, and
+<li>…implement multithreaded client/server applications using sockets.</li>
+<li>…interpret existing specifications of network protocols, and
 translate them into code.</li>
-<li>...design and combine network protocols that form the foundation of the
+<li>…design and combine network protocols that form the foundation of the
 Internet.</li>
-<li>...develop software collaboratively through the use of version control
+<li>…develop software collaboratively through the use of version control
 tools, code reviews, and project management.</li>
 </ul>
 <p>In a nutshell, students will learn how the Internet works. By the end of
-this course, students should understand <em>everything</em> that happens &#8220;under the hood&#8221;
+this course, students should understand <em>everything</em> that happens “under the hood”
 when (for example) a web page is requested, from the moment
 you click on a link in your browser to the moment you get the requested
 page back.</p>
@@ -149,13 +145,12 @@ using POSIX sockets and pthreads.</li>
 <li><strong>chiTCP</strong>: Implementing the Transmission Control Protocol.</li>
 <li><strong>chirouter</strong>: Implementing an Internet router using the <a class="reference external" href="https://github.com/mininet/mininet">Mininet network emulator</a></li>
 </ol>
-<p>Each project is independent from the others. Students registered under the
-undergraduate code (CMSC 23300) will develop these projects in pairs. Project
-groups must be formed by Friday of the first week of the quarter.
+<p>Each project is independent from the others. Students will develop these
+projects in pairs; project groups must be formed by Monday of the
+second week of the quarter.
 Groups can be changed from one project to another. If your partner drops out of
-the course or you feel he/she is not contributing to the group’s effort,
+the course or you feel they are not contributing to the group’s effort,
 you should make the instructor aware of this.</p>
-<p>Students registered for the graduate code (CMSC 33300) will develop these projects individually.</p>
 </div>
 <div class="section" id="discussion-session">
 <h2>Discussion Session<a class="headerlink" href="#discussion-session" title="Permalink to this headline">¶</a></h2>
@@ -172,12 +167,14 @@ impact on your grade, we encourage you to attend them, as they will
 provide you with very valuable pointers on how to do the projects. At
 the very least, one of the two members in each group should plan to
 attend the discussion session each week.</p>
-<p>Please note that the first two discussion sessions will be used to
-provide a refresher on socket programming and concurrent programming,
-respectively. Students who did not take CMSC 15400 in the previous
+<p>Please note there will be a special session on Thursday,
+January 4, from 5:30pm to 8:30pm to provide a refresher on socket
+programming and concurrent programming. Students who did not take CMSC 15400 in the previous
 school year, or who are not comfortable working with sockets or threads
-in C, are <em>strongly</em> encouraged to attend these first two discussion
-sessions.</p>
+in C, are <em>strongly</em> encouraged to attend this review session. However,
+since it takes place outside of regular class/discussion teams, we understand
+that not everyone will be able to make it, and all examples from this
+session will be posted online, as well as pointers to reference materials.</p>
 </div>
 </div>
 <div class="section" id="exams">
@@ -237,7 +234,7 @@ We may also provide a preliminary and non-binding list of grade boundaries.</p>
 </div>
 <div class="section" id="types-of-grades">
 <h2>Types of grades<a class="headerlink" href="#types-of-grades" title="Permalink to this headline">¶</a></h2>
-<p>Students may take this course for a quality grade (a &#8220;letter&#8221; grade) or
+<p>Students may take this course for a quality grade (a “letter” grade) or
 a pass/fail grade. By default, we assume students are taking the class
 for a quality grade. We will honor all requests to withdraw or take the
 class pass/fail <em>before</em> the final exam.</p>
@@ -277,7 +274,7 @@ use two extensions as a pair.</p>
 <p>The University of Chicago has a <a class="reference external" href="http://college.uchicago.edu/advising/academic-integrity-student-conduct">formal policy on academic honesty</a>
 that you are expected to adhere to.</p>
 <p>Additionally, this class has a <strong>ZERO TOLERANCE</strong> policy on plagiarism
-(i.e., handing in someone else&#8217;s work as your own, whether it be work
+(i.e., handing in someone else’s work as your own, whether it be work
 done by another student in the class or available publicly on the Internet).
 If we determine you committed plagiarism, you will receive an F in the
 class and you will be referred to the Dean of Students in the College for
@@ -287,17 +284,17 @@ penalties, up to and including suspension and expulsion.</p>
 just need to make sure you follow these simple rules:</p>
 <ul>
 <li><p class="first"><strong>DO NOT</strong> ask another student in the class to show you or e-mail you
-their code. It doesn&#8217;t matter how you want to use it: even if you just
+their code. It doesn’t matter how you want to use it: even if you just
 want to skim through their solution for inspiration, this is still
-plagiarism. Needless to say, you <strong>MUST NOT</strong> use someone else&#8217;s code
+plagiarism. Needless to say, you <strong>MUST NOT</strong> use someone else’s code
 (with or without their permission) in your own solution.</p>
 </li>
 <li><p class="first">Similarly, <strong>DO NOT</strong> show or share your code with another student in the class.
-If someone in the class asks you to share your code with them, even if you&#8217;re
-certain they won&#8217;t use it and they just want to look at it to get &#8220;unstuck&#8221;,
+If someone in the class asks you to share your code with them, even if you’re
+certain they won’t use it and they just want to look at it to get “unstuck”,
 please point them to this part of the syllabus. <em>Take into account
 that, if you willingly share your code with someone else, you are
-not being a &#8220;Good Samaritan&#8221;: you are an equally guilty
+not being a “Good Samaritan”: you are an equally guilty
 party in a plagiarism offence, and will also receive an F.</em></p>
 </li>
 <li><p class="first"><strong>DO NOT</strong> post your code in publicly-accessible websites, like pastebin,
@@ -324,14 +321,21 @@ class, we will provide as much assistance as we can. Plus, a poor performance in
 one assignment is unlikely to wreck your grade for the class. Plagiarism
 is never worth it.</p>
 <p>All that said, we do encourage a collaborative environment in this class,
-as long as it doesn&#8217;t slip into the realm of plagiarism. If a given
+as long as it doesn’t slip into the realm of plagiarism. If a given
 assignment requires you to work with another student, you may share
 code with that student only for that assignment. You are also welcome
 to <em>discuss</em> aspects of an assignment with other students in the class,
-as long as you don&#8217;t share or write code together. If you have discussed parts of an
-assignment with someone else, then make sure to say so in your
-submission (e.g., in a README file or as a comment at the top of your
-source code file).</p>
+as long as you don’t share or write code together.</p>
+<p>Please note that this also included “whiteboarding”: discussing an assignment with
+other students by sketching out code on a whiteboard <em>may</em> cross the line into
+academic dishonesty (<em>even when using pseudocode</em>). If you do sketch out code on
+a whiteboard, do not take pictures of the code or use the code verbatim in your
+own solution. You should instead focus on using the whiteboard discussion as
+a way to understand the high-level aspects of the problem, and then writing
+your own code from scratch.</p>
+<p>In any case, if you have discussed parts of an assignment with someone else,
+then make sure to say so in your submission (e.g., in a README file or as a
+comment at the top of your source code file).</p>
 <p>Using outside sources is generally acceptable as long as:</p>
 <ol class="arabic simple">
 <li>You cite the source you used.</li>
@@ -340,8 +344,8 @@ source code file).</p>
 to the assignment.</li>
 </ol>
 <p>Furthermore, the use of external libraries is generally allowed on all
-the projects, as long as they don&#8217;t provide networks-related functionality
-that you&#8217;re expected to implement. If you want to be on the safe side,
+the projects, as long as they don’t provide networks-related functionality
+that you’re expected to implement. If you want to be on the safe side,
 you can ask on Piazza whether a given library is ok to use. Please note
 that the following libraries are pre-approved, and you are welcome to use them
 in your projects (in fact, many students have used them in past years):</p>
@@ -380,10 +384,10 @@ without hiding behind a veil of anonymity.</p>
 is your responsibility to check Piazza often to see if there are any
 announcements. Please note that you can configure your Piazza account to
 send you e-mail notifications every time there is a new post on Piazza.
-Just go to your Account Settings, then to Class Settings, click on &#8220;Edit
-Notifications&#8221; under CMSC 23300. We encourage you to select either the
-&#8220;Real Time&#8221; option (get a notification as soon as there are new posts)
-or the &#8220;Smart Digest&#8221; option (get a summary of all the posts sent over
+Just go to your Account Settings, then to Class Settings, click on “Edit
+Notifications” under CMSC 23300. We encourage you to select either the
+“Real Time” option (get a notification as soon as there are new posts)
+or the “Smart Digest” option (get a summary of all the posts sent over
 the last 1-6 hours – you can select the frequency).</p>
 </div>
 <div class="section" id="acknowledgements">
@@ -405,8 +409,8 @@ Prof. Anne Rogers and Prof. Ian Foster from the University of Chicago.</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2017, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
     </p>
   </div>
 </footer>

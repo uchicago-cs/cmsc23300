@@ -1,38 +1,34 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
 <title>CMSC 23300 - Networks and Distributed Systems</title>
 
-    
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Syllabus" href="syllabus.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -40,7 +36,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -92,7 +88,7 @@
 <div class="section" id="announcements">
 <h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>January 2nd, 2017 &#8211; The course website has been updated for Winter 2017.</li>
+<li>December 19th, 2017 – The course website has been updated for Winter 2018.</li>
 </ul>
 </div>
 <div class="section" id="course-staff">
@@ -100,17 +96,11 @@
 <p><strong>Instructor</strong></p>
 <p><a class="reference external" href="http://people.cs.uchicago.edu/~borja/">Borja Sotomayor</a> (<a class="reference external" href="mailto:borja&#37;&#52;&#48;cs&#46;uchicago&#46;edu">borja<span>&#64;</span>cs<span>&#46;</span>uchicago<span>&#46;</span>edu</a>)</p>
 <p><em>Office</em>: Eckhart 120-B</p>
-<p><em>Office hours</em>: After class and by appointment.</p>
+<p><em>Office hours</em>: Tuesdays and Thursdays, 1:30pm-3pm</p>
 <p><strong>TAs</strong></p>
-<p>Jakub Tucholski, Brian Tuan</p>
+<p>Mark Cohen, Geoffrey Owens</p>
 <p>Please do not contact the TAs directly; instead, post your questions on Piazza.</p>
-<p>Office Hours</p>
-<ul class="simple">
-<li>Monday, 1pm-2:30pm (Brian Tuan) in CSIL 4</li>
-<li>Wednesday, 1pm-2:30pm (Brian Tuan) in CSIL 4</li>
-<li>Wednesday, 2:30pm-4pm (Jakub Tucholski) in the computer islands outside CSIL 3+4</li>
-<li>Friday, 2:30pm-4pm (Jakub Tucholski) in CSIL 4</li>
-</ul>
+<p>Office Hours: TBD</p>
 </div>
 <div class="section" id="course-description">
 <h2>Course Description<a class="headerlink" href="#course-description" title="Permalink to this headline">¶</a></h2>
@@ -123,16 +113,16 @@ end-to-end protocols (UDP, TCP); and other commonly used network
 protocols and techniques.</p>
 <p>In this course, students will learn how to…</p>
 <ul class="simple">
-<li>...implement multithreaded client/server applications using sockets.</li>
-<li>...interpret existing specifications of network protocols, and
+<li>…implement multithreaded client/server applications using sockets.</li>
+<li>…interpret existing specifications of network protocols, and
 translate them into code.</li>
-<li>...design and combine network protocols that form the foundation of the
+<li>…design and combine network protocols that form the foundation of the
 Internet.</li>
-<li>...develop software collaboratively through the use of version control
+<li>…develop software collaboratively through the use of version control
 tools, code reviews, and project management.</li>
 </ul>
 <p>In a nutshell, students will learn how the Internet works. By the end of
-this course, students should understand <em>everything</em> that happens &#8220;under the hood&#8221;
+this course, students should understand <em>everything</em> that happens “under the hood”
 when (for example) a web page is requested, from the moment
 you click on a link in your browser to the moment you get the requested
 page back.</p>
@@ -158,8 +148,8 @@ prerequisites for this course.</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2017, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
     </p>
   </div>
 </footer>

@@ -1,39 +1,34 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-<title>Project 1 Tips &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+<title>Project 1 Tips &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
-    
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
-    <link rel="up" title="Projects" href="projects.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Submitting a project" href="submit.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -41,7 +36,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -101,13 +96,13 @@
 <div class="section" id="before-you-get-started">
 <h2>Before you get started<a class="headerlink" href="#before-you-get-started" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Make sure you&#8217;ve read all the pages listed under &#8220;General&#8221; in the main <a class="reference external" href="projects.html">Projects</a>
+<li>Make sure you’ve read all the pages listed under “General” in the main <a class="reference external" href="projects.html">Projects</a>
 page.</li>
 <li>Double-check that your repository has a single <code class="docutils literal"><span class="pre">chirc</span></code> directory in it, and that the chirc
-files are in that directory. If the chirc files (<code class="docutils literal"><span class="pre">README</span></code>, <code class="docutils literal"><span class="pre">src/</span></code>, ...) are in the top
+files are in that directory. If the chirc files (<code class="docutils literal"><span class="pre">README</span></code>, <code class="docutils literal"><span class="pre">src/</span></code>, …) are in the top
 level of your repository, they will not be graded. Make sure you follow the exact instructions
 in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</li>
-<li>Don&#8217;t forget that we are providing you with a <a class="reference external" href="https://github.com/uchicago-cs/cmsc23300/blob/master/samples/chirc/project1a-trivial.c">solution</a>
+<li>Don’t forget that we are providing you with a <a class="reference external" href="https://github.com/uchicago-cs/cmsc23300/blob/master/samples/chirc/project1a-trivial.c">solution</a>
 to Project 1a that will pass nearly half of the tests (but would get a zero in the design portion of
 the code).</li>
 <li>When writing the socket code for your chirc server, make sure you take a look at the
@@ -165,7 +160,7 @@ sample code <a class="reference external" href="https://github.com/uchicago-cs/c
 <p>The IRC protocol is, in some cases, not as well-specified and clear as one would hope (this is,
 unfortunately, a common attribute of many network specifications). If you’re unclear about how your server is meant to behave in some cases (specially the more obscure corner cases of IRC, or the points where the IRC specification is ambiguous), you should take the following steps:</p>
 <ol class="arabic">
-<li><p class="first">Check whether it makes any of our tests fail. If it doesn&#8217;t, your interpretation of the IRC protocol is probably fine. This includes the lack of features: if you&#8217;re not implementing some feature/command/reply/corner case/etc. and it isn&#8217;t covered by our tests, then you probably don&#8217;t need to implement it. The only exception is cases that are explicitly specified in the chirc specification (there are a few that are not covered by our tests).</p>
+<li><p class="first">Check whether it makes any of our tests fail. If it doesn’t, your interpretation of the IRC protocol is probably fine. This includes the lack of features: if you’re not implementing some feature/command/reply/corner case/etc. and it isn’t covered by our tests, then you probably don’t need to implement it. The only exception is cases that are explicitly specified in the chirc specification (there are a few that are not covered by our tests).</p>
 </li>
 <li><p class="first">Take into account that there are literally hundreds of production IRC servers on the Internet that you can log into to test how they’ve interpreted the IRC specification. We suggest using Freenode servers, which you can log into simply by running:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">telnet</span> <span class="n">irc</span><span class="o">.</span><span class="n">freenode</span><span class="o">.</span><span class="n">net</span> <span class="mi">6667</span>
@@ -173,7 +168,7 @@ unfortunately, a common attribute of many network specifications). If you’re u
 </div>
 </li>
 </ol>
-<p>In general, if you replicate the behaviour of a production IRC server, that&#8217;s good enough for us.</p>
+<p>In general, if you replicate the behaviour of a production IRC server, that’s good enough for us.</p>
 <ol class="arabic">
 <li><p class="first">You can also test the command on our reference implementation:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">telnet</span> <span class="n">frost</span><span class="o">.</span><span class="n">cs</span><span class="o">.</span><span class="n">uchicago</span><span class="o">.</span><span class="n">edu</span> <span class="mi">6666</span>
@@ -181,7 +176,7 @@ unfortunately, a common attribute of many network specifications). If you’re u
 </div>
 </li>
 </ol>
-<p>Like a production IRC server, if you replicate the behaviour of our reference implementation, that&#8217;s good enough for us.</p>
+<p>Like a production IRC server, if you replicate the behaviour of our reference implementation, that’s good enough for us.</p>
 </div>
 <div class="section" id="common-issues-in-project-1a">
 <h2>Common Issues in Project 1a<a class="headerlink" href="#common-issues-in-project-1a" title="Permalink to this headline">¶</a></h2>
@@ -197,15 +192,15 @@ unfortunately, a common attribute of many network specifications). If you’re u
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">USER</span>\<span class="mi">0</span><span class="n">user</span>\<span class="mi">0</span><span class="o">*</span>\<span class="mi">0</span><span class="o">*</span>\<span class="mi">0</span><span class="p">:</span><span class="n">User</span>\<span class="mi">0</span>
 </pre></div>
 </div>
-<p>What strtok returns is pointers into that transformed string, not fresh new strings. That means that if you overwrite the original string (e.g., if you wipe out a buffer), the tokens will also be wiped out. Depending on how you&#8217;ve written your solution, you may need to <code class="docutils literal"><span class="pre">strdup</span></code> the tokens.</p>
-<p>For more details, please read the <code class="docutils literal"><span class="pre">strtok</span></code> man page, which explains <code class="docutils literal"><span class="pre">strtok</span></code>&#8216;s internal behavior in detail.</p>
+<p>What strtok returns is pointers into that transformed string, not fresh new strings. That means that if you overwrite the original string (e.g., if you wipe out a buffer), the tokens will also be wiped out. Depending on how you’ve written your solution, you may need to <code class="docutils literal"><span class="pre">strdup</span></code> the tokens.</p>
+<p>For more details, please read the <code class="docutils literal"><span class="pre">strtok</span></code> man page, which explains <code class="docutils literal"><span class="pre">strtok</span></code>’s internal behavior in detail.</p>
 <div class="section" id="error-handling-in-sockets">
 <h3>Error handling in sockets<a class="headerlink" href="#error-handling-in-sockets" title="Permalink to this headline">¶</a></h3>
-<p>Don&#8217;t forget to check the return value of the socket functions. Although this is not something we will likely take point off for, it will indirectly make you lose points because your code is likely to behave strangely if you don&#8217;t react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in 1b and 1c, you will need to &#8220;log out&#8221; the user from the IRC server when that happens).</p>
+<p>Don’t forget to check the return value of the socket functions. Although this is not something we will likely take point off for, it will indirectly make you lose points because your code is likely to behave strangely if you don’t react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in 1b and 1c, you will need to “log out” the user from the IRC server when that happens).</p>
 </div>
 <div class="section" id="general-socket-confusion">
 <h3>General socket confusion<a class="headerlink" href="#general-socket-confusion" title="Permalink to this headline">¶</a></h3>
-<p>For those of you who did not take CMSC 15400 last year, or who did not do well in that class&#8217;s socket assignment, working with sockets in the first Networks project can prove challenging. We recommend you read <a class="reference external" href="http://beej.us/guide/bgnet/">Beej&#8217;s Guide to Network Programming</a> for a more thorough review of sockets.</p>
+<p>For those of you who did not take CMSC 15400 last year, or who did not do well in that class’s socket assignment, working with sockets in the first Networks project can prove challenging. We recommend you read <a class="reference external" href="http://beej.us/guide/bgnet/">Beej’s Guide to Network Programming</a> for a more thorough review of sockets.</p>
 </div>
 </div>
 <div class="section" id="common-issues-in-projects-1b-and-1c">
@@ -227,8 +222,8 @@ any socket that multiple threads could write to. POSIX requires system calls to 
 <div class="section" id="bad-memory-management">
 <h3>Bad memory management<a class="headerlink" href="#bad-memory-management" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Make sure that any block of code you malloc() is also free()&#8217;d.</li>
-<li>Don&#8217;t return pointers to stack-allocated variables (i.e., local function variables). Remember:
+<li>Make sure that any block of code you malloc() is also free()’d.</li>
+<li>Don’t return pointers to stack-allocated variables (i.e., local function variables). Remember:
 stack-allocated variables become invalid after the function returns. Stack-allocated data should
 only be used during the lifetime of a function. So, for example, calling function B from function
 A, and giving B a pointer to a local variable of A is fine. Returning a pointer to a local
@@ -238,12 +233,12 @@ always check whether that pointer is NULL before using it.</li>
 <li>C has a wonderful function called <code class="docutils literal"><span class="pre">strdup</span></code> that will create a copy of a string and malloc
 the exact amount of memory needed for it. You should use this function any time you want to make a
 copy of a string. Take into account that using assignment (=) will create a shallow copy, meaning
-that if the original string is modified (or free()&#8217;d) it will affect the copy too.</li>
+that if the original string is modified (or free()’d) it will affect the copy too.</li>
 </ul>
 </div>
 <div class="section" id="arbitrary-sizes">
 <h3>Arbitrary sizes<a class="headerlink" href="#arbitrary-sizes" title="Permalink to this headline">¶</a></h3>
-<p>Whenever the amount of needed memory is unknown, a common approach is to allocate an arbitrary amount of memory. This is fine, but you should be a little more methodical than just allocating several kilobytes of memory as an arbitrarily large amount. Whenever you allocate an arbitrary amount of memory, you should specify what your assumptions are (e.g., are you assuming that each line of the MOTD file won&#8217;t have more than X characters?) and, ideally, a note on what conditions would make your program crash given that arbitrary limit.</p>
+<p>Whenever the amount of needed memory is unknown, a common approach is to allocate an arbitrary amount of memory. This is fine, but you should be a little more methodical than just allocating several kilobytes of memory as an arbitrarily large amount. Whenever you allocate an arbitrary amount of memory, you should specify what your assumptions are (e.g., are you assuming that each line of the MOTD file won’t have more than X characters?) and, ideally, a note on what conditions would make your program crash given that arbitrary limit.</p>
 </div>
 <div class="section" id="strcat-vs-sprintf">
 <h3><code class="docutils literal"><span class="pre">strcat</span></code> vs <code class="docutils literal"><span class="pre">sprintf</span></code><a class="headerlink" href="#strcat-vs-sprintf" title="Permalink to this headline">¶</a></h3>
@@ -276,8 +271,8 @@ build more complex messages.</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2017, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
     </p>
   </div>
 </footer>

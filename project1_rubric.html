@@ -1,45 +1,41 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-<title>Project 1 Rubric &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+<title>Project 1 Rubric &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
-    
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -113,7 +109,7 @@
 <p>The Completeness component of the grade will be determined by the result of running
 the tests and, more specifically, on the number of points obtained when
 running <code class="docutils literal"><span class="pre">make</span> <span class="pre">grade</span></code> (see <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests">Using the automated tests</a>
-in the chirc documentation and, specifically, the &#8220;Producing a grade report&#8221; section).</p>
+in the chirc documentation and, specifically, the “Producing a grade report” section).</p>
 </div>
 <div class="section" id="correctness">
 <h2>Correctness<a class="headerlink" href="#correctness" title="Permalink to this headline">¶</a></h2>
@@ -127,10 +123,10 @@ using a single lock for your entire server) will result in an 8 point penalty.</
 <ul class="simple">
 <li>Hardcoding reply values that happen to make the tests pass, but which would fail
 under reasonable use cases (e.g., hardcoding the LUSERS values)</li>
-<li>Segfaults that happen under reasonable use cases (i.e., the graders won&#8217;t be
+<li>Segfaults that happen under reasonable use cases (i.e., the graders won’t be
 trying to make your code fail with bizarre corner cases)</li>
 <li>Not implementing something that is clearly specified in the project, even if
-the tests don&#8217;t test for it (e.g., implementing a command almost completely,
+the tests don’t test for it (e.g., implementing a command almost completely,
 but not implementing one of the replies).</li>
 </ul>
 <p>Please note that this section of the rubric will not re-penalize you for a failure
@@ -140,8 +136,8 @@ re-penalize you here.</p>
 </div>
 <div class="section" id="design">
 <h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
-<p>The Design component of the grade will be determined by &#8220;qualities, many of which are intangible,
-that don’t have to do with (and exist to some extent independently of) the correct operation of your code.&#8221;
+<p>The Design component of the grade will be determined by “qualities, many of which are intangible,
+that don’t have to do with (and exist to some extent independently of) the correct operation of your code.”
 (thanks to Adam Shaw for this concise phrasing). Across all three
 parts of the project, we will be looking at least at the following
 (the exact points for each of the parts of the project is specified
@@ -152,10 +148,10 @@ implementation into modules and functions that make sense. This includes avoidin
 repeated/redundant code, ensuring that each function performs a well-defined
 task, and putting related functions in the same module (i.e., the same C file).</li>
 <li><strong>Data structure design</strong>: We will look at whether you have designed (and/or used)
-the right data structures to store your server&#8217;s state.</li>
+the right data structures to store your server’s state.</li>
 <li><strong>Efficiency</strong>: We will look at whether your code is minimally efficient.
 In other words, we are not looking for sublimely efficient code but, rather,
-for the lack of grossly inefficient code. For example, we don&#8217;t care whether
+for the lack of grossly inefficient code. For example, we don’t care whether
 you store your list of channels in a linked list (<span class="math">\(O(n)\)</span> lookup times) or a
 hash table (<span class="math">\(O(1)\)</span> lookup times), but we do care whether you iterate over a list
 in <span class="math">\(O(n^2)\)</span> time when the same task can reasonably be accomplished in
@@ -210,7 +206,7 @@ that would be easier to understand with more code comments, using magic
 numbers, etc.</li>
 <li><strong>General adherence to the style guide</strong> (4 points): The graders will not be
 checking that you follow every minute aspect of our style guide, and occasional
-infractions are ok (and won&#8217;t necessarily be penalized). What we&#8217;re more
+infractions are ok (and won’t necessarily be penalized). What we’re more
 concerned with is that your code, overall, has a <em>consistent</em> style that
 asymptotically approaches the one specified in our style guide.</li>
 </ul>
@@ -227,7 +223,7 @@ some of the above is acceptable. You will not be penalized in those cases.</p>
 <h2>Additional Penalties<a class="headerlink" href="#additional-penalties" title="Permalink to this headline">¶</a></h2>
 <p>We will also apply the following penalties:</p>
 <ul>
-<li><p class="first"><strong>Submitting code that doesn&#8217;t build</strong>: If the graders are able to build your
+<li><p class="first"><strong>Submitting code that doesn’t build</strong>: If the graders are able to build your
 code with a few minor fixes (missing semicolons, parenthesis, etc.),
 we will apply a 15 point penalty. If your code
 requires substantial work to get it to build, you will receive a zero on
@@ -235,10 +231,10 @@ the assignment.</p>
 <p><strong>So, make sure you verify that the version of the code you submitted builds correctly on a CS machine</strong></p>
 </li>
 <li><p class="first"><strong>Grossly incorrect memory management</strong>: Up to 5 point penalty. You should make sure
-to free any memory you malloc, but we will usually not take points off unless you&#8217;ve
-been grossly negligent in your malloc&#8217;ing/freeing. You should also make sure to
-not &#8220;save&#8221; pointers to stack-allocated memory that is going to be deallocated.
-This can happen if you store a pointer to a functions&#8217; local variable in a struct
+to free any memory you malloc, but we will usually not take points off unless you’ve
+been grossly negligent in your malloc’ing/freeing. You should also make sure to
+not “save” pointers to stack-allocated memory that is going to be deallocated.
+This can happen if you store a pointer to a functions’ local variable in a struct
 that is heap-allocated.</p>
 </li>
 </ul>
@@ -257,8 +253,8 @@ that is heap-allocated.</p>
       
     </p>
     <p>
-        &copy; Copyright 2011-2017, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
     </p>
   </div>
 </footer>

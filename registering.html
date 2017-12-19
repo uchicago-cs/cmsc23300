@@ -1,39 +1,34 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-<title>Registering for the projects &mdash; CMSC 23300 - Networks and Distributed Systems</title>
+<title>Registering for the projects &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
-    
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
-    <link rel="up" title="Projects" href="projects.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Uploading the initial code to your repository" href="initial_code.html" />
     <link rel="prev" title="Using Git" href="git.html" />
 <meta charset='utf-8'>
@@ -42,7 +37,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -101,11 +96,11 @@
 <h1>Registering for the projects<a class="headerlink" href="#registering-for-the-projects" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="registering-for-the-first-time">
 <h2>Registering for the first time<a class="headerlink" href="#registering-for-the-first-time" title="Permalink to this headline">¶</a></h2>
-<p>We use a command-line tool called <code class="docutils literal"><span class="pre">chisubmit</span></code> to manage teams and their repositories in this course. Before you can start working on the projects, you will need to register your team with <cite>chisubmit</cite> (this will result in a Git repository being created for your team in our GitLab server). First, choose an empty directory in your CS home directory on which to do your CMSC 23300 work on. Inside that directory, run the following command on a CS Linux machine (or by SSH&#8217;ing into linux.cs.uchicago.edu):</p>
+<p>We use a command-line tool called <code class="docutils literal"><span class="pre">chisubmit</span></code> to manage teams and their repositories in this course. Before you can start working on the projects, you will need to register your team with <cite>chisubmit</cite> (this will result in a Git repository being created for your team in our GitLab server). First, choose an empty directory in your CS home directory on which to do your CMSC 23300 work on. Inside that directory, run the following command on a CS Linux machine (or by SSH’ing into linux.cs.uchicago.edu):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">init</span>
 </pre></div>
 </div>
-<p>When prompted for your &#8220;chisubmit username&#8221; and &#8220;chisubmit password&#8221;, just use your CNetID and password. Once you have entered your username and password, you will be shown a list of courses you belong to in <code class="docutils literal"><span class="pre">chisubmit</span></code>. If CMSC 23300 does not appear in them, you registration information may not have been added to <code class="docutils literal"><span class="pre">chisubmit</span></code> (if you registered for the class recently, please try again in 24 hours; if not, please contact your instructor).</p>
+<p>When prompted for your “chisubmit username” and “chisubmit password”, just use your CNetID and password. Once you have entered your username and password, you will be shown a list of courses you belong to in <code class="docutils literal"><span class="pre">chisubmit</span></code>. If CMSC 23300 does not appear in them, you registration information may not have been added to <code class="docutils literal"><span class="pre">chisubmit</span></code> (if you registered for the class recently, please try again in 24 hours; if not, please contact your instructor).</p>
 <p>After <code class="docutils literal"><span class="pre">chisubmit</span> <span class="pre">init</span></code> runs successfully, you will be able to run <code class="docutils literal"><span class="pre">chisubmit</span></code> commands from inside that directory.</p>
 <p>The first thing you should do is register for the first project (<code class="docutils literal"><span class="pre">p1a</span></code>) as a team. You (<code class="docutils literal"><span class="pre">studentA</span></code>) must run this command:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">register</span> <span class="n">p1a</span> <span class="o">--</span><span class="n">partner</span> <span class="n">studentB</span>
@@ -155,8 +150,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2011-2017, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
     </p>
   </div>
 </footer>
