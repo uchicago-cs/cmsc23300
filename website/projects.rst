@@ -6,6 +6,16 @@ General
 
 Make sure you read the following before working on any of the projects:
 
+* **Supported software environments**: We can only provide support for work performed
+  on a CS Linux machine or using a `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`_
+  (version 201718.3 or higher). If you use any other software environment, it is your
+  responsibility to test your work on a supported environment before submitting your code.
+
+  Note: The CS Virtual Machine is **required** to complete Project 3 (this project uses
+  a network simulator that requires root access on a Linux machine, and the easiest way to
+  provide this to you is through a virtual machine). Even if you don't plan on using the virtual
+  machine for Projects 1 and 2, you may want to ensure (well ahead of Project 3) that
+  you are able to install and use the virtual machine.
 * `Using Git <git.html>`_: If you are unfamiliar with Git, read this first.
 * `Registering for the projects <registering.html>`_: Before you start working on
   each project, there are some steps you need to take to register for each project.
@@ -15,6 +25,8 @@ Make sure you read the following before working on any of the projects:
 * `Submitting a project <submit.html>`_: This page explains how to submit your projects,
   including how to use your extensions.
 * `Style Guide <style_guide.html>`_: Conventions for writing C code in this class.
+
+
 
 
 Project 1: chirc
