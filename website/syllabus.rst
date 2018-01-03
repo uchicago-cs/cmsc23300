@@ -230,7 +230,7 @@ code with that student only for that assignment. You are also welcome
 to *discuss* aspects of an assignment with other students in the class,
 as long as you don't share or write code together. 
 
-Please note that this also included "whiteboarding": discussing an assignment with
+Please note that this also includes "whiteboarding": discussing an assignment with
 other students by sketching out code on a whiteboard *may* cross the line into 
 academic dishonesty (*even when using pseudocode*). If you do sketch out code on
 a whiteboard, do not take pictures of the code or use the code verbatim in your

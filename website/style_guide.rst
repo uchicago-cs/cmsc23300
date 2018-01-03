@@ -38,7 +38,7 @@ Indentation
         
 You must follow one of the following two indent styles:
 
-* `K&R style <https://en.wikipedia.org/wiki/Indent_style#K.26R_style>`_ (you can use any of the variants listed on that page, except BSD KNF), or
+* `K&R style <https://en.wikipedia.org/wiki/Indentation_style#K&R>`_ (you can use any of the variants listed on that page, except BSD KNF), or
 * `Allman style <https://en.wikipedia.org/wiki/Indent_style#Allman_style>`_
 
 Make sure you choose one indent style and use it **consistently**. Please note that you can use `astyle <http://astyle.sourceforge.net/>`_ to take existing code and

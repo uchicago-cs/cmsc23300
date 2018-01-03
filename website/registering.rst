@@ -30,7 +30,7 @@ And you can use this command to check the status of your team (and, in particula
 
 (where ``TEAMNAME`` should be replaced by your team name)
 
-Once you have both registered for the first project (``p1a``), a GitLab repository will be created for you. Please note that there is usually a lag of 10 minutes between completing your registration and having your repository created. 
+Once you have both registered for the first project (``p1a``), a GitLab repository will be created for you. Please note that there is usually a lag of 30-60 minutes between completing your registration and having your repository created. 
 
 Once your repository has been created, *do not initialize or upload anything to your repository*. You should follow the instructions described in `Uploading the initial code to your repository <initial_code.html>`_. 
 

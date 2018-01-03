@@ -5,7 +5,7 @@ Using Git
 
 In many of your previous CS courses, you became familiar with using Subversion (SVN) to handle *revision control* (or *version control*) of your projects and assignments. In this class, we will be using Git instead, which has become the most popular revision control system in the open-source community in recent years. This page provides an overview of Git, and should be enough to get started, specially if you are already familiar with SVN. For a deeper dive into Git, we recommend consulting the `Pro Git <http://git-scm.com/book>`_ book (available for free online).
 
-This page will also guide you through creating a GitHub account, which will allow you to experiment with uploading (or "pushing") your Git repository to a remote repository (and, also, because having a GitHub account is a generally useful thing to do). However, please note that, in this class, we will be using a `GitLab <https://about.gitlab.com/`>_ server run by the CS department. Working with GitLab is fairly similar to working with GitHub, but it is very important that you do not upload any of your code from the projects to your GitHub account!
+This page will also guide you through creating a GitHub account, which will allow you to experiment with uploading (or "pushing") your Git repository to a remote repository (and, also, because having a GitHub account is a generally useful thing to do). However, please note that, in this class, we will be using a `GitLab <https://about.gitlab.com/>`_ server run by the CS department. Working with GitLab is fairly similar to working with GitHub, but it is very important that you do not upload any of your code from the projects to your GitHub account!
 
 Git
 ~~~

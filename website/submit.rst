@@ -44,7 +44,11 @@ By default, chisubmit will create a submission using the latest commit in your r
 
     Are you sure you want to continue? (y/n):
 
-Before you type ``y``, **take a moment to ensure that this commit is the one you actually want to submit**. In particular, if you follow the instructions in the assignment, but there is an error when committing or pushing (e.g., if you encounter a git merge conflict), you may be submitting an older commit (because the last one you tried to do actually failed). If the commit message and date shown by chisubmit don't look right, then you should double-check whether you were able to successfully commit and push your code (a very common mistake is to simply forget to run ``git push``)
+.. warning::
+
+   At this point, a lot of student just press "y" without reading the message printed by chisubmit. **It is your responsibility to ensure that the commit shown by chisubmit is the one you actually want to submit**. By pressing "y", you are agreeing to have your code graded at the specified commit. If you submit the wrong version of your code, we will not accept "I thought I was submitting a different version" as an excuse. Please note that we also provide below several ways to double/triple/quadruple check that your submission was made correctly.
+
+   Please note that a common pitfall is to make all your final changes locally, but then forgetting to push to your repository (or encountering an issue when pushing, such as a merge conflict). chisubmit can only see commits that you have successfully pushed to the GitLab server so, if the commit message and date shown by chisubmit don't look right, then you should double-check whether you were able to successfully commit and push your code
 
 After you type ``y``, you should see the following message::
 
@@ -91,7 +95,25 @@ Please note that, if you click on the commit itself (either the title or the ide
 Re-submitting
 -------------
 
-You can resubmit as many times as you want **before the deadline**. If you make a submission before the deadline, and then realize you want to use an extension, this requires a slightly different process (described below).
+Re-submitting is possible, but can sometimes be tricky because, in some cases, the graders may have already
+started grading your previous submission! So, if you think you may want to resubmit an assignment,
+you have to remember this important rule:
+
+   **If the deadline for an assignment passes, and you have made a submission
+   for that assignment before the deadline, the graders will be able to start grading it!**
+   
+What happens internally is that, once the deadline passes, chisubmit looks at all the submissions
+that have been already made and flags them as "ready for grading". So, when a grader checks
+whether there is any grading assigned to them, your submission will show up on their end.
+   
+Don't worry: if you have extensions to use, there are ways of ensuring that you can re-submit even 
+after the deadline passes, but it requires being careful about what steps you take to do so.
+If you find yourself in that situation, make sure you read the following sections *very carefully*.
+
+For now, let's assume the simplest (and most common) scenario: resubmitting when you have
+no intention of using any extensions. In this case, things become very simple:
+you can resubmit as many times as you want *before the deadline*. Then, once the deadline
+passes, your last submission before the deadline will be the one that the graders will see.
 
 To re-submit before the deadline, just run the submission command like before::
 
@@ -155,7 +177,7 @@ Using extensions
 
 Please make sure you have read and understood the `Late submissions <syllabus.html#late-submissions>`_ section of the syllabus!
 
-If you want to use an extensions, you do not need to ask an instructor for permission and you do not need to notify us of you intention to do so. When you submit, chisubmit will simply determine how many extensions you need to use. For example, if you submit less than 24 hours after the deadline (meaning you only need to use one extensions), chisubmit will include something like this when you run the submission command::
+If you want to use an extension, you do not need to ask an instructor for permission and you do not need to notify us of you intention to do so. When you submit, chisubmit will simply determine how many extensions you need to use. For example, if you submit less than 24 hours after the deadline (meaning you only need to use one extension), chisubmit will include something like this when you run the submission command::
 
     Your team currently has 4 extensions
 
@@ -197,12 +219,17 @@ And the following once you confirm your submission::
     during the grace period, your instructor bring this to your attention.
 
 
-Re-submitting with an extensions
---------------------------------
+Re-submitting with an extension
+-------------------------------
 
-As we said earlier, you can re-submit as many times as you want **before the deadline**. Why do we stress "before the deadline"? If you make a submission, and the deadline passes, chisubmit flags your submission as being ready for grading, which means the graders might start looking at your submission right away. This is why re-submitting after the deadline is a bit trickier.
+As we said earlier, chisubmit flags your submission as being ready for grading once the
+deadline passes, which means the graders might start looking at your submission right away. 
+This is why re-submitting after the deadline is a bit trickier: the graders may have
+already started grading your code.
 
-If you made a submission before the deadline and realize (before the deadline) that you want to use an extension after all, then you need to cancel your submission. That way, chisubmit will not flag it as ready for grading when the deadline passes. Simply run this command::
+If you made a submission before the deadline and realize (before the deadline) that you 
+want to use an extension after all, then you need to cancel your submission. That way, 
+chisubmit will not flag it as ready for grading when the deadline passes. Simply run this comm
 
     chisubmit student assignment cancel-submit p1a
 
@@ -219,7 +246,18 @@ You should see something like this::
 
     Your submission has been cancelled.
 
-Once you've done that, just re-submit *after* the deadline, and chisubmit will apply the necessary extensions.
+Once you've done that, just re-submit *after* the deadline, and chisubmit will apply 
+the necessary extensions.
 
-On the other hand, if you made a submission before the deadline, and then try to either re-submit or cancel the submission *after* the deadline, chisubmit will not allow you to do this. You will need to ask an instructor to cancel your submission manually, which may involve having to tell the graders to discard any grading they have already done on your submission. This is very inconvenient to the graders, so please try to avoid getting into this situation.
+The above command may even work *after* the deadline: if the graders haven't actually
+started grading your code, chisubmit will still allow you to cancel your submission,
+even if the deadline has passed. However, if you plan to resubmit after the deadline,
+you should always aim to cancel your submission before the deadline. 
+
+If you try to cancel it after the deadline, and the graders have started grading your code,
+chisubmit will not allow you to cancel your submission. 
+You will need to ask an instructor to cancel your submission manually,
+which may involve having to tell the graders to discard any grading they have already 
+done on your submission. This is very inconvenient to the graders, so please try to 
+avoid getting into this situation.
 
