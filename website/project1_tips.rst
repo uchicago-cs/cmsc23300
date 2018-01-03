@@ -78,7 +78,7 @@ unfortunately, a common attribute of many network specifications). If you’re u
 
     telnet irc.freenode.net 6667 
 
-In general, if you replicate the behaviour of a production IRC server, that's good enough for us.
+   In general, if you replicate the behaviour of a production IRC server, that's good enough for us.
 
 #. You can also test the command on our reference implementation::
 
@@ -115,7 +115,7 @@ Don't forget to check the return value of the socket functions. Although this is
 General socket confusion
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-For those of you who did not take CMSC 15400 last year, or who did not do well in that class's socket assignment, working with sockets in the first Networks project can prove challenging. We recommend you read `Beej's Guide to Network Programming <http://beej.us/guide/bgnet/>`_ for a more thorough review of sockets.
+For those of you who have not taken CMSC 15400 recently, or who took a version of CMSC 15400 that did not include a socket assignment, working with sockets in the first Networks project can prove challenging. We recommend you read `Beej's Guide to Network Programming <http://beej.us/guide/bgnet/>`_ for a more thorough review of sockets.
 
 
 Common Issues in Projects 1b and 1c

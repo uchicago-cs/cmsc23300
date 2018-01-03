@@ -32,13 +32,6 @@ Make sure you read the following before working on any of the projects:
 Project 1: chirc
 ~~~~~~~~~~~~~~~~
 
-.. admonition:: WARNING: Project 1 has not yet been updated for Winter 2018!
-
-   You can find here the links to the project specification, and other resources,
-   exactly as they were assigned in 2017. You may find them useful to get a sense
-   of what the project will involve, but **DO NOT** work on this project until
-   we tell you to do so, as the project specification may change.
-
 In this project, you will implement a simple Internet Relay Chat (IRC)
 server called chirc. This project has three goals:
 
