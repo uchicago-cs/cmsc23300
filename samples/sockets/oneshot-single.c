@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     socklen_t sinSize = sizeof(struct sockaddr_in);
 
     /* Message we're going to send out */
-    char *msg = "Hello, socket!\n";
+    char *msg = "Hello, socket!";
 
     /* Make sure serverAddr is all zeroes */
     memset(&serverAddr, 0, sizeof(serverAddr));

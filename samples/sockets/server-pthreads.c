@@ -181,7 +181,7 @@ void *accept_clients(void *args)
            so we'll pass the clientSocket as a parameter to the thread. Although we could arguably
            just pass a pointer to clientSocket, it is good practice to use a struct that encapsulates
            the parameters to the thread (even if there is only one parameter). In this case, this is
-           sone with the workerArgs struct. */
+           done with the workerArgs struct. */
         wa = malloc(sizeof(struct workerArgs));
         wa->socket = clientSocket;
 
