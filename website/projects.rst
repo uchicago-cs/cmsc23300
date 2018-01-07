@@ -25,6 +25,7 @@ Make sure you read the following before working on any of the projects:
 * `Submitting a project <submit.html>`_: This page explains how to submit your projects,
   including how to use your extensions.
 * `Style Guide <style_guide.html>`_: Conventions for writing C code in this class.
+* `Asking Effective Questions <questions.html>`_: A guide to asking effective questions on Piazza.
 
 
 
@@ -111,4 +112,12 @@ simulator. If you need to use a virtual machine, please read our
    registering.rst
    initial_code.rst
    submit.rst
+   style_guide.rst
+   questions.rst
    project1_tips.rst
+   project1_rubric.rst
+   project2_tips.rst
+   project2_rubric.rst
+   project3_tips.rst
+   project3_rubric.rst
+   project3_vm.rst
