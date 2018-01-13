@@ -12,7 +12,7 @@ chirc:build:
 chirc:tests:
     stage: test
     script:
-      - make -C chirc/ tests
+      - make -C chirc/ -k tests grade
     dependencies:
       - chirc:build
     artifacts:
