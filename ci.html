@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Continuous Integration &#8212; CMSC 23300 - Networks and Distributed Systems</title>
+
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          CMSC 23300 - Networks and Distributed Systems</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="syllabus.html">Syllabus</a></li>
+                <li><a href="calendar.html">Course Calendar</a></li>
+                <li><a href="resources.html">Additional Resources</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            
+            
+              
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+<div class="row">
+    <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="index.html">CMSC 23300 - Networks and Distributed Systems</a></li>
+            <li class="active">Continuous Integration</li>
+        </ul>
+    </div>
+</div>
+
+    <div class="col-md-12 content">
+      
+  <div class="section" id="continuous-integration">
+<h1>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h1>
+<p>Any time a software project involves more than one software developer (which is pretty much always), there is the potential for one developer to make changes that could break parts of the code that other developers are working on. Most times, the developer is not aware that they’re doing this; they may be focusing on developing and testing only the specific part of the code they were working on, not realizing that their change broke other features in the code (this is often referred to as a <em>regression</em>).</p>
+<p>To address this problem, a common practice is to perform <em>continuous integration</em> (CI): have all developers work on a shared codebase, and have every change to the codebase trigger the running of an extensive set of test cases that cover as much of the code as possible. These tests typically include <em>unit tests</em>, which test whether individual components of the project work correctly, as well as <em>integration tests</em>, which test whether those individual components work correctly <em>together</em>.</p>
+<p>For example, the tests you are provided for chirc are all actually integration tests: while they may seem to tests very specific aspects of the project, they all rely on several components of the project working correctly (if you dig into the test code, you’ll see that they don’t call any of your C functions directly; instead, they launch your chirc executable and communicate with it via a TCP connection). An example of a unit test would be a test that called your IRC message parsing function directly and tested whether it correctly accounted for a number of cases (no parameters, multiple parameters, incorrect commands, etc.)</p>
+<p>The GitLab server we use in this class has a built-in Continuous Integration server, which means it is possible to automatically build your code and run the tests every time you push your code (and accessing the results through the GitLab web interface). This has many advantages:</p>
+<ul class="simple">
+<li>It immediately alerts you to any issues (typically unintended) in your code. Maybe you pushed code that had unresolved Git merge conflicts, or you made a small change that you thought couldn’t possibly break anything (but it did), etc.</li>
+<li>You could have forgotten to add some files to your Git repository. So, it may build correctly on your computer, but not when the code is pulled from scratch from your repository (which is what the graders will do)</li>
+<li>It creates a record of the build/test status of your code. If you need to prove to the instructors that your code was building and/or producing a specific test score, all you need to do is point them to the results of a CI build.</li>
+</ul>
+</div>
+<div class="section" id="using-gitlab-ci">
+<h1>Using GitLab CI<a class="headerlink" href="#using-gitlab-ci" title="Permalink to this headline">¶</a></h1>
+<p>Enabling CI for your repository just requires adding a configuration file called <code class="docutils literal"><span class="pre">.gitlab-ci.yml</span></code> to the root of your repository. We provide ready-to-use files in our course repository: <a class="reference external" href="https://github.com/uchicago-cs/cmsc23300/tree/master/ci">https://github.com/uchicago-cs/cmsc23300/tree/master/ci</a> Please note that you must take the file for the project you’re working on, rename it to <code class="docutils literal"><span class="pre">.gitlab-ci.yml</span></code>, add it to the root of your Git repository (not inside your <code class="docutils literal"><span class="pre">chirc</span></code>, <code class="docutils literal"><span class="pre">chitcp</span></code>, or <code class="docutils literal"><span class="pre">chirouter</span></code> directories), and then commit and push it. After that point, every time you push to your <code class="docutils literal"><span class="pre">master</span></code> branch, it will trigger a build of your code and will run all the tests for that project.</p>
+<p>In GitLab CI, the process of building and testing your code after a push is referred to as a <em>pipeline</em>. You can see the pipelines that have been run for your repository by logging into the GitLab server (<a class="reference external" href="https://mit.cs.uchicago.edu/">https://mit.cs.uchicago.edu/</a>), going to your repository, and clicking on the Pipelines link on the left:</p>
+<img alt="_images/ci-1.png" class="align-center" src="_images/ci-1.png" />
+<p>The above image shows four pipelines: the first (at the bottom) was run with the reference implementation of chirc, so it built correctly and passed all the tests. The next two intentionally cause failures in either the tests or the build, and the fourth one (at the top) fixes those failures. Additionally, you will get an e-mail notification every time a pipeline fails:</p>
+<img alt="_images/ci-2.png" class="align-center" src="_images/ci-2.png" />
+<p>On the web interface, you can can also click on individual stages of the pipeline to access the exact output produced by that stage. this can be useful when trying to determine why a build or a test failed:</p>
+<img alt="_images/ci-3.png" class="align-center" src="_images/ci-3.png" />
+<p>In this case, clicking on “chirc:tests” will lead to another page with the output of that stage:</p>
+<img alt="_images/ci-4.png" src="_images/ci-4.png" />
+</div>
+<div class="section" id="frequently-asked-questions">
+<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
+<p><strong>Can I write my own .gitlab-ci.yml files?</strong></p>
+<p>You are welcome to do so (GitLab CI has a lot of bells and whistles, which you can read about here: <a class="reference external" href="https://docs.gitlab.com/ee/ci/">https://docs.gitlab.com/ee/ci/</a>) However, the <code class="docutils literal"><span class="pre">.gitlab-ci.yml</span></code> files we provide produce “artifacts” (files that are stored in case they need to be further inspected) that we rely on for some things. If you write your own files, please make sure you continue to produce the same artifacts as our files.</p>
+<p><strong>Can I run only a subset of the tests? I’m not going to pass all the tests until I’m done with the project, and I don’t want to get so many failed test notifications!</strong></p>
+<p>The point of doing Continuous Integration is to always run an exhaustive set of tests. Instead of addressing this problem by thinking about how to run fewer tests, you may want to consider doing most of your work on a separate “development” branch of your repository, and only merging to master when you’ve completed a substantial amount of work. You will still get failed test notifications if you’re not passing all of your tests, but if you just pushed a version that passes “all the tests for features X and Y, but not Z”, this allows you to double-check that this is still the case.</p>
+<p>In general, the <code class="docutils literal"><span class="pre">master</span></code> branch should only contain code that builds and passes all the tests (although, in this class, it is also ok for <code class="docutils literal"><span class="pre">master</span></code> to contain code that passes <em>some</em> of the tests). Most of the active development should happen on other branches, merging to <code class="docutils literal"><span class="pre">master</span></code> only when you have completed specific features. If you are unfamiliar with how to use Git branches, we recommend taking a look at <a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>.</p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011-2018, The University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
