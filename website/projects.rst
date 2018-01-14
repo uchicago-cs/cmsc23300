@@ -26,6 +26,7 @@ Make sure you read the following before working on any of the projects:
   including how to use your extensions.
 * `Style Guide <style_guide.html>`_: Conventions for writing C code in this class.
 * `Asking Effective Questions <questions.html>`_: A guide to asking effective questions on Piazza.
+* `Using Continuous Integration <ci.html>`_
 
 
 
