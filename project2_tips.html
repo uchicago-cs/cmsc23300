@@ -163,6 +163,41 @@ you need to check for is whether the <em>advertised window</em> ever becomes zer
 <ul>
 <li><p class="first"><strong>Calling tcp_data_init or tcp_data_free</strong>: You should never call <code class="docutils literal"><span class="pre">tcp_data_init</span></code> or <code class="docutils literal"><span class="pre">tcp_data_free</span></code> from your code. These functions are called by the socket layer (when a socket is created or destroyed), and calling either of them a second time can produce unexpected results.</p>
 </li>
+<li><p class="first"><strong>Worrying about functionality that is handled in the socket or network layers</strong>: Since you are writing a TCP implementation that interacts with both a socket layer and a network layer, it can sometimes be challenging to tell what is the responsibility of each layer. In the past, some students have spent a considerable amount of effort worrying about things that were actually already handled for them in other layers, most notably:</p>
+<ul>
+<li><p class="first"><em>The source/destination ports</em>: You should not set or modify these fields of the TCP header. These
+fields are actually set by <code class="docutils literal"><span class="pre">chitcpd_tcp_packet_create</span></code>, which will look at the ports associated with the socket,
+and will fill in the correct ports in the TCP header. Additionally, none of your code should depend on the
+value of the source/destination ports; the socket layer is in charge of delivering data to the correct process
+(based on the destination port), and is also in charge of assigning
+source ports (either because the port is specified in a call to <code class="docutils literal"><span class="pre">chisocket_bind</span></code> or because one is selected by
+the socket layer in <code class="docutils literal"><span class="pre">chisocket_connect</span></code> when creating an active socket).</p>
+</li>
+<li><p class="first"><em>Reporting errors back to the application layer</em>: RFC 793 specifies, at various points, that certain errors should
+be returned to the application layer. For example, under the <code class="docutils literal"><span class="pre">SEND</span> <span class="pre">Call</span></code> specification (corresponding to chiTCP’s
+<code class="docutils literal"><span class="pre">APPLICATION_SEND</span></code> event), the RFC specifies the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">FIN</span><span class="o">-</span><span class="n">WAIT</span><span class="o">-</span><span class="mi">1</span> <span class="n">STATE</span>
+<span class="n">FIN</span><span class="o">-</span><span class="n">WAIT</span><span class="o">-</span><span class="mi">2</span> <span class="n">STATE</span>
+<span class="n">CLOSING</span> <span class="n">STATE</span>
+<span class="n">LAST</span><span class="o">-</span><span class="n">ACK</span> <span class="n">STATE</span>
+<span class="n">TIME</span><span class="o">-</span><span class="n">WAIT</span> <span class="n">STATE</span>
+
+  <span class="n">Return</span> <span class="s2">&quot;error:  connection closing&quot;</span> <span class="ow">and</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">service</span> <span class="n">request</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This does not mean that your handling of <code class="docutils literal"><span class="pre">APPLICATION_SEND</span></code> in those states should implement some error-handling
+logic. For the most part, these kind of errors are handled either in the socket layer or the network layer. For
+example, in the above case, if an application called <code class="docutils literal"><span class="pre">chisocket_send</span></code> on a socket that was in any of the
+above states, the socket layer would return an error (and this event would never propagate to your state handling
+functions).</p>
+</li>
+<li><p class="first"><em>Passive sockets</em>: The setup and management of passive sockets is handled by the socket layer, including the
+creation of a new active socket when a passive socket receives a SYN packet. The sockets you will deal will
+in your implementation will always be active sockets, resulting either from an <code class="docutils literal"><span class="pre">APPLICATION_CONNECT</span></code> event or
+from a passive socket spawning an active socket after receiving a SYN packet.</p>
+</li>
+</ul>
+</li>
 <li><p class="first"><strong>Not initializing the sequence number in the buffer</strong>: You need to initialize the initial sequence number of the buffers with <code class="docutils literal"><span class="pre">circular_buffer_set_seq_initial</span></code>. If you do not, functions <code class="docutils literal"><span class="pre">circular_buffer_first</span></code> and <code class="docutils literal"><span class="pre">circular_buffer_next</span></code> will return incoherent values.</p>
 <p>Take into account that the initial sequence number of the buffers should be the same as the first sequence number of sendable/received <em>data</em>. So, it would not be exactly ISS/IRS, because those are actually the first “byte” used by the SYN (but which do not represent any actual data). So, you would initialize them to ISS+1 and IRS+1.</p>
 </li>
