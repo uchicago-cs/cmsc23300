@@ -80,7 +80,40 @@ The RTT estimation tests do not contribute to your test grade (the one you get w
 
 Common Pitfalls
 ---------------
+
 * **Calling tcp_data_init or tcp_data_free**: You should never call ``tcp_data_init`` or ``tcp_data_free`` from your code. These functions are called by the socket layer (when a socket is created or destroyed), and calling either of them a second time can produce unexpected results. 
+
+* **Worrying about functionality that is handled in the socket or network layers**: Since you are writing a TCP implementation that interacts with both a socket layer and a network layer, it can sometimes be challenging to tell what is the responsibility of each layer. In the past, some students have spent a considerable amount of effort worrying about things that were actually already handled for them in other layers, most notably:
+
+  * *The source/destination ports*: You should not set or modify these fields of the TCP header. These
+    fields are actually set by ``chitcpd_tcp_packet_create``, which will look at the ports associated with the socket,
+    and will fill in the correct ports in the TCP header. Additionally, none of your code should depend on the
+    value of the source/destination ports; the socket layer is in charge of delivering data to the correct process 
+    (based on the destination port), and is also in charge of assigning
+    source ports (either because the port is specified in a call to ``chisocket_bind`` or because one is selected by
+    the socket layer in ``chisocket_connect`` when creating an active socket).
+  * *Reporting errors back to the application layer*: RFC 793 specifies, at various points, that certain errors should
+    be returned to the application layer. For example, under the ``SEND Call`` specification (corresponding to chiTCP's
+    ``APPLICATION_SEND`` event), the RFC specifies the following::
+
+        FIN-WAIT-1 STATE
+        FIN-WAIT-2 STATE
+        CLOSING STATE
+        LAST-ACK STATE
+        TIME-WAIT STATE
+
+          Return "error:  connection closing" and do not service request.
+
+    This does not mean that your handling of ``APPLICATION_SEND`` in those states should implement some error-handling
+    logic. For the most part, these kind of errors are handled either in the socket layer or the network layer. For
+    example, in the above case, if an application called ``chisocket_send`` on a socket that was in any of the
+    above states, the socket layer would return an error (and this event would never propagate to your state handling
+    functions).
+  * *Passive sockets*: The setup and management of passive sockets is handled by the socket layer, including the
+    creation of a new active socket when a passive socket receives a SYN packet. The sockets you will deal will
+    in your implementation will always be active sockets, resulting either from an ``APPLICATION_CONNECT`` event or
+    from a passive socket spawning an active socket after receiving a SYN packet.
+
 
 * **Not initializing the sequence number in the buffer**: You need to initialize the initial sequence number of the buffers with ``circular_buffer_set_seq_initial``. If you do not, functions ``circular_buffer_first`` and ``circular_buffer_next`` will return incoherent values.
 

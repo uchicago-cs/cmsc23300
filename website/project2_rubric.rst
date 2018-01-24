@@ -31,7 +31,7 @@ check via the automated tests, so a perfect score on the tests is no guarantee
 that you'll also get a high score in this section.
 
 Most penalties in this section are usually because something was implemented
-by rote.For example, it is easy to pass the three-way handshake
+by rote. For example, it is easy to pass the three-way handshake
 by making TCP go into an ESTABLISHED state after receiving two packets (without checking
 whether the first one is a SYN packet, and whether the second one contains a valid ACK).
 In general, making assumptions about the packets you will receive, instead of performing
