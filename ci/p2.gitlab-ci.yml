@@ -1,0 +1,10 @@
+chitcp:build:
+    stage: build
+    script:
+      - cd chitcp/  
+      - ./autogen.sh
+      - ./configure
+      - make 
+      - make tcp-tests
+    only: 
+      - master
