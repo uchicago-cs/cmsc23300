@@ -74,17 +74,6 @@ Make sure you read the `Project 2 rubric <project2_rubric.html>`_ and the `Proje
 Project 3: chirouter
 ~~~~~~~~~~~~~~~~~~~~
 
-.. admonition:: WARNING: Project 3 has not yet been updated for Winter 2018!
-
-   You can find here the links to the project specification, and other resources,
-   exactly as they were assigned in 2017. You may find them useful to get a sense
-   of what the project will involve, but **DO NOT** work on this project until
-   we tell you to do so, as the project specification may change.
-
-   Also, **DO NOT** install last year's virtual machine, as it will undergo
-   major updates for this year. We cannot provide any support on this project
-   if you install an outdated VM.
-
 In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.
 
 The project specification is available `here <http://chi.cs.uchicago.edu/chirouter/>`_.
@@ -93,9 +82,8 @@ Make sure you read the `Project 3 rubric <project3_rubric.html>`_ and the `Proje
 
 Take into account that this project requires using a network simulator that
 needs to be run with root privileges on a Linux machine. If you do not have
-access to such a machine, you can use a virtual machine to run the network
-simulator. If you need to use a virtual machine, please read our 
-`VM instructions <project3_vm.html>`_.
+access to such a machine, you can use the `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`_
+(version 201718.3 or higher) to run the network simulator.
 
 
 .. toctree::
@@ -114,4 +102,3 @@ simulator. If you need to use a virtual machine, please read our
    project2_rubric.rst
    project3_tips.rst
    project3_rubric.rst
-   project3_vm.rst

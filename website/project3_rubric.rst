@@ -15,25 +15,30 @@ This project does not have automated tests, but the graders will be running thro
 commands described in the `Testing your Implementation <http://chi.cs.uchicago.edu/chirouter/testing.html>`_
 page in the chirouter documentation. They will be looking specifically at the following:
 
-* ARP - 25 points
+* ARP - 20 points
 
-  * Responding to ARP requests - 5 points
-  * Sending ARP requests - 5 points
+  * Responding to ARP requests - 2 points
+  * Sending ARP requests - 3 points
   * Processing ARP replies - 5 points
   * Managing Pending ARP Requests - 10 points
 
-* ICMP - 20 points
+* ICMP - 15 points
 
   * Responding to Echo Requests - 5 points
-  * Host Unreachable - 5 points
+  * Host Unreachable - 2 points
   * Time Exceeded - 5 points
-  * Port Unreachable - 5 points
+  * Port Unreachable - 3 points
 
 * IP Forwarding - 15 points
 
   * Basic Forwarding - 5 points
   * Sending withheld frames - 5 points
   * Host Unreachable - 5 points
+
+* Multiple routers - 10 points
+
+  * Two Router topology: 7.5 points
+  * Three Router topology: 2.5 points
  
 While the graders will be basing their score largely on whether your implementation
 produces the expected results when running the commands listed on the chirouter
@@ -46,16 +51,13 @@ Design
 
 The Design component of the grade will be determined by "qualities, many of which are intangible, 
 that don’t have to do with (and exist to some extent independently of) the correct operation of your code."
-(thanks to Adam Shaw for this concise phrasing). Across both
-parts of the project, we will be looking at the following
-(the exact points for each of the parts of the project is specified
-later):
+(thanks to Adam Shaw for this concise phrasing). We will specifically be looking at the following:
 
-* **Function decomposition** : We will look at whether you divided your
+* **Function decomposition** (15 points): We will look at whether you divided your
   implementation into functions that make sense. This includes avoiding
   repeated/redundant code, ensuring that each function performs a well-defined
   task, and putting related functions in the same module (i.e., the same C file).
-* **Efficiency**: We will look at whether your code is minimally efficient.
+* **Efficiency** (5 points): We will look at whether your code is minimally efficient.
   In other words, we are not looking for sublimely efficient code but, rather,
   for the lack of grossly inefficient code. For example, we don't care whether
   you store your list of channels in a linked list (:math:`O(n)` lookup times) or a
@@ -114,7 +116,8 @@ We will also apply the following penalties:
   requires substantial work to get it to build, you will receive a zero on
   the assignment.
 
-  **So, make sure you verify that the version of the code you submitted builds correctly on a CS machine**
+  **So, make sure you verify that the version of the code you submitted builds correctly on a supported
+  software environment** (see the `Projects <projects.html>`_ page for more details on this)
 
 * **Grossly incorrect memory management**: Up to 5 point penalty. You should make sure
   to free any memory you malloc, but we will usually not take points off unless you've

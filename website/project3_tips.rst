@@ -27,8 +27,8 @@ when using the CS Virtual Machine, the ``HOST`` you must specify in the ``--chir
 to ``run-mininet`` is **10.0.2.2**. This is the IP that, from inside the VM, will allow you to connect
 to the host that is running the VM.
 
-Please note that, for this to work, your the Network settings for your VM (in VirtualBox) must indicate that
-"Adapter 1" is attached to **NAT**. If you change this value, it will likely prevent chirouter and mininet
+Please note that, for this to work, the Network settings for your VM (in VirtualBox) must indicate that
+"Adapter 1" is attached to **NAT**. This is the default value but, if you change this value, it will likely prevent chirouter and mininet
 from being able to communicate.
 
 
@@ -94,3 +94,5 @@ Common Pitfalls
 * **Forgetting to use htons, htonl, etc.**: Remember that the values in the protocol headers have to be in *network order*, and
   you must use functions like htons and htonl to convert from host order to network order (and ntohs and ntohl to convert from
   network order to host order)
+
+* **... except with checksums**: The ``cksum`` function already produces a checksum in network order. There is no need to convert it from host order to network order.
