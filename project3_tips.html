@@ -105,26 +105,36 @@ level of your repository, they will not be graded. Make sure you follow the exac
 in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</li>
 </ul>
 </div>
+<div class="section" id="using-the-cs-virtual-machine">
+<h2>Using the CS Virtual Machine<a class="headerlink" href="#using-the-cs-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<p>The mininet network simulator in Project 3 must be run with root privileges
+on a Linux machine. If you do not have access to such a machine, we recommend
+using the <a class="reference external" href="https://howto.cs.uchicago.edu/vm:index">CS Virtual Machine</a> (version 201718.3 or higher)
+to run mininet.</p>
+<p>Take into account that this doesn’t mean you have to do all your development work inside the virtual machine; you
+will be able to continue to use your usual development environment (your laptop,
+a CSIL machine, etc.). You will simply need to follow the instructions on
+“Running chirouter and mininet on separate machines” in the chirouter documentation. Please note that,
+when using the CS Virtual Machine, the <code class="docutils literal"><span class="pre">HOST</span></code> you must specify in the <code class="docutils literal"><span class="pre">--chirouter</span></code> parameter
+to <code class="docutils literal"><span class="pre">run-mininet</span></code> is <strong>10.0.2.2</strong>. This is the IP that, from inside the VM, will allow you to connect
+to the host that is running the VM.</p>
+<p>Please note that, for this to work, the Network settings for your VM (in VirtualBox) must indicate that
+“Adapter 1” is attached to <strong>NAT</strong>. This is the default value but, if you change this value, it will likely prevent chirouter and mininet
+from being able to communicate.</p>
+</div>
 <div class="section" id="resetting-mininet">
 <h2>Resetting Mininet<a class="headerlink" href="#resetting-mininet" title="Permalink to this headline">¶</a></h2>
 <p>If, at any point, Mininet starts behaving in an unexpected manner, specially if you see the following error message
 when running chirouter:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CRITIC</span> <span class="n">Routing</span> <span class="n">table</span> <span class="n">included</span> <span class="n">interface</span> <span class="n">eth1</span><span class="p">,</span> <span class="n">but</span> <span class="n">received</span> <span class="n">no</span> <span class="n">such</span> <span class="n">interface</span> <span class="kn">from</span> <span class="nn">POX</span>
-<span class="n">CRITIC</span> <span class="n">Error</span> <span class="k">while</span> <span class="n">processing</span> <span class="n">POX</span> <span class="n">message</span><span class="o">.</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CRITIC</span> <span class="n">Error</span> <span class="k">while</span> <span class="n">processing</span> <span class="n">POX</span> <span class="n">message</span><span class="o">.</span>
 <span class="n">CRITIC</span> <span class="n">Error</span> <span class="k">while</span> <span class="n">receiving</span> <span class="n">messages</span> <span class="kn">from</span> <span class="nn">POX</span>
 </pre></div>
 </div>
-<p>Try stopping chirouter, POX, and mininet, and then running this:</p>
+<p>Try stopping chirouter and mininet, and then running this:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mn</span> <span class="o">-</span><span class="n">c</span>
 </pre></div>
 </div>
-<p>This will reset Mininet to a clean configuration. Next, try re-running the POX, Mininet, and chirouter commands as usual.</p>
-</div>
-<div class="section" id="bytes">
-<h2>29 bytes?<a class="headerlink" href="#bytes" title="Permalink to this headline">¶</a></h2>
-<p>An ARP message is 28 bytes long, but you may observe that some of your <em>inbound</em> ARP messages are 29 bytes long. You can safely ignore this,
-as long as you only process the first 28 bytes of the ARP message. Take into account that when you generate an ARP message,
-you must make sure it’s 28 bytes long.</p>
+<p>This will reset Mininet to a clean configuration. Next, try re-running the chirouter and mininet commands as usual.</p>
 </div>
 <div class="section" id="unexpected-udp-packets-on-port-67">
 <h2>Unexpected UDP packets on port 67<a class="headerlink" href="#unexpected-udp-packets-on-port-67" title="Permalink to this headline">¶</a></h2>
@@ -167,6 +177,8 @@ and will likely yield an incorrect size. You should manually compute the size of
 <li><p class="first"><strong>Forgetting to use htons, htonl, etc.</strong>: Remember that the values in the protocol headers have to be in <em>network order</em>, and
 you must use functions like htons and htonl to convert from host order to network order (and ntohs and ntohl to convert from
 network order to host order)</p>
+</li>
+<li><p class="first"><strong>… except with checksums</strong>: The <code class="docutils literal"><span class="pre">cksum</span></code> function already produces a checksum in network order. There is no need to convert it from host order to network order.</p>
 </li>
 </ul>
 </div>

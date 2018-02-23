@@ -29,7 +29,6 @@
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Project 3 Virtual Machine" href="project3_vm.html" />
     <link rel="prev" title="Project 3 Tips" href="project3_tips.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -107,24 +106,29 @@ divided into the following components:</p>
 commands described in the <a class="reference external" href="http://chi.cs.uchicago.edu/chirouter/testing.html">Testing your Implementation</a>
 page in the chirouter documentation. They will be looking specifically at the following:</p>
 <ul class="simple">
-<li>ARP - 25 points<ul>
-<li>Responding to ARP requests - 5 points</li>
-<li>Sending ARP requests - 5 points</li>
+<li>ARP - 20 points<ul>
+<li>Responding to ARP requests - 2 points</li>
+<li>Sending ARP requests - 3 points</li>
 <li>Processing ARP replies - 5 points</li>
 <li>Managing Pending ARP Requests - 10 points</li>
 </ul>
 </li>
-<li>ICMP - 20 points<ul>
+<li>ICMP - 15 points<ul>
 <li>Responding to Echo Requests - 5 points</li>
-<li>Host Unreachable - 5 points</li>
+<li>Host Unreachable - 2 points</li>
 <li>Time Exceeded - 5 points</li>
-<li>Port Unreachable - 5 points</li>
+<li>Port Unreachable - 3 points</li>
 </ul>
 </li>
 <li>IP Forwarding - 15 points<ul>
 <li>Basic Forwarding - 5 points</li>
 <li>Sending withheld frames - 5 points</li>
 <li>Host Unreachable - 5 points</li>
+</ul>
+</li>
+<li>Multiple routers - 10 points<ul>
+<li>Two Router topology: 7.5 points</li>
+<li>Three Router topology: 2.5 points</li>
 </ul>
 </li>
 </ul>
@@ -137,16 +141,13 @@ not explicitly captured by the commands, could lead to <em>incorrect</em> behavi
 <h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
 <p>The Design component of the grade will be determined by “qualities, many of which are intangible,
 that don’t have to do with (and exist to some extent independently of) the correct operation of your code.”
-(thanks to Adam Shaw for this concise phrasing). Across both
-parts of the project, we will be looking at the following
-(the exact points for each of the parts of the project is specified
-later):</p>
+(thanks to Adam Shaw for this concise phrasing). We will specifically be looking at the following:</p>
 <ul class="simple">
-<li><strong>Function decomposition</strong> : We will look at whether you divided your
+<li><strong>Function decomposition</strong> (15 points): We will look at whether you divided your
 implementation into functions that make sense. This includes avoiding
 repeated/redundant code, ensuring that each function performs a well-defined
 task, and putting related functions in the same module (i.e., the same C file).</li>
-<li><strong>Efficiency</strong>: We will look at whether your code is minimally efficient.
+<li><strong>Efficiency</strong> (5 points): We will look at whether your code is minimally efficient.
 In other words, we are not looking for sublimely efficient code but, rather,
 for the lack of grossly inefficient code. For example, we don’t care whether
 you store your list of channels in a linked list (<span class="math">\(O(n)\)</span> lookup times) or a
@@ -201,7 +202,8 @@ code with a few minor fixes (missing semicolons, parenthesis, etc.),
 we will apply a 15 point penalty. If your code
 requires substantial work to get it to build, you will receive a zero on
 the assignment.</p>
-<p><strong>So, make sure you verify that the version of the code you submitted builds correctly on a CS machine</strong></p>
+<p><strong>So, make sure you verify that the version of the code you submitted builds correctly on a supported
+software environment</strong> (see the <a class="reference external" href="projects.html">Projects</a> page for more details on this)</p>
 </li>
 <li><p class="first"><strong>Grossly incorrect memory management</strong>: Up to 5 point penalty. You should make sure
 to free any memory you malloc, but we will usually not take points off unless you’ve
