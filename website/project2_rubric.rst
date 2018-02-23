@@ -157,7 +157,8 @@ We will also apply the following penalties:
   requires substantial work to get it to build, you will receive a zero on
   the assignment.
 
-  **So, make sure you verify that the version of the code you submitted builds correctly on a CS machine**
+  **So, make sure you verify that the version of the code you submitted builds correctly on a supported
+  software environment** (see the `Projects <projects.html>`_ page for more details on this)
 
 * **Grossly incorrect memory management**: Up to 5 point penalty. You should make sure
   to free any memory you malloc, but we will usually not take points off unless you've
