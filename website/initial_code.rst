@@ -20,7 +20,6 @@ Preliminaries
         git add README
         git commit -m "Added README"
 
-* The procedure described in this page relies on the ``git subtree`` subcommand. This command was added in Git 1.7.11, so you must use at least that version of Git. Please note that ``git subtree`` *is* available on the CS machines.
 
 Project 1
 ~~~~~~~~~

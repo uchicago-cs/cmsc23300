@@ -60,7 +60,7 @@ DNS
 Network Neutrality
 ~~~~~~~~~~~~~~~~~~
 
-* `Paid Peering, Paid Prioritization, and the Nuance of the Net Neutrality Debate <https://www.benton.org/node/197702>`_
+* `Paid Peering, Paid Prioritization, and the Nuance of the Net Neutrality Debate <https://www.benton.org/node/79432>`_
 * `What Everyone Gets Wrong in the Debate Over Net Neutrality <http://www.wired.com/2014/06/net_neutrality_missing/>`_
 * `Understanding the Level 3-Comcast spat (FAQ) <http://www.cnet.com/news/understanding-the-level-3-comcast-spat-faq/>`_
 * `Comcast and Netflix Reach Deal on Service <http://www.nytimes.com/2014/02/24/business/media/comcast-and-netflix-reach-a-streaming-agreement.html>`_

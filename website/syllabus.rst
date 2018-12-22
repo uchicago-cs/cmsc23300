@@ -58,14 +58,11 @@ provide you with very valuable pointers on how to do the projects. At
 the very least, one of the two members in each group should plan to
 attend the discussion session each week.
 
-Please note there will be a special session on Thursday,
-January 4, from 5:30pm to 8:30pm to provide a refresher on socket 
-programming and concurrent programming. Students who did not take CMSC 15400 in the previous
-school year, or who are not comfortable working with sockets or threads
-in C, are *strongly* encouraged to attend this review session. However,
-since it takes place outside of regular class/discussion teams, we understand
-that not everyone will be able to make it, and all examples from this
-session will be posted online, as well as pointers to reference materials.
+Please note thar the first discussion session will provide a refresher on socket 
+programming (which may or may not have been covered in CMSC 15400 depending
+on when you took it). If you did not cover sockets in CMSC 15400 (or it
+has been a while since you took CMSC 15400), we *strongly* encourage
+you to attend this discussion session.
 
 Exams
 -----
@@ -134,8 +131,9 @@ Types of grades
 
 Students may take this course for a quality grade (a "letter" grade) or
 a pass/fail grade. By default, we assume students are taking the class
-for a quality grade. We will honor all requests to withdraw or take the
-class pass/fail *before* the final exam.
+for a quality grade. We will honor all requests to take the
+class pass/fail *before* the final exam. Requests for withdrawal must
+be submitted to your College advisor.
 
 Note: *Students taking this course to meet general education
 requirements must take the course for a letter grade*.
@@ -174,96 +172,28 @@ use two extensions as a pair.
 Policy on academic honesty
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The University of Chicago has a `formal policy on academic honesty <http://college.uchicago.edu/advising/academic-integrity-student-conduct>`_
-that you are expected to adhere to.
+We take academic honesty **very** seriously in this class. Please make sure to 
+read our `Academic Honesty <academic_honesty.html>`__ page.
 
-Additionally, this class has a **ZERO TOLERANCE** policy on plagiarism
-(i.e., handing in someone else's work as your own, whether it be work
-done by another student in the class or available publicly on the Internet).
-If we determine you committed plagiarism, you will receive an F in the 
-class and you will be referred to the Dean of Students in the College for 
-further adjudication. The College may impose further
-penalties, up to and including suspension and expulsion.
 
-Fortunately, avoiding plagiarism is very simple! For the most part, you
-just need to make sure you follow these simple rules:
+Diversity statement
+~~~~~~~~~~~~~~~~~~~
 
-* **DO NOT** ask another student in the class to show you or e-mail you 
-  their code. It doesn't matter how you want to use it: even if you just
-  want to skim through their solution for inspiration, this is still
-  plagiarism. Needless to say, you **MUST NOT** use someone else's code
-  (with or without their permission) in your own solution.
-* Similarly, **DO NOT** show or share your code with another student in the class.
-  If someone in the class asks you to share your code with them, even if you're
-  certain they won't use it and they just want to look at it to get "unstuck",
-  please point them to this part of the syllabus. *Take into account
-  that, if you willingly share your code with someone else, you are 
-  not being a "Good Samaritan": you are an equally guilty
-  party in a plagiarism offence, and will also receive an F.*
-* **DO NOT** post your code in publicly-accessible websites, like pastebin,
-  a public GitHub repository, GitHub gists, etc. While it can be a convenient 
-  mechanism to share code with an instructor/TA or with a project partner, it 
-  can also expose your code to other students in the class. You are provided
-  with a private repository on our GitLab server, and you should use that repository
-  exclusively to share code with your project partner, or with the instructional
-  staff.
+The University of Chicago is committed to diversity and rigorous inquiry that
+arises from multiple perspectives. We concur with that commitment and also 
+believe that we have the highest quality interactions and can creatively solve 
+more problems when we recognize and share our diversity. We thus expect to 
+maintain a productive learning environment based upon open communication,
+mutual respect, and non-discrimination. We view the diversity that students 
+bring to this class as a resource, strength and benefit. It is our intent 
+to present materials and activities that are respectful of diversity: gender, 
+sexuality, disability, socioeconomic status, ethnicity, race, religious 
+background, and immigration status. Any suggestions as to how to further 
+such a positive and open environment in the class will be appreciated and 
+given serious consideration.
 
-  If you do post your code in a publicly-accessible location, and we find out
-  about it outside of a plagiarism incident, you will just get a warning. However, 
-  if another student in the class uses code that you posted on such a site (even
-  if you did not intend for that code to be used by someone else), you will
-  receive an F in the class.
-* **DO NOT** use code you find on the Internet, except in the very limited
-  cases described below.
-
-We realize that sometimes students commit plagiarism out of desperation
-and as a measure of last resort. If you are in this situation, please
-just ask the instructors for help. If you are having a hard time in the
-class, we will provide as much assistance as we can. Plus, a poor performance in
-one assignment is unlikely to wreck your grade for the class. Plagiarism
-is never worth it.
-
-All that said, we do encourage a collaborative environment in this class,
-as long as it doesn't slip into the realm of plagiarism. If a given
-assignment requires you to work with another student, you may share
-code with that student only for that assignment. You are also welcome
-to *discuss* aspects of an assignment with other students in the class,
-as long as you don't share or write code together. 
-
-Please note that this also includes "whiteboarding": discussing an assignment with
-other students by sketching out code on a whiteboard *may* cross the line into 
-academic dishonesty (*even when using pseudocode*). If you do sketch out code on
-a whiteboard, do not take pictures of the code or use the code verbatim in your
-own solution. You should instead focus on using the whiteboard discussion as
-a way to understand the high-level aspects of the problem, and then writing
-your own code from scratch.
-
-In any case, if you have discussed parts of an assignment with someone else, 
-then make sure to say so in your submission (e.g., in a README file or as a 
-comment at the top of your source code file). 
-
-Using outside sources is generally acceptable as long as:
-
-1. You cite the source you used.
-2. You do not use verbatim blocks of code from that source.
-3. The source does not provide a complete (or nearly complete) solution 
-   to the assignment.
-
-Furthermore, the use of external libraries is generally allowed on all
-the projects, as long as they don't provide networks-related functionality 
-that you're expected to implement. If you want to be on the safe side,
-you can ask on Piazza whether a given library is ok to use. Please note
-that the following libraries are pre-approved, and you are welcome to use them
-in your projects (in fact, many students have used them in past years):
-
-- `simclist <http://mij.oltrelinux.com/devel/simclist/>`_: A C library for Lists
-- `bstring <http://bstring.sourceforge.net/>`_: The Better String Library
-- `uthash <https://troydhanson.github.io/uthash/>`_: A hash table for C structures
-- `utlist <https://troydhanson.github.io/uthash/utlist.html>`_: Another linked list library
-
-Finally, if you have any questions regarding what would or would not be
-considered academic dishonesty in this course, please don’t hesitate to
-ask the instructor.
+If you have a preferred name different from what appears on the class roster, 
+or preferred gender pronouns you would like us to use, please let us know.
 
 Asking questions
 ~~~~~~~~~~~~~~~~
@@ -306,3 +236,14 @@ Acknowledgements
 
 This syllabus is based on previous CMSC 23300/33300 syllabi developed by
 Prof. Anne Rogers and Prof. Ian Foster from the University of Chicago.
+
+Thanks to Tim Black for suggesting the addition of a diversity
+statement in the syllabus (in a different class we co-taught)
+
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   academic_honesty.rst
+

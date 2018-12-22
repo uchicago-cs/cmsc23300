@@ -8,7 +8,7 @@ Make sure you read the following before working on any of the projects:
 
 * **Supported software environments**: We can only provide support for work performed
   on a CS Linux machine or using a `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`_
-  (version 201718.3 or higher). If you use any other software environment, it is your
+  (version 201819.2 or higher). If you use any other software environment, it is your
   responsibility to test your work on a supported environment before submitting your code.
 
   Note: The CS Virtual Machine is **required** to complete Project 3 (this project uses
@@ -25,6 +25,7 @@ Make sure you read the following before working on any of the projects:
 * `Submitting a project <submit.html>`_: This page explains how to submit your projects,
   including how to use your extensions.
 * `Style Guide <style_guide.html>`_: Conventions for writing C code in this class.
+* `The Debugging Guide <https://uchicago-cs.github.io/debugging-guide/>`_: A guide with useful suggestions and pointers on how to debug your C code.
 * `Asking Effective Questions <questions.html>`_: A guide to asking effective questions on Piazza.
 * `Using Continuous Integration <ci.html>`_
 
@@ -33,6 +34,13 @@ Make sure you read the following before working on any of the projects:
 
 Project 1: chirc
 ~~~~~~~~~~~~~~~~
+
+.. admonition:: WARNING: Project 1 has not yet been updated for Winter 2019!
+
+   You can find here the links to the project specification, and other resources,
+   exactly as they were assigned in 2018. You may find them useful to get a sense
+   of what the project will involve, but **DO NOT** work on this project until
+   we tell you to do so, as the project specification may change.
 
 In this project, you will implement a simple Internet Relay Chat (IRC)
 server called chirc. This project has three goals:
@@ -54,6 +62,13 @@ Make sure you read the `Project 1 rubric <project1_rubric.html>`_ and the `Proje
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
 
+.. admonition:: WARNING: Project 2 has not yet been updated for Winter 2019!
+
+   You can find here the links to the project specification, and other resources,
+   exactly as they were assigned in 2018. You may find them useful to get a sense
+   of what the project will involve, but **DO NOT** work on this project until
+   we tell you to do so, as the project specification may change.
+
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -66,7 +81,7 @@ functions have the same expected behaviour as the standard socket functions,
 they do not implement the entire functionality provided by standard sockets
 (e.g., non-blocking sockets are not supported).
 
-The project specification is available `here <http://chi.cs.uchicago.edu/chitcp/>`_.
+The project specification is available `here <http://chi.cs.uchicago.edu/chitcp/>`__.
 
 Make sure you read the `Project 2 rubric <project2_rubric.html>`_ and the `Project 2 tips <project2_tips.html>`_.
 
@@ -74,16 +89,23 @@ Make sure you read the `Project 2 rubric <project2_rubric.html>`_ and the `Proje
 Project 3: chirouter
 ~~~~~~~~~~~~~~~~~~~~
 
+.. admonition:: WARNING: Project 3 has not yet been updated for Winter 2019!
+
+   You can find here the links to the project specification, and other resources,
+   exactly as they were assigned in 2018. You may find them useful to get a sense
+   of what the project will involve, but **DO NOT** work on this project until
+   we tell you to do so, as the project specification may change.
+
 In this project you will be implementing a simple IP router capable of routing IPv4 datagrams between multiple networks. This router will have a static routing table, so you will not have to deal with implementing a routing protocol like RIP or OSPF; instead, the project will focus on the routing of IP datagrams. While, at a high level, this just involves receiving IP datagrams and figuring out what interface they should be sent on, this requires building additional functionality before you can actually start routing IP datagrams.
 
-The project specification is available `here <http://chi.cs.uchicago.edu/chirouter/>`_.
+The project specification is available `here <http://chi.cs.uchicago.edu/chirouter/>`__.
 
 Make sure you read the `Project 3 rubric <project3_rubric.html>`_ and the `Project 3 tips <project3_tips.html>`_.
 
 Take into account that this project requires using a network simulator that
 needs to be run with root privileges on a Linux machine. If you do not have
 access to such a machine, you can use the `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`_
-(version 201718.3 or higher) to run the network simulator.
+(version 201819.2 or higher) to run the network simulator.
 
 
 .. toctree::
@@ -95,6 +117,7 @@ access to such a machine, you can use the `CS Virtual Machine <https://howto.cs.
    initial_code.rst
    submit.rst
    style_guide.rst
+   ci.rst
    questions.rst
    project1_tips.rst
    project1_rubric.rst

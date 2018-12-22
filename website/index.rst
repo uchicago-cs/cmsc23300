@@ -4,7 +4,7 @@ CMSC 23300 - Networks and Distributed Systems
 Announcements
 ~~~~~~~~~~~~~
 
-- December 19th, 2017 -- The course website has been updated for Winter 2018.
+- December 22nd, 2018 -- The course website has been updated for Winter 2019.
 
 Course Staff
 ~~~~~~~~~~~~
@@ -13,17 +13,17 @@ Course Staff
 
 `Borja Sotomayor <http://people.cs.uchicago.edu/~borja/>`_ (borja@cs.uchicago.edu)
 
-*Office*: Eckhart 120-B
+*Office*: Crerar 209
 
-*Office hours*: Tuesdays and Thursdays, 1:30pm-3pm
+*Office hours*: Tuesdays 5pm-6:30pm and Thursdays 2pm-3:30pm
 
 **TAs**
 
-Mark Cohen, Geoffrey Owens
+Mark Cohen, Lydia Filipe
 
 Please do not contact the TAs directly; instead, post your questions on Piazza.
 
-Office Hours: TBD
+*Office hours*: Will be announced on Piazza
 
 
 Course Description
