@@ -3,41 +3,32 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Syllabus &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/chiweb.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Winter 2018 Course Calendar" href="calendar.html" />
+    <link rel="next" title="Academic Honesty" href="academic_honesty.html" />
     <link rel="prev" title="CMSC 23300 - Networks and Distributed Systems" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body>
+  </head><body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -167,14 +158,11 @@ impact on your grade, we encourage you to attend them, as they will
 provide you with very valuable pointers on how to do the projects. At
 the very least, one of the two members in each group should plan to
 attend the discussion session each week.</p>
-<p>Please note there will be a special session on Thursday,
-January 4, from 5:30pm to 8:30pm to provide a refresher on socket
-programming and concurrent programming. Students who did not take CMSC 15400 in the previous
-school year, or who are not comfortable working with sockets or threads
-in C, are <em>strongly</em> encouraged to attend this review session. However,
-since it takes place outside of regular class/discussion teams, we understand
-that not everyone will be able to make it, and all examples from this
-session will be posted online, as well as pointers to reference materials.</p>
+<p>Please note thar the first discussion session will provide a refresher on socket
+programming (which may or may not have been covered in CMSC 15400 depending
+on when you took it). If you did not cover sockets in CMSC 15400 (or it
+has been a while since you took CMSC 15400), we <em>strongly</em> encourage
+you to attend this discussion session.</p>
 </div>
 </div>
 <div class="section" id="exams">
@@ -236,8 +224,9 @@ We may also provide a preliminary and non-binding list of grade boundaries.</p>
 <h2>Types of grades<a class="headerlink" href="#types-of-grades" title="Permalink to this headline">¶</a></h2>
 <p>Students may take this course for a quality grade (a “letter” grade) or
 a pass/fail grade. By default, we assume students are taking the class
-for a quality grade. We will honor all requests to withdraw or take the
-class pass/fail <em>before</em> the final exam.</p>
+for a quality grade. We will honor all requests to take the
+class pass/fail <em>before</em> the final exam. Requests for withdrawal must
+be submitted to your College advisor.</p>
 <p>Note: <em>Students taking this course to meet general education
 requirements must take the course for a letter grade</em>.</p>
 </div>
@@ -271,93 +260,25 @@ use two extensions as a pair.</p>
 </div>
 <div class="section" id="policy-on-academic-honesty">
 <h2>Policy on academic honesty<a class="headerlink" href="#policy-on-academic-honesty" title="Permalink to this headline">¶</a></h2>
-<p>The University of Chicago has a <a class="reference external" href="http://college.uchicago.edu/advising/academic-integrity-student-conduct">formal policy on academic honesty</a>
-that you are expected to adhere to.</p>
-<p>Additionally, this class has a <strong>ZERO TOLERANCE</strong> policy on plagiarism
-(i.e., handing in someone else’s work as your own, whether it be work
-done by another student in the class or available publicly on the Internet).
-If we determine you committed plagiarism, you will receive an F in the
-class and you will be referred to the Dean of Students in the College for
-further adjudication. The College may impose further
-penalties, up to and including suspension and expulsion.</p>
-<p>Fortunately, avoiding plagiarism is very simple! For the most part, you
-just need to make sure you follow these simple rules:</p>
-<ul>
-<li><p class="first"><strong>DO NOT</strong> ask another student in the class to show you or e-mail you
-their code. It doesn’t matter how you want to use it: even if you just
-want to skim through their solution for inspiration, this is still
-plagiarism. Needless to say, you <strong>MUST NOT</strong> use someone else’s code
-(with or without their permission) in your own solution.</p>
-</li>
-<li><p class="first">Similarly, <strong>DO NOT</strong> show or share your code with another student in the class.
-If someone in the class asks you to share your code with them, even if you’re
-certain they won’t use it and they just want to look at it to get “unstuck”,
-please point them to this part of the syllabus. <em>Take into account
-that, if you willingly share your code with someone else, you are
-not being a “Good Samaritan”: you are an equally guilty
-party in a plagiarism offence, and will also receive an F.</em></p>
-</li>
-<li><p class="first"><strong>DO NOT</strong> post your code in publicly-accessible websites, like pastebin,
-a public GitHub repository, GitHub gists, etc. While it can be a convenient
-mechanism to share code with an instructor/TA or with a project partner, it
-can also expose your code to other students in the class. You are provided
-with a private repository on our GitLab server, and you should use that repository
-exclusively to share code with your project partner, or with the instructional
-staff.</p>
-<p>If you do post your code in a publicly-accessible location, and we find out
-about it outside of a plagiarism incident, you will just get a warning. However,
-if another student in the class uses code that you posted on such a site (even
-if you did not intend for that code to be used by someone else), you will
-receive an F in the class.</p>
-</li>
-<li><p class="first"><strong>DO NOT</strong> use code you find on the Internet, except in the very limited
-cases described below.</p>
-</li>
-</ul>
-<p>We realize that sometimes students commit plagiarism out of desperation
-and as a measure of last resort. If you are in this situation, please
-just ask the instructors for help. If you are having a hard time in the
-class, we will provide as much assistance as we can. Plus, a poor performance in
-one assignment is unlikely to wreck your grade for the class. Plagiarism
-is never worth it.</p>
-<p>All that said, we do encourage a collaborative environment in this class,
-as long as it doesn’t slip into the realm of plagiarism. If a given
-assignment requires you to work with another student, you may share
-code with that student only for that assignment. You are also welcome
-to <em>discuss</em> aspects of an assignment with other students in the class,
-as long as you don’t share or write code together.</p>
-<p>Please note that this also includes “whiteboarding”: discussing an assignment with
-other students by sketching out code on a whiteboard <em>may</em> cross the line into
-academic dishonesty (<em>even when using pseudocode</em>). If you do sketch out code on
-a whiteboard, do not take pictures of the code or use the code verbatim in your
-own solution. You should instead focus on using the whiteboard discussion as
-a way to understand the high-level aspects of the problem, and then writing
-your own code from scratch.</p>
-<p>In any case, if you have discussed parts of an assignment with someone else,
-then make sure to say so in your submission (e.g., in a README file or as a
-comment at the top of your source code file).</p>
-<p>Using outside sources is generally acceptable as long as:</p>
-<ol class="arabic simple">
-<li>You cite the source you used.</li>
-<li>You do not use verbatim blocks of code from that source.</li>
-<li>The source does not provide a complete (or nearly complete) solution
-to the assignment.</li>
-</ol>
-<p>Furthermore, the use of external libraries is generally allowed on all
-the projects, as long as they don’t provide networks-related functionality
-that you’re expected to implement. If you want to be on the safe side,
-you can ask on Piazza whether a given library is ok to use. Please note
-that the following libraries are pre-approved, and you are welcome to use them
-in your projects (in fact, many students have used them in past years):</p>
-<ul class="simple">
-<li><a class="reference external" href="http://mij.oltrelinux.com/devel/simclist/">simclist</a>: A C library for Lists</li>
-<li><a class="reference external" href="http://bstring.sourceforge.net/">bstring</a>: The Better String Library</li>
-<li><a class="reference external" href="https://troydhanson.github.io/uthash/">uthash</a>: A hash table for C structures</li>
-<li><a class="reference external" href="https://troydhanson.github.io/uthash/utlist.html">utlist</a>: Another linked list library</li>
-</ul>
-<p>Finally, if you have any questions regarding what would or would not be
-considered academic dishonesty in this course, please don’t hesitate to
-ask the instructor.</p>
+<p>We take academic honesty <strong>very</strong> seriously in this class. Please make sure to
+read our <a class="reference external" href="academic_honesty.html">Academic Honesty</a> page.</p>
+</div>
+<div class="section" id="diversity-statement">
+<h2>Diversity statement<a class="headerlink" href="#diversity-statement" title="Permalink to this headline">¶</a></h2>
+<p>The University of Chicago is committed to diversity and rigorous inquiry that
+arises from multiple perspectives. We concur with that commitment and also
+believe that we have the highest quality interactions and can creatively solve
+more problems when we recognize and share our diversity. We thus expect to
+maintain a productive learning environment based upon open communication,
+mutual respect, and non-discrimination. We view the diversity that students
+bring to this class as a resource, strength and benefit. It is our intent
+to present materials and activities that are respectful of diversity: gender,
+sexuality, disability, socioeconomic status, ethnicity, race, religious
+background, and immigration status. Any suggestions as to how to further
+such a positive and open environment in the class will be appreciated and
+given serious consideration.</p>
+<p>If you have a preferred name different from what appears on the class roster,
+or preferred gender pronouns you would like us to use, please let us know.</p>
 </div>
 <div class="section" id="asking-questions">
 <h2>Asking questions<a class="headerlink" href="#asking-questions" title="Permalink to this headline">¶</a></h2>
@@ -394,6 +315,10 @@ the last 1-6 hours – you can select the frequency).</p>
 <h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
 <p>This syllabus is based on previous CMSC 23300/33300 syllabi developed by
 Prof. Anne Rogers and Prof. Ian Foster from the University of Chicago.</p>
+<p>Thanks to Tim Black for suggesting the addition of a diversity
+statement in the syllabus (in a different class we co-taught)</p>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -410,7 +335,7 @@ Prof. Anne Rogers and Prof. Ian Foster from the University of Chicago.</p>
     </p>
     <p>
         &copy; Copyright 2011-2018, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.<br/>
     </p>
   </div>
 </footer>

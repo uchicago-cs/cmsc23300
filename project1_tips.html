@@ -3,26 +3,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Project 1 Tips &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/chiweb.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -36,8 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body>
+  </head><body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -99,8 +90,8 @@
 <ul class="simple">
 <li>Make sure you’ve read all the pages listed under “General” in the main <a class="reference external" href="projects.html">Projects</a>
 page.</li>
-<li>Double-check that your repository has a single <code class="docutils literal"><span class="pre">chirc</span></code> directory in it, and that the chirc
-files are in that directory. If the chirc files (<code class="docutils literal"><span class="pre">README</span></code>, <code class="docutils literal"><span class="pre">src/</span></code>, …) are in the top
+<li>Double-check that your repository has a single <code class="docutils literal notranslate"><span class="pre">chirc</span></code> directory in it, and that the chirc
+files are in that directory. If the chirc files (<code class="docutils literal notranslate"><span class="pre">README</span></code>, <code class="docutils literal notranslate"><span class="pre">src/</span></code>, …) are in the top
 level of your repository, they will not be graded. Make sure you follow the exact instructions
 in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</li>
 <li>Don’t forget that we are providing you with a <a class="reference external" href="https://github.com/uchicago-cs/cmsc23300/blob/master/samples/chirc/project1a-trivial.c">solution</a>
@@ -164,13 +155,13 @@ unfortunately, a common attribute of many network specifications). If you’re u
 <li><p class="first">Check whether it makes any of our tests fail. If it doesn’t, your interpretation of the IRC protocol is probably fine. This includes the lack of features: if you’re not implementing some feature/command/reply/corner case/etc. and it isn’t covered by our tests, then you probably don’t need to implement it. The only exception is cases that are explicitly specified in the chirc specification (there are a few that are not covered by our tests).</p>
 </li>
 <li><p class="first">Take into account that there are literally hundreds of production IRC servers on the Internet that you can log into to test how they’ve interpreted the IRC specification. We suggest using Freenode servers, which you can log into simply by running:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">telnet</span> <span class="n">irc</span><span class="o">.</span><span class="n">freenode</span><span class="o">.</span><span class="n">net</span> <span class="mi">6667</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">telnet</span> <span class="n">irc</span><span class="o">.</span><span class="n">freenode</span><span class="o">.</span><span class="n">net</span> <span class="mi">6667</span>
 </pre></div>
 </div>
 <p>In general, if you replicate the behaviour of a production IRC server, that’s good enough for us.</p>
 </li>
 <li><p class="first">You can also test the command on our reference implementation:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">telnet</span> <span class="n">frost</span><span class="o">.</span><span class="n">cs</span><span class="o">.</span><span class="n">uchicago</span><span class="o">.</span><span class="n">edu</span> <span class="mi">6666</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">telnet</span> <span class="n">frost</span><span class="o">.</span><span class="n">cs</span><span class="o">.</span><span class="n">uchicago</span><span class="o">.</span><span class="n">edu</span> <span class="mi">6666</span>
 </pre></div>
 </div>
 </li>
@@ -181,18 +172,18 @@ unfortunately, a common attribute of many network specifications). If you’re u
 <h2>Common Issues in Project 1a<a class="headerlink" href="#common-issues-in-project-1a" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="strtok">
-<h2><code class="docutils literal"><span class="pre">strtok</span></code><a class="headerlink" href="#strtok" title="Permalink to this headline">¶</a></h2>
-<p>A common approach to tokenizing IRC commands is to use the standard <code class="docutils literal"><span class="pre">strtok</span></code> function. This is a good approach, but you should take into account that <code class="docutils literal"><span class="pre">strtok</span></code> is not thread-safe and will be the source of inexplicable bugs and race conditions once you start supporting multiple clients. You should use <code class="docutils literal"><span class="pre">strtok_r</span></code> instead (the reentrant version of <code class="docutils literal"><span class="pre">strtok</span></code>).</p>
-<p>Additionally, a common pitfall when using <code class="docutils literal"><span class="pre">strtok</span></code> is to (incorrectly) assume that <code class="docutils literal"><span class="pre">strtok</span></code> returns a fresh new string with each call. That is not the case. Given a string like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">USER</span> <span class="n">user</span> <span class="o">*</span> <span class="o">*</span> <span class="p">:</span><span class="n">User</span>\<span class="mi">0</span>
+<h2><code class="docutils literal notranslate"><span class="pre">strtok</span></code><a class="headerlink" href="#strtok" title="Permalink to this headline">¶</a></h2>
+<p>A common approach to tokenizing IRC commands is to use the standard <code class="docutils literal notranslate"><span class="pre">strtok</span></code> function. This is a good approach, but you should take into account that <code class="docutils literal notranslate"><span class="pre">strtok</span></code> is not thread-safe and will be the source of inexplicable bugs and race conditions once you start supporting multiple clients. You should use <code class="docutils literal notranslate"><span class="pre">strtok_r</span></code> instead (the reentrant version of <code class="docutils literal notranslate"><span class="pre">strtok</span></code>).</p>
+<p>Additionally, a common pitfall when using <code class="docutils literal notranslate"><span class="pre">strtok</span></code> is to (incorrectly) assume that <code class="docutils literal notranslate"><span class="pre">strtok</span></code> returns a fresh new string with each call. That is not the case. Given a string like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">USER</span> <span class="n">user</span> <span class="o">*</span> <span class="o">*</span> <span class="p">:</span><span class="n">User</span>\<span class="mi">0</span>
 </pre></div>
 </div>
 <p>Successive calls to strtok will transform the string in place into this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">USER</span>\<span class="mi">0</span><span class="n">user</span>\<span class="mi">0</span><span class="o">*</span>\<span class="mi">0</span><span class="o">*</span>\<span class="mi">0</span><span class="p">:</span><span class="n">User</span>\<span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">USER</span>\<span class="mi">0</span><span class="n">user</span>\<span class="mi">0</span><span class="o">*</span>\<span class="mi">0</span><span class="o">*</span>\<span class="mi">0</span><span class="p">:</span><span class="n">User</span>\<span class="mi">0</span>
 </pre></div>
 </div>
-<p>What strtok returns is pointers into that transformed string, not fresh new strings. That means that if you overwrite the original string (e.g., if you wipe out a buffer), the tokens will also be wiped out. Depending on how you’ve written your solution, you may need to <code class="docutils literal"><span class="pre">strdup</span></code> the tokens.</p>
-<p>For more details, please read the <code class="docutils literal"><span class="pre">strtok</span></code> man page, which explains <code class="docutils literal"><span class="pre">strtok</span></code>’s internal behavior in detail.</p>
+<p>What strtok returns is pointers into that transformed string, not fresh new strings. That means that if you overwrite the original string (e.g., if you wipe out a buffer), the tokens will also be wiped out. Depending on how you’ve written your solution, you may need to <code class="docutils literal notranslate"><span class="pre">strdup</span></code> the tokens.</p>
+<p>For more details, please read the <code class="docutils literal notranslate"><span class="pre">strtok</span></code> man page, which explains <code class="docutils literal notranslate"><span class="pre">strtok</span></code>’s internal behavior in detail.</p>
 <div class="section" id="error-handling-in-sockets">
 <h3>Error handling in sockets<a class="headerlink" href="#error-handling-in-sockets" title="Permalink to this headline">¶</a></h3>
 <p>Don’t forget to check the return value of the socket functions. Although this is not something we will likely take point off for, it will indirectly make you lose points because your code is likely to behave strangely if you don’t react appropriately to certain error conditions (e.g., a return code of 0 from recv means that the client has disconnected; in 1b and 1c, you will need to “log out” the user from the IRC server when that happens).</p>
@@ -229,7 +220,7 @@ A, and giving B a pointer to a local variable of A is fine. Returning a pointer 
 variable of A, on the other hand, is not.</li>
 <li>If you initialize pointers to NULL (e.g., to indicate the absence of something), make sure you
 always check whether that pointer is NULL before using it.</li>
-<li>C has a wonderful function called <code class="docutils literal"><span class="pre">strdup</span></code> that will create a copy of a string and malloc
+<li>C has a wonderful function called <code class="docutils literal notranslate"><span class="pre">strdup</span></code> that will create a copy of a string and malloc
 the exact amount of memory needed for it. You should use this function any time you want to make a
 copy of a string. Take into account that using assignment (=) will create a shallow copy, meaning
 that if the original string is modified (or free()’d) it will affect the copy too.</li>
@@ -240,20 +231,20 @@ that if the original string is modified (or free()’d) it will affect the copy 
 <p>Whenever the amount of needed memory is unknown, a common approach is to allocate an arbitrary amount of memory. This is fine, but you should be a little more methodical than just allocating several kilobytes of memory as an arbitrarily large amount. Whenever you allocate an arbitrary amount of memory, you should specify what your assumptions are (e.g., are you assuming that each line of the MOTD file won’t have more than X characters?) and, ideally, a note on what conditions would make your program crash given that arbitrary limit.</p>
 </div>
 <div class="section" id="strcat-vs-sprintf">
-<h3><code class="docutils literal"><span class="pre">strcat</span></code> vs <code class="docutils literal"><span class="pre">sprintf</span></code><a class="headerlink" href="#strcat-vs-sprintf" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">strcat</span></code> vs <code class="docutils literal notranslate"><span class="pre">sprintf</span></code><a class="headerlink" href="#strcat-vs-sprintf" title="Permalink to this headline">¶</a></h3>
 <p>In some languages, creating a new string from multiple other substrings is as easy as doing this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;USER &quot;</span>
 <span class="n">s</span> <span class="o">+=</span> <span class="n">username</span>
 <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot; * * &quot;</span>
 <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">user_fullname</span>
 </pre></div>
 </div>
-<p>Some students tend to translate this pattern directly into C by using the <code class="docutils literal"><span class="pre">strcat</span></code> function
+<p>Some students tend to translate this pattern directly into C by using the <code class="docutils literal notranslate"><span class="pre">strcat</span></code> function
 (creating messages and replies by making successive calls to strcat, starting from an empty string).
 Resist the urge to do this: this is very hard to read, and will not scale well once you have to
 build more complex messages.</p>
-<p>Consider using <code class="docutils literal"><span class="pre">sprintf</span></code> instead to create messages and replies.</p>
+<p>Consider using <code class="docutils literal notranslate"><span class="pre">sprintf</span></code> instead to create messages and replies.</p>
 </div>
 </div>
 </div>
@@ -271,7 +262,7 @@ build more complex messages.</p>
     </p>
     <p>
         &copy; Copyright 2011-2018, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.<br/>
     </p>
   </div>
 </footer>

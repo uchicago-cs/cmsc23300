@@ -3,26 +3,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Submitting a project &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/chiweb.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -36,8 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body>
+  </head><body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -97,20 +88,20 @@
 <div class="section" id="preliminaries">
 <h2>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Submissions are made using the <code class="docutils literal"><span class="pre">chisubmit</span></code> tool. Make sure you run these commands from your chisubmit directory
-(the one you initialized with <code class="docutils literal"><span class="pre">chisubmit</span> <span class="pre">init</span></code> as described in <a class="reference external" href="registering.html">Registering for the projects</a>).</li>
-<li>Before making a submission, make sure you have pushed your code to the GitLab server. If your code hasn’t been pushed to GitLab, then <code class="docutils literal"><span class="pre">chisubmit</span></code> will not see it.</li>
+<li>Submissions are made using the <code class="docutils literal notranslate"><span class="pre">chisubmit</span></code> tool. Make sure you run these commands from your chisubmit directory
+(the one you initialized with <code class="docutils literal notranslate"><span class="pre">chisubmit</span> <span class="pre">init</span></code> as described in <a class="reference external" href="registering.html">Registering for the projects</a>).</li>
+<li>Before making a submission, make sure you have pushed your code to the GitLab server. If your code hasn’t been pushed to GitLab, then <code class="docutils literal notranslate"><span class="pre">chisubmit</span></code> will not see it.</li>
 </ul>
 </div>
 <div class="section" id="making-the-submission">
 <h2>Making the submission<a class="headerlink" href="#making-the-submission" title="Permalink to this headline">¶</a></h2>
 <p>To submit a project, simply run the following <strong>BEFORE THE DEADLINE</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">submit</span> <span class="o">&lt;</span><span class="n">assignment</span><span class="o">-</span><span class="nb">id</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">submit</span> <span class="o">&lt;</span><span class="n">assignment</span><span class="o">-</span><span class="nb">id</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Where <code class="docutils literal"><span class="pre">&lt;assignment-id&gt;</span></code> is the project identifier. Your instructor will tell you what identifier to use, but you can also see the list of possible assignment ids by running <code class="docutils literal"><span class="pre">chisubmit</span> <span class="pre">student</span> <span class="pre">assignment</span> <span class="pre">list</span></code>.</p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">&lt;assignment-id&gt;</span></code> is the project identifier. Your instructor will tell you what identifier to use, but you can also see the list of possible assignment ids by running <code class="docutils literal notranslate"><span class="pre">chisubmit</span> <span class="pre">student</span> <span class="pre">assignment</span> <span class="pre">list</span></code>.</p>
 <p>By default, chisubmit will create a submission using the latest commit in your repository. You should see something like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>SUBMISSION FOR ASSIGNMENT p1a (chirc: Part 1)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SUBMISSION FOR ASSIGNMENT p1a (chirc: Part 1)
 ---------------------------------------------
 
 This is a TEAM submission for team amr-borja with the following students:
@@ -140,25 +131,25 @@ Are you sure you want to continue? (y/n):
 <p>At this point, a lot of student just press “y” without reading the message printed by chisubmit. <strong>It is your responsibility to ensure that the commit shown by chisubmit is the one you actually want to submit</strong>. By pressing “y”, you are agreeing to have your code graded at the specified commit. If you submit the wrong version of your code, we will not accept “I thought I was submitting a different version” as an excuse. Please note that we also provide below several ways to double/triple/quadruple check that your submission was made correctly.</p>
 <p class="last">Please note that a common pitfall is to make all your final changes locally, but then forgetting to push to your repository (or encountering an issue when pushing, such as a merge conflict). chisubmit can only see commits that you have successfully pushed to the GitLab server so, if the commit message and date shown by chisubmit don’t look right, then you should double-check whether you were able to successfully commit and push your code</p>
 </div>
-<p>After you type <code class="docutils literal"><span class="pre">y</span></code>, you should see the following message:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Your</span> <span class="n">submission</span> <span class="n">has</span> <span class="n">been</span> <span class="n">completed</span><span class="o">.</span>
+<p>After you type <code class="docutils literal notranslate"><span class="pre">y</span></code>, you should see the following message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Your</span> <span class="n">submission</span> <span class="n">has</span> <span class="n">been</span> <span class="n">completed</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>If you want to submit an earlier commit, use the <code class="docutils literal"><span class="pre">--commit-sha</span></code> option when running chisubmit:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">submit</span> <span class="n">p1a</span> <span class="o">--</span><span class="n">commit</span><span class="o">-</span><span class="n">sha</span> <span class="mf">2e5969</span><span class="n">ce281b88bcb3743dc81539623124e63f41</span>
+<p>If you want to submit an earlier commit, use the <code class="docutils literal notranslate"><span class="pre">--commit-sha</span></code> option when running chisubmit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">submit</span> <span class="n">p1a</span> <span class="o">--</span><span class="n">commit</span><span class="o">-</span><span class="n">sha</span> <span class="mf">2e5969</span><span class="n">ce281b88bcb3743dc81539623124e63f41</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="verifying-that-your-submission-was-made-correctly">
 <h1>Verifying that your submission was made correctly<a class="headerlink" href="#verifying-that-your-submission-was-made-correctly" title="Permalink to this headline">¶</a></h1>
-<p>If you see <code class="docutils literal"><span class="pre">Your</span> <span class="pre">submission</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">completed</span></code>, that means you are all set. If you want to be extra sure, the following command will show you the assignments you are registered for, and their submission status:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">team</span> <span class="n">show</span> <span class="n">TEAMNAME</span>
+<p>If you see <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">submission</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">completed</span></code>, that means you are all set. If you want to be extra sure, the following command will show you the assignments you are registered for, and their submission status:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">team</span> <span class="n">show</span> <span class="n">TEAMNAME</span>
 </pre></div>
 </div>
-<p>(where <code class="docutils literal"><span class="pre">TEAMNAME</span></code> should be replaced by your team name)</p>
+<p>(where <code class="docutils literal notranslate"><span class="pre">TEAMNAME</span></code> should be replaced by your team name)</p>
 <p>If you have not submitted an assignment, you will see something like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ASSIGNMENTS</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ASSIGNMENTS</span>
 <span class="o">-----------</span>
 <span class="n">ID</span><span class="p">:</span> <span class="n">p1a</span>
 <span class="n">Name</span><span class="p">:</span> <span class="n">chirc</span><span class="p">:</span> <span class="n">Part</span> <span class="mi">1</span>
@@ -167,7 +158,7 @@ Are you sure you want to continue? (y/n):
 </pre></div>
 </div>
 <p>If you have submitted the assignment correctly, you will see something like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ASSIGNMENTS</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ASSIGNMENTS</span>
 <span class="o">-----------</span>
 <span class="n">ID</span><span class="p">:</span> <span class="n">p1a</span>
 <span class="n">Name</span><span class="p">:</span> <span class="n">chirc</span><span class="p">:</span> <span class="n">Part</span> <span class="mi">1</span>
@@ -177,7 +168,7 @@ Are you sure you want to continue? (y/n):
 <span class="n">Extensions</span> <span class="n">used</span><span class="p">:</span> <span class="mi">0</span>
 </pre></div>
 </div>
-<p>If you want to be super extra double sure, you can log into the GitLab server (<a class="reference external" href="https://mit.cs.uchicago.edu">https://mit.cs.uchicago.edu</a>), then click on your repository on the right side of the page, then click on “Commits” on the left side of the page. You will see the list of commits that are on the server (this is what the graders will see). On the right side of the page, you will see the first eight characters of each commit’s SHA; find the one that was shown by <code class="docutils literal"><span class="pre">chisubmit</span> <span class="pre">student</span> <span class="pre">team</span> <span class="pre">show</span></code> command, and verify that it is, indeed the version of the code that you want the graders to grade. To do this, simply click on “Browse files” to see the state of the repository at that commit</p>
+<p>If you want to be super extra double sure, you can log into the GitLab server (<a class="reference external" href="https://mit.cs.uchicago.edu">https://mit.cs.uchicago.edu</a>), then click on your repository on the right side of the page, then click on “Commits” on the left side of the page. You will see the list of commits that are on the server (this is what the graders will see). On the right side of the page, you will see the first eight characters of each commit’s SHA; find the one that was shown by <code class="docutils literal notranslate"><span class="pre">chisubmit</span> <span class="pre">student</span> <span class="pre">team</span> <span class="pre">show</span></code> command, and verify that it is, indeed the version of the code that you want the graders to grade. To do this, simply click on “Browse files” to see the state of the repository at that commit</p>
 <p>Please note that, if you click on the commit itself (either the title or the identifier), you will see the changes that were included just in that commit. <em>Don’t be alarmed if you don’t see all your files in your last commit!</em> A Git commit only stores the information of what changed in your repository since the previous commit; to see the complete state of your repository (up to and including a given commit), just click on “Browse files” for that commit in the list of commits.</p>
 </div>
 <div class="section" id="re-submitting">
@@ -199,11 +190,11 @@ no intention of using any extensions. In this case, things become very simple:
 you can resubmit as many times as you want <em>before the deadline</em>. Then, once the deadline
 passes, your last submission before the deadline will be the one that the graders will see.</p>
 <p>To re-submit before the deadline, just run the submission command like before:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">submit</span> <span class="n">p1a</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">submit</span> <span class="n">p1a</span>
 </pre></div>
 </div>
 <p>chisubmit will know that you already made a submission, and will ask you to confirm that you want to create a new submission:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>SUBMISSION FOR ASSIGNMENT p1a (chirc: Part 1)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SUBMISSION FOR ASSIGNMENT p1a (chirc: Part 1)
 ---------------------------------------------
 
 This is a TEAM submission for team amr-borja with the following students:
@@ -255,7 +246,7 @@ Your submission has been completed.
 <h1>Using extensions<a class="headerlink" href="#using-extensions" title="Permalink to this headline">¶</a></h1>
 <p>Please make sure you have read and understood the <a class="reference external" href="syllabus.html#late-submissions">Late submissions</a> section of the syllabus!</p>
 <p>If you want to use an extension, you do not need to ask an instructor for permission and you do not need to notify us of you intention to do so. When you submit, chisubmit will simply determine how many extensions you need to use. For example, if you submit less than 24 hours after the deadline (meaning you only need to use one extension), chisubmit will include something like this when you run the submission command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Your</span> <span class="n">team</span> <span class="n">currently</span> <span class="n">has</span> <span class="mi">4</span> <span class="n">extensions</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Your</span> <span class="n">team</span> <span class="n">currently</span> <span class="n">has</span> <span class="mi">4</span> <span class="n">extensions</span>
 
 <span class="n">You</span> <span class="n">are</span> <span class="n">going</span> <span class="n">to</span> <span class="n">use</span> <span class="mi">1</span> <span class="n">extensions</span> <span class="n">on</span> <span class="n">this</span> <span class="n">submission</span><span class="o">.</span>
 
@@ -263,7 +254,7 @@ Your submission has been completed.
 </pre></div>
 </div>
 <p>To check how many extensions you have left, just run the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">course</span> <span class="n">show</span><span class="o">-</span><span class="n">extensions</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">course</span> <span class="n">show</span><span class="o">-</span><span class="n">extensions</span>
 </pre></div>
 </div>
 <div class="section" id="the-deadline-grace-period">
@@ -274,13 +265,13 @@ Your submission has been completed.
 <li>chisubmit informs the instructors of which students have submitted during the grace period. If we see a team that submits during the grace period for multiple projects, we may begin applying point penalties to any future submissions you make during a grace period.</li>
 </ul>
 <p>When you submit during the grace period, chisubmit will print the following before you confirm your submission:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">NOTE</span><span class="p">:</span> <span class="n">You</span> <span class="n">are</span> <span class="n">submitting</span> <span class="n">after</span> <span class="n">the</span> <span class="n">deadline</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">instructor</span> <span class="n">has</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NOTE</span><span class="p">:</span> <span class="n">You</span> <span class="n">are</span> <span class="n">submitting</span> <span class="n">after</span> <span class="n">the</span> <span class="n">deadline</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">instructor</span> <span class="n">has</span>
 <span class="n">allowed</span> <span class="n">some</span> <span class="n">extra</span> <span class="n">time</span> <span class="n">after</span> <span class="n">the</span> <span class="n">deadline</span> <span class="k">for</span> <span class="n">students</span> <span class="n">to</span> <span class="n">submit</span>
 <span class="n">without</span> <span class="n">having</span> <span class="n">to</span> <span class="n">consume</span> <span class="n">an</span> <span class="n">extension</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>And the following once you confirm your submission:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>Your submission has been completed.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Your submission has been completed.
 
 Your submission was made during the deadline&#39;s grace period. This means
 that, although your submission was technically made *after* the
@@ -307,7 +298,7 @@ chisubmit will not flag it as ready for grading when the deadline passes. Simply
 <blockquote>
 <div>chisubmit student assignment cancel-submit p1a</div></blockquote>
 <p>You should see something like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>This is your existing submission for assignment p1a:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>This is your existing submission for assignment p1a:
 
       Commit: 5b485c80fad76d02df675044b6b4c6c0d32b4ae8
         Date: 2017-01-09 19:17:56
@@ -346,7 +337,7 @@ avoid getting into this situation.</p>
     </p>
     <p>
         &copy; Copyright 2011-2018, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.<br/>
     </p>
   </div>
 </footer>

@@ -3,26 +3,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Project 1 Rubric &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/chiweb.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -36,8 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body>
+  </head><body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -111,7 +102,7 @@
 <h2>Completeness<a class="headerlink" href="#completeness" title="Permalink to this headline">¶</a></h2>
 <p>The Completeness component of the grade will be determined by the result of running
 the tests and, more specifically, on the number of points obtained when
-running <code class="docutils literal"><span class="pre">make</span> <span class="pre">grade</span></code> (see <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests">Using the automated tests</a>
+running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">grade</span></code> (see <a class="reference external" href="http://chi.cs.uchicago.edu/chirc/testing.html#using-the-automated-tests">Using the automated tests</a>
 in the chirc documentation and, specifically, the “Producing a grade report” section).</p>
 </div>
 <div class="section" id="correctness">
@@ -155,10 +146,10 @@ the right data structures to store your server’s state.</li>
 <li><strong>Efficiency</strong>: We will look at whether your code is minimally efficient.
 In other words, we are not looking for sublimely efficient code but, rather,
 for the lack of grossly inefficient code. For example, we don’t care whether
-you store your list of channels in a linked list (<span class="math">\(O(n)\)</span> lookup times) or a
-hash table (<span class="math">\(O(1)\)</span> lookup times), but we do care whether you iterate over a list
-in <span class="math">\(O(n^2)\)</span> time when the same task can reasonably be accomplished in
-<span class="math">\(O(n)\)</span> time (i.e., when the <span class="math">\(O(n)\)</span> is not particularly clever or relies
+you store your list of channels in a linked list (<span class="math notranslate nohighlight">\(O(n)\)</span> lookup times) or a
+hash table (<span class="math notranslate nohighlight">\(O(1)\)</span> lookup times), but we do care whether you iterate over a list
+in <span class="math notranslate nohighlight">\(O(n^2)\)</span> time when the same task can reasonably be accomplished in
+<span class="math notranslate nohighlight">\(O(n)\)</span> time (i.e., when the <span class="math notranslate nohighlight">\(O(n)\)</span> is not particularly clever or relies
 on some obscure algorithm).</li>
 </ul>
 <p>In Project 1a, we will be looking at the following:</p>
@@ -258,7 +249,7 @@ that is heap-allocated.</p>
     </p>
     <p>
         &copy; Copyright 2011-2018, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.<br/>
     </p>
   </div>
 </footer>

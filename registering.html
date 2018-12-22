@@ -3,26 +3,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Registering for the projects &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/chiweb.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -36,8 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body>
+  </head><body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -96,45 +87,45 @@
 <h1>Registering for the projects<a class="headerlink" href="#registering-for-the-projects" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="registering-for-the-first-time">
 <h2>Registering for the first time<a class="headerlink" href="#registering-for-the-first-time" title="Permalink to this headline">¶</a></h2>
-<p>We use a command-line tool called <code class="docutils literal"><span class="pre">chisubmit</span></code> to manage teams and their repositories in this course. Before you can start working on the projects, you will need to register your team with <cite>chisubmit</cite> (this will result in a Git repository being created for your team in our GitLab server). First, choose an empty directory in your CS home directory on which to do your CMSC 23300 work on. Inside that directory, run the following command on a CS Linux machine (or by SSH’ing into linux.cs.uchicago.edu):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">init</span>
+<p>We use a command-line tool called <code class="docutils literal notranslate"><span class="pre">chisubmit</span></code> to manage teams and their repositories in this course. Before you can start working on the projects, you will need to register your team with <cite>chisubmit</cite> (this will result in a Git repository being created for your team in our GitLab server). First, choose an empty directory in your CS home directory on which to do your CMSC 23300 work on. Inside that directory, run the following command on a CS Linux machine (or by SSH’ing into linux.cs.uchicago.edu):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">init</span>
 </pre></div>
 </div>
-<p>When prompted for your “chisubmit username” and “chisubmit password”, just use your CNetID and password. Once you have entered your username and password, you will be shown a list of courses you belong to in <code class="docutils literal"><span class="pre">chisubmit</span></code>. If CMSC 23300 does not appear in them, you registration information may not have been added to <code class="docutils literal"><span class="pre">chisubmit</span></code> (if you registered for the class recently, please try again in 24 hours; if not, please contact your instructor).</p>
-<p>After <code class="docutils literal"><span class="pre">chisubmit</span> <span class="pre">init</span></code> runs successfully, you will be able to run <code class="docutils literal"><span class="pre">chisubmit</span></code> commands from inside that directory.</p>
-<p>The first thing you should do is register for the first project (<code class="docutils literal"><span class="pre">p1a</span></code>) as a team. You (<code class="docutils literal"><span class="pre">studentA</span></code>) must run this command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">register</span> <span class="n">p1a</span> <span class="o">--</span><span class="n">partner</span> <span class="n">studentB</span>
+<p>When prompted for your “chisubmit username” and “chisubmit password”, just use your CNetID and password. Once you have entered your username and password, you will be shown a list of courses you belong to in <code class="docutils literal notranslate"><span class="pre">chisubmit</span></code>. If CMSC 23300 does not appear in them, you registration information may not have been added to <code class="docutils literal notranslate"><span class="pre">chisubmit</span></code> (if you registered for the class recently, please try again in 24 hours; if not, please contact your instructor).</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">chisubmit</span> <span class="pre">init</span></code> runs successfully, you will be able to run <code class="docutils literal notranslate"><span class="pre">chisubmit</span></code> commands from inside that directory.</p>
+<p>The first thing you should do is register for the first project (<code class="docutils literal notranslate"><span class="pre">p1a</span></code>) as a team. You (<code class="docutils literal notranslate"><span class="pre">studentA</span></code>) must run this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">register</span> <span class="n">p1a</span> <span class="o">--</span><span class="n">partner</span> <span class="n">studentB</span>
 </pre></div>
 </div>
-<p>And your partner (<code class="docutils literal"><span class="pre">studentB</span></code>) must run this command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">register</span> <span class="n">p1a</span> <span class="o">--</span><span class="n">partner</span> <span class="n">studentA</span>
+<p>And your partner (<code class="docutils literal notranslate"><span class="pre">studentB</span></code>) must run this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">register</span> <span class="n">p1a</span> <span class="o">--</span><span class="n">partner</span> <span class="n">studentA</span>
 </pre></div>
 </div>
-<p>You will be assigned a team name which will be composed of your CNetIDs (e.g., in this case, the team name would be <code class="docutils literal"><span class="pre">studentA-studentB</span></code>. You can see the list of teams you are in with this command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">team</span> <span class="nb">list</span>
+<p>You will be assigned a team name which will be composed of your CNetIDs (e.g., in this case, the team name would be <code class="docutils literal notranslate"><span class="pre">studentA-studentB</span></code>. You can see the list of teams you are in with this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">team</span> <span class="nb">list</span>
 </pre></div>
 </div>
 <p>And you can use this command to check the status of your team (and, in particular, whether your partner has completed their part of the registration):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">team</span> <span class="n">show</span> <span class="n">TEAMNAME</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">team</span> <span class="n">show</span> <span class="n">TEAMNAME</span>
 </pre></div>
 </div>
-<p>(where <code class="docutils literal"><span class="pre">TEAMNAME</span></code> should be replaced by your team name)</p>
-<p>Once you have both registered for the first project (<code class="docutils literal"><span class="pre">p1a</span></code>), a GitLab repository will be created for you. Please note that there is usually a lag of 30-60 minutes between completing your registration and having your repository created.</p>
+<p>(where <code class="docutils literal notranslate"><span class="pre">TEAMNAME</span></code> should be replaced by your team name)</p>
+<p>Once you have both registered for the first project (<code class="docutils literal notranslate"><span class="pre">p1a</span></code>), a GitLab repository will be created for you. Please note that there is usually a lag of 30-60 minutes between completing your registration and having your repository created.</p>
 <p>Once your repository has been created, <em>do not initialize or upload anything to your repository</em>. You should follow the instructions described in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</p>
 </div>
 <div class="section" id="registering-for-subsequent-projects">
 <h2>Registering for subsequent projects<a class="headerlink" href="#registering-for-subsequent-projects" title="Permalink to this headline">¶</a></h2>
-<p>Once you have registered for the first project, and your team repository has been created, you will need to register for the other projects too (otherwise, you will not be able to submit them). However, you do not need to repeat all the steps described above. If you are working with the same partner, all you (<code class="docutils literal"><span class="pre">studentA</span></code>) has to do is run the following command from your chisubmit directory (the one you initialized with <cite>chisubmit init</cite>):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">register</span> <span class="n">PROJECT_ID</span> <span class="o">--</span><span class="n">partner</span> <span class="n">studentB</span>
+<p>Once you have registered for the first project, and your team repository has been created, you will need to register for the other projects too (otherwise, you will not be able to submit them). However, you do not need to repeat all the steps described above. If you are working with the same partner, all you (<code class="docutils literal notranslate"><span class="pre">studentA</span></code>) has to do is run the following command from your chisubmit directory (the one you initialized with <cite>chisubmit init</cite>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">register</span> <span class="n">PROJECT_ID</span> <span class="o">--</span><span class="n">partner</span> <span class="n">studentB</span>
 </pre></div>
 </div>
-<p>Where <code class="docutils literal"><span class="pre">PROJECT_ID</span></code> should be replaced with the project you are registering for (<code class="docutils literal"><span class="pre">p1b</span></code>, <code class="docutils literal"><span class="pre">p1c</span></code>, <code class="docutils literal"><span class="pre">p2a</span></code>, <code class="docutils literal"><span class="pre">p2b</span></code>, or <code class="docutils literal"><span class="pre">p3</span></code>). Your partner, <code class="docutils literal"><span class="pre">studentB</span></code>, does not need to run the equivalent command (since you are both already confirmed to be working together).</p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">PROJECT_ID</span></code> should be replaced with the project you are registering for (<code class="docutils literal notranslate"><span class="pre">p1b</span></code>, <code class="docutils literal notranslate"><span class="pre">p1c</span></code>, <code class="docutils literal notranslate"><span class="pre">p2a</span></code>, <code class="docutils literal notranslate"><span class="pre">p2b</span></code>, or <code class="docutils literal notranslate"><span class="pre">p3</span></code>). Your partner, <code class="docutils literal notranslate"><span class="pre">studentB</span></code>, does not need to run the equivalent command (since you are both already confirmed to be working together).</p>
 <p>We suggest you register for an assignment as soon as you know you will be working on it (i.e., do not wait until right before the deadline). This way, the instructor will know what teams are working on what projects.</p>
 <p>Finally, please make sure your project partner wants to continue working with you before registering your team again. If you want to cancel your registration for a given assignment, just run the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">cancel</span><span class="o">-</span><span class="n">registration</span> <span class="n">PROJECT_ID</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chisubmit</span> <span class="n">student</span> <span class="n">assignment</span> <span class="n">cancel</span><span class="o">-</span><span class="n">registration</span> <span class="n">PROJECT_ID</span>
 </pre></div>
 </div>
-<p>If you decide to switch to a different team for one of the projects, then both you and your new partner will have to run the <code class="docutils literal"><span class="pre">chisubmit</span> <span class="pre">student</span> <span class="pre">assignment</span> <span class="pre">register</span></code> command, and you must wait for a shared repository to be created for your team.</p>
+<p>If you decide to switch to a different team for one of the projects, then both you and your new partner will have to run the <code class="docutils literal notranslate"><span class="pre">chisubmit</span> <span class="pre">student</span> <span class="pre">assignment</span> <span class="pre">register</span></code> command, and you must wait for a shared repository to be created for your team.</p>
 </div>
 </div>
 
@@ -151,7 +142,7 @@
     </p>
     <p>
         &copy; Copyright 2011-2018, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.<br/>
     </p>
   </div>
 </footer>

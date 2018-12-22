@@ -3,26 +3,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Project 2 Tips &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/chiweb.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -36,8 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body>
+  </head><body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -99,8 +90,8 @@
 <ul class="simple">
 <li>Make sure you’ve read all the pages listed under “General” in the main <a class="reference external" href="projects.html">Projects</a>
 page.</li>
-<li>Double-check that your repository has a single <code class="docutils literal"><span class="pre">chitcp</span></code> directory in it, and that the chiTCP
-files are in that directory. If the chiTCP files (<code class="docutils literal"><span class="pre">README</span></code>, <code class="docutils literal"><span class="pre">src/</span></code>, …) are in the top
+<li>Double-check that your repository has a single <code class="docutils literal notranslate"><span class="pre">chitcp</span></code> directory in it, and that the chiTCP
+files are in that directory. If the chiTCP files (<code class="docutils literal notranslate"><span class="pre">README</span></code>, <code class="docutils literal notranslate"><span class="pre">src/</span></code>, …) are in the top
 level of your repository, they will not be graded. Make sure you follow the exact instructions
 in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</li>
 </ul>
@@ -126,8 +117,8 @@ of zero bytes (a common way of dealing with this is by sending
 <a class="reference external" href="http://www.tcpipguide.com/free/t_TCPWindowManagementIssues-3.htm">probe segments</a>). So, if a host does advertise
 a window with zero bytes, your TCP may get stuck. The tests are designed to avoid, as much as possible, this situation,
 but it may still arise (and will do so sporadically, since it requires a specific sequence of events to happen). We
-suggest you add something like this wherever you update the <code class="docutils literal"><span class="pre">SND_WND</span></code> variable:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">tcp_data</span><span class="o">-&gt;</span><span class="n">SND_WND</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+suggest you add something like this wherever you update the <code class="docutils literal notranslate"><span class="pre">SND_WND</span></code> variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">tcp_data</span><span class="o">-&gt;</span><span class="n">SND_WND</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">chilog</span><span class="p">(</span><span class="n">CRITICAL</span><span class="p">,</span> <span class="s2">&quot;Zero window received. TCP may become stuck.&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -140,9 +131,9 @@ you need to check for is whether the <em>advertised window</em> ever becomes zer
 </div>
 <div class="section" id="origin-of-log-messages">
 <h2>Origin of log messages<a class="headerlink" href="#origin-of-log-messages" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">tcp-socket-N</span></code> log messages originate in your TCP thread (where <code class="docutils literal"><span class="pre">N</span></code> is the socket number)</p>
-<p><code class="docutils literal"><span class="pre">socket-layer-N</span></code> log messages originate in the socket layer of the protocol stack (the one that handles send(), recv(), connect(), etc.). The socket layer is the one that calls your <code class="docutils literal"><span class="pre">tcp_data_init</span></code> function so, in the second part of the project, your timer thread will inherit the same name unless you specifically set a new name for the timer thread. To make your logs clearer, you can do so by setting the name of the timer thread with this code (at the start of the timer thread function):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">char</span> <span class="n">thread_name</span><span class="p">[</span><span class="mi">17</span><span class="p">];</span>
+<p><code class="docutils literal notranslate"><span class="pre">tcp-socket-N</span></code> log messages originate in your TCP thread (where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the socket number)</p>
+<p><code class="docutils literal notranslate"><span class="pre">socket-layer-N</span></code> log messages originate in the socket layer of the protocol stack (the one that handles send(), recv(), connect(), etc.). The socket layer is the one that calls your <code class="docutils literal notranslate"><span class="pre">tcp_data_init</span></code> function so, in the second part of the project, your timer thread will inherit the same name unless you specifically set a new name for the timer thread. To make your logs clearer, you can do so by setting the name of the timer thread with this code (at the start of the timer thread function):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">char</span> <span class="n">thread_name</span><span class="p">[</span><span class="mi">17</span><span class="p">];</span>
 <span class="n">snprintf</span> <span class="p">(</span><span class="n">thread_name</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;timer-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ptr_to_fd</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">entry</span><span class="p">));</span>
 <span class="n">pthread_setname_np</span><span class="p">(</span><span class="n">pthread_self</span><span class="p">(),</span> <span class="n">thread_name</span><span class="p">);</span>
 </pre></div>
@@ -156,27 +147,27 @@ you need to check for is whether the <em>advertised window</em> ever becomes zer
 </div>
 <div class="section" id="the-rtt-tests">
 <h2>The RTT tests<a class="headerlink" href="#the-rtt-tests" title="Permalink to this headline">¶</a></h2>
-<p>The RTT estimation tests do not contribute to your test grade (the one you get when running <code class="docutils literal"><span class="pre">make</span> <span class="pre">grade</span></code>). The reason for this is that these tests are trivial to pass if you just estimate the RTT to be zero (ensuring your tests never time out). However, the graders will be running these tests and, if you are not doing any RTT estimation (or if they find issues with the RTT estimation) they will deduct points from the Correctness portion of the rubric (in fact, the rubric specifically calls this out as something we’ll be looking at in p2b)</p>
+<p>The RTT estimation tests do not contribute to your test grade (the one you get when running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">grade</span></code>). The reason for this is that these tests are trivial to pass if you just estimate the RTT to be zero (ensuring your tests never time out). However, the graders will be running these tests and, if you are not doing any RTT estimation (or if they find issues with the RTT estimation) they will deduct points from the Correctness portion of the rubric (in fact, the rubric specifically calls this out as something we’ll be looking at in p2b)</p>
 </div>
 <div class="section" id="common-pitfalls">
 <h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><strong>Calling tcp_data_init or tcp_data_free</strong>: You should never call <code class="docutils literal"><span class="pre">tcp_data_init</span></code> or <code class="docutils literal"><span class="pre">tcp_data_free</span></code> from your code. These functions are called by the socket layer (when a socket is created or destroyed), and calling either of them a second time can produce unexpected results.</p>
+<li><p class="first"><strong>Calling tcp_data_init or tcp_data_free</strong>: You should never call <code class="docutils literal notranslate"><span class="pre">tcp_data_init</span></code> or <code class="docutils literal notranslate"><span class="pre">tcp_data_free</span></code> from your code. These functions are called by the socket layer (when a socket is created or destroyed), and calling either of them a second time can produce unexpected results.</p>
 </li>
 <li><p class="first"><strong>Worrying about functionality that is handled in the socket or network layers</strong>: Since you are writing a TCP implementation that interacts with both a socket layer and a network layer, it can sometimes be challenging to tell what is the responsibility of each layer. In the past, some students have spent a considerable amount of effort worrying about things that were actually already handled for them in other layers, most notably:</p>
 <ul>
 <li><p class="first"><em>The source/destination ports</em>: You should not set or modify these fields of the TCP header. These
-fields are actually set by <code class="docutils literal"><span class="pre">chitcpd_tcp_packet_create</span></code>, which will look at the ports associated with the socket,
+fields are actually set by <code class="docutils literal notranslate"><span class="pre">chitcpd_tcp_packet_create</span></code>, which will look at the ports associated with the socket,
 and will fill in the correct ports in the TCP header. Additionally, none of your code should depend on the
 value of the source/destination ports; the socket layer is in charge of delivering data to the correct process
 (based on the destination port), and is also in charge of assigning
-source ports (either because the port is specified in a call to <code class="docutils literal"><span class="pre">chisocket_bind</span></code> or because one is selected by
-the socket layer in <code class="docutils literal"><span class="pre">chisocket_connect</span></code> when creating an active socket).</p>
+source ports (either because the port is specified in a call to <code class="docutils literal notranslate"><span class="pre">chisocket_bind</span></code> or because one is selected by
+the socket layer in <code class="docutils literal notranslate"><span class="pre">chisocket_connect</span></code> when creating an active socket).</p>
 </li>
 <li><p class="first"><em>Reporting errors back to the application layer</em>: RFC 793 specifies, at various points, that certain errors should
-be returned to the application layer. For example, under the <code class="docutils literal"><span class="pre">SEND</span> <span class="pre">Call</span></code> specification (corresponding to chiTCP’s
-<code class="docutils literal"><span class="pre">APPLICATION_SEND</span></code> event), the RFC specifies the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">FIN</span><span class="o">-</span><span class="n">WAIT</span><span class="o">-</span><span class="mi">1</span> <span class="n">STATE</span>
+be returned to the application layer. For example, under the <code class="docutils literal notranslate"><span class="pre">SEND</span> <span class="pre">Call</span></code> specification (corresponding to chiTCP’s
+<code class="docutils literal notranslate"><span class="pre">APPLICATION_SEND</span></code> event), the RFC specifies the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIN</span><span class="o">-</span><span class="n">WAIT</span><span class="o">-</span><span class="mi">1</span> <span class="n">STATE</span>
 <span class="n">FIN</span><span class="o">-</span><span class="n">WAIT</span><span class="o">-</span><span class="mi">2</span> <span class="n">STATE</span>
 <span class="n">CLOSING</span> <span class="n">STATE</span>
 <span class="n">LAST</span><span class="o">-</span><span class="n">ACK</span> <span class="n">STATE</span>
@@ -185,33 +176,33 @@ be returned to the application layer. For example, under the <code class="docuti
   <span class="n">Return</span> <span class="s2">&quot;error:  connection closing&quot;</span> <span class="ow">and</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">service</span> <span class="n">request</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>This does not mean that your handling of <code class="docutils literal"><span class="pre">APPLICATION_SEND</span></code> in those states should implement some error-handling
+<p>This does not mean that your handling of <code class="docutils literal notranslate"><span class="pre">APPLICATION_SEND</span></code> in those states should implement some error-handling
 logic. For the most part, these kind of errors are handled either in the socket layer or the network layer. For
-example, in the above case, if an application called <code class="docutils literal"><span class="pre">chisocket_send</span></code> on a socket that was in any of the
+example, in the above case, if an application called <code class="docutils literal notranslate"><span class="pre">chisocket_send</span></code> on a socket that was in any of the
 above states, the socket layer would return an error (and this event would never propagate to your state handling
 functions).</p>
 </li>
 <li><p class="first"><em>Passive sockets</em>: The setup and management of passive sockets is handled by the socket layer, including the
 creation of a new active socket when a passive socket receives a SYN packet. The sockets you will deal will
-in your implementation will always be active sockets, resulting either from an <code class="docutils literal"><span class="pre">APPLICATION_CONNECT</span></code> event or
+in your implementation will always be active sockets, resulting either from an <code class="docutils literal notranslate"><span class="pre">APPLICATION_CONNECT</span></code> event or
 from a passive socket spawning an active socket after receiving a SYN packet.</p>
 </li>
 </ul>
 </li>
-<li><p class="first"><strong>Not initializing the sequence number in the buffer</strong>: You need to initialize the initial sequence number of the buffers with <code class="docutils literal"><span class="pre">circular_buffer_set_seq_initial</span></code>. If you do not, functions <code class="docutils literal"><span class="pre">circular_buffer_first</span></code> and <code class="docutils literal"><span class="pre">circular_buffer_next</span></code> will return incoherent values.</p>
+<li><p class="first"><strong>Not initializing the sequence number in the buffer</strong>: You need to initialize the initial sequence number of the buffers with <code class="docutils literal notranslate"><span class="pre">circular_buffer_set_seq_initial</span></code>. If you do not, functions <code class="docutils literal notranslate"><span class="pre">circular_buffer_first</span></code> and <code class="docutils literal notranslate"><span class="pre">circular_buffer_next</span></code> will return incoherent values.</p>
 <p>Take into account that the initial sequence number of the buffers should be the same as the first sequence number of sendable/received <em>data</em>. So, it would not be exactly ISS/IRS, because those are actually the first “byte” used by the SYN (but which do not represent any actual data). So, you would initialize them to ISS+1 and IRS+1.</p>
 </li>
 <li><p class="first"><strong>Implementing stop-and-wait instead of sliding window, or ignoring the window size</strong>: In sliding window, you send as much data as allowed by the receiver’s window (after accounting for any data that may already be in flight). If you send one packet and wait for an ACK before sending the next one, you’re implementing stop-and-wait, not sliding window. If, on the other hand, you do send multiple packets at once, but send more data than allowed by the window, this will likely result in undefined behaviour. An easy way to check this is to see whether, at the start of the tests that send more than 4KB, your code send only 4KB and doesn’t send more data until it receives a first ACK. If you send (for example) 32KB all at once, then you’re ignoring the windows size.</p>
 </li>
 <li><p class="first"><strong>Sending only one packet when segmentizing</strong>: Whenever you process the send buffer, you should always send as many packets as possible without exceeding the receiver’s advertised window. A common pitfall is to correctly identify that the send buffer contains more than one MSS of data, but then sending only that first MSS, instead of sending as many packets allowed by SND.WND.</p>
 </li>
-<li><p class="first"><strong>Sending only when the APPLICATION_SEND event happens</strong>: The <code class="docutils literal"><span class="pre">APPLICATION_SEND</span></code> event simply informs TCP that the application has called <code class="docutils literal"><span class="pre">send()</span></code>, which means there is likely new data to send, and you should send it if possible. However, this is <em>not</em> the only time you’ll want to process the send buffer to send data. If the values of SND.UNA or SND.WND change (in general, if the window shifts or grows), it may be possible for you to send more data to the other peer. It is a good strategy to write a separate function that handles this task (“check the send buffer and determine whether any data can be sent and, if so, send it”), and call it not just from the <code class="docutils literal"><span class="pre">APPLICATION_SEND</span></code> handler but also whenever SND.UNA or SND.WND change.</p>
+<li><p class="first"><strong>Sending only when the APPLICATION_SEND event happens</strong>: The <code class="docutils literal notranslate"><span class="pre">APPLICATION_SEND</span></code> event simply informs TCP that the application has called <code class="docutils literal notranslate"><span class="pre">send()</span></code>, which means there is likely new data to send, and you should send it if possible. However, this is <em>not</em> the only time you’ll want to process the send buffer to send data. If the values of SND.UNA or SND.WND change (in general, if the window shifts or grows), it may be possible for you to send more data to the other peer. It is a good strategy to write a separate function that handles this task (“check the send buffer and determine whether any data can be sent and, if so, send it”), and call it not just from the <code class="docutils literal notranslate"><span class="pre">APPLICATION_SEND</span></code> handler but also whenever SND.UNA or SND.WND change.</p>
 </li>
 <li><p class="first"><strong>Not setting/reading the window variables</strong>: Every TCP packet you send must include a valid value for SEG.WND. This is true regardless of whether the size of the receive buffer has changed since the last TCP packet, and regardless of whether the packet carries a payload or not. The value of SEG.WND is always set to the available space in the receive buffer.</p>
 <p>Similarly, the value of SND.WND is always updated when you receive a valid TCP packet.</p>
 </li>
-<li><p class="first"><strong>Not delaying the FIN packet</strong>: When an <code class="docutils literal"><span class="pre">APPLICATION_CLOSE</span></code> event happens, you <em>only</em> send a FIN packet if the send buffer is empty. If the send buffer still has unacknowledged/unsent data, you don’t send the FIN packet until the send buffer is empty.</p>
-<p>Similarly, it is not enough to simply process your send buffer from <code class="docutils literal"><span class="pre">APPLICATION_CLOSE</span></code> to clear the buffer, because the receiver’s window may not allow you to do this at that point. So, you have to take into account that the send buffer may not become empty until <em>after</em> you’ve processed the <code class="docutils literal"><span class="pre">APPLICATION_CLOSE</span></code> event.</p>
+<li><p class="first"><strong>Not delaying the FIN packet</strong>: When an <code class="docutils literal notranslate"><span class="pre">APPLICATION_CLOSE</span></code> event happens, you <em>only</em> send a FIN packet if the send buffer is empty. If the send buffer still has unacknowledged/unsent data, you don’t send the FIN packet until the send buffer is empty.</p>
+<p>Similarly, it is not enough to simply process your send buffer from <code class="docutils literal notranslate"><span class="pre">APPLICATION_CLOSE</span></code> to clear the buffer, because the receiver’s window may not allow you to do this at that point. So, you have to take into account that the send buffer may not become empty until <em>after</em> you’ve processed the <code class="docutils literal notranslate"><span class="pre">APPLICATION_CLOSE</span></code> event.</p>
 </li>
 </ul>
 </div>
@@ -230,7 +221,7 @@ from a passive socket spawning an active socket after receiving a SYN packet.</p
     </p>
     <p>
         &copy; Copyright 2011-2018, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.<br/>
     </p>
   </div>
 </footer>

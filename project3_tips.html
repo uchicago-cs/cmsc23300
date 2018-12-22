@@ -3,26 +3,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Project 3 Tips &#8212; CMSC 23300 - Networks and Distributed Systems</title>
 
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/chiweb.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/chiweb.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -36,8 +28,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body>
+  </head><body>
 
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -99,8 +90,8 @@
 <ul class="simple">
 <li>Make sure you’ve read all the pages listed under “General” in the main <a class="reference external" href="projects.html">Projects</a>
 page.</li>
-<li>Double-check that your repository has a single <code class="docutils literal"><span class="pre">chirouter</span></code> directory in it, and that the chirouter
-files are in that directory. If the chirouter files (<code class="docutils literal"><span class="pre">README.md</span></code>, <code class="docutils literal"><span class="pre">src/</span></code>, …) are in the top
+<li>Double-check that your repository has a single <code class="docutils literal notranslate"><span class="pre">chirouter</span></code> directory in it, and that the chirouter
+files are in that directory. If the chirouter files (<code class="docutils literal notranslate"><span class="pre">README.md</span></code>, <code class="docutils literal notranslate"><span class="pre">src/</span></code>, …) are in the top
 level of your repository, they will not be graded. Make sure you follow the exact instructions
 in <a class="reference external" href="initial_code.html">Uploading the initial code to your repository</a>.</li>
 </ul>
@@ -115,8 +106,8 @@ to run mininet.</p>
 will be able to continue to use your usual development environment (your laptop,
 a CSIL machine, etc.). You will simply need to follow the instructions on
 “Running chirouter and mininet on separate machines” in the chirouter documentation. Please note that,
-when using the CS Virtual Machine, the <code class="docutils literal"><span class="pre">HOST</span></code> you must specify in the <code class="docutils literal"><span class="pre">--chirouter</span></code> parameter
-to <code class="docutils literal"><span class="pre">run-mininet</span></code> is <strong>10.0.2.2</strong>. This is the IP that, from inside the VM, will allow you to connect
+when using the CS Virtual Machine, the <code class="docutils literal notranslate"><span class="pre">HOST</span></code> you must specify in the <code class="docutils literal notranslate"><span class="pre">--chirouter</span></code> parameter
+to <code class="docutils literal notranslate"><span class="pre">run-mininet</span></code> is <strong>10.0.2.2</strong>. This is the IP that, from inside the VM, will allow you to connect
 to the host that is running the VM.</p>
 <p>Please note that, for this to work, the Network settings for your VM (in VirtualBox) must indicate that
 “Adapter 1” is attached to <strong>NAT</strong>. This is the default value but, if you change this value, it will likely prevent chirouter and mininet
@@ -126,12 +117,12 @@ from being able to communicate.</p>
 <h2>Resetting Mininet<a class="headerlink" href="#resetting-mininet" title="Permalink to this headline">¶</a></h2>
 <p>If, at any point, Mininet starts behaving in an unexpected manner, specially if you see the following error message
 when running chirouter:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CRITIC</span> <span class="n">Error</span> <span class="k">while</span> <span class="n">processing</span> <span class="n">POX</span> <span class="n">message</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CRITIC</span> <span class="n">Error</span> <span class="k">while</span> <span class="n">processing</span> <span class="n">POX</span> <span class="n">message</span><span class="o">.</span>
 <span class="n">CRITIC</span> <span class="n">Error</span> <span class="k">while</span> <span class="n">receiving</span> <span class="n">messages</span> <span class="kn">from</span> <span class="nn">POX</span>
 </pre></div>
 </div>
 <p>Try stopping chirouter and mininet, and then running this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mn</span> <span class="o">-</span><span class="n">c</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mn</span> <span class="o">-</span><span class="n">c</span>
 </pre></div>
 </div>
 <p>This will reset Mininet to a clean configuration. Next, try re-running the chirouter and mininet commands as usual.</p>
@@ -159,26 +150,26 @@ well-defined modifications.</p>
 <h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first"><strong>Computing a checksum over a pointer instead of what the pointer points to</strong>: Suppose you have the following variable:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">iphdr_t</span> <span class="o">*</span><span class="n">hdr</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iphdr_t</span> <span class="o">*</span><span class="n">hdr</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>And that you have malloc’d and populated the values in the IP header. A common mistake is to call the <code class="docutils literal"><span class="pre">cksum</span></code> function like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cksum</span><span class="p">(</span><span class="n">hdr</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">hdr</span><span class="p">))</span>
+<p>And that you have malloc’d and populated the values in the IP header. A common mistake is to call the <code class="docutils literal notranslate"><span class="pre">cksum</span></code> function like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cksum</span><span class="p">(</span><span class="n">hdr</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">hdr</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>This will compute a checksum over 4 or 8 bytes, because <code class="docutils literal"><span class="pre">hdr</span></code> is a pointer, and its size is 4 or 8 bytes. Make sure you pass the correct size to <code class="docutils literal"><span class="pre">cksum</span></code>. For an IP header, you would call <code class="docutils literal"><span class="pre">cksum</span></code> like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cksum</span><span class="p">(</span><span class="n">hdr</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">iphdr_t</span><span class="p">))</span>
+<p>This will compute a checksum over 4 or 8 bytes, because <code class="docutils literal notranslate"><span class="pre">hdr</span></code> is a pointer, and its size is 4 or 8 bytes. Make sure you pass the correct size to <code class="docutils literal notranslate"><span class="pre">cksum</span></code>. For an IP header, you would call <code class="docutils literal notranslate"><span class="pre">cksum</span></code> like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cksum</span><span class="p">(</span><span class="n">hdr</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">iphdr_t</span><span class="p">))</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>Computing ICMP header sizes</strong>: Related to the above, you cannot use <code class="docutils literal"><span class="pre">sizeof(icmp_packet_t)</span></code>, since <code class="docutils literal"><span class="pre">icmp_packet_t</span></code> is a <code class="docutils literal"><span class="pre">union</span></code> type,
+<li><p class="first"><strong>Computing ICMP header sizes</strong>: Related to the above, you cannot use <code class="docutils literal notranslate"><span class="pre">sizeof(icmp_packet_t)</span></code>, since <code class="docutils literal notranslate"><span class="pre">icmp_packet_t</span></code> is a <code class="docutils literal notranslate"><span class="pre">union</span></code> type,
 and will likely yield an incorrect size. You should manually compute the size of your ICMP packet.</p>
 </li>
 <li><p class="first"><strong>Forgetting to use htons, htonl, etc.</strong>: Remember that the values in the protocol headers have to be in <em>network order</em>, and
 you must use functions like htons and htonl to convert from host order to network order (and ntohs and ntohl to convert from
 network order to host order)</p>
 </li>
-<li><p class="first"><strong>… except with checksums</strong>: The <code class="docutils literal"><span class="pre">cksum</span></code> function already produces a checksum in network order. There is no need to convert it from host order to network order.</p>
+<li><p class="first"><strong>… except with checksums</strong>: The <code class="docutils literal notranslate"><span class="pre">cksum</span></code> function already produces a checksum in network order. There is no need to convert it from host order to network order.</p>
 </li>
 </ul>
 </div>
@@ -197,7 +188,7 @@ network order to host order)</p>
     </p>
     <p>
         &copy; Copyright 2011-2018, The University of Chicago.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.<br/>
     </p>
   </div>
 </footer>
