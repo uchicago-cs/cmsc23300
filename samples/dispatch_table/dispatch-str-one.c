@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "handlers.h"
 
 typedef int (*handler_function)(int a, int b, int *x);
