@@ -102,10 +102,10 @@ you can ask on Piazza whether a given library is ok to use. Please note
 that the following libraries are pre-approved, and you are welcome to use them
 in your projects (in fact, many students have used them in past years):
 
-- `simclist <http://mij.oltrelinux.com/devel/simclist/>`_: A C library for Lists
-- `bstring <http://bstring.sourceforge.net/>`_: The Better String Library
+- `utlist <https://troydhanson.github.io/uthash/utlist.html>`_: A linked list library
 - `uthash <https://troydhanson.github.io/uthash/>`_: A hash table for C structures
-- `utlist <https://troydhanson.github.io/uthash/utlist.html>`_: Another linked list library
+- `SDS <https://github.com/antirez/sds>`_: Simple Dynamic Strings
+- `bstring <http://bstring.sourceforge.net/>`_: The Better String Library
 
 Finally, if you have any questions regarding what would or would not be
 considered academic dishonesty in this course, please don’t hesitate to
