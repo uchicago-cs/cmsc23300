@@ -36,7 +36,7 @@ pthread_mutex_t lock;
 #endif
 
 
-struct workerArgs
+struct worker_args
 {
     int socket;
 };
@@ -86,7 +86,7 @@ void *accept_clients(void *args)
     struct addrinfo hints, *res, *p;
     struct sockaddr_storage *clientAddr;
     socklen_t sinSize = sizeof(struct sockaddr_storage);
-    struct workerArgs *wa;
+    struct worker_args *wa;
     int yes = 1;
 
     memset(&hints, 0, sizeof hints);
@@ -150,7 +150,7 @@ void *accept_clients(void *args)
             continue;
         }
 
-        wa = malloc(sizeof(struct workerArgs));
+        wa = malloc(sizeof(struct worker_args));
         wa->socket = clientSocket;
 
         if (pthread_create(&worker_thread, NULL, service_single_client, wa) != 0) 
@@ -168,11 +168,11 @@ void *accept_clients(void *args)
 }
 
 void *service_single_client(void *args) {
-    struct workerArgs *wa;
+    struct worker_args *wa;
     int socket, nbytes, i;
     char buffer[100];
 
-    wa = (struct workerArgs*) args;
+    wa = (struct worker_args*) args;
     socket = wa->socket;
 
     pthread_detach(pthread_self());

@@ -10,6 +10,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -28,7 +29,7 @@ const char *port = "23300";
 pthread_mutex_t lock;
 pthread_cond_t cv_setup_done;
 
-struct workerArgs
+struct worker_args
 {
     int socket;
     int setup_done;
@@ -71,13 +72,13 @@ int main(int argc, char *argv[])
 
 void *accept_clients(void *args)
 {
-    int serverSocket;
-    int clientSocket;
+    int server_socket;
+    int client_socket;
     pthread_t worker_thread;
     struct addrinfo hints, *res, *p;
-    struct sockaddr_storage *clientAddr;
-    socklen_t sinSize = sizeof(struct sockaddr_storage);
-    struct workerArgs *wa;
+    struct sockaddr_storage *client_addr;
+    socklen_t sin_size = sizeof(struct sockaddr_storage);
+    struct worker_args *wa;
     int yes = 1;
 
     memset(&hints, 0, sizeof hints);
@@ -93,30 +94,30 @@ void *accept_clients(void *args)
 
     for(p = res;p != NULL; p = p->ai_next) 
     {
-        if ((serverSocket = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1) 
+        if ((server_socket = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
         {
             perror("Could not open socket");
             continue;
         }
 
-        if (setsockopt(serverSocket, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
+        if (setsockopt(server_socket, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
         {
             perror("Socket setsockopt() failed");
-            close(serverSocket);
+            close(server_socket);
             continue;
         }
 
-        if (bind(serverSocket, p->ai_addr, p->ai_addrlen) == -1)
+        if (bind(server_socket, p->ai_addr, p->ai_addrlen) == -1)
         {
             perror("Socket bind() failed");
-            close(serverSocket);
+            close(server_socket);
             continue;
         }
 
-        if (listen(serverSocket, 5) == -1)
+        if (listen(server_socket, 5) == -1)
         {
             perror("Socket listen() failed");
-            close(serverSocket);
+            close(server_socket);
             continue;
         }
 
@@ -133,34 +134,34 @@ void *accept_clients(void *args)
 
     while (1)
     {
-        clientAddr = malloc(sinSize);
-        if ((clientSocket = accept(serverSocket, (struct sockaddr *) clientAddr, &sinSize)) == -1) 
+        client_addr = malloc(sin_size);
+        if ((client_socket = accept(server_socket, (struct sockaddr *) client_addr, &sin_size)) == -1)
         {
-            free(clientAddr);
+            free(client_addr);
             perror("Could not accept() connection");
             continue;
         }
 
-        wa = malloc(sizeof(struct workerArgs));
-        wa->socket = clientSocket;
+        wa = malloc(sizeof(struct worker_args));
+        wa->socket = client_socket;
         wa->setup_done = 0;
 
         pthread_mutex_lock(&lock);
         if (pthread_create(&worker_thread, NULL, service_single_client, wa) != 0) 
         {
             perror("Could not create a worker thread");
-            free(clientAddr);
+            free(client_addr);
             free(wa);
-            close(clientSocket);
-            close(serverSocket);
+            close(client_socket);
+            close(server_socket);
             pthread_exit(NULL);
         }
 
         /* ADDED: we use the condition variable to wait until wa->setup_done is 1 */
-        printf("\n(%d) accept_clients(): Waiting for thread setup to complete.\n", clientSocket);
+        printf("\n(%d) accept_clients(): Waiting for thread setup to complete.\n", client_socket);
         while(!wa->setup_done)
             pthread_cond_wait(&cv_setup_done, &lock);
-        printf("(%d) accept_clients(): Woke up (setup complete).\n", clientSocket);
+        printf("(%d) accept_clients(): Woke up (setup complete).\n", client_socket);
         pthread_mutex_unlock(&lock);
     }
 
@@ -168,11 +169,11 @@ void *accept_clients(void *args)
 }
 
 void *service_single_client(void *args) {
-    struct workerArgs *wa;
+    struct worker_args *wa;
     int socket, nbytes, i;
     char buffer[100];
 
-    wa = (struct workerArgs*) args;
+    wa = (struct worker_args*) args;
     socket = wa->socket;
 
     printf("(%d) service_single_client(): Starting setup.\n", socket);
