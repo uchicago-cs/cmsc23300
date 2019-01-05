@@ -1,6 +1,6 @@
 /* 
  *
- *  CMSC 23300 / 33300 - Networks and Distributed Systems
+ *  CMSC 23300 - Networks and Distributed Systems
  *  
  *  A client that bombs a server with N connections
  *

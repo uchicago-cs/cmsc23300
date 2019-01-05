@@ -1,6 +1,6 @@
 /* 
  *
- *  CMSC 23300 / 33300 - Networks and Distributed Systems
+ *  CMSC 23300 - Networks and Distributed Systems
  *  
  *  This is the simplest possible one-shot server
  *  

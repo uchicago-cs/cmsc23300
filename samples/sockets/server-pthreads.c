@@ -1,6 +1,6 @@
 /* 
  *
- *  CMSC 23300 / 33300 - Networks and Distributed Systems
+ *  CMSC 23300 - Networks and Distributed Systems
  *  
  *  A simple multi-threaded server
  *  
@@ -21,7 +21,7 @@
 #include <errno.h>
 #include <time.h>
 
-const char *port = "23300";
+const char *PORT = "23300";
 
 /* We will use this struct to pass parameters to one of the threads */
 struct worker_args
@@ -29,14 +29,11 @@ struct worker_args
     int socket;
 };
 
-void *accept_clients(void *args);
+/* Forward declaration. See below for details. */
 void *service_single_client(void *args);
 
 int main(int argc, char *argv[])
 {
-    /* The pthread_t type is a struct representing a single thread. */
-    pthread_t server_thread;
-
     /* If a client closes a connection, this will generally produce a SIGPIPE
        signal that will kill the process. We want to ignore this signal, so
        send() just returns -1 when this happens. */
@@ -49,57 +46,20 @@ int main(int argc, char *argv[])
         exit(-1);
     }
 
-    /* The pthread_create function creates a new thread.
-       The first parameter is a pointer to a pthread_t variable, which we can use
-       in the remainder of the program to manage this thread.
-       The second parameter is used to specify the attributes of this new thread
-       (e.g., its stack size). We can leave it NULL here.
-       The third parameter is the function this thread will run. This function *must*
-       have the following prototype:
 
-           void *f(void *args);
+    /* The following code sets up the server socket to accept connections.
+       The socket code is similar to oneshot-single.c, except that we will
+       use getaddrinfo() to get the sockaddr (instead of creating it manually)
+       and we will use sockaddr_storage when accepting a client connection
+       (instead of using sockaddr_in, which assumes that the incoming connection
+       is coming from an IPv4 host).
 
-       Note how the function expects a single parameter of type void*. The fourth
-       parameter to pthread_create is used to specify this parameter. In this case,
-       we have no parameters to pass to the thread function, so we leave it NULL.
-       If we _do_ need to pass parameters, we will typically malloc a struct
-       with the necessary args. The thread function is typically responsible
-       for freeing this struct.
+       Additionally, this function will spawn a new thread for each new client
+       connection.
 
-       The thread we are creating here is the "server thread", which will be
-       responsible for listening on port 23300 for incoming connections. This thread,
-       in turn, will spawn threads to service each incoming connection, allowing
-       multiple clients to connect simultaneously.
-
-       Note that, in this particular example, creating a "server thread" is redundant,
-       since there will only be one server thread, and the program's main thread (the 
-           one running main()) could fulfill this purpose. */
-    if (pthread_create(&server_thread, NULL, accept_clients, NULL) < 0)
-    {
-        perror("Could not create server thread");
-        exit(-1);
-    }
-
-    pthread_join(server_thread, NULL);
-
-    pthread_exit(NULL);
-}
-
-
-/* This is the function that is run by the "server thread".
-   The socket code is similar to oneshot-single.c, except that we will
-   use getaddrinfo() to get the sockaddr (instead of creating it manually)
-   and we will use sockaddr_storage when accepting a client connection
-   (instead of using sockaddr_in, which assumes that the incoming connection
-   is coming from an IPv4 host).
-   Additionally, this function will spawn a new thread for each new client
-   connection.
-
-   See oneshot-single.c and client.c for more documentation on how the socket
-   code works.
- */
-void *accept_clients(void *args)
-{
+       See oneshot-single.c and client.c for more documentation on how the socket
+       code works.
+     */
     int server_socket;
     int client_socket;
     pthread_t worker_thread;
@@ -115,13 +75,13 @@ void *accept_clients(void *args)
     hints.ai_flags = AI_PASSIVE; // Return my address, so I can bind() to it
 
     /* Note how we call getaddrinfo with the host parameter set to NULL */
-    if (getaddrinfo(NULL, port, &hints, &res) != 0)
+    if (getaddrinfo(NULL, PORT, &hints, &res) != 0)
     {
         perror("getaddrinfo() failed");
         pthread_exit(NULL);
     }
 
-    for(p = res;p != NULL; p = p->ai_next) 
+    for(p = res;p != NULL; p = p->ai_next)
     {
         if ((server_socket = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
         {
@@ -152,7 +112,7 @@ void *accept_clients(void *args)
 
         break;
     }
-    
+
     freeaddrinfo(res);
 
     if (p == NULL)
@@ -164,7 +124,7 @@ void *accept_clients(void *args)
     /* Loop and wait for connections */
     while (1)
     {
-        /* Call accept(). The thread will block until a client establishes a connection. */
+        /* Call accept(). At this point, we will block until a client establishes a connection. */
         client_addr = malloc(sin_size);
         if ((client_socket = accept(server_socket, (struct sockaddr *) client_addr, &sin_size)) == -1)
         {
@@ -176,29 +136,44 @@ void *accept_clients(void *args)
 
         /* We're now connected to a client. We're going to spawn a "worker thread" to handle
            that connection. That way, the server thread can continue running, accept more connections,
-            and spawn more threads to handle them. 
+           and spawn more threads to handle them.
 
-           The worker thread needs to know what socket it must use to communicate with the client,
-           so we'll pass the client_socket as a parameter to the thread. Although we could arguably
-           just pass a pointer to client_socket, it is good practice to use a struct that encapsulates
-           the parameters to the thread (even if there is only one parameter). In this case, this is
-           done with the worker_args struct. */
+           New threads are created using the pthread_create function.
+           - The first parameter is a pointer to a pthread_t variable, which we can use
+             in the remainder of the program to manage this thread.
+           - The second parameter is used to specify the attributes of this new thread
+             (e.g., its stack size). We can leave it NULL here.
+           - The third parameter is the function this thread will run. This function *must*
+             have the following prototype:
+
+               void *f(void *args);
+
+             Note how the function expects a single parameter of type void*. In this case,
+             the thread function will be service_single_client.
+           - The fourth parameter to pthread_create is used to specify the parameter
+             to the thread function. In this case, the worker thread needs to know what socket
+             it must use to communicate with the client, so we'll pass the client_socket as a
+             parameter to the thread. Although we could arguably just pass a pointer to client_socket,
+             it is good practice to use a struct that encapsulates the parameters to the thread
+             (even if there is only one parameter). In this case, this is done with the worker_args struct.
+        */
         wa = malloc(sizeof(struct worker_args));
         wa->socket = client_socket;
 
-        if (pthread_create(&worker_thread, NULL, service_single_client, wa) != 0) 
+        if (pthread_create(&worker_thread, NULL, service_single_client, wa) != 0)
         {
             perror("Could not create a worker thread");
             free(client_addr);
             free(wa);
             close(client_socket);
             close(server_socket);
-            pthread_exit(NULL);
+            return EXIT_FAILURE;
         }
     }
 
-    pthread_exit(NULL);
+    return EXIT_SUCCESS;
 }
+
 
 
 /* This is the function that is run by the "worker thread".

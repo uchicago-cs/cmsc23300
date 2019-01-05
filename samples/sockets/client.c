@@ -1,6 +1,6 @@
 /* 
  *
- *  CMSC 23300 / 33300 - Networks and Distributed Systems
+ *  CMSC 23300 - Networks and Distributed Systems
  *  
  *  A very simple socket client. Reads at most 100 bytes from a socket and quits.
  *  
