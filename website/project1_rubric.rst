@@ -139,24 +139,7 @@ some of the above is acceptable. You will not be penalized in those cases.
 Additional Penalties
 ~~~~~~~~~~~~~~~~~~~~
 
-We will also apply the following penalties:
-
-* **Submitting code that doesn't build**: If the graders are able to build your
-  code with a few minor fixes (missing semicolons, parenthesis, etc.), 
-  we will apply a 15 point penalty. If your code
-  requires substantial work to get it to build, you will receive a zero on
-  the assignment.
-
-  **So, make sure you verify that the version of the code you submitted builds correctly on a supported
-  software environment** (see the `Projects <projects.html>`_ page for more details on this)
-
-* **Grossly incorrect memory management**: Up to 5 point penalty. You should make sure
-  to free any memory you malloc, but we will usually not take points off unless you've
-  been grossly negligent in your malloc'ing/freeing. You should also make sure to
-  not "save" pointers to stack-allocated memory that is going to be deallocated.
-  This can happen if you store a pointer to a functions' local variable in a struct
-  that is heap-allocated.
-
+.. include:: additional_penalties.txt
 
 
 

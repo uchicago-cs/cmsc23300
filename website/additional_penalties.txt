@@ -1,0 +1,33 @@
+We will also apply the following penalties:
+
+* **Reinventing wheels that don't need to be reinvented**: In this class, we expect
+  you to know how to use data structures like linked lists, hash tables, etc.
+  (and how to choose the right data structure for a given task). However, this is a Networks class,
+  not a Data Structures class, and you should *not* be spending any time implementing
+  such data structures. Instead, you should use existing data structure libraries
+  (our `Academic Honesty <academic_honesty.html>`__ page lists a few publicly-available
+  libraries that you are welcome to use).
+
+  If you implement your own linked list, hash table, etc. from scratch, we will apply
+  a 15 point penalty. While you may think that implementing your own data structure
+  is a worthwhile exercise, it invariably results in more work for the TAs and graders
+  (as you will likely run into all sorts of issues and segfaults that could have been
+  avoided by using a well-known and well-tested data structures library). Plus, it will
+  be a much more worthwhile experience for you to understand how to incorporate an existing library
+  into your own code.
+
+* **Submitting code that doesn't build**: If the graders are able to build your
+  code with a few minor fixes (missing semicolons, parenthesis, etc.),
+  we will apply a 15 point penalty. If your code
+  requires substantial work to get it to build, you will receive a zero on
+  the assignment.
+
+  **So, make sure you verify that the version of the code you submitted builds correctly on a supported
+  software environment** (see the `Projects <projects.html>`_ page for more details on this)
+
+* **Grossly incorrect memory management**: Up to 5 point penalty. You should make sure
+  to free any memory you malloc, but we will usually not take points off unless you've
+  been grossly negligent in your malloc'ing/freeing. You should also make sure to
+  not "save" pointers to stack-allocated memory that is going to be deallocated.
+  This can happen if you store a pointer to a functions' local variable in a struct
+  that is heap-allocated.
