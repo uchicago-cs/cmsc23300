@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     server_addr.sin_addr.s_addr = INADDR_ANY;  // Bind to any address
     
     /* Create the socket*/    
-    server_socket = socket(PF_INET,       // Family: IPv4
+    server_socket = socket(PF_INET,      // Family: IPv4
                           SOCK_STREAM,   // Type: Full-duplex stream (reliable)
                           IPPROTO_TCP);  // Protocol: TCP
 
