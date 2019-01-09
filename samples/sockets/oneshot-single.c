@@ -1,6 +1,6 @@
 /* 
  *
- *  CMSC 23300 / 33300 - Networks and Distributed Systems
+ *  CMSC 23300 - Networks and Distributed Systems
  *  
  *  This is the simplest possible one-shot server
  *  
@@ -9,6 +9,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -19,8 +20,8 @@
 int main(int argc, char *argv[])
 {
     /* A socket is just a file descriptor, i.e., an int */
-    int serverSocket;    // Used to listen for connections
-    int clientSocket;    // Used to communicate with one specific client
+    int server_socket;    // Used to listen for connections
+    int client_socket;    // Used to communicate with one specific client
 
     /* A sockaddr struct holds socket address information for lots of different types of sockets.
 
@@ -44,27 +45,27 @@ int main(int argc, char *argv[])
         unsigned char      sin_zero[8]; // Same size as struct sockaddr
     };
     */
-    struct sockaddr_in serverAddr, clientAddr;
+    struct sockaddr_in server_addr, client_addr;
 
     /* We need this to call setsockopt(), which expects a *pointer* to the socket option */
     int yes = 1;
 
     /* We will need this to call accept(), which expects a *pointer* to the sockaddr size */
-    socklen_t sinSize = sizeof(struct sockaddr_in);
+    socklen_t sin_size = sizeof(struct sockaddr_in);
 
     /* Message we're going to send out */
     char *msg = "Hello, socket!";
 
-    /* Make sure serverAddr is all zeroes */
-    memset(&serverAddr, 0, sizeof(serverAddr));
+    /* Make sure server_addr is all zeroes */
+    memset(&server_addr, 0, sizeof(server_addr));
  
     /* Set other fields. Note we need to convert the port to network order. */
-    serverAddr.sin_family = AF_INET;          // IPv4
-    serverAddr.sin_port = htons(23300);       // TCP port number
-    serverAddr.sin_addr.s_addr = INADDR_ANY;  // Bind to any address
+    server_addr.sin_family = AF_INET;          // IPv4
+    server_addr.sin_port = htons(23300);       // TCP port number
+    server_addr.sin_addr.s_addr = INADDR_ANY;  // Bind to any address
     
     /* Create the socket*/    
-    serverSocket = socket(PF_INET,       // Family: IPv4
+    server_socket = socket(PF_INET,      // Family: IPv4
                           SOCK_STREAM,   // Type: Full-duplex stream (reliable)
                           IPPROTO_TCP);  // Protocol: TCP
 
@@ -77,7 +78,7 @@ int main(int argc, char *argv[])
        using sockaddr_storage, since we don't know a priori if we'll be using IPv4 or IPv6. */
 
     /* Make sure socket was created correctly */
-    if(serverSocket == -1)
+    if(server_socket == -1)
     {
         perror("Could not open socket");
         exit(-1);
@@ -88,18 +89,18 @@ int main(int argc, char *argv[])
        the connection must stay in the TIME_WAIT state to make sure the client received the
        acknowledgement that the connection has been terminated. During this time, this port
        is unavailable to other processes, unless we specify this option) */
-    if(setsockopt(serverSocket, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
+    if(setsockopt(server_socket, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
     {
         perror("Socket setsockopt() failed");
-        close(serverSocket);
+        close(server_socket);
         exit(-1);
     }
 
     /* Bind the socket to the address */
-    if(bind(serverSocket, (struct sockaddr *) &serverAddr, sizeof(serverAddr)) == -1)
+    if(bind(server_socket, (struct sockaddr *) &server_addr, sizeof(server_addr)) == -1)
     {
         perror("Socket bind() failed");
-        close(serverSocket);
+        close(server_socket);
         exit(-1);
     }
 
@@ -108,10 +109,10 @@ int main(int argc, char *argv[])
        Note that listen() doesn't block until incoming connections arrive. It just makes
        the OS aware that this process is willing to accept connections on this socket
        (which is bound to a specific IP and port) */
-    if(listen(serverSocket, 5) == -1)
+    if(listen(server_socket, 5) == -1)
     {
         perror("Socket listen() failed");
-        close(serverSocket);
+        close(server_socket);
         exit(-1);
     }
     
@@ -119,15 +120,15 @@ int main(int argc, char *argv[])
 
     /* When an incoming connection arrives, accept it. The call to accept() blocks until
        the incoming connection arrives */
-    if( (clientSocket = accept(serverSocket, (struct sockaddr *) &clientAddr, &sinSize)) == -1)
+    if( (client_socket = accept(server_socket, (struct sockaddr *) &client_addr, &sin_size)) == -1)
     {
         perror("Socket accept() failed");
-        close(serverSocket);
+        close(server_socket);
         exit(-1);
     }
 
     /* accept() returns a new socket that we can use to communicate with the client. 
-       clientAddr is also used to return the sockaddr for the client (with the client's
+       client_addr is also used to return the sockaddr for the client (with the client's
        IP address and port).
 
        So, in this case, we send the message to the client. Note that we can get away with
@@ -135,15 +136,15 @@ int main(int argc, char *argv[])
        send() can send all of it in a single go. For larger messages, we would need to
        check if the number of bytes we send matches the number of bytes *actually* sent
        (and make more calls to send with the remainder of the message, if necessary)*/
-    if (send(clientSocket, msg, strlen(msg), 0) <= 0)
+    if(send(client_socket, msg, strlen(msg), 0) <= 0)
     {
         perror("Socket send() failed");
-        close(serverSocket);
-        close(clientSocket);
+        close(server_socket);
+        close(client_socket);
         exit(-1);
     }
 
-    close(clientSocket);
+    close(client_socket);
     fprintf(stderr, "message sent!\n");
     
     /* Note that the above is a one-shot server. The program not only closes the connection
@@ -151,7 +152,7 @@ int main(int argc, char *argv[])
        If we want to support many consecutive connections, we would just need to place
        everything between the fprintf's in a while(1) { } loop */
 
-    close(serverSocket);
+    close(server_socket);
 
     return 0;
 }
