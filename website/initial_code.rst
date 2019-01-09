@@ -29,7 +29,7 @@ To initialize your repository for project 1, run the following commands from ins
 ::
 
     REPO_NAME=studentA-studentB
-    git remote add -f origin git@mit.cs.uchicago.edu:cmsc23300-win-18/$REPO_NAME.git
+    git remote add -f origin git@mit.cs.uchicago.edu:cmsc23300-win-19/$REPO_NAME.git
     git remote add -f chirc-upstream https://github.com/uchicago-cs/chirc.git
     git subtree add --prefix chirc chirc-upstream master --squash
 
@@ -39,7 +39,7 @@ At this point, you have only added the code to your local repository. To push it
 
 If you want to create other copies of the repository (e.g., if you are the team member who did *not* run the above commands) just run the following *after* the repository has been initialized::
 
-    git clone git@mit.cs.uchicago.edu:cmsc23300-win-18/$REPO_NAME.git
+    git clone git@mit.cs.uchicago.edu:cmsc23300-win-19/$REPO_NAME.git
 
 If we make any changes to the upstream repository, and you want to merge them into your repository, you need to run the following command::
 
