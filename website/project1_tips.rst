@@ -37,11 +37,12 @@ General Tips
    points.
 
 -  Your implementation will require using data structures to store
-   collections of users, channels, etc. We do not expect you to
-   implement these data structures from scratch. The instructors’ reference
-   implementation uses the `SimCList library <http://mij.oltrelinux.com/devel/simclist/>`_.
-   In the past, many students have also used the `uthash <https://troydhanson.github.io/uthash/>`_
-   library.
+   collections of users, channels, etc. Do not implement these
+   data structures from scratch! (in fact, we will take points
+   off if you do) You should use existing data structure
+   implementations; we suggest you specifically
+   use libraries like `utlist <https://troydhanson.github.io/uthash/utlist.html>`_
+   and `uthash <https://troydhanson.github.io/uthash/>`_.
    
 -  Working with strings (specially parsing and tokenizing them) in C can be
    a pain. Using a library like `bstring <http://bstring.sourceforge.net/>`_
