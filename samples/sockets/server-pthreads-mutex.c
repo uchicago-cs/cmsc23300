@@ -26,9 +26,7 @@
 #include <errno.h>
 #include <time.h>
 
-#define NLOOPS 1000000
-
-const char *PORT = "23300";
+#define NLOOPS (1000000)
 
 /* ADDED: A "server context" struct that contains information that needs to be shared
  * amongst all the worker threads. It contains a number of connections, along with
@@ -80,7 +78,7 @@ int main(int argc, char *argv[])
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    if (getaddrinfo(NULL, PORT, &hints, &res) != 0)
+    if (getaddrinfo(NULL, "23300", &hints, &res) != 0)
     {
         perror("getaddrinfo() failed");
         pthread_exit(NULL);
@@ -128,7 +126,7 @@ int main(int argc, char *argv[])
 
     while (1)
     {
-        client_addr = malloc(sin_size);
+        client_addr = calloc(1, sin_size);
         if ((client_socket = accept(server_socket, (struct sockaddr *) client_addr, &sin_size)) == -1)
         {
             free(client_addr);
@@ -136,7 +134,7 @@ int main(int argc, char *argv[])
             continue;
         }
 
-        wa = malloc(sizeof(struct worker_args));
+        wa = calloc(1, sizeof(struct worker_args));
         wa->socket = client_socket;
         wa->ctx = ctx;
 

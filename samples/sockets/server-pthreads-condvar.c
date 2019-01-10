@@ -29,8 +29,6 @@
 #include <errno.h>
 #include <time.h>
 
-const char *PORT = "23300";
-
 /* ADDED: The server context now contains an enum variable that indicates
  * the state of the latest worker thread. We also add a condition variable
  * (and corresponding mutex) to signal the main thread when the
@@ -101,7 +99,7 @@ int main(int argc, char *argv[])
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    if (getaddrinfo(NULL, PORT, &hints, &res) != 0)
+    if (getaddrinfo(NULL, "23300", &hints, &res) != 0)
     {
         perror("getaddrinfo() failed");
         pthread_exit(NULL);
@@ -149,7 +147,7 @@ int main(int argc, char *argv[])
 
     while (1)
     {
-        client_addr = malloc(sin_size);
+        client_addr = calloc(1, sin_size);
         if ((client_socket = accept(server_socket, (struct sockaddr *) client_addr, &sin_size)) == -1)
         {
             free(client_addr);
@@ -157,7 +155,7 @@ int main(int argc, char *argv[])
             continue;
         }
 
-        wa = malloc(sizeof(struct worker_args));
+        wa = calloc(1, sizeof(struct worker_args));
         wa->socket = client_socket;
         wa->ctx = ctx;
 

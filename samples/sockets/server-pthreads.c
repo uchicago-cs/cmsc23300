@@ -21,8 +21,6 @@
 #include <errno.h>
 #include <time.h>
 
-const char *PORT = "23300";
-
 /* We will use this struct to pass parameters to one of the threads */
 struct worker_args
 {
@@ -75,7 +73,7 @@ int main(int argc, char *argv[])
     hints.ai_flags = AI_PASSIVE; // Return my address, so I can bind() to it
 
     /* Note how we call getaddrinfo with the host parameter set to NULL */
-    if (getaddrinfo(NULL, PORT, &hints, &res) != 0)
+    if (getaddrinfo(NULL, "23300", &hints, &res) != 0)
     {
         perror("getaddrinfo() failed");
         pthread_exit(NULL);
@@ -125,7 +123,7 @@ int main(int argc, char *argv[])
     while (1)
     {
         /* Call accept(). At this point, we will block until a client establishes a connection. */
-        client_addr = malloc(sin_size);
+        client_addr = calloc(1, sin_size);
         if ((client_socket = accept(server_socket, (struct sockaddr *) client_addr, &sin_size)) == -1)
         {
             /* If this particular connection fails, no need to kill the entire thread. */
@@ -157,7 +155,7 @@ int main(int argc, char *argv[])
              it is good practice to use a struct that encapsulates the parameters to the thread
              (even if there is only one parameter). In this case, this is done with the worker_args struct.
         */
-        wa = malloc(sizeof(struct worker_args));
+        wa = calloc(1, sizeof(struct worker_args));
         wa->socket = client_socket;
 
         if (pthread_create(&worker_thread, NULL, service_single_client, wa) != 0)
