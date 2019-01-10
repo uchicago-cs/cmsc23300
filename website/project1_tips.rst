@@ -45,8 +45,8 @@ General Tips
    and `uthash <https://troydhanson.github.io/uthash/>`_.
    
 -  Working with strings (specially parsing and tokenizing them) in C can be
-   a pain. Using a library like `bstring <http://bstring.sourceforge.net/>`_
-   can ease that pain.
+   a pain. Using a library like `SDS <https://github.com/antirez/sds>`_ or
+   `bstring <http://bstring.sourceforge.net/>`_ can ease that pain.
 
 -  As you read the project specification and the IRC specification
    itself, you’ll notice that the same patterns come up over and over.
