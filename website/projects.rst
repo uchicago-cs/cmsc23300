@@ -25,6 +25,11 @@ Make sure you read the following before working on any of the projects:
 * `Submitting a project <submit.html>`_: This page explains how to submit your projects,
   including how to use your extensions.
 * `Style Guide <style_guide.html>`_: Conventions for writing C code in this class.
+
+The following are resources that you may find helpful when working on your projects:
+
+* `Working in Pairs <working_in_pairs.html>`__: This page provides a number of concrete
+  suggestions and strategies for working effectively as a pair in the projects.
 * `The Debugging Guide <https://uchicago-cs.github.io/debugging-guide/>`_: A guide with useful suggestions and pointers on how to debug your C code.
 * `Asking Effective Questions <questions.html>`_: A guide to asking effective questions on Piazza.
 * `Using Continuous Integration <ci.html>`_
