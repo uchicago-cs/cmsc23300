@@ -45,14 +45,14 @@ may want to consider the following before pairing up with someone:
   you may find it difficult to meet and to communicate throughout the quarter.
 
 - *Level of experience*: You will usually want to pair up with someone that is
-  at your same level. If you're a fourth year who is almost done with the CS major,
+  at roughly your same level. If you're a fourth year who is almost done with the CS major,
   and you pair up with a second year who is fresh out of the intro sequence,
   you may get frustrated by the fact that your partner progresses more slowly
   through the projects.
 
   There is one notable exception to this: pairing up with someone less experienced
   than you for the express purpose of having a mentorship relationship can be
-  a very fulfilling experience. However, you need to make sure you're both on
+  a very fulfilling experience for the both of you. However, you need to make sure you're both on
   board with this, and understand that the less experienced partner may need
   some hand-holding throughout the project.
 
@@ -104,14 +104,18 @@ While it can be tough to admit you may not be able to do something you committed
 to doing, having an early and frank discussion about it gives the two of you an
 opportunity to regroup and figure out how to stay on track.
 
-It is also important that the two of you understand that this is a *perfectly normal*
-aspect of software development: sometimes you estimate that something will take you
-one hour and it turns out to be a ten hour task (or maybe it *was* a one hour task,
-but you got sidetracked by something else). This happens to even the most
-seasoned software developers, and communicating frequently and in a positive, constructive,
-and non-judgemental manner allows developers to make adjustments to their plans.
-This is another reason why frequent check-ins are important: they can help you
-catch these issues sooner rather than later.
+Take into account that correctly estimating the time and
+effort required for a task is challenging even for seasoned software developers,
+and it happens more frequently than you'd imagine in many software projects.
+If it happens to you, don't think of it as having done something wrong:
+you're simply getting the hang of figuring out how long it takes to do something,
+particularly in a collaborative setting. This is another reason why frequent
+check-ins are important: they can help you catch these issues sooner rather than later.
+It is better to identify this issue (and reassess the way forward with
+your project partner) once you realize it's going to take you longer than expected,
+instead of plowing through and then revealing to your partner that you
+didn't get to other tasks because you spent so much extra time on another
+task.
 
 
 
@@ -130,10 +134,10 @@ you may find useful.
 Start early
 ~~~~~~~~~~~
 
-We're sure you're told in every single class that you shouldn't wait until right
-before the deadline to start working on an assignment. We realize you have multiple
-demands on your time, and and that this is not always possible but we encourage you,
-if possible, for you to get an early start in the first projects.
+We're sure you're told in all your classes that you shouldn't wait until right
+before the deadline to start working on an assignment. We realize this is not always
+possible (given all the demands on your time) but we encourage you,
+if possible, to get an early start in the first projects.
 This is when you will start working with your project partner,
 and will likely have to iron out the ways in which you collaborate best, and this
 will take time. You want to allow plenty of time before the deadline to figure
@@ -143,7 +147,7 @@ outside of the context of a pre-deadline time crunch.
 Once you've settled into a good working relationship, it may be a bit easier
 to live on the razor's edge but, even so,
 we will reiterate that the best way to have a productive and fun experience
-with these projects is to start early and to spread the work before the deadline.,
+with these projects is to start early and to spread the work before the deadline,
 instead of planning on a pre-deadline coding marathon.
 
 
@@ -201,8 +205,8 @@ the work you each did). It also means that each of you will only be familiar
 with half the project (and remember that, on the exams, we will be asking
 you about all aspects of the project).
 
-Going to the other extreme, where you do all your work sitting together on the
-same computer, seems like it would be more ideal, but it can be logistically
+On the other hand, you could do all your work sitting together on the
+same computer, but this can be logistically
 complicated: you need to find time to physically meet together, and you
 lose the ability to parallelize your progress (since you're limited
 to making progress only when the two of you are physically sitting together
@@ -264,11 +268,11 @@ progress, it can be helpful to use a concrete mechanism to track and document
 that progress. A common way of doing this is by using an
 `issue tracking system <https://en.wikipedia.org/wiki/Issue_tracking_system>`__,
 where you create a new "issue" for each concrete task that needs to be completed.
-The issue tracker then allows you to add comments to that issue, and effectively
-have a specific location to discuss anything surrounding that task.
+The issue tracker then allows you to add comments to that issue, and
+have a single location to discuss anything surrounding that task.
 
 The Git server we use, GitLab, helpfully provides a built-in issue tracker in
-each repository (you can see their full documentation `here <https://docs.gitlab.com/ce/user/project/issues/>`__.
+each repository (you can see their full documentation `here <https://docs.gitlab.com/ce/user/project/issues/>`__).
 You do, however, need to enable this functionality. In your project,
 click on "Settings" -> "General" (in the left sidebar) and then switch "Issues"
 to "Only team members". Don't forget to then click on "Save Changes".
@@ -296,7 +300,7 @@ the ``MOTD`` command. You would do something like this:
    ``#42`` somewhere in your commit message). This will make
    the commit show up automatically in the issue, which is very helpful to
    easily access the exact code associated with a task.
-4. Once a task is completed, close the issue. While you can then merge the
+5. Once a task is completed, close the issue. While you can then merge the
    code into your ``master`` branch, we suggest you do a code review
    before doing so.
 
@@ -309,7 +313,7 @@ of doing so, become an expert on that command. Your partner, unfortunately,
 will know nothing about it, except at a very high level. One way to ensure
 that you are both familiar with the entire implementation of the project is
 to systematically review each others code. More importantly, doing this
-can help you catch bugs early on (that you may have missed) and to getting
+can help you catch bugs that you may have missed and will also help you get
 comfortable with giving and receiving feedback.
 
 A common mechanism to handle this process is to take the code you produced
