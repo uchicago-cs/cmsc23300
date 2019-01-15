@@ -127,6 +127,26 @@ all about project management in this class, we provide below a few essential tip
 you may find useful.
 
 
+Start early
+~~~~~~~~~~~
+
+We're sure you're told in every single class that you shouldn't wait until right
+before the deadline to start working on an assignment. We realize you have multiple
+demands on your time, and and that this is not always possible but we encourage you,
+if possible, for you to get an early start in the first projects.
+This is when you will start working with your project partner,
+and will likely have to iron out the ways in which you collaborate best, and this
+will take time. You want to allow plenty of time before the deadline to figure
+our how to work effectively together, and you will find this much easier to do
+outside of the context of a pre-deadline time crunch.
+
+Once you've settled into a good working relationship, it may be a bit easier
+to live on the razor's edge but, even so,
+we will reiterate that the best way to have a productive and fun experience
+with these projects is to start early and to spread the work before the deadline.,
+instead of planning on a pre-deadline coding marathon.
+
+
 Design
 ~~~~~~
 
@@ -220,6 +240,13 @@ code right before submitting. Instead, it can be an invaluable tool for developi
 code collaboratively. Make sure you review our `Using Git <git.html>`__ page and,
 in particular, that you familiarize yourself with using branches in Git, as
 these will be necessary for doing issue tracking and code reviews.
+
+We do have one caveat about branches: avoid having per-person branches (i.e., you
+do all your work on all the projects in one branch, and your project partner
+does all their work on all the projects in another branch). Below we
+suggest a better way to manage branches, where each branch corresponds to a
+specific task or issue you're working on (and, while these will often be worked
+upon by just one person, that isn't always the case).
 
 You should also make sure to set up `Continuous Integration <ci.html>`__ (CI) on your
 repository. In combination with frequent code reviews, CI is a great tool
@@ -335,3 +362,4 @@ This will merge your code into the target branch.
 
 When things go wrong
 --------------------
+
