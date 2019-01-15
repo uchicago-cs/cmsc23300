@@ -363,3 +363,67 @@ This will merge your code into the target branch.
 When things go wrong
 --------------------
 
+While the suggestions and tips in this page may help you have a productive
+and rewarding collaborative experience in the course projects, you may
+still hit some bumps in the road. A common issue is feeling like your
+project partner may not be as invested in the project as you are, or
+having your project partner miss specific goals you both agreed upon.
+
+While it is easy to think your partner is being lazy or unengaged,
+and that you're the one who's doing most of the work, we encourage
+you to avoid that mindset. More often than not, when two people don't
+work well together, it turns out that no single individual is to blame:
+maybe it turned out you each had different working styles and did not
+work through how to harmonize them, or you were not checking in with
+each other often enough and did not catch potential issues early on
+(and those issues instead blew up right before the deadline, which
+can generate a sense of resentment as you deal with both finishing
+the project and dealing with what you perceive to be a sub-par project partner).
+
+In fact, if this is your first time working in a team, it is perfectly
+normal to not get it completely right on your first try! So,
+if you feel like your collaboration is not being as productive as it
+could be, approach it as an opportunity to learn how you could improve
+the way that you work as a team. Here are a few
+things you may want to discuss if you feel like your work together
+isn't going as smoothly as you hoped:
+
+- In general, keep the discussion positive and start by going over
+  the aspects that worked well. For example, try to make statements
+  like "I really enjoyed when we did X" or "It was really helpful
+  when you did Y". If you can identify aspects of your partnership
+  that worked well, you will want to nurture those aspects as you
+  move forward.
+- If one of you did not meet a goal you agreed upon, don't try to
+  figure out who is to blame. Discuss why that goal wasn't met:
+  was the goal too ambitious? was it not clear what exactly you
+  had to accomplish? did you get stuck at some point and
+  didn't ask for help? All of these can help you improve your
+  goal-setting in future projects.
+- If you feel like you're not communicating enough, see if there is
+  a root cause, instead of just making blanket statements like
+  "You need to reply to my messages sooner!" For example, did
+  you both agree to use a given messaging platform
+  to stay in touch when it turned out that one or both of you
+  don't actually use it that much? Have your schedules changed
+  since the start of the quarter? Did you agree to have in-person
+  meetings, and find yourselves having trouble sticking to specific times?
+
+Of course, they may sometimes be situations when your project partner is
+really not doing any work. If you feel like you've made a good faith effort
+to address the issue with your partner, and they are unresponsive to your
+concerns, you should then bring this to the attention of the instructor.
+
+
+Learning more about working in teams
+------------------------------------
+
+This page aims to provide some concrete tips and suggestions on how to
+successfully work with others in a software project, but it really only
+scratches the surface of this subject. Working in teams is something
+you could write an entire book on... and someone did! If you'd
+like to learn about other ways to work effectively as part of a team,
+we strongly encourage you to read
+`Debugging Teams: Better Productivity through Collaboration <http://shop.oreilly.com/product/0636920042372.do>`__,
+written by Brian Fitzpatrick and Ben Collins-Sussman (SB'94)
+
