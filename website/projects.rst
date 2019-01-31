@@ -60,12 +60,10 @@ Make sure you read the `Project 1 rubric <project1_rubric.html>`_ and the `Proje
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
 
-.. admonition:: WARNING: Project 2 has not yet been updated for Winter 2019!
+.. admonition:: WARNING: Part 2 of Project 2 has not yet been updated for Winter 2019!
 
-   You can find here the links to the project specification, and other resources,
-   exactly as they were assigned in 2018. You may find them useful to get a sense
-   of what the project will involve, but **DO NOT** work on this project until
-   we tell you to do so, as the project specification may change.
+   You can start working on Part 1, but do not start working on Part 2 until we
+   tell you it is ready.
 
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
