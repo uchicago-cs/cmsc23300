@@ -60,11 +60,6 @@ Make sure you read the `Project 1 rubric <project1_rubric.html>`_ and the `Proje
 Project 2: chitcp
 ~~~~~~~~~~~~~~~~~
 
-.. admonition:: WARNING: Part 2 of Project 2 has not yet been updated for Winter 2019!
-
-   You can start working on Part 1, but do not start working on Part 2 until we
-   tell you it is ready.
-
 In this project you will be implementing the Transmission Control Protocol, as
 specified in `[RFC793] <http://tools.ietf.org/html/rfc793>`__. However, instead
 of implementing it inside the operating system itself, you will be implementing
@@ -78,6 +73,10 @@ they do not implement the entire functionality provided by standard sockets
 (e.g., non-blocking sockets are not supported).
 
 The project specification is available `here <http://chi.cs.uchicago.edu/chitcp/>`__.
+
+.. admonition:: NOTE
+
+   You are not required to implement persist timers in Project 2b.
 
 Make sure you read the `Project 2 rubric <project2_rubric.html>`_ and the `Project 2 tips <project2_tips.html>`_.
 
