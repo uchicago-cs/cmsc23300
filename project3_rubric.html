@@ -140,12 +140,12 @@ repeated/redundant code, ensuring that each function performs a well-defined
 task, and putting related functions in the same module (i.e., the same C file).</li>
 <li><strong>Efficiency</strong> (5 points): We will look at whether your code is minimally efficient.
 In other words, we are not looking for sublimely efficient code but, rather,
-for the lack of grossly inefficient code. For example, we don’t care whether
-you store your list of channels in a linked list (<span class="math notranslate nohighlight">\(O(n)\)</span> lookup times) or a
-hash table (<span class="math notranslate nohighlight">\(O(1)\)</span> lookup times), but we do care whether you iterate over a list
-in <span class="math notranslate nohighlight">\(O(n^2)\)</span> time when the same task can reasonably be accomplished in
+for the lack of grossly inefficient code. In this project, you should not need
+to add any additional data structures (lists, hash tables, etc.) to the existing code,
+but we will care about how you use the provided data structures. For example, if
+you iterate over a list in <span class="math notranslate nohighlight">\(O(n^2)\)</span> time when the same task can reasonably be accomplished in
 <span class="math notranslate nohighlight">\(O(n)\)</span> time (i.e., when the <span class="math notranslate nohighlight">\(O(n)\)</span> is not particularly clever or relies
-on some obscure algorithm).</li>
+on some obscure algorithm), we may deduct points for this.</li>
 </ul>
 </div>
 <div class="section" id="style">

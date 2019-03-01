@@ -156,7 +156,7 @@ kind of issues.</p>
 This issue is particularly hard to catch because, if you include an incorrect checksum somewhere,
 your message will be silently dropped by tools like ping, traceroute, etc. In other words, you may
 be doing every other step correctly (like forwarding an IP datagram through the correct interface)
-only to have your datagram rejected when it arrives at its destination.</p>
+only to have your datagram silently rejected when it arrives at its destination.</p>
 <p>However, take into account that IPv4 checksum validation is disabled by default in Wireshark.
 You can enable it like this:</p>
 <img alt="_images/wireshark_checksum.png" class="align-center" src="_images/wireshark_checksum.png" />
