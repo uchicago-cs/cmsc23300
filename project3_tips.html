@@ -100,7 +100,7 @@ in <a class="reference external" href="initial_code.html">Uploading the initial 
 <h2>Using the CS Virtual Machine<a class="headerlink" href="#using-the-cs-virtual-machine" title="Permalink to this headline">¶</a></h2>
 <p>The mininet network simulator in Project 3 must be run with root privileges
 on a Linux machine. If you do not have access to such a machine, we recommend
-using the <a class="reference external" href="https://howto.cs.uchicago.edu/vm:index">CS Virtual Machine</a> (version 201718.3 or higher)
+using the <a class="reference external" href="https://howto.cs.uchicago.edu/vm:index">CS Virtual Machine</a> (version 201819.2 or higher)
 to run mininet.</p>
 <p>Take into account that this doesn’t mean you have to do all your development work inside the virtual machine; you
 will be able to continue to use your usual development environment (your laptop,
@@ -145,6 +145,21 @@ that will create a new protocol header, forcing you to think about the exact val
 in every field of the header, than to try to reuse existing headers.</p>
 <p>Note: this does not apply to IP forwarding, where the existing IP header is kept largely intact, except for some
 well-defined modifications.</p>
+</div>
+<div class="section" id="using-wireshark-to-analyze-the-capture-files">
+<h2>Using Wireshark to analyze the capture files<a class="headerlink" href="#using-wireshark-to-analyze-the-capture-files" title="Permalink to this headline">¶</a></h2>
+<p>Every time you test your router, you should generate a capture file (using the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option to chirouter,
+not by doing a live capture) and then open it with Wireshark. If there are any issues in the Ethernet/IP/ICMP/ARP messages you are
+generating, Wireshark will likely highlight them for you, which will make it easier to catch these
+kind of issues.</p>
+<p>Take into account that, by far, the most common issue is incorrectly computing a checksum somewhere.
+This issue is particularly hard to catch because, if you include an incorrect checksum somewhere,
+your message will be silently dropped by tools like ping, traceroute, etc. In other words, you may
+be doing every other step correctly (like forwarding an IP datagram through the correct interface)
+only to have your datagram rejected when it arrives at its destination.</p>
+<p>However, take into account that IPv4 checksum validation is disabled by default in Wireshark.
+You can enable it like this:</p>
+<img alt="_images/wireshark_checksum.png" class="align-center" src="_images/wireshark_checksum.png" />
 </div>
 <div class="section" id="common-pitfalls">
 <h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this headline">¶</a></h2>
