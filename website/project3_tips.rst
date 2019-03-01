@@ -16,7 +16,7 @@ Using the CS Virtual Machine
 
 The mininet network simulator in Project 3 must be run with root privileges
 on a Linux machine. If you do not have access to such a machine, we recommend
-using the `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`_ (version 201718.3 or higher)
+using the `CS Virtual Machine <https://howto.cs.uchicago.edu/vm:index>`_ (version 201819.2 or higher)
 to run mininet. 
 
 Take into account that this doesn't mean you have to do all your development work inside the virtual machine; you
@@ -72,6 +72,27 @@ Note: this does not apply to IP forwarding, where the existing IP header is kept
 well-defined modifications.
 
 
+Using Wireshark to analyze the capture files
+--------------------------------------------
+
+Every time you test your router, you should generate a capture file (using the ``-c`` option to chirouter,
+not by doing a live capture) and then open it with Wireshark. If there are any issues in the Ethernet/IP/ICMP/ARP messages you are
+generating, Wireshark will likely highlight them for you, which will make it easier to catch these
+kind of issues.
+
+Take into account that, by far, the most common issue is incorrectly computing a checksum somewhere.
+This issue is particularly hard to catch because, if you include an incorrect checksum somewhere,
+your message will be silently dropped by tools like ping, traceroute, etc. In other words, you may
+be doing every other step correctly (like forwarding an IP datagram through the correct interface)
+only to have your datagram silently rejected when it arrives at its destination.
+
+However, take into account that IPv4 checksum validation is disabled by default in Wireshark.
+You can enable it like this:
+
+.. image:: wireshark_checksum.png
+   :align: center
+
+
 Common Pitfalls
 ---------------
 
@@ -96,3 +117,5 @@ Common Pitfalls
   network order to host order)
 
 * **... except with checksums**: The ``cksum`` function already produces a checksum in network order. There is no need to convert it from host order to network order.
+
+
