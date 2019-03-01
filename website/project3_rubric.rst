@@ -59,12 +59,12 @@ that don’t have to do with (and exist to some extent independently of) the cor
   task, and putting related functions in the same module (i.e., the same C file).
 * **Efficiency** (5 points): We will look at whether your code is minimally efficient.
   In other words, we are not looking for sublimely efficient code but, rather,
-  for the lack of grossly inefficient code. For example, we don't care whether
-  you store your list of channels in a linked list (:math:`O(n)` lookup times) or a
-  hash table (:math:`O(1)` lookup times), but we do care whether you iterate over a list
-  in :math:`O(n^2)` time when the same task can reasonably be accomplished in
+  for the lack of grossly inefficient code. In this project, you should not need
+  to add any additional data structures (lists, hash tables, etc.) to the existing code,
+  but we will care about how you use the provided data structures. For example, if
+  you iterate over a list in :math:`O(n^2)` time when the same task can reasonably be accomplished in
   :math:`O(n)` time (i.e., when the :math:`O(n)` is not particularly clever or relies
-  on some obscure algorithm).
+  on some obscure algorithm), we may deduct points for this.
 
 
 Style
